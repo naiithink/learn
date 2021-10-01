@@ -20,3 +20,4 @@ elif circle > 0:
         char.insert(0,x)
         i += 1
     print("".join(char))
+
