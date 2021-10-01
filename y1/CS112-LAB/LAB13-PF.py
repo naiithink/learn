@@ -13,7 +13,7 @@ def vowels(word, count, boolean):
     return product
 
 ######################################################################
-#import nthk
+import nthk
 import ctypes
 
 #print("here's it", ctypes.cast(140704471110384, ctypes.py_object).value)
