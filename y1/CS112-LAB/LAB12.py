@@ -79,29 +79,25 @@ def convintomatrix(x):
 
 print (convintomatrix(l1))"""
 
-tovalid, name, extn, phase, include = input(), "", "", 0, "."
+"""import multiprocessing
 
-if tovalid:
-    for i in tovalid[::-1]:
-        if tovalid.count("."):
-            if not phase and i != ".":
-                if i in "\/*:|\"<> ":
-                    i = "_"
-                extn += i
-            elif not phase:
-                phase += 1
-                continue
+def replace(result, guess):
+    for char in result:
+        if char == guess:
+            return guess
         else:
-            include = ""
-            phase += 1
-        if phase:
-            if i in ".\/*:|\"<> ":
-                i = "_"
-            name += i
+            return "-"
 
-    name = name[::-1]; extn = extn[::-1]
-    if len(name) > 15:
-        name = name[:15]
-    if len(extn) > 3:
-        extn = extn[:3]
-    print("%s%s%s" % (name, include, extn))
+target = input(); result = ""
+while True:
+    print("j")
+    guess = input()
+    check = guess * len(target)
+    if guess == "0":
+        break
+    result = map(replace, guess)
+    #print([(result.replace(k, j)) for i in target for j in guess for k in result if i == j])
+
+result = target
+print(target)
+"""
