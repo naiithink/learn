@@ -2,3 +2,6 @@
 
 # macOS System Files:
 *.DS_Store
+
+# Cloud:
+*.replit
