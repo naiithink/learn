@@ -1,3 +1,5 @@
+#PASSED
+
 """
 s, shift, c = input().lower(), 0, ""
 for i in s:
