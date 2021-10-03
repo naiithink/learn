@@ -106,6 +106,16 @@ def checkif(number):
     if number[::-1].find(".") > 2:
         return False
     
+    if number.find(",") > 3:
+        return False
+
+    cir = 0
+    for i in number:
+        if i == ",":
+            cir += 1
+        if not cir and i == "0":
+            return False
+
     convertable = ""
     for i in number[::-1]:
         if number.count(","):
@@ -136,7 +146,7 @@ def checkif(number):
 
 inp = input()
 
-if inp and inp[-1] != "." and checkif(inp):
+if inp and inp[-1] != "." and inp[0] != "," and checkif(inp) and not inp.count(" "):
     number = ""
     for i in inp:
         if i != ",":
