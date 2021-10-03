@@ -101,3 +101,55 @@ while True:
 result = target
 print(target)
 """
+
+def checkif(number):
+    if number[::-1].find(".") > 2:
+        return False
+    
+    convertable = ""
+    for i in number[::-1]:
+        if number.count(","):
+            if i != ",":
+                convertable += i
+        else:
+            convertable = number[::-1]
+    while True:
+        try:
+            float(convertable[::-1])
+            break
+        except ValueError:
+            return False
+    integral = number[::-1]
+    if number.count("."):
+        integral = number[(len(number) - number.rfind(".")) * -1 - 1::-1]
+    index = 0; commasep = []
+    for i in integral:
+        index += 1
+        if i == ",":
+            commasep.append(index)
+    for i in commasep:
+        if i % 4:
+            return False
+
+    return True
+
+
+inp = input()
+
+if inp and inp[-1] != "." and checkif(inp):
+    number = ""
+    for i in inp:
+        if i != ",":
+            number += i
+    if float(number) > 0:
+        if number.count("."):
+            precision = number[::-1].rfind(".")
+            result = ("{:.{}f}".format(float(number) + 1, precision))
+            print(str(result).zfill(len(number)))
+        else:
+            result = int(number) + 1
+            print(str(result).zfill(len(number)))
+    else:
+        print("ERROR")
+else:
+    print("ERROR")
