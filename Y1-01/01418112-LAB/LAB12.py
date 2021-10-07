@@ -165,3 +165,27 @@ if inp and inp[-1] != "." and inp[0] != "," and checkif(inp) and not inp.count("
         print("ERROR")
 else:
     print("ERROR")
+
+x = input(); ls = []; member = ""; indx = 0
+for i in x:
+    if i != ",":
+        member += i
+    elif i == ",":
+        ls.append(member.strip())
+        member = ""
+    if indx == len(x) - 1:
+        if i != "," and i != " ":
+            ls.append(member)
+            break
+        else:
+            ls.append("")
+            break
+    indx += 1
+
+count = 0
+for i in ls:
+    if count == len(ls) - 1:
+        print("\"{}\"".format(i), end="")
+    else:
+        print(f"\"{i}\",", end="")
+    count += 1
