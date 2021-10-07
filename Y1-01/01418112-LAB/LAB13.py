@@ -20,5 +20,3 @@ def namelist(names):
     return product
 
 print( namelist(['Bart']) )
-
-def 
