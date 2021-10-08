@@ -172,7 +172,7 @@ for i in x:
         member += i
     elif i == ",":
         ls.append(member.strip())
-        member = ""
+        member = "">
     if indx == len(x) - 1:
         if i != "," and i != " ":
             ls.append(member)
