@@ -3,3 +3,6 @@ def missing_integer(data):
     for i in ls:
         if i not in data and i != ",":
             return i
+
+data = "3,2,10,8,5,0,1,7,6,4"
+print(missing_integer(data))
