@@ -5,3 +5,6 @@ def complement9(x):
         for i in x:
             product += str(9 - int(i))
     return product
+
+x = 431609
+print(complement9(x))

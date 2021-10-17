@@ -4,3 +4,6 @@ def is_abecedarian(s):
         return True
     else:
         return False
+
+s = "duck"
+print(is_abecedarian(s))
