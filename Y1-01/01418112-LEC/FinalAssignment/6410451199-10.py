@@ -13,7 +13,7 @@ def sumRowCol(ls, numr, numc):
                 sumr.append(smr)
                 smr = 0
             sumc[col] += int(j)
-    print(sumr, sumc, sep="\n")
+    return [sumr, sumc]
 
 numr = int(input())
 numc = int(input())
@@ -21,7 +21,7 @@ ls = []; cnt = 0
 while cnt < numr:
     ls.append(input().split(" "))
     cnt += 1
-sumRowCol(ls, numr, numc)
+print(*sumRowCol(ls, numr, numc), sep="\n")
 
 """
 5
