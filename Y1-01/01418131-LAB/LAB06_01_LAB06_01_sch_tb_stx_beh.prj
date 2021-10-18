@@ -1,0 +1,4 @@
+verilog isim_temp "LAB06_01.vf"
+verilog isim_temp "../../../Files/ISE_DS/CS131-LAB/Sources/LAB06_01_VeriTest.v"
+verilog isim_temp "LAB05.vf"
+verilog isim_temp "/opt/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"
