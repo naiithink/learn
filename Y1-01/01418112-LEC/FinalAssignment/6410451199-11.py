@@ -9,9 +9,7 @@ def firstClosestPair(ls):
     dis = min(list(dif.values()))
     pair = [key for key, value in dif.items() if value == dis]
     position = pair[0].split(" ")
-    print(ls[int(position[0])], ls[int(position[1])])
+    return [ls[int(position[0])], ls[int(position[1])]]
 
-ls = input()
-firstClosestPair(ls)
-
-"50 61 108 123 101 91 98 0"
+ls = "50 61 108 123 101 91 98 0"
+print(*firstClosestPair(ls))
