@@ -6,7 +6,7 @@ def firstDescPair(ls):
             product = None
             if len(each) < 2:
                 return None
-            if int(each[0]) < int(each[1]):
+            elif int(each[0]) < int(each[1]) or int(each[0]) == int(each[1]):
                 return findOut(each[1:])
             else:
                 product = [each[0], each[1]]
