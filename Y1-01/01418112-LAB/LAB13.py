@@ -1,4 +1,4 @@
-def namelist(names):
+"""def namelist(names):
     product = ""
     if len(names) == 1:
         product += names[0]
@@ -20,3 +20,9 @@ def namelist(names):
     return product
 
 print( namelist(['Bart']) )
+"""
+
+coor = [input().split(","), input().split(",")]
+coor = [float(j.strip()) for i in coor for j in i]
+coor = [coor[0] + coor[2], coor[1] + coor[3]]
+print(*coor, sep=",")
