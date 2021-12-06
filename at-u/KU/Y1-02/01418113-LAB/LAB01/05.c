@@ -17,7 +17,7 @@ int main(void)
         }
         else
         {
-            noteCount[i] = 0;
+            noteCount[i] = 0; //
         }
         remain = remain - noteCount[i] * notes[i];
     }
