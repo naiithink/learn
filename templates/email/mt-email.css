@@ -1,0 +1,104 @@
+@charset "utf-8";
+
+@media only screen and (max-width: 535px) {
+    table.report-table th:nth-child(3), table.report-table td:nth-child(3) {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 536px) {
+    table.report-table {
+        table-layout: fixed;
+        width: 521px;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: #FFFFFF;
+    }
+
+    * {
+        color: #000000;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #151414;
+    }
+
+    * {
+        color: #CDCCCD;
+    }
+}
+
+a:link {
+    color: #306FDB;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #306FDB;
+    text-decoration: underline;
+}
+
+* {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+hr.eiei {
+    border: 1px solid;
+    max-width: 521px;
+    margin-left: 0;
+}
+
+table.report-table * {
+    vertical-align: baseline;
+}
+
+table.report-table th:first-child, table.report-table td:first-child, table.report-table th:last-child, table.report-table td:last-child {
+    text-align: right;
+}
+
+table.report-table th#des, table.report-table th#procedure-timestamp {
+    text-align: left;
+}
+
+table.report-table th#row-num, table.report-table td.row-num {
+    width: 6%;
+    text-align: right;
+    padding-right: 5px;
+    font-weight: bold;
+}
+
+table.report-table th#des {
+    width: 48%;
+    text-align: left;
+}
+
+table.report-table th#procedure-timestamp {
+    width: 23%;
+    text-align: left;
+}
+
+table.report-table th#amount {
+    width: 23%;
+    text-align: right;
+}
+
+table.report-table tr#sum-row {
+    font-weight: bold;
+}
+
+table.report-table tr#sum-row td:first-child {
+    text-align: center;
+}
+
+table.report-table tr#sum-row td:last-child {
+    text-align: right;
+}
+
+td {
+    vertical-align: baseline;
+}
