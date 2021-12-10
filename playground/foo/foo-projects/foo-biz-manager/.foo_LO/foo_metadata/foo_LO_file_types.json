@@ -1,0 +1,9 @@
+{
+    "calc": "com.sun.star.sheet.SpreadsheetDocument",
+    "writer": "com.sun.star.text.TextDocument",
+    "impress": "com.sun.star.presentation.PresentationDocument",
+    "draw": "com.sun.star.drawing.DrawingDocument",
+    "base": "com.sun.star.sdb.DocumentDataSource",
+    "math": "com.sun.star.formula.FormulaProperties",
+    "basic": "com.sun.star.script.BasicIDE"
+}

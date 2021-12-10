@@ -1,0 +1,107 @@
+{
+    "os": {
+        "unix": {
+            "platform": [
+                "darwin",
+                "linux"
+            ],
+            "shell": [
+                "bash",
+                "zsh"
+            ],
+            "pathsep": "/"
+        },
+        "ms-dos": {
+            "platform": [
+                "win32"
+            ],
+            "shell": [
+                "cmd",
+                "powershell",
+                "bash",
+                "zsh"
+            ],
+            "pathsep": "\\\\"
+        }
+    },
+    "keycode": {
+        "enter": {
+            "darwin": "",
+            "linux": "",
+            "win32": ""
+        },
+        "shift": {
+            "left": {
+                "down": {
+                    "darwin": "",
+                    "linux": "",
+                    "win32": ""
+                },
+                "up": {
+                    "darwin": "",
+                    "linux": "",
+                    "win32": ""    
+                }    
+            },
+            "right": {
+                "down": {
+                    "darwin": "",
+                    "linux": "",
+                    "win32": ""
+                },
+                "up": {
+                    "darwin": "",
+                    "linux": "",
+                    "win32": ""    
+                }    
+            }
+        },
+        "caps-lock": {
+            "left": {
+                "down": {
+                    "darwin": "",
+                    "linux": "",
+                    "win32": ""
+                },
+                "up": {
+                    "darwin": "",
+                    "linux": "",
+                    "win32": ""    
+                }    
+            },
+            "right": {
+                "down": {
+                    "darwin": "",
+                    "linux": "",
+                    "win32": ""
+                },
+                "up": {
+                    "darwin": "",
+                    "linux": "",
+                    "win32": ""    
+                }    
+            }
+        }
+    },
+    "cmd": {
+        "changedir": {
+            "bash": "cd",
+            "zsh": "cd",
+            "cmd": "chdir",
+            "powershell": "cd"
+        },
+        "currentdir": {
+            "bash": ".",
+            "zsh": ".",
+            "cmd": "",
+            "powershell": "."
+        },
+        "printworkingdir": {
+            "_comment": "research",
+            "bash": "pwd",
+            "zsh": "pwd",
+            "cmd": "dir",
+            "powershell": "dir"
+        }
+    }
+}

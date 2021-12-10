@@ -1,0 +1,48 @@
+/*
+    yep 1.0 -- Single flag
+    Works well with bash and zsh.
+
+    Visit https://github.com/naiithink/ for more details,
+    bugs and issues could be reported there as well.
+    Cheers, naiithink.
+*/
+
+/*
+    usage()
+
+--
+void
+usage (int status)
+{
+    if (status != EXIT_SUCCESS)
+    {
+        emit_try_help ();
+    }
+    else
+    {
+        printf (_("Usage: %s [LANG] FILENAME...\n"), PROGRAM_NAME);
+        fputs (_("\
+yep will...\n\
+    Y anks the source file from you,\n\
+      hands it to the compiler/interpreter and store the output into the destination (configurable),\n\
+    E xecute the binary,\n\
+      then\n\
+    P rint out the result.\n\
+เยป จะ\n\
+    กระชากไฟล์ไปจากมือคุณ\n\
+    โยนงานต่อให้ตัวแปลโปรแกรมจัดการให้เสร็จสับ\n\
+    แล้วแสดงผลลัพธ์บน CLI\n\
+\n\
+No flags: compile/interpret in default mode based on the file extension.\n\
+ถ้าไม่มีการใส่ตัวเลือก จะดำเนินการแปลโปรแกรมด้วยค่าเริ่มต้นของภาษาต่าง ๆ\n\
+\n\
+    -gcc   \
+"), stdout);
+        // fputs (HELP_OPTION_DESCRIPTION, stdout);
+        // fputs (VERSION_OPTION_DESCRIPTION, stdout);
+        emit_ancillary_info (PROGRAM_NAME);
+    }
+    exit (status);
+}
+--
+*/

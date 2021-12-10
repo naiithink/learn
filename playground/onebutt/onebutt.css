@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+@media only screen and (max-width: 535px) {
+    table.report-table th:nth-child(3), table.report-table td:nth-child(3) {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 536px) {
+    table.report-table {
+        table-layout: fixed;
+        width: 521px;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: #FFFFFF;
+    }
+
+    * {
+        color: #000000;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #151414;
+    }
+
+    * {
+        color: #CDCCCD;
+    }
+}
+
+code {
+    font-family: "Courier New", Courier, monospace;
+}
+
+a:link {
+    color: #306FDB;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #306FDB;
+    text-decoration: underline;
+}
+
+* {
+    font-family: Helvetica, Arial;
+}
