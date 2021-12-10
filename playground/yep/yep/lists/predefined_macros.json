@@ -1,0 +1,71 @@
+{
+    "ARCH": {
+        "amd": {
+            "na": [
+                "__amd64__",
+                "__amd64",
+                "__x86_64__",
+                "__x86_64"
+            ]
+        },
+        "arm": {
+            "na": [
+                "__aarch64__",
+                "__arm__",
+                "__ARM_ARCH_'V'__"
+            ]
+        },
+        "intel": {
+            "x86": {
+                "na": [
+                    "i386",
+                    "__i386",
+                    "__i386__",
+                    "_X86_"
+                ],
+                "32-bit": "_M_IX86",
+                "16-bit": "_M_I86"
+            }
+        }
+    },
+    "OSYS": {
+        "unix": [
+            "__unix__",
+            "__unix"
+        ],
+        "android": "__ANDROID__",
+        "bsd_env": [
+            "__FreeBSD__",
+            "__NetBSD__",
+            "__OpenBSD__",
+            "__bsdi__",
+            "__DragonFly__",
+            "_SYSTYPE_BSD"
+        ],
+        "bsd/os": "__bsdi__",
+        "cygwin": "__CYGWIN__",
+        "gnu": [
+            "__GNU__",
+            "__gnu_hurd__"
+        ],
+        "gnu/linux":"__gnu_linux__",
+        "linux": [
+            "__linux__",
+            "linux",
+            "__linux"
+        ],
+        "darwin": [
+            ["__APPLE__", "__MACH__"],
+            "Macintosh",
+            "macintosh"
+        ],
+        "windows": {
+            "env": {
+                "64-bit": "_WIN64",
+                "32-bit": "_WIN32",
+                "16-bit": "_WIN16"
+            },
+            "3rd": "__WINDOWS__"
+        }
+    }
+}
