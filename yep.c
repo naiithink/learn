@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-#include "shell.h"
+#include "yep.h"
 
 #define FILE_NAME "yep.c"
 #define YEP_ISSUE_REPORT "https://github.com/naiithink/foo-i/issues"
@@ -18,7 +18,7 @@ typedef struct
 {
     char *os;
     char *arch;
-    enum {os, arch} *error;
+    enum {os, arch, BOTH, END} *error;
 }
 platform;
 
@@ -63,10 +63,26 @@ main (int argc, char **argv)
 
     if (! SUPPORTED_PLATFORM)
     {
-        FILE *yep_is_in, *yep_is_on;
+        FILE *yep_is_in, *yep_is_on, *p1, *p2;
 
         yep_is_in = popen ("uname", "r");
-        yep_is_on = popen ("uname -i", "r");
+        p1 = popen ("echo $?", "r");
+        if (p1 != 0)
+        {
+            for (int i = 0; )
+            yep_is_in = open ("WinVer", "r");
+            p1 = popen ("%%errorvalue%%", "r");
+            if (p1 == "True")
+            {
+                this_platform.os = "win32";
+            }
+            else
+            {
+                
+            }
+        }
+        yep_is_on = popen ("uname -p", "r");
+        p2 = popen ("echo $?", "r");
 
         if (! strcmp(yep_is_in, YEP_IS_IN, 1) && ! strcmp(yep_is_on, YEP_IS_ON, 1))
         {
@@ -86,9 +102,11 @@ main (int argc, char **argv)
         }
         else if (strcmp(yep_is_in, YEP_IS_IN, 1) && strcmp(yep_is_on, YEP_IS_ON, 1))
         {
-            this_platform->error = "os, arch";
+            this_platform->error = BOTH;
         }
         pclose (yep_is_in);
+        pclose (yep_is_on);
+        pclose (p1);
         pclose (yep_is_on);
 
         if (this_platform->error != NULL)
