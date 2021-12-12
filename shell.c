@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 #include "shell.h"
 
+#define FILE_NAME "yep.c"
 #define YEP_ISSUE_REPORT "https://github.com/naiithink/foo-i/issues"
 
 #if (defined YEP_IS_IN && defined YEP_IS_ON)
@@ -11,8 +13,20 @@
 #define SUPPORTED_PLATFORM 0
 #endif
 
+// Platform info
+typedef struct
+{
+    char *os;
+    char *arch;
+    enum {os, arch} *error;
+}
+platform;
+
 // Raise user helper
 void yep_help ();
+
+// Get shell
+char *get_shell ();
 
 // Return char * type executable command of the host OS
 char *get_bash_command (char *command);
@@ -34,24 +48,50 @@ typedef struct eiei
 eiei;
 
 // Verified OS
-static char *verified_os;
+static platform *this_platform;
 
 int
 main (int argc, char **argv)
 {
+    clock_t start, end;
+    yep_bool ok;
+    char *shell;
     char *user_input_os;
+
+    // Program start time
+    start = clock();
 
     if (! SUPPORTED_PLATFORM)
     {
-        FILE *yep_is_in;
+        FILE *yep_is_in, *yep_is_on;
 
         yep_is_in = popen ("uname", "r");
+        yep_is_on = popen ("uname -i", "r");
 
-        if (! strcmp(yep_is_in, YEP_IS_IN, 1))
+        if (! strcmp(yep_is_in, YEP_IS_IN, 1) && ! strcmp(yep_is_on, YEP_IS_ON, 1))
         {
-            verified_os = YEP_IS_IN;
+            this_platform->os = YEP_IS_IN;
+            this_platform->arch = YEP_IS_ON;
         }
-        else if (yep_is_in == NULL)
+        else if (! strcmp(yep_is_in, YEP_IS_IN, 1) || ! strcmp(yep_is_on, YEP_IS_ON, 1))
+        {
+            if (strcmp(yep_is_in, YEP_IS_IN, 1))
+            {
+                this_platform->error = "os";
+            }
+            else
+            {
+                this_platform->error = "arch";
+            }
+        }
+        else if (strcmp(yep_is_in, YEP_IS_IN, 1) && strcmp(yep_is_on, YEP_IS_ON, 1))
+        {
+            this_platform->error = "os, arch";
+        }
+        pclose (yep_is_in);
+        pclose (yep_is_on);
+
+        if (this_platform->error != NULL)
         {
             fputs ("\
 yep: ไม่สามารถระบุระบบปฏิบัติการณ์ของคุณได้\n\
@@ -96,6 +136,8 @@ yep: ไม่สามารถระบุชื่อของระบบป
         pclose(yep_is_in);
     }
 
+    shell = get_shell();
+
     // To call a function by its pointer
     // int *fn = &yep_help;
     // puts("%p", fn);
@@ -106,7 +148,7 @@ yep: ไม่สามารถระบุชื่อของระบบป
     if (argc == 1 || strcmp(argv[1], "--help", 1) || strcmp(argv[1], "-h", 1))
     {
         yep_help();
-        status = EXIT_FAILURE;
+        ok = EXIT_FAILURE;
     }
 
     char *cmd = "open -a \"Visual Studio Code\" ";
@@ -116,7 +158,7 @@ yep: ไม่สามารถระบุชื่อของระบบป
     
     if (combined == NULL)
     {
-        printf("Could not find an available memory region, terminated.\n");
+        printf("yep-dev:%s:%s: Could not find an available memory region, terminated.\n", FILE_NAME, __LINE__);
         return EXIT_FAILURE;
     }
 
@@ -147,7 +189,14 @@ yep: ไม่สามารถระบุชื่อของระบบป
     pclose (run);
     free(combined);
 
-    // return exit_status = status ? EXIT_FAILURE : EXIT_SUCCESS;
+    // Program almost-end time
+    end = clock();
+
+    // CPU elapsed time
+    double elapsed = ((double) (end - start)) / CLOCKS_PER_SEC;
+    printf("Time taken: %f s\n", elapsed);
+
+    return ok ? EXIT_FAILURE : EXIT_SUCCESS;
 }
 
 void
@@ -161,6 +210,32 @@ yep: พิมพ์คำสั่งด้วยสิครับพี่น
     yep --eiei\n\
     ู^^^^^^^^^^ ลองดูวว\n\
 ");
+}
+
+char *
+get_shell (char *verified_os)
+{
+    char *result;
+    FILE *shell, *shell_test_exit;
+
+    switch ()
+
+    if (! strcmp (YEP_IS_IN, "linux", 1) || strcmp (YEP_IS_IN, "darwin", 1))
+    {
+        shell = popen ("echo $0", "r");
+        shell_test_exit = popen ("echo $?", "r");
+        if (shell != NULL && shell_test_exit == 0)
+        {
+            result = shell;
+        }
+    }
+    else if (! strcmp (YEP_IS_IN, "win32", 1))
+    {
+        shell = popen ("$PSVersionTable.PSVersion", "r");
+        shell_test_exit = popen ();
+        if (shell != NULL && shell_test_exit == "True")
+
+    }
 }
 
 int

@@ -39,10 +39,12 @@
 
 typedef struct
 {
-        int CHAR;
-        int INT;
-        int LONG;
-        int FLOAT;
-        int DOUBLE;
+    int CHAR;
+    int INT;
+    int LONG;
+    int FLOAT;
+    int DOUBLE;
 }
 BYTE_SIZE;
+
+typedef enum {false, true} yep_bool;
