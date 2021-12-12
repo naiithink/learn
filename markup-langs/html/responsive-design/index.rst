@@ -1,4 +1,0 @@
-.. toctree::
-    :caption: Responsive Design
-    
-    
