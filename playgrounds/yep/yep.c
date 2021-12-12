@@ -1,336 +1,381 @@
-/*
-    Flag types:
-    (1): `-*`
-    (2): `--*`
-*/
-
-/*
-    Headnotes
-    =========
-    LD: 2021-12-06, :193
-
-    - R?    .*rc, json
-    - TO    mv system() popen()
-*/
-
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
-// ** #include "yep.h"
+#include "yep.h"
 
-#define PROGRAM_NAME "yep"
+#define FILE_NAME "yep.c"
+#define YEP_ISSUE_REPORT "https://github.com/naiithink/foo-i/issues"
 
-#define AUTHORS proper_name "NULL"                              // ??/ ??*
+#if (defined YEP_IS_IN && defined YEP_IS_ON)
+#define SUPPORTED_PLATFORM 1
+#else
+#define SUPPORTED_PLATFORM 0
+#endif
 
-#define FLAG "-"                                                // char
-#define ERROR_ECHO_INDEX "^"                                    // char
-
+// Platform info
 typedef struct
 {
-    char *filetype;
-    char *handler;
+    char *os;
+    char *arch;
+    enum {os, arch, BOTH, END} *error;
 }
-phandling;
+platform;
 
-/*
-    Note:
-    At the time, handler option flag is `-m`.
-*/
+// Raise user helper
+void yep_help ();
 
-typedef struct
+// Get shell
+char *get_shell ();
+
+// Return char * type executable command of the host OS
+char *get_bash_command (char *command);
+char *get_cmd_command (char *command);
+char *get_pwsh_command (char *command);
+char *native_command(char *os, char *command);
+
+// Utilities ------------------------------------------
+int strlen (char *str);
+int strcmp (char *a, char *b, int ignore_case);
+    // ignore_case ? Ignore case : Case sensitive
+
+// Dynamic memory allocation
+typedef struct eiei
 {
-    char *opt;
-    char *val;
+    char *str;
+    struct eiei *next;
 }
-opts;
-                                                                // dd฿
-/*
-                                                                // ฿
-void usage (int status);
-                                                                // dd฿
-*/
-                                                                // ฿
-int find_a_char (char c, char *string);                         // ** replace `system()`
-int find_str_len (char *string);
-char *find_hander (char *extension);
+eiei;
+
+// Verified OS
+static platform *this_platform;
 
 int
 main (int argc, char **argv)
 {
-    char c;
-    phandling mgr;
-    opts flags;
-    int flag_count = 0;
-    static char *flag;
-    static char *fval;                                          // Option value
+    clock_t start, end;
+    yep_bool ok;
+    char *shell;
+    char *user_input_os;
 
-    // Search for flags.
-    for (int i = 0; i < argc; i++)
+    // Program start time
+    start = clock();
+
+    if (! SUPPORTED_PLATFORM)
     {
-        c = argv[i][0];
-        if ((int) c == (int) FLAG)
-        {   
-                                                                // dd฿
-            /*  Flag type 2 `--flag`
-                                                                // ฿
-            if ((int) argv[i][1] == (int) FLAG)
+        FILE *yep_is_in, *yep_is_on, *p1, *p2;
+
+        yep_is_in = popen ("uname", "r");
+        p1 = popen ("echo $?", "r");
+        if (p1 != 0)
+        {
+            for (int i = 0; )
+            yep_is_in = open ("WinVer", "r");
+            p1 = popen ("%%errorvalue%%", "r");
+            if (p1 == "True")
             {
-                // Flag type 2
+                this_platform->os = "win32";
             }
             else
             {
-                // Flag type 1
-                                                                // dd฿
-            */
-                                                                // ฿
-                // Declare char index counter.
-                int n = 0;
+                
+            }
+        }
+        yep_is_on = popen ("uname -p", "r");
+        p2 = popen ("echo $?", "r");
 
-                // Get option string.
-                while ((int) argv[i][n] != 32 && (int) argv[i][n] != (int) '\0')
+        if (! strcmp(yep_is_in, YEP_IS_IN, 1) && ! strcmp(yep_is_on, YEP_IS_ON, 1))
+        {
+            this_platform->os = YEP_IS_IN;
+            this_platform->arch = YEP_IS_ON;
+        }
+        else if (! strcmp(yep_is_in, YEP_IS_IN, 1) || ! strcmp(yep_is_on, YEP_IS_ON, 1))
+        {
+            if (strcmp(yep_is_in, YEP_IS_IN, 1))
+            {
+                this_platform->error = "os";
+            }
+            else
+            {
+                this_platform->error = "arch";
+            }
+        }
+        else if (strcmp(yep_is_in, YEP_IS_IN, 1) && strcmp(yep_is_on, YEP_IS_ON, 1))
+        {
+            this_platform->error = BOTH;
+        }
+        pclose (yep_is_in);
+        pclose (yep_is_on);
+        pclose (p1);
+        pclose (yep_is_on);
+
+        if (this_platform->error != NULL)
+        {
+            fputs ("\
+yep: ไม่สามารถระบุระบบปฏิบัติการณ์ของคุณได้\n\
+    --\n\
+    คุณสามารถลองบอกใบ้ชื่อระบบปฏิบัติการของคุณให้ yep ได้\n\
+    เช่น `linux`, `mac`, windows`\n\
+    หากคุณไม่ทราบ ให้กด Enter\n\
+    --\n\
+    พิมพ์ที่นี่: \
+", stdout);
+
+            char user_input_os[strlen(stdin)+1];
+            scanf("%s", user_input_os);
+
+            if (user_input_os == NULL)
+            {
+                fputs("\
+yep: ไม่สามารถระบุชื่อของระบบปฏิบัติการณ์ได้\n\
+    --\n\
+    yep ไม่สามารถทำงานได้เนื่องจากไม่ทราบชื่อของระบบปฏิบัติการณ์\n\
+    โปรดรายงานของผิดพลาดนี้ให้กับผู้พัฒนาที่ \
+", stdout);
+                printf("%s\n", YEP_ISSUE_REPORT);
+            }
+            else
+            {
+                if (! strcmp(user_input_os, "linux", 1))
                 {
-                    flag[n] = argv[i][n];
-                }
-
-                // Reset char index counter.
-                n = 0;
-
-                // Check if the next cl arg exists, if so, continue getting its value (end if/...).
-                if (i+1 < argc)
-                {
-                    i++;
+                    printf("yeah\n");
                 }
                 else
                 {
-                    int echo_index = 0;
-                    int invalid_flag_char_index;
-
-                    // Raise flag error then terminate the whole program.
-                    printf ("No option was found from %s\n.", flag);
-
-                    // Echo user tty in.
-                    for (int j = 0; j < argc; j++)
-                    {
-                        printf ("%s", argv[j]);
-                        echo_index = echo_index + find_str_len (argv[j]);
-                        if (j != argc-1)
-                        {
-                            printf ("%c", 32);
-                            echo_index++;
-
-                            // Get first char index of invalid argv.
-                            if (j == i)
-                            {
-                                invalid_flag_char_index = echo_index + 1;
-                            }
-                        }
-                    }
-                    printf ("\n");
-                    
-                    for (int k = 0; k < invalid_flag_char_index; k++)
-                    {
-                        printf ("%c", 32);
-                    }
-
-                    for (int k = 0; k < find_str_len(argv[i]); k++)
-                    {
-                        printf ("%c", ERROR_ECHO_INDEX);
-                    }
-                    printf ("\n");
-                    
-                    printf ("To use yep options, yep [OPTION] [FILE]\n");
-
-                    return EXIT_FAILURE;
+                    printf("%s\n", user_input_os);
                 }
-
-                // Get option value.
-                int k = 0;
-                while (argv[i][k] != '\0')
-                {
-                    fval[k] = argv[i][k];
-
-                    if (argv[i][k+1] == '\0')
-                    {
-                        fval[k+1] = '\0';
-                    }
-                }
-
-                // Store option and its value.
-                flags.opt[flag_count] = flag;
-                flags.val[flag_count] = fval;
-
-                                                                // dd฿
-            /* For flag type 2
-                                                                // ฿
             }
-                                                                // dd฿
-            */
-                                                                // ฿
-
-           // ??/ ??+ More handler support.
-           if (flags.opt[0] == 'm')
-           {
-               mgr.handler = flags.val[0];
-           }
         }
-    }
-
-    // If no flags were found, try indicating the handler by file name itself.
-    if (! mgr.handler)
-    {
-        int file_name_split_point = find_a_char ('.', argv[1]);
-        mgr.filetype = *argv[file_name_split_point+1];          // ??/ ?
-
-        if (mgr.filetype > -1)
+        else
         {
-            mgr.handler = find_handler (mgr.filetype);
+
         }
+
+        pclose(yep_is_in);
     }
 
-    // If no tty input, try searching in the working directory.
-    // -f for a file, -d for a dir.
+    shell = get_shell();
 
-    // @ 2021-12-06
-    FILE *wdp, *file_existp, *filep;
+    // To call a function by its pointer
+    // int *fn = &yep_help;
+    // puts("%p", fn);
 
-    char wd;
-    char file_exist;
-    char file;
+    int status;
+
+    // Check if the user is asking for help.
+    if (argc == 1 || strcmp(argv[1], "--help", 1) || strcmp(argv[1], "-h", 1))
+    {
+        yep_help();
+        ok = EXIT_FAILURE;
+    }
+
+    char *cmd = "open -a \"Visual Studio Code\" ";
     
-    wd = popen ("pwd", "r");
-
-    file_existp = popen ("[ -d ]", "r");
-
-    pclose(wdp);
-    pclose(file_exist);
-    pclose(file);
-}
-
-                                                                // dd฿
-/*
-                                                                // ฿
-void
-usage (int status)
-{
-    if (status != EXIT_SUCCESS)
+    char *combined;
+    combined = malloc(((strlen(cmd)) + (strlen(argv[1]) + 1)) * sizeof(char));
+    
+    if (combined == NULL)
     {
-        emit_try_help ();
-    }
-    else
-    {
-        printf (_("Usage: %s [LANG] FILENAME...\n"), PROGRAM_NAME);
-
-        // **
-    }
-    exit (status);
-}
-                                                                // dd฿
-*/
-                                                                // ฿
-
-int
-find_a_char (char c, char *string)
-{
-    char s;
-    int n = -1;
-    do {
-        n++;
-        s = string[n];
-    } while ((int) s != (int) c && s != '\0');
-
-    if (s == '\0')
-    {
-        n = -1;
+        printf("yep-dev:%s:%s: Could not find an available memory region, terminated.\n", FILE_NAME, __LINE__);
+        return EXIT_FAILURE;
     }
 
-    return n;
-}
+    int i = 0;
 
-int
-find_str_len (char *string)
-{
-    if (string)
+    for (int c = 0; c < strlen(cmd); c++)
     {
-        int i = 0;
-        int char_counter = 0;
-        while (string[i] != '\0')
+        combined[c] = cmd[c];
+        i = c + 1;
+    }
+
+    for (int j = 0; j < strlen(argv[1]); j++)
+    {
+        combined[i] = argv[1][j];
+        if (j == strlen(argv[1]))
         {
-            char_counter++;
+            combined[i] = '\0';
+            break;
         }
+        i++;
+    }
 
-        return char_counter;
-    }
-    else
-    {
-        /* add install path later... */
-        printf ("Internal Error: No string input at \"int find_str_len (char *string);\" in yep.c\n");
-        exit (1);
-    }
+    FILE *file, *run;
+
+    file = fopen (argv[1], "r");
+    run = popen (combined, "r");
+    fclose (file);
+    pclose (run);
+    free(combined);
+
+    // Program almost-end time
+    end = clock();
+
+    // CPU elapsed time
+    double elapsed = ((double) (end - start)) / CLOCKS_PER_SEC;
+    printf("Time taken: %f s\n", elapsed);
+
+    return ok ? EXIT_FAILURE : EXIT_SUCCESS;
 }
 
-static int exit_status;
+void
+yep_help ()
+{
+    puts("\
+yep: พิมพ์คำสั่งด้วยสิครับพี่น้อง\n\
+    เช่น\n\
+    `yep [ตัวเลือก] <ชื่อไฟล์แบบเต็ม path หรือไฟล์ที่อยู่ใน dir ปัจจุบัน>`\n\
+    e.g.\n\
+    yep --eiei\n\
+    ู^^^^^^^^^^ ลองดูวว\n\
+");
+}
 
 char *
-find_hander (char *extension)
+get_shell (char *verified_os)
 {
-    char *handler;
+    char *result;
+    FILE *shell, *shell_test_exit;
 
-    if ((int) *extension == (int) 'c')
+    switch ()
+
+    if (! strcmp (YEP_IS_IN, "linux", 1) || strcmp (YEP_IS_IN, "darwin", 1))
     {
-        system ("gcc --version");                               // ??/ ?
-        system ("echo $?");                                     // ??/ ?
-        int trial_status = system ("$?");                       // ??/ ?
-        if (trial_status == 0)
+        shell = popen ("echo $0", "r");
+        shell_test_exit = popen ("echo $?", "r");
+        if (shell != NULL && shell_test_exit == 0)
         {
-            handler = "gcc";
-        }
-        else
-        {
-            system ("clang --version");                         // ??/ ?
-            system ("echo $?");                                 // ??/ ?
-            trial_status = system ("echo $(!!)");               // ??/ ?
-            if (trial_status == 0)
-            {
-                handler = "clang";
-            }
-            else
-            {
-                exit_status = EXIT_FAILURE;
-            }
+            result = shell;
         }
     }
-    else if ((int) *extension == (int) *"py")                   // ??/ ?
+    else if (! strcmp (YEP_IS_IN, "win32", 1))
     {
-        system ("python --version");                            // ??/ ?
-        system ("echo $?");                                     // ??/ ?
-        int trial_status = system ("$?");                       // ??/ ?
-        if (trial_status == 0)
-        {
-            handler = "python";
-        }
-        else
-        {
-            system ("python3 --version");                       // ??/ ?
-            system ("echo $?");                                 // ??/ ?
-            trial_status = system ("echo $(!!)");               // ??/ ?
-            if (trial_status == 0)
-            {
-                handler = "clang";
-            }
-            else
-            {
-                exit_status = EXIT_FAILURE;
-            }
-        }
+        shell = popen ("$PSVersionTable.PSVersion", "r");
+        shell_test_exit = popen ("", "r");
+        if (shell != NULL && shell_test_exit == "True")
+
+    }
+}
+
+int
+get_terminal_cols ()
+{
+    int cols;
+    char *cmd;
+
+    if (! strcmp(this_platform->os, "linux", 1) || ! strcmp(this_platform->oss, "darwin", 1))
+    {
+        cmd = "tput cols";
+    }
+    else if (! strcmp(this_platform->os, "win32", 1))
+    {
+        cmd = "";
     }
 
-    // If could not find the proper handler, raise the error then terminate the program.
-    if (exit_status == EXIT_FAILURE)
+    /*
+    if (cmd != NULL)
     {
-        system ("echo \"yep: Unknown file type.\" && echo \"Try yep --help for help.\"");
+        FILE *cols;
+
+        cols = 
+    }
+    */
+}
+
+char *
+get_bash_command (char *command)
+{
+    char *native_command;
+    switch (command)
+    {
+        case "get_term_width":
+            native_command = "tput cols";
+            break;
+    }
+}
+
+char *
+get_cmd_command (char *command)
+{
+
+}
+
+char *
+get_pwsh_command (char *command)
+{
+    
+}
+
+char *
+native_command (char *verified_os, char *command)
+{
+    char *native_command;
+    switch (verified_os)
+    {
+        case "linux":
+        case "darwin":
+            native_command = get_bash_command (command);
+            break;
+        case "win32":
+            native_command = get_cmd_command (command);
+            break;
+    }
+}
+
+int
+strlen (char *str)
+{
+    int i = 0;
+    while (str[i] != '\0')
+    {
+        i++;
+    }
+    return i;
+}
+
+// ignore_case ? Ignore case : Case sensitive
+int
+strcmp (char *a, char *b, int ignore_case)
+{
+    const int switch_case = 32;
+    int try_switching_case = 0;
+    int tester;
+    int result;
+    if (strlen(a) != strlen(b))
+    {
+        result = -1;
     }
     else
     {
-        return handler;
+        // Ignore case
+        if (ignore_case != NULL || ignore_case != 0)
+        {
+            try_switching_case = switch_case;
+        }
+
+        for (int i = 0, n = strlen(a); i < n; i++)
+        {
+            if ((int) (a[i]) >= 65 && (int) (a[i]) <= 90)
+            {
+                tester = try_switching_case;
+            }
+            else if ((int) (a[i]) >= 97 && (int) (a[i]) <= 122)
+            {
+                tester = try_switching_case * -1;
+            }
+            // Case-sensitive
+            else
+            {
+                tester = 0;
+            }
+
+            if (a[i] != b[i] && a[i]+tester != b[i])
+            {
+                result = -1;
+                break;
+            }
+            result = 0;
+        }
     }
+
+    return result;
 }
