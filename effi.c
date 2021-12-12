@@ -12,6 +12,10 @@ platform;
 int main(void)
 {
     clock_t start, end;
+
+    printf("jf %% fj");
+
+    /*
     platform *ison;
 
     ison->error = "eiei";
@@ -38,6 +42,7 @@ int main(void)
     {
         printf("error is NULL\n");
     }
+    */
 
     end = clock();
     double elapsed = ((double) (end - start)) / CLOCKS_PER_SEC;

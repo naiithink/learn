@@ -37,6 +37,8 @@
 #define YEP_IS_ON "arm64"
 #endif
 
+#define
+
 typedef struct
 {
         int CHAR;
@@ -47,12 +49,13 @@ typedef struct
 }
 BYTE_SIZE;
 
+typedef enum {uname, WinVer} get_os;
+typedef enum {unix = uname -i, $PSVersionTable.PSVersion} get_arch;
+
 extern
 int
 encrypt_malloc ()
-{
-
-}
+{}
 
 extern
 int
