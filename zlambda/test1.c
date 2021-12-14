@@ -2,6 +2,18 @@
 
 int main()
 {
+    /*
+    char *str;
+    printf("");
+    printf(">> %i\n", sizeof(stdout));
+    fgets(str, sizeof(stdin), stdin);
+    printf("Okay\n");
+    printf("You typed \"%s\"\n", str);
+    */
+
+    putchar('\a');
+
+    /*
     float f = 499.99;
     double g = 499.99;
     
@@ -14,4 +26,5 @@ int main()
     printf("%.2lf\n", g);
     printf("%.3lf\n", g);
     printf("%.30lf\n", g);
+    */
 }

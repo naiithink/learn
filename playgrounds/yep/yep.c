@@ -4,7 +4,12 @@
 
 #include "yep.h"
 
+// Used as the shell alias
+#define PROGRAM_NAME "yep"
+
+// yep properties
 #define FILE_NAME "yep.c"
+#define PROGRAM_VERSION 
 #define YEP_ISSUE_REPORT "https://github.com/naiithink/foo-i/issues"
 
 #if (defined YEP_IS_IN && defined YEP_IS_ON)
@@ -35,6 +40,7 @@ char *get_pwsh_command (char *command);
 char *native_command(char *os, char *command);
 
 // Utilities ------------------------------------------
+void about_this_yep (void);
 int strlen (char *str);
 int strcmp (char *a, char *b, int ignore_case);
     // ignore_case ? Ignore case : Case sensitive
@@ -215,6 +221,12 @@ yep: ไม่สามารถระบุชื่อของระบบป
     printf("Time taken: %f s\n", elapsed);
 
     return ok ? EXIT_FAILURE : EXIT_SUCCESS;
+}
+
+void
+about_this_yep (void)
+{
+    puts ("");
 }
 
 void
