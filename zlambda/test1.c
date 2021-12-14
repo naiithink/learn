@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <unistd.h>
 
 int main()
 {
@@ -11,6 +12,14 @@ int main()
     printf("You typed \"%s\"\n", str);
     */
 
+    putchar('\a');
+    sleep(1);
+    putchar('\a');
+    sleep(1);
+    putchar('\a');
+    sleep(1);
+    putchar('\a');
+    sleep(1);
     putchar('\a');
 
     /*
