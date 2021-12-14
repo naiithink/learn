@@ -27,8 +27,12 @@ typedef struct
 }
 platform;
 
+// Support Check
+int platform_support_check (void);
+
 // Raise user helper
-void yep_help ();
+void about_this_yep (void);
+void yep_helper (void);
 
 // Get shell
 char *get_shell ();
@@ -56,17 +60,136 @@ eiei;
 // Verified OS
 static platform *this_platform;
 
+// Exit status
+static exit_status;
+
 int
 main (int argc, char **argv)
 {
+    ok_status ok;
     clock_t start, end;
-    yep_bool ok;
+
     char *shell;
     char *user_input_os;
 
     // Program start time
     start = clock();
 
+    if (platform_support_check ())
+    {
+        ok = no;
+    }
+    else
+    {
+        shell = get_shell();
+
+        // To call a function by its pointer
+        // int *fn = &yep_help;
+        // puts("%p", fn);
+
+        int status;
+
+        // Check if the user is asking for help.
+        if (argc == 1 || strcmp(argv[1], "--help", 1) || strcmp(argv[1], "-h", 1))
+        {
+            yep_help();
+            ok = EXIT_FAILURE;
+        }
+
+        char *cmd = "open -a \"Visual Studio Code\" ";
+        
+        char *combined;
+        combined = malloc(((strlen(cmd)) + (strlen(argv[1]) + 1)) * sizeof(char));
+        
+        if (combined == NULL)
+        {
+            printf("yep-dev:%s:%s: Could not find an available memory region, terminated.\n", FILE_NAME, __LINE__);
+            return EXIT_FAILURE;
+        }
+
+        int i = 0;
+
+        for (int c = 0; c < strlen(cmd); c++)
+        {
+            combined[c] = cmd[c];
+            i = c + 1;
+        }
+
+        for (int j = 0; j < strlen(argv[1]); j++)
+        {
+            combined[i] = argv[1][j];
+            if (j == strlen(argv[1]))
+            {
+                combined[i] = '\0';
+                break;
+            }
+            i++;
+        }
+
+        FILE *file, *run;
+
+        file = fopen (argv[1], "r");
+        run = popen (combined, "r");
+        fclose (file);
+        pclose (run);
+        free(combined);
+    }
+
+    // Program almost-end time
+    end = clock();
+
+    // CPU elapsed time
+    double elapsed = ((double) (end - start)) / CLOCKS_PER_SEC;
+    printf("Time taken: %f s\n", elapsed);
+
+    return ok ? EXIT_FAILURE : EXIT_SUCCESS;
+}
+
+void
+about_this_yep (void)
+{
+    puts ("");
+}
+
+void
+yep_helper (void)
+{
+    fputs("\
+    This is the help page.\n\
+", stdout);
+
+    fputs ('\a', stdout);
+}
+
+char *
+get_shell (char *verified_os)
+{
+    char *result;
+    FILE *shell, *shell_test_exit;
+
+    switch ()
+
+    if (! strcmp (YEP_IS_IN, "linux", 1) || strcmp (YEP_IS_IN, "darwin", 1))
+    {
+        shell = popen ("echo $0", "r");
+        shell_test_exit = popen ("echo $?", "r");
+        if (shell != NULL && shell_test_exit == 0)
+        {
+            result = shell;
+        }
+    }
+    else if (! strcmp (YEP_IS_IN, "win32", 1))
+    {
+        shell = popen ("$PSVersionTable.PSVersion", "r");
+        shell_test_exit = popen ("", "r");
+        if (shell != NULL && shell_test_exit == "True")
+
+    }
+}
+
+int
+platform_support_check (void)
+{
     if (! SUPPORTED_PLATFORM)
     {
         FILE *yep_is_in, *yep_is_on, *p1, *p2;
@@ -159,113 +282,7 @@ yep: ไม่สามารถระบุชื่อของระบบป
 
         pclose(yep_is_in);
     }
-
-    shell = get_shell();
-
-    // To call a function by its pointer
-    // int *fn = &yep_help;
-    // puts("%p", fn);
-
-    int status;
-
-    // Check if the user is asking for help.
-    if (argc == 1 || strcmp(argv[1], "--help", 1) || strcmp(argv[1], "-h", 1))
-    {
-        yep_help();
-        ok = EXIT_FAILURE;
-    }
-
-    char *cmd = "open -a \"Visual Studio Code\" ";
-    
-    char *combined;
-    combined = malloc(((strlen(cmd)) + (strlen(argv[1]) + 1)) * sizeof(char));
-    
-    if (combined == NULL)
-    {
-        printf("yep-dev:%s:%s: Could not find an available memory region, terminated.\n", FILE_NAME, __LINE__);
-        return EXIT_FAILURE;
-    }
-
-    int i = 0;
-
-    for (int c = 0; c < strlen(cmd); c++)
-    {
-        combined[c] = cmd[c];
-        i = c + 1;
-    }
-
-    for (int j = 0; j < strlen(argv[1]); j++)
-    {
-        combined[i] = argv[1][j];
-        if (j == strlen(argv[1]))
-        {
-            combined[i] = '\0';
-            break;
-        }
-        i++;
-    }
-
-    FILE *file, *run;
-
-    file = fopen (argv[1], "r");
-    run = popen (combined, "r");
-    fclose (file);
-    pclose (run);
-    free(combined);
-
-    // Program almost-end time
-    end = clock();
-
-    // CPU elapsed time
-    double elapsed = ((double) (end - start)) / CLOCKS_PER_SEC;
-    printf("Time taken: %f s\n", elapsed);
-
-    return ok ? EXIT_FAILURE : EXIT_SUCCESS;
-}
-
-void
-about_this_yep (void)
-{
-    puts ("");
-}
-
-void
-yep_help ()
-{
-    puts("\
-yep: พิมพ์คำสั่งด้วยสิครับพี่น้อง\n\
-    เช่น\n\
-    `yep [ตัวเลือก] <ชื่อไฟล์แบบเต็ม path หรือไฟล์ที่อยู่ใน dir ปัจจุบัน>`\n\
-    e.g.\n\
-    yep --eiei\n\
-    ู^^^^^^^^^^ ลองดูวว\n\
-");
-}
-
-char *
-get_shell (char *verified_os)
-{
-    char *result;
-    FILE *shell, *shell_test_exit;
-
-    switch ()
-
-    if (! strcmp (YEP_IS_IN, "linux", 1) || strcmp (YEP_IS_IN, "darwin", 1))
-    {
-        shell = popen ("echo $0", "r");
-        shell_test_exit = popen ("echo $?", "r");
-        if (shell != NULL && shell_test_exit == 0)
-        {
-            result = shell;
-        }
-    }
-    else if (! strcmp (YEP_IS_IN, "win32", 1))
-    {
-        shell = popen ("$PSVersionTable.PSVersion", "r");
-        shell_test_exit = popen ("", "r");
-        if (shell != NULL && shell_test_exit == "True")
-
-    }
+    return ;
 }
 
 int

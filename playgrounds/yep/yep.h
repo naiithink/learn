@@ -49,4 +49,6 @@ typedef struct
 }
 BYTE_SIZE;
 
+typedef enum {no, yes} ok_status;
+
 typedef enum {false, true} yep_bool;
