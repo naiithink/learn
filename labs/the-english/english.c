@@ -61,20 +61,19 @@ int main(int argc, char **argv)
 }
 
 void
-about_this_program (void);{
-
+about_this_program (void);
+{
+    
 }
 
 int
 yep_helper (void)
 {
-    printf("This is the help page.\n");
+    fputs("\
+    This is the help page.\n\
+", stdout);
 
-    FILE *bell, *nl;
-    bell = popen ("echo $'\\a'", "r");
-    nl = popen ("echo $'\n'", "r");
-    pclose (bell);
-    pclose (nl);
+    fputs ('\a', stdout);
 }
 
 void
