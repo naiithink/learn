@@ -1,3 +1,5 @@
+#define YEP_HEADER_VERSION "0.1"
+
 #include <stdlib.h>
 
 // Unixes: unix __unix__ __unix

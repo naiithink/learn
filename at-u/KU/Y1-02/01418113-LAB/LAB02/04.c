@@ -4,9 +4,15 @@
 int main()
 {
     // scanf("%lf", &salary);
+    int n_char;
+
+    printf("Enter: ");
+    n_char = sizeof(stdin);
+    printf("%i\n", n_char);
+
     char *salary_str;
     double salary, salary1, total;
-    fgets(salary_str, sizeof(stdin)+2, stdin);
+    fgets(salary_str, sizeof(char), stdin);
     salary = atof(salary_str);
     salary1 = salary;
 
