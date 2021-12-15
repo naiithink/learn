@@ -1,3 +1,7 @@
+/*
+*   White paper:    // URL
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -37,7 +41,7 @@ void about_this_yep (void);
 void yep_helper (void);
 
 // Get shell
-char *get_shell (void);
+char *get_shell (platform_enum platform_id);
 
 // Return char * type executable command of the host OS
 char *native_command(char *verified_shell, char *command);
@@ -73,6 +77,8 @@ main (int argc, char **argv)
     // Program start time
     start = clock();
 
+    platform_enum platform_id;
+
     if (platform_support_check ())
     {
         ok = no;
@@ -81,11 +87,11 @@ main (int argc, char **argv)
     {
         char *verified_shell;
 
-        verified_shell = get_shell();
+        verified_shell = get_shell(platform_id);
 
         // To call a function by its pointer
         // int *fn = &yep_help;
-        // puts("%p", fn);
+        // fputs(" /* pointer */ ", stdout);
 
         // Check if the user is asking for help.
         if (argc == 1 || strcmp(argv[1], "--help", 1) || strcmp(argv[1], "-h", 1))
@@ -148,7 +154,9 @@ main (int argc, char **argv)
 void
 about_this_yep (void)
 {
-    puts ("");
+    fputs ("\
+    \n\
+", stdout);
 }
 
 void
@@ -162,7 +170,7 @@ yep_helper (void)
 }
 
 char *
-get_shell (void)
+get_shell (platform_enum platform_id)
 {
     char *result;
     FILE *shell, *shell_test_exit;
