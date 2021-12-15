@@ -53,6 +53,9 @@ BYTE_SIZE;
 // About exit_status
 typedef enum {no, yes} ok_status;
 
+// Platform info
+typedef enum {linux, darwin, win32} platform_enum;
+
 // Shells
 typedef struct
 {
