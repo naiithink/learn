@@ -57,6 +57,8 @@ typedef enum {no, yes} ok_status;
 typedef enum {linux, darwin, win32} platform_enum;
 
 // Shells
+const enum {bash, zsh, csh, cmd, powershell} shells;
+
 typedef struct
 {
     char *command;
