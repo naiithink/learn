@@ -61,9 +61,9 @@ int main(int argc, char **argv)
 }
 
 void
-about_this_program (void);
+about_this_program (void)
 {
-    
+    //
 }
 
 int
@@ -79,11 +79,11 @@ yep_helper (void)
 void
 guide (word arg)
 {
-
+    //
 }
 
 int
 check_type (word word)
 {
-
+    //
 }
