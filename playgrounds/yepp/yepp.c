@@ -64,7 +64,7 @@ main (int argc, char **argv)
 void
 about_yepp (void)
 {
-    puts ("\
+    fputs ("\
     yepp is a yep extension that help you manager you packages.\n\
 ", stdout);
 }

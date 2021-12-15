@@ -12,13 +12,13 @@
 #define PROGRAM_VERSION 
 #define YEP_ISSUE_REPORT "https://github.com/naiithink/foo-i/issues"
 
+// Platform info
 #if (defined YEP_IS_IN && defined YEP_IS_ON)
 #define SUPPORTED_PLATFORM 1
 #else
 #define SUPPORTED_PLATFORM 0
 #endif
 
-// Platform info
 typedef struct
 {
     char *os;
@@ -27,21 +27,20 @@ typedef struct
 }
 platform;
 
-// Support Check
+// Platform support check
 int platform_support_check (void);
+
+const enum {bash, zsh, csh, cmd, powershell} shells;
 
 // Raise user helper
 void about_this_yep (void);
 void yep_helper (void);
 
 // Get shell
-char *get_shell ();
+char *get_shell (void);
 
 // Return char * type executable command of the host OS
-char *get_bash_command (char *command);
-char *get_cmd_command (char *command);
-char *get_pwsh_command (char *command);
-char *native_command(char *os, char *command);
+char *native_command(char *verified_shell, char *command);
 
 // Utilities ------------------------------------------
 void about_this_yep (void);
@@ -69,7 +68,6 @@ main (int argc, char **argv)
     ok_status ok;
     clock_t start, end;
 
-    char *shell;
     char *user_input_os;
 
     // Program start time
@@ -81,13 +79,13 @@ main (int argc, char **argv)
     }
     else
     {
-        shell = get_shell();
+        char *verified_shell;
+
+        verified_shell = get_shell();
 
         // To call a function by its pointer
         // int *fn = &yep_help;
         // puts("%p", fn);
-
-        int status;
 
         // Check if the user is asking for help.
         if (argc == 1 || strcmp(argv[1], "--help", 1) || strcmp(argv[1], "-h", 1))
@@ -107,6 +105,7 @@ main (int argc, char **argv)
             return EXIT_FAILURE;
         }
 
+        // Counter
         int i = 0;
 
         for (int c = 0; c < strlen(cmd); c++)
@@ -126,6 +125,7 @@ main (int argc, char **argv)
             i++;
         }
 
+        // Yank input file
         FILE *file, *run;
 
         file = fopen (argv[1], "r");
@@ -162,12 +162,17 @@ yep_helper (void)
 }
 
 char *
-get_shell (char *verified_os)
+get_shell (void)
 {
     char *result;
     FILE *shell, *shell_test_exit;
 
+    /*
     switch ()
+    {
+        case :
+    }
+    */
 
     if (! strcmp (YEP_IS_IN, "linux", 1) || strcmp (YEP_IS_IN, "darwin", 1))
     {
@@ -183,7 +188,9 @@ get_shell (char *verified_os)
         shell = popen ("$PSVersionTable.PSVersion", "r");
         shell_test_exit = popen ("", "r");
         if (shell != NULL && shell_test_exit == "True")
+        {
 
+        }
     }
 }
 
@@ -198,7 +205,13 @@ platform_support_check (void)
         p1 = popen ("echo $?", "r");
         if (p1 != 0)
         {
-            for (int i = 0; )
+            /*
+            for (int i = 0; i < %%?; i++)
+            {
+
+            }
+            */
+
             yep_is_in = open ("WinVer", "r");
             p1 = popen ("%%errorvalue%%", "r");
             if (p1 == "True")
@@ -291,7 +304,7 @@ get_terminal_cols ()
     int cols;
     char *cmd;
 
-    if (! strcmp(this_platform->os, "linux", 1) || ! strcmp(this_platform->oss, "darwin", 1))
+    if (! strcmp(this_platform->os, "linux", 1) || ! strcmp(this_platform->os, "darwin", 1))
     {
         cmd = "tput cols";
     }
@@ -311,43 +324,24 @@ get_terminal_cols ()
 }
 
 char *
-get_bash_command (char *command)
+native_command (char *verified_shell, char *command)
 {
     char *native_command;
-    switch (command)
+
+    /*
+    switch (verified_shell)
     {
-        case "get_term_width":
-            native_command = "tput cols";
+        case "bash":
+        case "zsh":
+        case "csh":
+
+            break;
+        case "cmd":
+            break;
+        case "powershell":
             break;
     }
-}
-
-char *
-get_cmd_command (char *command)
-{
-
-}
-
-char *
-get_pwsh_command (char *command)
-{
-    
-}
-
-char *
-native_command (char *verified_os, char *command)
-{
-    char *native_command;
-    switch (verified_os)
-    {
-        case "linux":
-        case "darwin":
-            native_command = get_bash_command (command);
-            break;
-        case "win32":
-            native_command = get_cmd_command (command);
-            break;
-    }
+    */
 }
 
 int
