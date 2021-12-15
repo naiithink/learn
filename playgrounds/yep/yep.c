@@ -34,8 +34,6 @@ platform;
 // Platform support check
 int platform_support_check (void);
 
-const enum {bash, zsh, csh, cmd, powershell} shells;
-
 // Raise user helper
 void about_this_yep (void);
 void yep_helper (void);
