@@ -15,18 +15,7 @@ int main()
   level = atoi(level_str);
   year = atoi(year_str);
 
-  // level  [1, 6]
-  // year   [0, 12]
-  // level  <= 3: year > 3
-  // level  > 3: year != 0
-
-  if ((1 <= level <= 6)     && \
-
-     (0 <= year <= 12)      && \
-
-     (level <= 3 && year > 3) || (level > 3 && year != 0) \
-
-) {
+  if ( ((level > 3 && year != 0) || (level <= 3 && year > 3)) && (0 < level && level <= 6 && 0 <= year && year <= 12) ) {
      printf("YES");
   }
   else {
