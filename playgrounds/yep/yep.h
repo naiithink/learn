@@ -39,6 +39,7 @@
 #define YEP_IS_ON "arm64"
 #endif
 
+// Data types
 typedef struct
 {
     int CHAR;
@@ -49,6 +50,12 @@ typedef struct
 }
 BYTE_SIZE;
 
+// About exit_status
 typedef enum {no, yes} ok_status;
 
-typedef enum {false, true} yep_bool;
+// Shells
+typedef struct
+{
+    char *command;
+}
+_shells_;
