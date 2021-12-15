@@ -13,16 +13,6 @@ int main(void)
     fgets(in, 10, stdin);
     price = atof(in);
 
-    if (n > 9)
-    {
-        count = 9;
-        discount = 0.4;
-    }
-    else
-    {
-
-    }
-
     if (n >= 9)
     {
         in_use = 9;
