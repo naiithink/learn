@@ -14,49 +14,105 @@ int main()
     int y = atoi(y_str);
 
     //
-
-    char dim_x[6] = "00000", dim_y[6] = "00000", sep = '-';
-
+    
+    /*
     if (x == y && y == 0)
     {
         printf("Center\n");
         return 0;
     }
-
-    if (x > 0)
-    {
-        dim_x[0] = "east";
-    }
-    else if (x < 0)
-    {
-        dim_x[0] = "west";
-    }
+    
+    char *dim_x, *dim_y, sep;
 
     if (y > 0)
     {
-        dim_y[0] = "north";
+        dim_y = "North";
     }
     else if (y < 0)
     {
-        dim_y[0] = "south";
+        dim_y = "South";
     }
-
-    if (! x || ! y)
+    else
     {
-        sep = '\0';
-        if (! x)
-        {
-            dim_x[0] = '\0';
-            dim_y[0] = dim_y[0] - 32;
-        }
-        else if (! y)
-        {
-            dim_y[0] = '\0';
-            dim_x[0] = dim_x[0] - 32;
-        }
+        dim_y = "";
     }
 
-    printf("%s%c%s\n", dim_x, sep, dim_y);
+    if (x > 0)
+    {
+        if (! y)
+        {
+            dim_x = "East";
+        }
+        else
+        {
+            dim_x = "east";
+        }
+    }
+    else if (x < 0)
+    {
+        if (! y)
+        {
+            dim_x = "West";
+        }
+        else
+        {
+            dim_x = "west";
+        }
+    }
+    else
+    {
+        dim_x = "";
+    }
+
+    if (x && y)
+    {
+        sep = '-';
+    }
+
+    printf("%s%c%s\n", dim_y, sep, dim_x);
+
+    */
+
+    char *dim;
+
+    if (! x && ! y)
+    {
+        dim = "Center";
+    }
+    else if (x < 0 && y == 0)
+    {
+        dim = "West";
+    }
+    else if (x < 0 && y < 0)
+    {
+        dim = "South-west";
+    }
+    else if (x < 0 && y > 0)
+    {
+        dim = "North-west";
+    }
+    else if (x > 0 && y == 0)
+    {
+        dim = "East";
+    }
+    else if (x > 0 && y < 0)
+    {
+        dim = "South-east";
+    }
+    else if (x > 0 && y > 0)
+    {
+        dim = "North-east";
+    }
+    else if (x == 0 && y > 0)
+    {
+        dim = "North";
+    }
+    else if (x == 0 && y < 0)
+    {
+        dim = "South";
+    }
+
+    printf("%s\n", dim);
 
     //
 
