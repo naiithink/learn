@@ -1,35 +1,33 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdarg.h>
 
-int main(void)
+char *
+str_cat (char *fmt, ...)
 {
-    char *out;
-    FILE *f_out1, *tty_out, *tty_in, *f_out2;
+    char *s;
+    va_list ap, ap2;
+    va_start (ap, fmt);
+    while (*fmt)
+    {
+        s = va_arg(ap, char *);
+        printf("%s\n", s);
+    }
+    va_end (ap);
+    va_end (ap2);
+}
 
-    printf("#1\n");
+int main(int argc, char **argv)
+{
+    char *file_name ; // , *wd = getenv("PWD");
+    FILE *source_file;
 
-    tty_out = popen("echo world >> /dev/stdout", "w");
-    f_out2 = fopen(stdout, "r");
-    printf(">> %s\n", f_out2);
-    printf("--");
+    if (argc > 1)
+    {
+        file_name = argv[1];
+    }
 
-    fclose(f_out2);
-    pclose(tty_out);
+    str_cat ("this is", argv[1]);
 
-    tty_out = popen("echo world >> /dev/stdin", "w");
-    f_out2 = fopen(stdin, "r");
-    printf(">> %s\n", f_out2);
-    printf("--");
-
-    fclose(f_out2);
-    pclose(tty_in);
-
-    printf("#2\n");
-
-    fputs("hello\n", stdout);
-    f_out1 = fopen(stdout, "r");
-    fgets(out, sizeof(f_out1)+1, f_out1);
-    printf("> %s\n", out);
-
-    fclose(f_out1);
+    return 0;
 }
