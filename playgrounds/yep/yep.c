@@ -36,7 +36,7 @@ platform;
 int platform_support_check (void);
 
 // Raise user helper
-void about_this_yep (void);
+void yep_about (void);
 void yep_helper (void);
 
 // Get shell
@@ -151,21 +151,39 @@ main (int argc, char **argv)
 }
 
 void
-about_this_yep (void)
+yep_about (void)
 {
-    fputs ("\
-    \n\
+        fputs("\
+\n\
+    yep: about\n\
+\n\
+    The Yank Execute Print Program.\n\
+    Created on earth by human.\n\
+    Issue report: https://github.com/naiithink/yep/issues\n\
+\n\
+    Version: (-1) -- lite, test-flight\n\
+    eiei.\n\
+\n\
 ", stdout);
 }
 
 void
 yep_helper (void)
 {
-    fputs("\
-    This is the help page.\n\
+        fputs("\
+\n\
+    yep: help\n\
+\n\
+    Synopsis\n\
+    yep [options] [command_string | file]\n\
+\n\
+    Options\n\
+    --about             About this yep.\n\
+    -h | --help         Display a help message.\n\
+    --learn-cli         Learn how to use the command line interface.\n\
+    --switch_lang       Switch the program display language (EN | TH).\n\
+\n\
 ", stdout);
-
-    fputs ('\a', stdout);
 }
 
 char *
