@@ -29,7 +29,7 @@ main (int argc, char **argv)
 
                     while (argv[i][j] != '\0')
                     {
-                        option = argv[i][j] = argv[i][j];
+                        option[j] = argv[i][j] = argv[i][j];
                     }
                 }
             }
