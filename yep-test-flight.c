@@ -56,6 +56,7 @@ yep_about (void)
     Issue report: https://github.com/naiithink/yep/issues\n\
 \n\
     Version: (-1) -- lite, test-flight\n\
+    For full version, THB129 / month. - Just kidding.\n\
     eiei.\n\
 \n\
 ", stdout);
