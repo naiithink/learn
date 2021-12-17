@@ -36,15 +36,12 @@ main (int argc, char **argv)
     ok_status ok;
     int optc;
 
-    while ((optc = getopt(argc, argv )))
+    // while ((optc = getopt(argc, argv )))
     {
 
     }
 
-    int arg_c = arg_c;
-    char **arg_v = arg_v;
-
-    if (arg_c > 1)
+    if (argc > 1)
     {
         
     }
@@ -116,6 +113,7 @@ yep_help (int help_page_index)
     }
 }
 
+/*
 int *
 get_options (int arg_c, char **arg_v)
 {
@@ -157,3 +155,4 @@ get_options (int arg_c, char **arg_v)
 
     return result;
 }
+*/
