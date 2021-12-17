@@ -1,0 +1,11 @@
+[19634:19634:1217/152733.732370:ERROR:gpu_process_host.cc(967)] GPU process exited unexpectedly: exit_code=133
+[19634:19634:1217/152733.908962:ERROR:gpu_process_host.cc(967)] GPU process exited unexpectedly: exit_code=133
+[19634:19634:1217/152734.062663:ERROR:gpu_process_host.cc(967)] GPU process exited unexpectedly: exit_code=133
+[19634:19634:1217/152734.198630:ERROR:gpu_process_host.cc(967)] GPU process exited unexpectedly: exit_code=133
+[19634:19634:1217/152734.329224:ERROR:gpu_process_host.cc(967)] GPU process exited unexpectedly: exit_code=133
+[19634:19634:1217/152734.454019:ERROR:gpu_process_host.cc(967)] GPU process exited unexpectedly: exit_code=133
+[19841:19841:1217/152734.457693:ERROR:gpu_init.cc(457)] Passthrough is not supported, GL is disabled, ANGLE is 
+[19634:19688:1217/152738.615859:ERROR:chrome_browser_main_extra_parts_metrics.cc(226)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+[19634:19688:1217/152738.615873:ERROR:chrome_browser_main_extra_parts_metrics.cc(229)] crbug.com/1216328: Checking Bluetooth availability ended.
+[19634:19688:1217/152738.615876:ERROR:chrome_browser_main_extra_parts_metrics.cc(232)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+[19634:19688:1217/152738.640262:ERROR:chrome_browser_main_extra_parts_metrics.cc(236)] crbug.com/1216328: Checking default browser status ended.
