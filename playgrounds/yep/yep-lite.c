@@ -1,6 +1,8 @@
+#include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdarg.h>
+#include <unistd.h>
+#include <time.h>
 
 #include "yep.h"
 

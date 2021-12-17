@@ -51,13 +51,13 @@ typedef struct
 BYTE_SIZE;
 
 // About exit_status
-typedef enum {no, yes} ok_status;
+typedef enum { no, yes } ok_status;
 
 // Platform info
-typedef enum {linux, darwin, win32} platform_enum;
+typedef enum { linux, darwin, win32 } platform_enum;
 
 // Shells
-const enum {bash, zsh, csh, cmd, powershell} shells;
+const enum { bash, zsh, csh, cmd, powershell } shells;
 
 typedef struct
 {
