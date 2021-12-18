@@ -41,9 +41,19 @@ main (int argc, char **argv)
 
     }
 
-    if (argc > 1)
+    if (1) // argc > 1)
     {
-        
+        // lambda
+        FILE *user_src, *bin, *exit;
+
+        user_src = fopen (argv[1], "r");
+        bin = popen ("gcc /Users/naiithink/volumes/mountable/Git/private/test.c -o /Users/naiithink/volumes/mountable/Git/private/test", "r+");
+        exit = execvp ("./Users/naiithink/volumes/mountable/Git/private/test", NULL);
+
+        pclose (exit);
+        pclose (bin);
+        fclose (user_src);
+        // end lambda
     }
     else
     {
