@@ -1,0 +1,10 @@
+{
+    "unix-utilities": [
+        "valgrind"
+    ],
+    "python": [
+        "numpy",
+        "scipy",
+        "matplotlib"
+    ]
+}
