@@ -5,6 +5,15 @@
 // Unixes: unix __unix__ __unix
 // MingGW: WIN32 _WIN32 __WIN32 __WIN32__ __MINGW32__ WINNT __WINNT __WINNT__ _X86_ i386 __i386
 
+#if (   defined __GNUC__                        \
+)
+#define YEP_R_C 1
+#elif ( defined __GNUG__                        || \
+        defined __clang__                       \
+)
+#define YEP_R_CPP 1
+#endif
+
 // ~/lists/predefined_macros.json
 #if (defined __linux__)
 #define YEP_IS_IN "linux"
