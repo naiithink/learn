@@ -47,8 +47,9 @@ main (int argc, char **argv)
         FILE *user_src, *bin, *exit;
 
         user_src = fopen (argv[1], "r");
-        bin = popen ("gcc /Users/naiithink/volumes/mountable/Git/private/test.c -o /Users/naiithink/volumes/mountable/Git/private/test", "r+");
-        exit = execvp ("./Users/naiithink/volumes/mountable/Git/private/test", NULL);
+        bin = popen ("gcc /Users/naiithink/volumes/mountable/Git/private/test.c -o /Users/naiithink/volumes/mountable/Git/private/test.bin", "r+");
+        exit = popen ("./../../../test.bin", "r+");
+        printf("%s\n", exit);
 
         pclose (exit);
         pclose (bin);
