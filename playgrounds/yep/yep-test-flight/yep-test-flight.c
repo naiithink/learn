@@ -38,7 +38,7 @@ main (int argc, char **argv)
 
     // while ((optc = getopt(argc, argv )))
     {
-        
+
     }
 
     if (1) // argc > 1)
