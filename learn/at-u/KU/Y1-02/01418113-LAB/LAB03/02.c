@@ -6,7 +6,7 @@ int GCD(int x, int y) {
     int i = 0;
     int gcd = 0;
 
-    for(i=1; i <= x && i <= y; ++i)
+    for (i=1; i <= x && i <= y; ++i)
     {
         if(x%i==0 && y%i==0)
             gcd = i;

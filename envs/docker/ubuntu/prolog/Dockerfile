@@ -5,6 +5,11 @@ RUN     apt-get update && apt-get -y upgrade &&\
         apt-get install -y git &&\
         apt-get install -y python3 python3-dev python3-pip python3-venv
 
+RUN     apt-get install -y software-properties-common &&\
+        apt-add-repository ppa:swi-prolog/stable &&\
+        apt-get update &&\
+        apt-get install -y swi-prolog
+
 RUN     git clone https://github.com/vim/vim.git
 WORKDIR /vim/src
 RUN     make &&\
