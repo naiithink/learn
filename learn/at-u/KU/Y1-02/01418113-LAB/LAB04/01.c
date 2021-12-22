@@ -4,7 +4,7 @@
 int main(void)
 {
     char dec_str[3];
-    int dec, prt, bit[4], rem;
+    int dec, prt, bit[4];
 
     fgets(dec_str, 3, stdin);
     dec = atoi(dec_str);
