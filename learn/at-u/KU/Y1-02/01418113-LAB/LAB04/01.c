@@ -20,5 +20,5 @@ int main(void)
 
     printf("Binary number of %i is %i%i%i%i.\n", prt, bit[0], bit[1], bit[2], bit[3]);
 
-    return EXIT_FAILURE;
+    return EXIT_SUCCESS;
 }
