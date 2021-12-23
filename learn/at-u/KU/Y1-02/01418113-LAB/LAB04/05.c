@@ -1,80 +1,94 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-static char comple = '-';
-
-void printChars(int n, int breakpoint)
+// int b_point > 0
+// inherited from LAB03-05PB
+void print_string(int n, int b_point)
 {
-    int i = n, loop = 0, switcher = -1;
+    // safety first
+    if (n > 26 || n <= 0)
+    {
+        printf("-\n");
+        return;
+    }
+
+    int i = n, loop = 0, incre = -1;
+
     while (1)
     {
         printf("%c", i+96);
-
-        if (i == breakpoint)
+        if (i == b_point)
         {
-            if (n == breakpoint)
+            if (n == b_point)
             {
-                printf("\n");
                 break;
             }
-            switcher *= -1;
+            incre *= -1;
             loop++;
         }
         else if (loop == 1 && i == n)
         {
-            printf("\n");
             break;
         }
-
-        printf("%c", comple);
-        i += switcher;
+        printf("-");
+        i += incre;
     }
 }
 
-int findLim(int n)
+// find the print-out string length
+int find_width(int n)
 {
     return ((2 * n) - 1) + ((n - 1) * 2);
 }
 
 int main(void)
 {
-    char n_str[3];
-    int n;
+    char sym_chr = '-', N_str[3];
+    int N = 0, width = 0, ether = 0, padding = 0;
 
-    // fgets(n_str, 3, stdin);
-    n = 4; // atoi(n_str);
+    fgets(N_str, 3, stdin);
+    N = atoi(N_str);
 
-    if (n > 26 || n <= 0)
+    if (!N || N > 26 || N < 0)
     {
-        printf("%c\n", comple);
+        print_string(N, N+1);
         return 1;
     }
 
-    int cols = findLim(n), onRow = 0;
-    printf("%i\n", cols);
-    while (1)
+    width = find_width(N);
+
+    // for (int stack = 0; stack < 2; stack++)
     {
-        for (int sec = 0; sec < 3; sec++)
+        for (int row = 0; row < (2*N)-1; row++)
         {
-            int lim = (cols - findLim(onRow+1)) / 2;
-            if (sec == 1)
+            if (row >= N)
             {
-                printChars(n, cols-(2*lim));
+                ether = (N - row - 2) * -1;
             }
             else
             {
-                for (int j = 0; j < lim; j++)
+                ether = N - row;
+            }
+            for (int sec = 0; sec < 3; sec++)
+            {
+                if (sec % 2)
                 {
-                    printf("%c", comple);
+                    print_string(N, ether);
+                }
+                else
+                {
+                    padding = (width - find_width(N-ether+1)) / 2;
+                    for (int i = 0; i < padding; i++)
+                    {
+                        printf("%c", sym_chr);
+                    }
+                    if (sec == 2)
+                    {
+                        printf("\n");
+                    }
                 }
             }
         }
-        printf("\n");
-        if (onRow == (2 * n) - 2)
-        {
-            break;
-        }
-        onRow++;
     }
 
     return 0;
