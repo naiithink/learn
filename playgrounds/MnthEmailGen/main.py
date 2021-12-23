@@ -31,6 +31,8 @@ if "header.py" in program_root_dir_contents:
                 error["header_not_found"] = "Could not find `header.py`."
                 exit(1)
 
+del dir_search_list
+
 # Integrity check
 print("Checking integrity...")
 
