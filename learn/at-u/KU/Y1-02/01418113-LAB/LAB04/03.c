@@ -5,22 +5,25 @@
 // count target in n
 int count_target(int n, int target)
 {
-    int res = 0, rem;
+   /**/
+   int plce = 0, count = 0;
 
-    while (n)
-    {
-        rem = n % 10;
-        n /= 10;
-        if (rem == target)
-        {
-            res++;
-        }
-    }
+   while (n)
+   {
+      plce = n % 10;
+      n = n / 10;
+      if (plce == target)
+      {
+         count++;
+      }
+   }
 
-    return res;
+   return count;
+   /**/
 }
 
-int main() {
+int main()
+{
    char input_n[12], input_x[2];
    fgets(input_n, 12, stdin);
    fgets(input_x, 2, stdin);
@@ -35,11 +38,16 @@ int main() {
 
    // Display output in separate cases
    //
-   if (count <= 0) {
+   if (count <= 0)
+   {
       printf("There is no \"%d\" in %d.\n", x, n);
-   } else if (count == 1) {
+   }
+   else if (count == 1)
+   {
       printf("There is only 1 \"%d\" in %d.\n", x, n);
-   } else {
+   }
+   else
+   {
       printf("There are %d \"%d\"(s) in %d.\n", count, x, n);
    }
 }

@@ -1,53 +1,34 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-int main(void)
+void main(void)
 {
-    char sym = '*', col_str[5], row_str[5];
-    int col, row, bound, loop = 0;
+    char sym_chr = '*', cols_str[5], rows_str[5];
+    int cols = 0, rows = 0;
 
-    /*
-    fgets(row_str, 5, stdin);
-    fgets(col_str, 5, stdin);
+    fgets(cols_str, 5, stdin);
+    fgets(rows_str, 5, stdin);
 
-    row = atoi(row_str);
-    col = atoi(col_str);
-    */
+    cols = atoi(cols_str);
+    rows = atoi(rows_str);
 
-    row = 6;
-    col = 4;
-
-    if (row < 4 || col < 4)
+    for (int j = 0; j < rows; j++)
     {
-        return 1;
-    }
-
-    if (row - col >= 0)
-    {
-        bound = row;
-    }
-    else
-    {
-        bound = col;
-    }
-
-    for (int i = 0; i < row; i++)
-    {
-        for (int j = 0; j < bound; j++)
+        for (int tab = 0; tab < j; tab++)
         {
-            // printf("%i %i\n", i, j);
-            
-            if (i == j || i == col+loop || i == 0 || i == col-1)
-            {
-                printf("%c", sym);
-            }
-            else
+            printf("%c", 32);
+        }
+        for (int i = 0; i < cols; i++)
+        {
+            if (j && i && j != rows-1 && i-(cols-1))
             {
                 printf("%c", 32);
             }
+            else
+            {
+                printf("%c", sym_chr);
+            }
         }
         printf("\n");
-        loop++;
     }
-
-    return 0;
 }
