@@ -19,7 +19,17 @@ if "header.py" in program_root_dir_contents:
     try:
         import header
     except ImportError:
-        if 
+        dir_search_list = list()
+        for item in program_root_dir_contents:
+            if os.path.isdir(item):
+                dir_search_list.append(item)
+        for path in dir_search_list:
+            if "header" in path:
+                sys.path.append(path)
+                break
+            elif path == dir_search_list[-1]:
+                error["header_not_found"] = "Could not find `header.py`."
+                exit(1)
 
 # Integrity check
 print("Checking integrity...")
