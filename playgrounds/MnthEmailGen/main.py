@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import codecs, json, os, sys
+import codecs, json, os, sys, time
 
 print("Program started.")
 
@@ -31,8 +31,6 @@ if "header.py" in program_root_dir_contents:
                 error["header_not_found"] = "Could not find `header.py`."
                 exit(1)
 
-del dir_search_list
-
 # Integrity check
 print("Checking integrity...")
 
@@ -42,10 +40,12 @@ if "manifest" not in program_root_dir_contents:
 elif "template" not in program_root_dir_contents:
     os.mkdir(template_dir_path)
 
+ready += 1
+
 if ready:
-    print("Checking integrity...")
+    print("No errors found.")
 else:
-    print("Integrity check: found %i error%s".format(len(error), ))
+    print("Integrity check: found %d error%s".format(len(error), ))
     print(*error)
     exit(1)
 
