@@ -243,7 +243,7 @@ platform_support_check (void)
             */
 
             yep_is_in = open ("WinVer", "r");
-            p1 = popen ("%%errorvalue%%", "r");
+            p1 = popen ("echo %%errorlevel%%", "r");
             if (p1 == "True")
             {
                 this_platform->os = "win32";
