@@ -6,7 +6,7 @@ int main(void)
     char dec_str[3];
     int dec, prt, bit[4];
 
-    fgets(dec_str, 3, stdin);
+    fgets(dec_str, sizeof(dec_str), stdin);
     dec = atoi(dec_str);
     prt = dec;
 

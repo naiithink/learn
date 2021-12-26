@@ -1,38 +1,45 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-static int n, rev, was_init;
+static int s, p;
+
+void print_bin(int n)
+{
+    if (!p && !n)
+    {
+        printf("0\n");
+        return;
+    }
+    else if (!p)
+    {
+        n <<= 1;
+        n++;
+        p++;
+    }
+    else if (n)
+    {
+        s += n & 1;
+        if (n >>= 1)
+            s <<= 1;
+    }
+    else if (s > 1)
+    {
+        printf("%i", s&1);
+        s >>= 1;
+    }
+    else
+    {
+        printf("\n");
+        return;
+    }
+    return print_bin(n);
+}
 
 int main(void)
 {
     char n_str[10];
-    int rem = 0;
-    
-    if (!was_init)
-    {
-        fgets(n_str, 10, stdin);
-        n = atoi(n_str);
-        while (n)
-        {
-            rev <<= 1;
-            if (n & 1)
-            {
-                rev ^= 1;
-            }
-            n >>= 1;
-        }
-        was_init++;
-    }
-
-    if (rev)
-    {
-        rem = rev & 1;
-        rev >>= 1;
-        printf("%i", rem);
-        return main();
-    }
-
-    printf("\n");
+    fgets(n_str, sizeof(n_str), stdin);
+    print_bin(atoi(n_str));
 
     return 0;
 }

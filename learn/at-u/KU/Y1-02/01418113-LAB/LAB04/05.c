@@ -46,7 +46,7 @@ int main(void)
     char sym_chr = '-', N_str[3];
     int N = 0, width = 0, ether = 0, padding = 0;
 
-    fgets(N_str, 3, stdin);
+    fgets(N_str, sizeof(N_str), stdin);
     N = atoi(N_str);
 
     if (!N || N > 26 || N < 0)
