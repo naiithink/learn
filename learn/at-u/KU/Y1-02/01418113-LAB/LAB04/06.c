@@ -9,7 +9,8 @@ int main(void)
 
     printf("Enter your goal amount: ");
     fgets(goal_str, 10, stdin);
-    goal = atof(goal_str);
+    if ((goal = atof(goal_str)) <= 0)
+        return 1;
     
     remain = goal;
 
