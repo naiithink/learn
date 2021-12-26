@@ -6,8 +6,8 @@ void main(void)
     char sym_chr = '*', cols_str[5], rows_str[5];
     int cols = 0, rows = 0;
 
-    fgets(cols_str, 5, stdin);
-    fgets(rows_str, 5, stdin);
+    fgets(cols_str, sizeof(cols_str), stdin);
+    fgets(rows_str, sizeof(rows_str), stdin);
 
     cols = atoi(cols_str);
     rows = atoi(rows_str);

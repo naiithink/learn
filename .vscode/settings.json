@@ -12,7 +12,11 @@
         "memory": "c",
         "new": "c",
         "string": "c",
-        "type_traits": "c"
+        "type_traits": "c",
+        "array": "c",
+        "string_view": "c",
+        "unordered_map": "c",
+        "vector": "c"
     },
     "jupyter.jupyterServerType": "local"
 }

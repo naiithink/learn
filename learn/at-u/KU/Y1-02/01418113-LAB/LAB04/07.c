@@ -6,7 +6,7 @@ int main(void)
     char symb = '*', u_str[10];
     int u = 0, amp = 0, incre = 1;
 
-    fgets(u_str, 10, stdin);
+    fgets(u_str, sizeof(u_str), stdin);
     u = atoi(u_str);
 
     for (int stack = 0, height = (2*u)-1; stack < height; stack++)
