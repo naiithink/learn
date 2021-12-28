@@ -16,7 +16,9 @@
         "array": "c",
         "string_view": "c",
         "unordered_map": "c",
-        "vector": "c"
+        "vector": "c",
+        "algorithm": "c",
+        "iostream": "cpp"
     },
     "jupyter.jupyterServerType": "local"
 }
