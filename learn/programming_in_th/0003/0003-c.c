@@ -17,7 +17,7 @@ int c_in_str(char c, char *s)
 int main(void)
 {
     char m_str[5], n_str[5];
-    register unsigned short int m = 0, n = 0;
+    unsigned short int m = 0, n = 0;
 
     fgets(m_str, sizeof(m_str), stdin);
     fgets(n_str, sizeof(n_str), stdin);
