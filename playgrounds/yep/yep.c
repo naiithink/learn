@@ -12,8 +12,15 @@
 
 #include "yep.h"
 
+
 int
 main (int argc, char *argv[])
 {
-    
+    // `yep.h'
+    if ( !YEP_IS_IN || !YEP_IS_ON )
+        return EXIT_FAILURE;
+    else
+    {
+        
+    }
 }
