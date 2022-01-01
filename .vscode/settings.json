@@ -18,7 +18,10 @@
         "unordered_map": "c",
         "vector": "c",
         "algorithm": "c",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "stdarg.h": "c",
+        "limits.h": "c",
+        "types.h": "c"
     },
     "jupyter.jupyterServerType": "local"
 }
