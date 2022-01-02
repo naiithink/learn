@@ -6,7 +6,7 @@
 *       [ ] MAKE yep_write_log()
 *       [ ] MAKE yep_json()
 *   Plan-ahead:
-*       [ ] UPGRADE : multiple yunit.
+*       [ ] UPGRADE : multiple yapp.
 */
 
 #include <getopt.h>
@@ -42,12 +42,13 @@ main (int argc, char **argv)
         ok = false;
         /* <-- APPLY yep_write_log() here. --> */
     }
-    /* BREAK_00 */
+
+    /* <-- BREAK_00 --> */
+    /* CREATE yapp child process. */
     if (ok > 0)
 {
     /* <-- APPLY getopt_long() here. --> */
-    /* "UPGRADE : multiple yunit." can develop from here. */
-    /* Lab area */
+    /* "UPGRADE : multiple yapp." can develop from here. */
     pid_t yunit_pid;
     { /* LOCAL */
         pid_t is_pid0, is_pid1;
@@ -64,17 +65,19 @@ main (int argc, char **argv)
                 break;
             }
         }
-        /* ERROR cannot create a child process for yunit. */
+        /* ERROR cannot create a child process for yapp. */
         ok = false;
     /* LOCAL */ }
-    /* BREAK_01 */
+}
+
+    /* <-- BREAK_01 --> */
+    /* RETRIEVE yapp's stdin (if needed). */
     if (ok > 0)
 {
-    
-}
-}
-    /* Post-job area */
 
+}
+
+    /* POST-YEP */
     return exit_status = ok ? EXIT_SUCCESS : EXIT_FAILURE;
 }
 
