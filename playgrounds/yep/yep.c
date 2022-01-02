@@ -49,7 +49,7 @@ main (int argc, char **argv)
 {
     /* <-- APPLY getopt_long() here. --> */
     /* "UPGRADE : multiple yapp." can develop from here. */
-    pid_t yunit_pid;
+    pid_t yapp_pid;
     { /* LOCAL */
         pid_t is_pid0, is_pid1;
         for (int i = 0; i < 3; i++)
@@ -59,9 +59,9 @@ main (int argc, char **argv)
             if ((is_pid0*is_pid1) == 0)
             {
                 if (is_pid0 == 0)
-                    yunit_pid = is_pid1;
+                    yapp_pid = is_pid1;
                 else
-                    yunit_pid = is_pid0;
+                    yapp_pid = is_pid0;
                 break;
             }
         }
