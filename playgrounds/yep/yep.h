@@ -2,7 +2,7 @@
 *   Predefined macro ref:
 *       - ARCH
 *           - ARM: https://developer.arm.com/documentation/dui0774/e/Other-Compiler-specific-Features/Predefined-macros
-*       - PLATFORM
+*       - OS
 *           - Apple macOS: https://opensource.apple.com/source/WTF/WTF-7601.1.46.42/wtf/Platform.h.auto.html
 *           // Further MSVC
 *           - Microsoft Windows: https://docs.microsoft.com/en-us/cpp/preprocessor/predefined-macros?view=msvc-170
@@ -35,3 +35,23 @@
     #define YEP_IS_ON "arm"
 #elif (defined __)
 #endif
+
+struct cli_opt
+{
+    char *name;
+    int has_arg;
+    int *flag;
+    int val;
+};
+
+/* options descriptor */
+static struct option longopts[] = {
+        { "buffy",      no_argument,            NULL,           'b' },
+        { "fluoride",   required_argument,      NULL,           'f' },
+        { "daggerset",  no_argument,            &daggerset,     1 },
+        { NULL,         0,                      NULL,           0 }
+};
+
+/* dne: does not exist; undefined. */
+typedef enum {dne = -1, false, true} yep_ok;
+typedef char *string;
