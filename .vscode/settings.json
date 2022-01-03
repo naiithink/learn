@@ -23,5 +23,5 @@
         "limits.h": "c",
         "types.h": "c"
     },
-    "jupyter.jupyterServerType": "local"
+    "jupyter.jupyterServerType": "remote"
 }

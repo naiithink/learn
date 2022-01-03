@@ -6,6 +6,13 @@ Updated: `(UTC+7) 2022-01-02`
 
 ---
 
+### `signal.h`
+|Item|Location|Descriptions|Notes|
+|:---|:---|:-|:---|
+|`signal()`|`/yep.c/main()`|Signaling |Correspoding to `yep_ok ok;`|
+|||||
+
+
 ### `stdlib.h`
 
 |Item|Location|Descriptions|Notes|
