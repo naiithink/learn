@@ -11,13 +11,14 @@
 
 #include <getopt.h>
 #include <limits.h>
+#include <signal.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
 #include <sys/dir.h>
 #include <sys/errno.h>
 #include <sys/param.h>
-// #include <sys/types.h>       :Legacy
+#include <sys/types.h>
 // #include <time.h>
 #include <unistd.h>
 
@@ -56,7 +57,7 @@ main (int argc, char **argv)
         {
             is_pid0 = fork ();
             is_pid1 = fork ();
-            if ((is_pid0*is_pid1) == 0)
+            if ((is_pid0*is_pid1) == 0 && (is_pid0+is_pid1) != 0)
             {
                 if (is_pid0 == 0)
                     yapp_pid = is_pid1;
