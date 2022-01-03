@@ -38,8 +38,8 @@ main (int argc, char **argv)
     /* LAB: get path from env */
     char *LAB_CACHE_DIR = getenv ("YEP_LAB_CACHE_DIR");
     char *LAB_CACHE_FILE = getenv ("YEP_LAB_CACHE_FILE");
-    printf(">>> %s\n", LAB_CACHE_DIR);
-    printf(">>> %s\n", LAB_CACHE_FILE);
+    printf (">>> %s\n", LAB_CACHE_DIR);
+    printf (">>> %s\n", LAB_CACHE_FILE);
 
     /*
     char user_in_str[10];
@@ -49,7 +49,7 @@ main (int argc, char **argv)
     fgets (user_in, sizeof(user_in), stdin);
     user_in = atoi (user_in_str);
 
-    printf("%i\n", user_in);
+    printf ("%i\n", user_in);
     */
 
     /* The magic begins */
@@ -58,7 +58,7 @@ main (int argc, char **argv)
     
     if (pipe (yapp_pipe))
     {
-        printf("%s:%i: FunctionCallingError:UnableToCreatePipeForChildProcess: cannot create pipe for child process.\n", PROGRAM_SOURCE, __LINE__);
+        printf ("%s:%i: FunctionCallingError:UnableToCreatePipeForChildProcess: cannot create pipe for child process.\n", PROGRAM_SOURCE, __LINE__);
         return 1;
     }
 
@@ -72,7 +72,7 @@ main (int argc, char **argv)
         char *yapp_env_argv[0]; // = {};
         if (yapp_pid == 0)
         {
-            printf("child pid: %i\n", getpid());
+            printf ("child pid: %i\n", getpid());
             /* Child process area. */
 
             /* Check if already executable, if not, `gcc' */
@@ -106,7 +106,7 @@ main (int argc, char **argv)
                 execl ("/bin/gcc", yapp_path, "-o", LAB_CACHE_FILE);
                 if (access (LAB_CACHE_FILE, X_OK))
                 {
-                    printf("%s:%i: FileCompilationError:OutputFilePermissionDenied: problem compiling input source file.\n", PROGRAM_SOURCE, __LINE__);
+                    printf ("%s:%i: FileCompilationError:OutputFilePermissionDenied: problem compiling input source file.\n", PROGRAM_SOURCE, __LINE__);
                     return 1;
                 }
             }
@@ -122,22 +122,22 @@ main (int argc, char **argv)
         }
         else if (yapp_pid > 0)
         {
-            printf("parent pid: %i\n", getpid());
+            printf ("parent pid: %i\n", getpid());
             /* NOTICE: sizeof a native pointer. */
             if (waitpid (yapp_pid, &yapp_status, 0) == yapp_pid && WIFEXITED (yapp_status))
             {
                 yapp_exit = WEXITSTATUS (yapp_status);
-                printf("yapp exit(%i)\n", yapp_exit);
+                printf ("yapp exit(%i)\n", yapp_exit);
             }
             else
             {
-                printf("%s:%i: ChildProcessTerminationError:ChildProcessExitedWithNon-Zero: an error occurs while terminating yapp process.\n", PROGRAM_SOURCE, __LINE__);
+                printf ("%s:%i: ChildProcessTerminationError:ChildProcessExitedWithNon-Zero: an error occurs while terminating yapp process.\n", PROGRAM_SOURCE, __LINE__);
                 return 1;
             }
         }
         else
         {
-            printf("%s:%i: ChildProcessCreationError:UnableToCreateChildProcess: cannot create yapp process.\n", PROGRAM_SOURCE, __LINE__);
+            printf ("%s:%i: ChildProcessCreationError:UnableToCreateChildProcess: cannot create yapp process.\n", PROGRAM_SOURCE, __LINE__);
             return 1;
         }
     }
