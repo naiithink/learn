@@ -76,7 +76,7 @@ main (int argc, char **argv)
             /* Child process area. */
 
             /* Check if already executable, if not, `gcc' */
-            /* access return -1 if permission denied (i.e., not executable) */
+            /* access() returns -1 if permission denied (i.e., not executable). */
             if (access (yapp_path, X_OK) == -1)
             {
                 /*                     [0]  [1]       [2] [3]    */
