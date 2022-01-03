@@ -58,7 +58,7 @@ main (int argc, char **argv)
     
     if (pipe (yapp_pipe))
     {
-        printf("%s:%i: Error calling pipe().\n", PROGRAM_SOURCE, __LINE__);
+        printf("%s:%i: FunctionCallingError:UnableToCreatePipeForChildProcess: cannot create pipe for child process.\n", PROGRAM_SOURCE, __LINE__);
         return 1;
     }
 
@@ -106,7 +106,7 @@ main (int argc, char **argv)
                 execl ("/bin/gcc", yapp_path, "-o", LAB_CACHE_FILE);
                 if (access (LAB_CACHE_FILE, X_OK))
                 {
-                    printf("%s:%i: Error compiling input file.\n", PROGRAM_SOURCE, __LINE__);
+                    printf("%s:%i: FileCompilationError:OutputFilePermissionDenied: problem compiling input source file.\n", PROGRAM_SOURCE, __LINE__);
                     return 1;
                 }
             }
@@ -130,12 +130,14 @@ main (int argc, char **argv)
                 printf("yapp exit(%i)\n", yapp_exit);
             }
             else
-                printf("%s:%i: Error occurs while terminating yapp process.\n", PROGRAM_SOURCE, __LINE__);
+            {
+                printf("%s:%i: ChildProcessTerminationError:ChildProcessExitedWithNon-Zero: an error occurs while terminating yapp process.\n", PROGRAM_SOURCE, __LINE__);
                 return 1;
+            }
         }
         else
         {
-            printf("%s:%i: Error cannot create yapp process.\n", PROGRAM_SOURCE, __LINE__);
+            printf("%s:%i: ChildProcessCreationError:UnableToCreateChildProcess: cannot create yapp process.\n", PROGRAM_SOURCE, __LINE__);
             return 1;
         }
     }
