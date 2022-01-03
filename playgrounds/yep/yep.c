@@ -127,7 +127,7 @@ main (int argc, char **argv)
                 write (, , sizeof ());
               }
 
-            /* read from yapp stout respectively */
+            /* read from yapp stdout respectively */
             read (yapp_pipe[0], /* var for holding stdout */, sizeof ());
             /* write to report file */
             write (, , sizeof ());
