@@ -57,7 +57,7 @@ main (int argc, char **argv)
     printf ("%i\n", user_in);
     */
 
-    /* The magic begins */
+    /* Where the magic begins */
     char yapp_path[sizeof (argv[1])] = argv[1], test_stdin[sizeof (argv[2])] = argv[2];
     int yapp_pipe[2];
     
