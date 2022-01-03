@@ -44,14 +44,6 @@ struct cli_opt
     int val;
 };
 
-/* options descriptor */
-static struct option longopts[] = {
-        { "buffy",      no_argument,            NULL,           'b' },
-        { "fluoride",   required_argument,      NULL,           'f' },
-        { "daggerset",  no_argument,            &daggerset,     1 },
-        { NULL,         0,                      NULL,           0 }
-};
-
 /* dne: does not exist; undefined. */
 typedef enum {dne = -1, false, true} yep_ok;
 typedef char *string;

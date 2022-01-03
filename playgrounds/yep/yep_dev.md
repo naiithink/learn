@@ -10,6 +10,7 @@ Updated: `(UTC+7) 2022-01-02`
 |Item|Location|Descriptions|Notes|
 |:---|:---|:-|:---|
 |`signal()`|`/yep.c/main()`|Signaling |Correspoding to `yep_ok ok;`|
+|`strsignal()`|`/yep.c/main()`|Signaling |Correspoding to `yep_ok ok;`|
 |||||
 
 
