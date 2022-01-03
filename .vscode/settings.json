@@ -21,7 +21,8 @@
         "iostream": "cpp",
         "stdarg.h": "c",
         "limits.h": "c",
-        "types.h": "c"
+        "types.h": "c",
+        "dir.h": "c"
     },
     "jupyter.jupyterServerType": "remote"
 }

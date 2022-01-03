@@ -1,95 +1,144 @@
 /*
+*   Updated: 2022-01-03
 *   Reminders:
-*       - ALWAYS `memcheck` before release. -- `Valgrind`
+*       - ALWAYS `memcheck'.
 *   2DO:
 *       [ ] APPLY getopt_long()
 *       [ ] MAKE yep_write_log()
 *       [ ] MAKE yep_json()
 *   Plan-ahead:
 *       [ ] UPGRADE : multiple yapp.
+*       ...*
 */
 
-#include <getopt.h>
+// #include <getopt.h>
 #include <limits.h>
 #include <signal.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdarg.h>
-#include <sys/dir.h>
-#include <sys/errno.h>
-#include <sys/param.h>
+// #include <stdarg.h>
+// #include <sys/dir.h>
+// #include <sys/errno.h>
+// #include <sys/param.h>
 #include <sys/types.h>
 // #include <time.h>
 #include <unistd.h>
 
 #include "yep.h"
 
-#define MEASURE_EXEC_TIME 1
+#define PROGRAM_NAME "yep"
+#define PROGRAM_SOURCE "yep.c"
 
-/* Custom functions. */
-int is_on_supported_platform (void);
-
-/* Custom declaration. */
-static int exit_status;
-
-/* ONLY 'return' at the end of main(). */
+/* argv[1] = path/to/yapp, argv[2] = str to write to yapp stdin */
 int
 main (int argc, char **argv)
 {
-    yep_ok ok = dne;
+    pid_t yep_pid = getpid ();
 
-    if (!YEP_IS_IN || !YEP_IS_ON || !is_on_supported_platform())
+    /* LAB: get path from env */
+    char *LAB_CACHE_DIR = getenv ("YEP_LAB_CACHE_DIR");
+    char *LAB_CACHE_FILE = getenv ("YEP_LAB_CACHE_FILE");
+    printf(">>> %s\n", LAB_CACHE_DIR);
+    printf(">>> %s\n", LAB_CACHE_FILE);
+
+    /*
+    char user_in_str[10];
+    int user_in = 0;
+
+    fputs ("Enter 4-digit integer: ", stdout);
+    fgets (user_in, sizeof(user_in), stdin);
+    user_in = atoi (user_in_str);
+
+    printf("%i\n", user_in);
+    */
+
+    /* The magic begins */
+    char yapp_path[sizeof(argv[1])] = argv[1], test_stdin[sizeof(argv[2])] = argv[2];
+    int yapp_pipe[2];
+    
+    if (pipe (yapp_pipe))
     {
-        ok = false;
-        /* <-- APPLY yep_write_log() here. --> */
+        printf("%s:%i: Error calling pipe().\n", PROGRAM_SOURCE, __LINE__);
+        return 1;
     }
 
-    /* <-- BREAK_00 --> */
-    /* CREATE yapp child process. */
-    if (ok > 0)
-{
-    /* <-- APPLY getopt_long() here. --> */
-    /* "UPGRADE : multiple yapp." can develop from here. */
+    /* UPGRADE: multiple yapp, modify yapp_status -> (int *) */
+    int yapp_status, yapp_exit;
     pid_t yapp_pid;
-    { /* LOCAL */
-        pid_t is_pid0, is_pid1;
-        for (int i = 0; i < 3; i++)
+    if ((yapp_pid=fork()) >= 0);
+    {
+        /* SUPPORT: argv to yapp */
+        char *yapp_argv[0]; // = {};
+        char *yapp_env_argv[0]; // = {};
+        if (yapp_pid == 0)
         {
-            is_pid0 = fork ();
-            is_pid1 = fork ();
-            if ((is_pid0*is_pid1) == 0 && (is_pid0+is_pid1) != 0)
+            printf("child pid: %i\n", getpid());
+            /* Child process area. */
+
+            /* Check if already executable, if not, `gcc' */
+            /* access return -1 if permission denied (i.e., not executable) */
+            if (access (yapp_path, X_OK) == -1)
             {
-                if (is_pid0 == 0)
-                    yapp_pid = is_pid1;
-                else
-                    yapp_pid = is_pid0;
-                break;
+                /*                     [0]  [1]       [2] [3]    */
+                /* Currently limited: `gcc  source.c  -o  source` */
+                // char *cat_compile_cmd[4], *compiler_path;
+
+                /* <-- Check if env "CC" has any value here. --> */
+
+                /* <-- UPGRADE: exec `/bin/gcc' natively from search path. --> */
+
+                // #if (   defined __linux__       \
+                //     ||  defined __APPLE__)
+                //     /* <-- UPGRADE: get path w/ exec shell cmd. --> */
+                //     system ();
+                // /* SUPPORT: Win32 */
+                // #elif (defined WIN32)
+                //     #if (defined __MINGW32__)
+                //     #endif
+                // #endif
+
+                // cat_compile_cmd[0] = YAPP_COMPILER_ALIAS;
+                // cat_compile_cmd[1] = yapp_path;
+                // cat_compile_cmd[2] = "-o";
+                // cat_compile_cmd[3] = LAB_CACHE_FILE;
+
+                /* SUBSTITUTE: execve() */
+                execl ("/bin/gcc", yapp_path, "-o", LAB_CACHE_FILE);
+                if (access (LAB_CACHE_FILE, X_OK))
+                {
+                    printf("%s:%i: Error compiling input file.\n", PROGRAM_SOURCE, __LINE__);
+                    return 1;
+                }
             }
+
+            /* BEGIN yapp execution */
+            execve (LAB_CACHE_FILE, yapp_argv, yapp_env_argv);
+
+            /* yapp stdin */
+            // fork()
+            /* -------------------- 2022-01-03 -------------------- */
+
+            exit (0);
         }
-        /* ERROR cannot create a child process for yapp. */
-        ok = false;
-    /* LOCAL */ }
-}
+        else if (yapp_pid > 0)
+        {
+            printf("parent pid: %i\n", getpid());
+            /* NOTICE: sizeof a native pointer. */
+            if (waitpid (yapp_pid, &yapp_status, 0) == yapp_pid && WIFEXITED (yapp_status))
+            {
+                yapp_exit = WEXITSTATUS (yapp_status);
+                printf("yapp exit(%i)\n", yapp_exit);
+            }
+            else
+                printf("%s:%i: Error occurs while terminating yapp process.\n", PROGRAM_SOURCE, __LINE__);
+                return 1;
+        }
+        else
+        {
+            printf("%s:%i: Error cannot create yapp process.\n", PROGRAM_SOURCE, __LINE__);
+            return 1;
+        }
+    }
 
-    /* <-- BREAK_01 --> */
-    /* RETRIEVE yapp's stdin (if needed). */
-    if (ok > 0)
-{
-
-}
-
-    /* POST-YEP */
-    return exit_status = ok ? EXIT_SUCCESS : EXIT_FAILURE;
-}
-
-int
-is_on_supported_platform (void)
-{
-    /* APPLY yep_json() in here. */
-    int res = 0;
-    if (YEP_IS_IN && YEP_IS_ON)
-        res = 1;
-    else
-        res = 0;
-    return res;
+    return 0;
 }
