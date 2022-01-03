@@ -122,8 +122,15 @@ main (int argc, char **argv)
             /* write to yapp stdin */
             for (int i = 0; i < /* stdin queue count */; i++)
               {
-                
+                write (yapp_pipe[1], , sizeof ());
+                /* also write to report file */
+                write (, , sizeof ());
               }
+
+            /* read from yapp stout respectively */
+            read (yapp_pipe[0], /* var for holding stdout */, sizeof ());
+            /* write to report file */
+            write (, , sizeof ());
 
             /* yapp stdin */
             // fork ()
