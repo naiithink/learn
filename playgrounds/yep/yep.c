@@ -1,5 +1,5 @@
 /*
-*   Updated: 2022-01-03
+*   Updated: 2022-01-04
 *   GNU Coding Standard: https://www.gnu.org/prep/standards/html_node/Writing-C.html
 *   Reminders:
 *       - ALWAYS `memcheck'.
@@ -38,9 +38,13 @@ main (int argc, char **argv)
 
     /* LAB: get path from env */
     char *LAB_CACHE_DIR = getenv ("YEP_LAB_CACHE_DIR");
-    char *LAB_CACHE_FILE = getenv ("YEP_LAB_CACHE_FILE");
     printf (">>> %s\n", LAB_CACHE_DIR);
+    char *LAB_CACHE_FILE = getenv ("YEP_LAB_CACHE_FILE");
     printf (">>> %s\n", LAB_CACHE_FILE);
+    char *GCC_PATH = "/bin/bash";
+    printf (">>> %s\n", GCC_PATH);
+    char *GCC_OUTPUT_FLAG = "-o";
+    printf (">>> %s\n", GCC_OUTPUT_FLAG);
 
     /*
     char user_in_str[10];
@@ -104,8 +108,8 @@ main (int argc, char **argv)
                 // cat_compile_cmd[3] = LAB_CACHE_FILE;
 
                 /* SUBSTITUTE: execve() */
-                execl ("/bin/gcc", yapp_path, "-o", LAB_CACHE_FILE);
-                if (access (LAB_CACHE_FILE, X_OK))
+                execl (GCC_PATH, yapp_path, GCC_OUTPUT_FLAG, LAB_CACHE_FILE);
+                if (access (LAB_CACHE_FILE, X_OK) == -1)
                   {
                     printf ("%s:%i: FileCompilationError:OutputFilePermissionDenied: problem compiling input source file.\n", PROGRAM_SOURCE, __LINE__);
                     return 1;
@@ -114,10 +118,16 @@ main (int argc, char **argv)
 
             /* BEGIN yapp execution */
             execve (LAB_CACHE_FILE, yapp_argv, yapp_env_argv);
+            
+            /* write to yapp stdin */
+            for (int i = 0; i < /* stdin queue count */; i++)
+              {
+                
+              }
 
             /* yapp stdin */
             // fork ()
-            /* -------------------- 2022-01-03 -------------------- */
+            /* -------------------- 2022-01-04 -------------------- */
 
             exit (0);
           }
