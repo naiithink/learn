@@ -1,5 +1,5 @@
 /*
-*   Updated: 2022-01-04
+*   Updated: 2022-01-05
 *   GNU Coding Standard: https://www.gnu.org/prep/standards/html_node/Writing-C.html
 *   Reminders:
 *       - ALWAYS `memcheck'.
