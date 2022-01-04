@@ -7,6 +7,8 @@
 *       [ ] APPLY getopt_long()
 *       [ ] MAKE yep_write_log()
 *       [ ] MAKE yep_json()
+*       [ ] ADD yep to `whatis' database.
+*       [ ] BUILD `manpage'
 *   Plan-ahead:
 *       [ ] UPGRADE : multiple yapp.
 *       ...*
