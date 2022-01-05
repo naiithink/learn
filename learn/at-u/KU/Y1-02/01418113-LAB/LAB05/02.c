@@ -27,7 +27,7 @@ int main(void)
                     continue;
                 else if (n == sum && c == (pow ((pow (a, 2.0) + pow (b, 2.0)), 0.5)))
                 {
-                    printf("(%lf, %lf, %lf)\n", a, b, c);
+                    printf("(%.0lf, %.0lf, %.0lf)\n", a, b, c);
                     return 0;
                 }
             }
@@ -35,5 +35,5 @@ int main(void)
     }
     printf("No triple found.\n");
     
-    return 1.0;
+    return 1;
 }
