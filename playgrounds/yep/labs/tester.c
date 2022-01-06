@@ -1,6 +1,9 @@
 #include <ctype.h>
+#include <errno.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <sys/types.h>
+#include <sys/sysctl.h>
 #include <unistd.h>
 
 #include "yep.h"
@@ -14,43 +17,53 @@
     #endif
 #endif
 
-#define ASCII_OF_NOUGHT '0'
-
 #define PROGRAM_NAME "tester"
-#define PROGRAM_SOURCE "tester.c"
+
 #define YEP_REPORT_ENV_NAME "YEP_REPORT"
 #define EXIT_FAILED_CODE "1"
+#define ASCII_OF_NOUGHT '0'
 
 static int exit_status;
 typedef enum { dne = -1, false, true } running_ok;
 
 running_ok set_env_from_user_input (char *env_name, char *input_prompt, int NL_cursor, int input_env_value_buff, int reprompt_loop);
+void raise_unknown_err (char *program_name, char *file, int line);
 char *int_to_charptr (int n);
 int is_path_exists (char *path_str);
+int isa_translated_process (void);
 
 int
 main (int argc, char **argv)
 {
     register running_ok ok = dne;
+
+    if (__APPLE__ && __MACH__ && isa_translated_process ())
+        fprintf (stderr, "\033[1m%s: \033[1;35mWarning:\033[0m This program is currently running as a translated process.\n", PROGRAM_NAME);
+
     char *STDOUT_REPORT_PATH = getenv (YEP_REPORT_ENV_NAME);
     
     if (STDOUT_REPORT_PATH == NULL)
     {
         char SET_ENV_AGREEMENT;
-        fputs ("Yep output report path env `YEP_REPORT` has not been set.\n", stdout);
-        fputs ("Do you want to set it now? (y/n): ", stdin);
+        fprintf (stderr, "\033[1m%s: \
+\033[1;31m\
+Error: \
+\033[1;39m\
+Destination path for the report file has not been set.\n\
+\033[0m\
+%s needs an existing path on this device where it can write the report file there.\n", PROGRAM_NAME, PROGRAM_NAME);
+        fputs ("Do you want to set it now? [Y/n]: ", stdin);
         if ((SET_ENV_AGREEMENT = fgetc (stdin)) == EOF)
         {
             ok = false;
-            fputs ("Invalid Input\n", stdout);
-            fputs ("\
-Next time you run this program, please enter:\n\
-`y`   if you want to set the path now.\n\
-`n`   if you do not want to set the path (this program needs a path on this device where it can write the report file to).\n\
-                   ", stdout);
-            fputs ("Exiting with exit code: (", stdout);
-            fputs (EXIT_FAILED_CODE, stdout);
-            fputs (").\n", stdout);
+            fprintf (stderr, "\033[1m%s: \
+\033[1;31m\
+Error: \
+\033[1;39m\
+Invalid input.\n\
+\033[0m\
+\n\
+\033[1mExiting with exit code (%d).\033[0m\n", PROGRAM_NAME, EXIT_FAILURE);
         }
         else
             ok = true;
@@ -64,7 +77,11 @@ Next time you run this program, please enter:\n\
                 case '\n':
                 case 'n':
                 case 'N':
-                    fputs ("Set the output report path before you can use this program.\n", stdout);
+                    fprintf (stderr, "\033[1m%s: \
+\033[1;34m\
+Note: \
+\033[0;39m\
+Set a destination path for the report file before you can use this program.\n", PROGRAM_NAME);
                     ok = false;
                     break;
                 case 'y':
@@ -84,10 +101,35 @@ Next time you run this program, please enter:\n\
 
     if (ok < 0 || ok > 1)
     {
-        fputs ("Exited with an unknown error.\n", stdout);
+        raise_unknown_err (PROGRAM_NAME, __FILE__, __LINE__);
         return -1;
     }
     return exit_status = ok ? EXIT_SUCCESS : EXIT_FAILURE;
+}
+
+int
+isa_translated_process (void)
+{
+   int ret = 0;
+   size_t size = sizeof(ret);
+   if (sysctlbyname("sysctl.proc_translated", &ret, &size, NULL, 0) == -1) 
+   {
+      if (errno == ENOENT)
+         return 0;
+      return -1;
+   }
+   return ret;
+}
+
+void
+raise_unknown_err (char *program_name, char *file, int line)
+{
+    fprintf (stderr, "%s: \n\
+%s:%d: \
+\033[1;31m\
+InternalError: \
+\033[1;39m\
+An unknown error occurs.\033[0m\n", program_name, file, line);
 }
 
 char *
@@ -99,7 +141,7 @@ int_to_charptr (int n)
     {
         if (n >= 0 && n <= 9)
         {
-            char *res = malloc (sizeof(YEP_TYPE_CHAR_PTR) * 2);
+            char *res = calloc (1, sizeof(YEP_TYPE_CHAR_PTR) * 2);
             if (res != NULL)
             {
                 res[0] = n - ASCII_OF_NOUGHT;
@@ -123,7 +165,7 @@ int_to_charptr (int n)
 
             int rem = 0;
             char reversed[digit_count];
-            char *res = malloc ((sizeof(YEP_TYPE_CHAR_PTR) * digit_count) + (sizeof(YEP_TYPE_CHAR_PTR) * sign_char));
+            char *res = calloc (1, (sizeof(YEP_TYPE_CHAR_PTR) * digit_count) + (sizeof(YEP_TYPE_CHAR_PTR) * sign_char));
 
             if (res != NULL)
             {
@@ -160,7 +202,9 @@ set_env_from_user_input (char *env_name, char *input_prompt, int NL_cursor, \
     
     if (fgets (env_value, sizeof(input_env_value_buff), stdin) == NULL)
     {
-        fputs ("Invalid Input.\n", stdout);
+        fprintf (stderr, "\033[1m%s: \
+Invalid input.\
+\033[0m\n", PROGRAM_NAME);
         while (reprompt_loop)
         {
             set_env_from_user_input (env_name, input_prompt, NL_cursor, input_env_value_buff, reprompt_loop--);
@@ -178,12 +222,8 @@ set_env_from_user_input (char *env_name, char *input_prompt, int NL_cursor, \
     else if (setenv (env_name, env_value, 1) != 0)
     {
         function_ok = false;
-        fputs ("Got an unknown error at ", stdout);
-        fputs (PROGRAM_SOURCE, stdout);
-        fputs (":", stdout);
-        fputs (strtol (__LINE__), stdout);
-        fputs ("\n", stdout);
-        exit(1);
+        raise_unknown_err (PROGRAM_NAME, __FILE__, __LINE__);
+        exit (-1);
     }
     else
         function_ok = true;
@@ -203,12 +243,8 @@ is_path_exists (char *path_str)
         res = 1;
     else
     {
-        fputs ("Got an unknown error at ", stdout);
-        fputs (PROGRAM_SOURCE, stdout);
-        fputs (":", stdout);
-        fputs (__LINE__, stdout);
-        fputs ("\n", stdout);
-        exit(1);
+        raise_unknown_err (PROGRAM_NAME, __FILE__, __LINE__);
+        exit (-1);
     }
 
     return res;
