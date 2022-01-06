@@ -20,7 +20,6 @@
 #define PROGRAM_NAME "tester"
 
 #define YEP_REPORT_ENV_NAME "YEP_REPORT"
-#define EXIT_FAILED_CODE "1"
 #define ASCII_OF_NOUGHT '0'
 
 static int exit_status;
