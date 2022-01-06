@@ -1,166 +1,250 @@
-/*
-*   Updated: 2022-01-05
-*   GNU Coding Standard: https://www.gnu.org/prep/standards/html_node/Writing-C.html
-*   Reminders:
-*       - ALWAYS `memcheck'.
-*   2DO:
-*       [ ] APPLY getopt_long()
-*       [ ] MAKE yep_write_log()
-*       [ ] MAKE yep_json()
-*       [ ] ADD yep to `whatis' database.
-*       [ ] BUILD `manpage'
-*   Plan-ahead:
-*       [ ] UPGRADE : multiple yapp.
-*       ...*
-*/
-
-// #include <getopt.h>
-// #include <limits.h>
-#include <signal.h>
+#include <ctype.h>
+#include <errno.h>
 #include <stdio.h>
 #include <stdlib.h>
-// #include <stdarg.h>
-// #include <sys/dir.h>
-// #include <sys/errno.h>
-// #include <sys/param.h>
 #include <sys/types.h>
-// #include <time.h>
+#include <sys/sysctl.h>
 #include <unistd.h>
 
 #include "yep.h"
 
-#define PROGRAM_NAME "yep"
-#define PROGRAM_SOURCE "yep.c"
+#ifdef __linux__
+#include <linux/limits.h>
+#else
+#include <limits.h>
+    #ifdef WIN32
+    #define PATH_MAX MAX_PATH
+    #endif
+#endif
 
-/* argv[1] = path/to/yapp, argv[2] = str to write to yapp stdin */
+#define PROGRAM_NAME "tester"
+
+#define YEP_REPORT_ENV_NAME "YEP_REPORT"
+#define ASCII_OF_NOUGHT '0'
+
+static int exit_status;
+typedef enum { dne = -1, false, true } running_ok;
+
+running_ok set_env_from_user_input (char *env_name, char *input_prompt, int NL_cursor, int input_env_value_buff, int reprompt_loop);
+void raise_unknown_err (char *program_name, char *file, int line);
+char *int_to_charptr (int n);
+int is_path_exists (char *path_str);
+int isa_translated_process (void);
+
 int
 main (int argc, char **argv)
 {
-    pid_t yep_pid = getpid ();
+    register running_ok ok = dne;
 
-    /* LAB: get path from env */
-    char *LAB_CACHE_DIR = getenv ("YEP_LAB_CACHE_DIR");
-    printf (">>> %s\n", LAB_CACHE_DIR);
-    char *LAB_CACHE_FILE = getenv ("YEP_LAB_CACHE_FILE");
-    printf (">>> %s\n", LAB_CACHE_FILE);
-    char *GCC_PATH = "/bin/bash";
-    printf (">>> %s\n", GCC_PATH);
-    char *GCC_OUTPUT_FLAG = "-o";
-    printf (">>> %s\n", GCC_OUTPUT_FLAG);
+    if (__APPLE__ && __MACH__ && isa_translated_process ())
+        fprintf (stderr, "\033[1m%s: \033[1;35mWarning:\033[0m This program is currently running as a translated process.\n", PROGRAM_NAME);
 
-    /*
-    char user_in_str[10];
-    int user_in = 0;
-
-    fputs ("Enter 4-digit integer: ", stdout);
-    fgets (user_in, sizeof (user_in), stdin);
-    user_in = atoi (user_in_str);
-
-    printf ("%i\n", user_in);
-    */
-
-    /* Where the magic begins */
-    char yapp_path[sizeof (argv[1])] = argv[1], test_stdin[sizeof (argv[2])] = argv[2];
-    int yapp_pipe[2];
+    char *STDOUT_REPORT_PATH = getenv (YEP_REPORT_ENV_NAME);
     
-    if (pipe (yapp_pipe))
-      {
-        printf ("%s:%i: FunctionCallingError:UnableToCreatePipeForChildProcess: cannot create pipe for child process.\n", PROGRAM_SOURCE, __LINE__);
-        return 1;
-      }
-
-    /* UPGRADE: multiple yapp, modify yapp_status -> (int *) */
-    int yapp_status, yapp_exit;
-    pid_t yapp_pid;
-    if ((yapp_pid = fork ()) >= 0)
-      {
-        /* SUPPORT: argv to yapp */
-        char *yapp_argv[0]; // = {};
-        char *yapp_env_argv[0]; // = {};
-        if (yapp_pid == 0)
-          {
-            printf ("child pid: %i\n", getpid ());
-            /* Child process area. */
-
-            /* Check if already executable, if not, `gcc' */
-            /* access() returns -1 if permission denied (i.e., not executable). */
-            if (access (yapp_path, X_OK) == -1)
-              {
-                /*                     [0]  [1]       [2] [3]    */
-                /* Currently limited: `gcc  source.c  -o  source` */
-                // char *cat_compile_cmd[4], *compiler_path;
-
-                /* <-- Check if env "CC" has any value here. --> */
-
-                /* <-- UPGRADE: exec `/bin/gcc' natively from search path. --> */
-
-                // #if (defined __linux__               \
-                //      ||  defined __APPLE__)
-                // /* <-- UPGRADE: get path w/ exec shell cmd. --> */
-                // system ();
-                // /* SUPPORT: Win32 */
-                // #elif (defined WIN32)
-                //     #if (defined __MINGW32__)
-                //     #endif
-                // #endif
-
-                // cat_compile_cmd[0] = YAPP_COMPILER_ALIAS;
-                // cat_compile_cmd[1] = yapp_path;
-                // cat_compile_cmd[2] = "-o";
-                // cat_compile_cmd[3] = LAB_CACHE_FILE;
-
-                /* SUBSTITUTE: execve() */
-                execl (GCC_PATH, yapp_path, GCC_OUTPUT_FLAG, LAB_CACHE_FILE);
-                if (access (LAB_CACHE_FILE, X_OK) == -1)
-                  {
-                    printf ("%s:%i: FileCompilationError:OutputFilePermissionDenied: problem compiling input source file.\n", PROGRAM_SOURCE, __LINE__);
-                    return 1;
-                  }
-              }
-
-            /* BEGIN yapp execution */
-            execve (LAB_CACHE_FILE, yapp_argv, yapp_env_argv);
-            
-            /* write to yapp stdin */
-            for (int i = 0; i < /* stdin queue count */; i++)
-              {
-                write (yapp_pipe[1], , sizeof ());
-                /* also write to report file */
-                write (, , sizeof ());
-              }
-
-            /* read from yapp stdout respectively */
-            read (yapp_pipe[0], /* var for holding stdout */, sizeof ());
-            /* write to report file */
-            write (, , sizeof ());
-
-            /* yapp stdin */
-            // fork ()
-            /* -------------------- 2022-01-04 -------------------- */
-
-            exit (0);
-          }
-        else if (yapp_pid > 0)
-          {
-            printf ("parent pid: %i\n", getpid ());
-            /* NOTICE: sizeof a native pointer. */
-            if (waitpid (yapp_pid, &yapp_status, 0) == yapp_pid && WIFEXITED (yapp_status))
-              {
-                yapp_exit = WEXITSTATUS (yapp_status);
-                printf ("yapp exit(%i)\n", yapp_exit);
-              }
-            else
-              {
-                printf ("%s:%i: ChildProcessTerminationError:ChildProcessExitedWithNon-Zero: an error occurs while terminating yapp process.\n", PROGRAM_SOURCE, __LINE__);
-                return 1;
-              }
-          }
+    if (STDOUT_REPORT_PATH == NULL)
+    {
+        char SET_ENV_AGREEMENT;
+        fprintf (stderr, "\033[1m%s: \
+\033[1;31m\
+Error: \
+\033[1;39m\
+Destination path for the report file has not been set.\n\
+\033[0m\
+%s needs an existing path on this device where it can write the report file there.\n", PROGRAM_NAME, PROGRAM_NAME);
+        fputs ("Do you want to set it now? [Y/n]: ", stdout);
+        if ((SET_ENV_AGREEMENT = fgetc (stdin)) == EOF)
+        {
+            ok = false;
+            fprintf (stderr, "\033[1m%s: \
+\033[1;31m\
+Error: \
+\033[1;39m\
+Invalid input.\n\
+\033[0m\
+\n\
+\033[1mExiting with exit code (%d).\033[0m\n", PROGRAM_NAME, EXIT_FAILURE);
+        }
         else
-          {
-            printf ("%s:%i: ChildProcessCreationError:UnableToCreateChildProcess: cannot create yapp process.\n", PROGRAM_SOURCE, __LINE__);
-            return 1;
-          }
-      }
+            ok = true;
 
-    return 0;
+        /* Try setting STDOUT_REPORT_PATH */
+        if (ok == true)
+        {
+            switch (SET_ENV_AGREEMENT)
+            {
+                case 32:
+                case '\n':
+                case 'n':
+                case 'N':
+                    fprintf (stderr, "\033[1m%s: \
+\033[1;34m\
+Note: \
+\033[0;39m\
+Set a destination path for the report file before you can use this program.\n", PROGRAM_NAME);
+                    ok = false;
+                    break;
+                case 'y':
+                case 'Y':
+                    if (set_env_from_user_input (YEP_REPORT_ENV_NAME, "Enter the report path: ", 0, PATH_MAX, 3) == true)
+                        ok = true;
+                    else
+                        ok = false;
+                    break;
+                default:
+                    ok = false;
+            }
+        }
+    }
+
+    /* Continue here. */
+
+    if (ok < 0 || ok > 1)
+    {
+        raise_unknown_err (PROGRAM_NAME, __FILE__, __LINE__);
+        return -1;
+    }
+    return exit_status = ok ? EXIT_SUCCESS : EXIT_FAILURE;
+}
+
+int
+isa_translated_process (void)
+{
+   int ret = 0;
+   size_t size = sizeof(ret);
+   if (sysctlbyname("sysctl.proc_translated", &ret, &size, NULL, 0) == -1) 
+   {
+      if (errno == ENOENT)
+         return 0;
+      return -1;
+   }
+   return ret;
+}
+
+void
+raise_unknown_err (char *program_name, char *file, int line)
+{
+    fprintf (stderr, "%s: \n\
+%s:%d: \
+\033[1;31m\
+InternalError: \
+\033[1;39m\
+An unknown error occurs.\033[0m\n", program_name, file, line);
+}
+
+char *
+int_to_charptr (int n)
+{
+    void *res;
+
+    if (n && YEP_TYPE(n) >= 1 && YEP_TYPE(n) <= 11)
+    {
+        if (n >= 0 && n <= 9)
+        {
+            char *res = calloc (1, sizeof(YEP_TYPE_CHAR_PTR) * 2);
+            if (res != NULL)
+            {
+                res[0] = n - ASCII_OF_NOUGHT;
+                res[1] = '\0';
+            }
+            else
+                free (res);
+        }
+        else
+        {
+            int n_copy0 = n, n_copy1 = n, digit_count = 0, sign_char = 0;
+            
+            while (n_copy0)
+            {
+                n_copy0 /= 10;
+                digit_count++;
+            }
+
+            if (n < 0)
+                sign_char = 1;
+
+            int rem = 0;
+            char reversed[digit_count];
+            char *res = calloc (1, (sizeof(YEP_TYPE_CHAR_PTR) * digit_count) + (sizeof(YEP_TYPE_CHAR_PTR) * sign_char));
+
+            if (res != NULL)
+            {
+                { /* LOCAL */
+                    int i = digit_count;
+                    res[digit_count-1] = '\0';
+                    do
+                    {
+                        reversed[i] = (n_copy1 % 10) - ASCII_OF_NOUGHT;
+                        n_copy1 /= 10;
+                        i--;
+                    }
+                    while (i > 0);
+                /* LOCAL */ }
+            }
+            else
+                free (res);
+        }
+    }
+
+    return res;
+}
+
+running_ok
+set_env_from_user_input (char *env_name, char *input_prompt, int NL_cursor, \
+                         int input_env_value_buff, int reprompt_loop)
+{
+    running_ok function_ok = -1;
+    char env_value[input_env_value_buff];
+
+    fputs (input_prompt, stdout);
+    if (NL_cursor)
+        fputs ("\n", stdout);
+    
+    if (fgets (env_value, sizeof(input_env_value_buff), stdin) == NULL)
+    {
+        fprintf (stderr, "\033[1m%s: \
+Invalid input.\
+\033[0m\n", PROGRAM_NAME);
+        while (reprompt_loop)
+        {
+            set_env_from_user_input (env_name, input_prompt, NL_cursor, input_env_value_buff, reprompt_loop--);
+        }
+        function_ok = false;
+    }
+    else if (!is_path_exists (env_value))
+    {
+        while (reprompt_loop)
+        {
+            set_env_from_user_input (env_name, input_prompt, NL_cursor, input_env_value_buff, reprompt_loop--);
+        }
+        function_ok = false;
+    }
+    else if (setenv (env_name, env_value, 1) != 0)
+    {
+        function_ok = false;
+        raise_unknown_err (PROGRAM_NAME, __FILE__, __LINE__);
+        exit (-1);
+    }
+    else
+        function_ok = true;
+
+    return function_ok;
+}
+
+int
+is_path_exists (char *path_str)
+{
+    int res = 0;
+    int have_permission = 0;
+
+    if ((have_permission = access (path_str, F_OK)) == -1)
+        res = 0;
+    else if (have_permission == 0)
+        res = 1;
+    else
+    {
+        raise_unknown_err (PROGRAM_NAME, __FILE__, __LINE__);
+        exit (-1);
+    }
+
+    return res;
 }
