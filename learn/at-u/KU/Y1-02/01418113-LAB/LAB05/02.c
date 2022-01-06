@@ -25,7 +25,7 @@ int main(void)
                 sum = a + b + c;
                 if (((double) a / (double) c) >= sin(M_PI / 3.0))
                     continue;
-                else if (n == sum && c == (pow ((pow (a, 2.0) + pow (b, 2.0)), 0.5)))
+                else if (n == round(sum) && c == (pow ((pow (a, 2.0) + pow (b, 2.0)), 0.5)))
                 {
                     printf("(%.0lf, %.0lf, %.0lf)\n", a, b, c);
                     return 0;
