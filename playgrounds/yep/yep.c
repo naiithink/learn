@@ -36,8 +36,10 @@ main (int argc, char **argv)
 {
     register running_ok ok = dne;
 
-    if (__APPLE__ && __MACH__ && isa_translated_process ())
-        fprintf (stderr, "\033[1m%s: \033[1;35mWarning:\033[0m This program is currently running as a translated process.\n", PROGRAM_NAME);
+    #if (defined __APPLE__ && defined __MACH__)
+        if (isa_translated_process ())
+            fprintf (stderr, "\033[1m%s: \033[1;35mWarning:\033[0m This program is currently running as a translated process.\n", PROGRAM_NAME);
+    #endif
 
     char *STDOUT_REPORT_PATH = getenv (YEP_REPORT_ENV_NAME);
     
