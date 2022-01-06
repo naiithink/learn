@@ -28,7 +28,7 @@ typedef enum { dne = -1, false, true } running_ok;
 running_ok set_env_from_user_input (char *env_name, char *input_prompt, int NL_cursor, int input_env_value_buff, int reprompt_loop);
 void raise_unknown_err (char *program_name, char *file, int line);
 char *int_to_charptr (int n);
-int is_path_exists (char *path_str);
+int does_path_exists (char *path_str);
 int isa_translated_process (void);
 
 int
@@ -210,7 +210,7 @@ Invalid input.\
         }
         function_ok = false;
     }
-    else if (!is_path_exists (env_value))
+    else if (!does_path_exists (env_value))
     {
         while (reprompt_loop)
         {
@@ -231,7 +231,7 @@ Invalid input.\
 }
 
 int
-is_path_exists (char *path_str)
+does_path_exists (char *path_str)
 {
     int res = 0;
     int have_permission = 0;
