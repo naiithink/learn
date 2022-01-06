@@ -22,7 +22,8 @@
         "stdarg.h": "c",
         "limits.h": "c",
         "types.h": "c",
-        "dir.h": "c"
+        "dir.h": "c",
+        "bitset": "c"
     },
     "jupyter.jupyterServerType": "remote"
 }
