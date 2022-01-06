@@ -23,7 +23,8 @@
         "limits.h": "c",
         "types.h": "c",
         "dir.h": "c",
-        "bitset": "c"
+        "bitset": "c",
+        "ostream": "c"
     },
     "jupyter.jupyterServerType": "remote"
 }
