@@ -1,6 +1,9 @@
+#include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+
+#include "yep.h"
 
 #ifdef __linux__
 #include <linux/limits.h>
@@ -11,9 +14,10 @@
     #endif
 #endif
 
+#define ASCII_OF_NOUGHT '0'
+
 #define PROGRAM_NAME "tester"
 #define PROGRAM_SOURCE "tester.c"
-
 #define YEP_REPORT_ENV_NAME "YEP_REPORT"
 #define EXIT_FAILED_CODE "1"
 
@@ -21,14 +25,13 @@ static int exit_status;
 typedef enum { dne = -1, false, true } running_ok;
 
 running_ok set_env_from_user_input (char *env_name, char *input_prompt, int NL_cursor, int input_env_value_buff, int reprompt_loop);
-int is_number (int n);
-char *int_to_str (int n);
+char *int_to_charptr (int n);
 int is_path_exists (char *path_str);
 
 int
 main (int argc, char **argv)
 {
-    running_ok ok = dne;
+    register running_ok ok = dne;
     char *STDOUT_REPORT_PATH = getenv (YEP_REPORT_ENV_NAME);
     
     if (STDOUT_REPORT_PATH == NULL)
@@ -87,35 +90,59 @@ Next time you run this program, please enter:\n\
     return exit_status = ok ? EXIT_SUCCESS : EXIT_FAILURE;
 }
 
-int
-is_number (int n)
-{
-    int res = 0;
-    int n_size = sizeof (n);
-    
-    switch (n_size)
-    {
-        case sizeof (int):
-        case sizeof (long int):
-        case sizeof (long long):
-        case sizeof (long double):
-
-            break;
-        default:
-            res = 0;
-    }
-
-    return res;
-}
-
 char *
-int_to_str (int n)
+int_to_charptr (int n)
 {
-    char *res;
+    void *res;
 
-    if (n)
-    if (n >= 48 && n <= 57)
-        res = n - 48;
+    if (n && YEP_TYPE(n) >= 1 && YEP_TYPE(n) <= 11)
+    {
+        if (n >= 0 && n <= 9)
+        {
+            char *res = malloc (sizeof(YEP_TYPE_CHAR_PTR) * 2);
+            if (res != NULL)
+            {
+                res[0] = n - ASCII_OF_NOUGHT;
+                res[1] = '\0';
+            }
+            else
+                free (res);
+        }
+        else
+        {
+            int n_copy0 = n, n_copy1 = n, digit_count = 0, sign_char = 0;
+            
+            while (n_copy0)
+            {
+                n_copy0 /= 10;
+                digit_count++;
+            }
+
+            if (n < 0)
+                sign_char = 1;
+
+            int rem = 0;
+            char reversed[digit_count];
+            char *res = malloc ((sizeof(YEP_TYPE_CHAR_PTR) * digit_count) + (sizeof(YEP_TYPE_CHAR_PTR) * sign_char));
+
+            if (res != NULL)
+            {
+                { /* LOCAL */
+                    int i = digit_count;
+                    res[digit_count-1] = '\0';
+                    do
+                    {
+                        reversed[i] = (n_copy1 % 10) - ASCII_OF_NOUGHT;
+                        n_copy1 /= 10;
+                        i--;
+                    }
+                    while (i > 0);
+                /* LOCAL */ }
+            }
+            else
+                free (res);
+        }
+    }
 
     return res;
 }
