@@ -17,7 +17,7 @@
     #endif
 #endif
 
-#define PROGRAM_NAME "tester"
+#define PROGRAM_NAME "yep"
 
 #define YEP_REPORT_ENV_NAME "YEP_REPORT"
 #define ASCII_OF_NOUGHT '0'
