@@ -52,7 +52,7 @@ Error: \
 Destination path for the report file has not been set.\n\
 \033[0m\
 %s needs an existing path on this device where it can write the report file there.\n", PROGRAM_NAME, PROGRAM_NAME);
-        fputs ("Do you want to set it now? [Y/n]: ", stdin);
+        fputs ("Do you want to set it now? [Y/n]: ", stdout);
         if ((SET_ENV_AGREEMENT = fgetc (stdin)) == EOF)
         {
             ok = false;
