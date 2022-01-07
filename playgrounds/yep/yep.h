@@ -41,3 +41,19 @@ enum YEP_TYPE_ID
                                 char *:                     YEP_TYPE_CHAR_PTR,                      \
                                 void *:                     YEP_TYPE_VOID_PTR,                      \
                                 default:                    YEP_TYPE_UNKNOWN_TYPE                   )
+
+#if (defined __APPLE__ && defined __MACH__)
+int
+isa_translated_process (void)
+{
+   int ret = 0;
+   size_t size = sizeof(ret);
+   if (sysctlbyname ("sysctl.proc_translated", &ret, &size, NULL, 0) == -1) 
+   {
+      if (errno == ENOENT)
+         return 0;
+      return -1;
+   }
+   return ret;
+}
+#endif
