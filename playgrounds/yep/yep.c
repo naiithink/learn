@@ -134,7 +134,7 @@ Unknown option: \
 '%c%s'\n\
 \033[0m\
 \n\
-\033[1mExiting with exit code (%d).\033[0m\n", PROGRAM_NAME, SET_ENV_AGREEMENT, soOn, EXIT_FAILURE);
+\033[1mExiting with exit code (%d)...\033[0m\n", PROGRAM_NAME, SET_ENV_AGREEMENT, soOn, EXIT_FAILURE);
                     /* LOCAL */ }
                     ok = false;
             }
