@@ -21,7 +21,7 @@
 
 #define PROGRAM_NAME "yep"
 #define PROGRAM_VERSION "eiei."
-#define VERSION_NOTE "\033[1;34mThis version of yep is currently under development.\033[0;39m"
+#define PROGRAM_VERSION_NOTE "\033[1;34mThis version of yep is currently under development.\033[0;39m"
 
 #define YEP_REPORT_ENV_NAME "YEP_REPORT"
 #define ASCII_OF_NOUGHT '0'
@@ -56,8 +56,8 @@ main (int argc, char **argv)
 {
     register running_ok ok = dne;
 
-    #ifdef VERSION_NOTE
-    fprintf (stderr, "\n%s\n\n", VERSION_NOTE);
+    #ifdef PROGRAM_VERSION_NOTE
+    fprintf (stderr, "\n%s\n\n", PROGRAM_VERSION_NOTE);
     #endif
 
     #ifdef YEP_ISON_MACINTOSH
@@ -151,8 +151,8 @@ raise_unknown_err (char *program_name, char *file, int line)
 InternalError: \
 \033[1;39m\
 An unknown error occurs.\033[0m\n", program_name, file, line);
-    if (VERSION_NOTE)
-        fprintf (stderr, "--\n%s\n", VERSION_NOTE);
+    if (PROGRAM_VERSION_NOTE)
+        fprintf (stderr, "--\n%s\n", PROGRAM_VERSION_NOTE);
 }
 
 char *
