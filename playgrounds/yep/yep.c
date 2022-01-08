@@ -14,6 +14,7 @@
     #if (defined WIN32)
     #define PATH_MAX MAX_PATH
     #elif (defined __APPLE__ && defined __MACH__)
+    #define YEP_ISON_MACINTOSH 1
     #include <sys/sysctl.h>
     #endif
 #endif
@@ -34,7 +35,7 @@ void raise_unknown_err (char *program_name, char *file, int line);
 char *int_to_charptr (int n);
 int does_path_exists (char *path_str);
 
-#if (defined __APPLE__ && defined __MACH__)
+#ifdef YEP_ISON_MACINTOSH
 int
 isa_translated_process (void)
 {
@@ -59,7 +60,7 @@ main (int argc, char **argv)
     fprintf (stderr, "\n%s\n\n", VERSION_NOTE);
     #endif
 
-    #if (defined __APPLE__ && defined __MACH__)
+    #ifdef YEP_ISON_MACINTOSH
     if (isa_translated_process ())
         fprintf (stderr, "\033[1m%s: \033[1;35mWarning:\033[0m This program is currently running as a translated process.\n", PROGRAM_NAME);
     #endif
@@ -121,7 +122,7 @@ Set a destination path for the report file before you can use this program.\n", 
 Error: \
 \033[1;39m\
 Unknown option: \
-\033[0;39m\
+\033[0m\
 '%c'\n\
 \033[0m\
 \n\
