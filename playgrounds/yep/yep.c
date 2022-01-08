@@ -122,9 +122,7 @@ Set a destination path for the report file before you can use this program.\n", 
                     { /* LOCAL */
                         char soOn = "";
                         if (SET_ENV_AGREEMENT_OVER)
-                        {
-                            char *soOn = "...";
-                        }
+                            soOn = "...";
                         fprintf (stderr, "\033[1m%s: \
 \033[1;31m\
 Error: \
