@@ -69,7 +69,7 @@ main (int argc, char **argv)
     
     if (STDOUT_REPORT_PATH == NULL)
     {
-        char SET_ENV_AGREEMENT;
+        char SET_ENV_AGREEMENT, SET_ENV_AGREEMENT_OVER;
         fprintf (stderr, "\033[1m%s: \
 \033[1;31m\
 Error: \
@@ -80,6 +80,8 @@ Destination path for the report file has not been set.\n\
         fputs ("Do you want to set it now? [y/N]: ", stdout);
         if ((SET_ENV_AGREEMENT = fgetc (stdin)) == EOF)
         {
+            if (SET_ENV_AGREEMENT_OVER = fgetc (stdin) == EOF)
+
             ok = false;
             fprintf (stderr, "\033[1m%s: \
 \033[1;31m\
@@ -117,16 +119,23 @@ Set a destination path for the report file before you can use this program.\n", 
                         ok = false;
                     break;
                 default:
-                    fprintf (stderr, "\033[1m%s: \
+                    { /* LOCAL */
+                        char soOn = "";
+                        if (SET_ENV_AGREEMENT_OVER)
+                        {
+                            char *soOn = "...";
+                        }
+                        fprintf (stderr, "\033[1m%s: \
 \033[1;31m\
 Error: \
 \033[1;39m\
 Unknown option: \
 \033[0m\
-'%c'\n\
+'%c%s'\n\
 \033[0m\
 \n\
-\033[1mExiting with exit code (%d).\033[0m\n", PROGRAM_NAME, SET_ENV_AGREEMENT, EXIT_FAILURE);
+\033[1mExiting with exit code (%d).\033[0m\n", PROGRAM_NAME, SET_ENV_AGREEMENT, soOn, EXIT_FAILURE);
+                    /* LOCAL */ }
                     ok = false;
             }
         }
