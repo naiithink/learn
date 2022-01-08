@@ -41,15 +41,3 @@ enum YEP_TYPE_ID
                                 char *:                     YEP_TYPE_CHAR_PTR,                      \
                                 void *:                     YEP_TYPE_VOID_PTR,                      \
                                 default:                    YEP_TYPE_UNKNOWN_TYPE                   )
-
-#ifdef __linux__
-#include <linux/limits.h>
-#else
-#include <limits.h>
-    #if (defined WIN32)
-    #define PATH_MAX MAX_PATH
-    #elif (defined __APPLE__ && defined __MACH__)
-    #define YEP_ISON_MACINTOSH 1
-    #include <sys/sysctl.h>
-    #endif
-#endif
