@@ -1,3 +1,6 @@
+/* Process status */
+typedef enum { dne = -1, false, true } running_ok;
+
 /* Data type */
 enum YEP_TYPE_ID
 {
@@ -44,39 +47,12 @@ enum YEP_TYPE_ID
                                 default:                    YEP_TYPE_UNKNOWN_TYPE                   )
 
 /* File type */
-enum YEP_FILE_TYPE_ID
-{
-    YEP_FILE_TYPE_FIFO,
-    YEP_FILE_TYPE_CHAR_S,
-    YEP_FILE_TYPE_DIR,
-    YEP_FILE_TYPE_BLOCK_S,
-    YEP_FILE_TYPE_SYM_LINK,
-    YEP_FILE_TYPE_SOCK,
-    YEP_FILE_TYPE_WHT_OUT
-};
-
-#define YEP_FILE_TYPE(x) (  (x) ==                              \
-                            S_IFIFO:    YEP_FILE_TYPE_FIFO,     \
-                            S_IFCHR:    YEP_FILE_TYPE_CHAR_S,   \
-                            S_IFDIR:    YEP_FILE_TYPE_DIR,      \
-                            S_IFBLK:    YEP_FILE_TYPE_BLOCK_S,  \
-                            S_IFLNK:    YEP_FILE_TYPE_SYM_LINK, \
-                            S_IFSOCK:   YEP_FILE_TYPE_SOCK,     \
-                            S_IFWHT:    YEP_FILE_TYPE_WHT_OUT   )
-
-/* Jobctl */
-typedef enum { dne = -1, false, true } running_ok;
-
-/* ANSI Escape */
-#define ANSI(x) ()
-
-/* File */
 #define S_IFMT 0170000           /* type of file */
-#define        S_IFIFO  0010000  /* named pipe (fifo) */
-#define        S_IFCHR  0020000  /* character special */
-#define        S_IFDIR  0040000  /* directory */
-#define        S_IFBLK  0060000  /* block special */
-#define        S_IFREG  0100000  /* regular */
-#define        S_IFLNK  0120000  /* symbolic link */
-#define        S_IFSOCK 0140000  /* socket */
-#define        S_IFWHT  0160000  /* whiteout */
+#define     S_IFIFO  0010000     /* named pipe (fifo) */
+#define     S_IFCHR  0020000     /* character special */
+#define     S_IFDIR  0040000     /* directory */
+#define     S_IFBLK  0060000     /* block special */
+#define     S_IFREG  0100000     /* regular */
+#define     S_IFLNK  0120000     /* symbolic link */
+#define     S_IFSOCK 0140000     /* socket */
+#define     S_IFWHT  0160000     /* whiteout */
