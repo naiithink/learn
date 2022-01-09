@@ -24,7 +24,8 @@
         "types.h": "c",
         "dir.h": "c",
         "bitset": "c",
-        "ostream": "c"
+        "ostream": "c",
+        "yep.h": "c"
     },
     "jupyter.jupyterServerType": "remote"
 }

@@ -41,3 +41,5 @@ enum YEP_TYPE_ID
                                 char *:                     YEP_TYPE_CHAR_PTR,                      \
                                 void *:                     YEP_TYPE_VOID_PTR,                      \
                                 default:                    YEP_TYPE_UNKNOWN_TYPE                   )
+
+typedef enum { dne = -1, false, true } running_ok;

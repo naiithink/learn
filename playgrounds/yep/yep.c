@@ -27,10 +27,20 @@
 #define ASCII_OF_NOUGHT '0'
 #define SPACE_CHAR 32
 
+/* Var n Const */
 static int exit_status;
-typedef enum { dne = -1, false, true } running_ok;
 
+typedef struct
+{
+    int type;
+    char *title;
+    char *description;
+}
+not_msg;
+
+/* Func */
 running_ok set_env_from_user_input (char *env_name, char *input_prompt, int NL_cursor, int input_env_value_buff, int reprompt_loop);
+void raise_not_msg (not_msg message, FILE *stream);
 void raise_unknown_err (char *program_name, char *file, int line);
 char *int_to_charptr (int n);
 int does_path_exists (char *path_str);
@@ -80,7 +90,7 @@ Destination path for the report file has not been set.\n\
         fputs ("Do you want to set it now? [y/N]: ", stdout);
         if ((SET_ENV_AGREEMENT = fgetc (stdin)) == EOF)
         {
-            if (SET_ENV_AGREEMENT_OVER = fgetc (stdin) == EOF)
+            if ((SET_ENV_AGREEMENT_OVER = fgetc (stdin)) == EOF)
 
             ok = false;
             fprintf (stderr, "\033[1m%s: \
@@ -120,7 +130,7 @@ Set a destination path for the report file before you can use this program.\n", 
                     break;
                 default:
                     { /* LOCAL */
-                        char soOn = "";
+                        char *soOn = "";
                         if (SET_ENV_AGREEMENT_OVER)
                             soOn = "...";
                         fprintf (stderr, "\033[1m%s: \
@@ -132,7 +142,7 @@ Unknown option: \
 '%c%s'\n\
 \033[0m\
 \n\
-\033[1mExiting with exit code (%d)...\033[0m\n", PROGRAM_NAME, SET_ENV_AGREEMENT, soOn, EXIT_FAILURE);
+\033[1mExiting with exit code (%d).\033[0m\n", PROGRAM_NAME, SET_ENV_AGREEMENT, soOn, EXIT_FAILURE);
                     /* LOCAL */ }
                     ok = false;
             }
@@ -147,6 +157,21 @@ Unknown option: \
         return -1;
     }
     return exit_status = ok ? EXIT_SUCCESS : EXIT_FAILURE;
+}
+
+void
+raise_not_msg (not_msg message, FILE *stream)
+{
+    char *title_format
+    switch (message.type)
+    {
+        case 1:
+            break;
+        default:
+
+    }
+    fprintf (stream, "%s%s: \
+\033", "", PROGRAM_NAME);
 }
 
 void
