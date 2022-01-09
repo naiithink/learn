@@ -2,6 +2,7 @@
 #include <errno.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <sys/stat.h>
 #include <sys/types.h>
 #include <unistd.h>
 
@@ -33,6 +34,36 @@ static int exit_status;
 typedef struct
 {
     int type;
+    char *name;
+    char *parent_dir;
+    char *owner;
+    struct
+    {
+        int r;
+        int w;
+        int x;
+    }
+    permission;
+    int yep_inspected;
+}
+a_file;
+
+typedef enum
+{
+    reset = 39,
+    red = 31,
+    green,
+    cyan,
+    blue,
+    magenta,
+    skyblue,
+    grey,
+}
+tty_clr;
+
+typedef struct
+{
+    int type;
     char *title;
     char *description;
 }
@@ -40,9 +71,11 @@ not_msg;
 
 /* Func */
 running_ok set_env_from_user_input (char *env_name, char *input_prompt, int NL_cursor, int input_env_value_buff, int reprompt_loop);
+void clear_tty (void);
 void raise_not_msg (not_msg message, FILE *stream);
 void raise_unknown_err (char *program_name, char *file, int line);
 char *int_to_charptr (int n);
+int format_w_color_seq (char *msg, tty_clr color);
 int does_path_exists (char *path_str);
 
 #ifdef YEP_ISON_MACINTOSH
@@ -79,7 +112,8 @@ main (int argc, char **argv)
     
     if (STDOUT_REPORT_PATH == NULL)
     {
-        char SET_ENV_AGREEMENT, SET_ENV_AGREEMENT_OVER;
+        char SET_ENV_AGREEMENT;
+        int SET_ENV_AGREEMENT_OVERFLOWN = 0;
         fprintf (stderr, "\033[1m%s: \
 \033[1;31m\
 Error: \
@@ -90,8 +124,7 @@ Destination path for the report file has not been set.\n\
         fputs ("Do you want to set it now? [y/N]: ", stdout);
         if ((SET_ENV_AGREEMENT = fgetc (stdin)) == EOF)
         {
-            if ((SET_ENV_AGREEMENT_OVER = fgetc (stdin)) == EOF)
-
+            SET_ENV_AGREEMENT_OVERFLOWN = 1;
             ok = false;
             fprintf (stderr, "\033[1m%s: \
 \033[1;31m\
@@ -130,19 +163,19 @@ Set a destination path for the report file before you can use this program.\n", 
                     break;
                 default:
                     { /* LOCAL */
-                        char *soOn = "";
-                        if (SET_ENV_AGREEMENT_OVER)
-                            soOn = "...";
+                        char desig_over = '\0';
+                        if (SET_ENV_AGREEMENT_OVERFLOWN)
+                            desig_over = '*';
                         fprintf (stderr, "\033[1m%s: \
 \033[1;31m\
 Error: \
 \033[1;39m\
 Unknown option: \
 \033[0m\
-'%c%s'\n\
+'%c%c'\n\
 \033[0m\
 \n\
-\033[1mExiting with exit code (%d).\033[0m\n", PROGRAM_NAME, SET_ENV_AGREEMENT, soOn, EXIT_FAILURE);
+\033[1mExiting with exit code (%d).\033[0m\n", PROGRAM_NAME, SET_ENV_AGREEMENT, desig_over, EXIT_FAILURE);
                     /* LOCAL */ }
                     ok = false;
             }
@@ -159,16 +192,64 @@ Unknown option: \
     return exit_status = ok ? EXIT_SUCCESS : EXIT_FAILURE;
 }
 
+int
+str_len (char *str)
+{
+    int res = 0;
+
+    if (!str || str == NULL)
+        return res = -1;
+    
+    int i = 0;
+    do
+    {
+        res++;
+        i++;
+    }
+    while (str[i] != '\0');
+
+    return res;
+}
+
+int
+format_w_color_seq (char *msg, tty_clr color)
+{
+    char *res;
+    char *swap;
+    int str_buf = str_len (msg);
+    int buf = (sizeof(char) * 6) + ((sizeof(char) * str_buf) + 1);
+    
+    swap = calloc (1, buf);
+    for (int i = 0; i < buf; i++)
+    {
+        if (i == buf)
+        {
+            /*  */
+            break;
+        }
+
+    }
+
+    return res;
+}
+
+void
+clear_tty (void)
+{
+    fputs ("\033c", stdout);
+}
+
 void
 raise_not_msg (not_msg message, FILE *stream)
 {
-    char *title_format
+    char *title_format;
     switch (message.type)
     {
         case 1:
             break;
         default:
-
+            /* ??? */
+            break;
     }
     fprintf (stream, "%s%s: \
 \033", "", PROGRAM_NAME);
