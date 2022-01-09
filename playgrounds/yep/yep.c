@@ -1,5 +1,10 @@
+/*
+*   Status: Not Done Yet
+*/
+
 #include <ctype.h>
 #include <errno.h>
+#include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/stat.h>
@@ -44,10 +49,12 @@ typedef struct
         int x;
     }
     permission;
-    int yep_inspected;
+    int inspected;
+    FILE *p;
 }
-a_file;
+yep_file;
 
+/* Clb? */
 typedef enum
 {
     reset = 39,
@@ -69,7 +76,7 @@ typedef struct
 }
 not_msg;
 
-/* Func */
+/* Fn */
 running_ok set_env_from_user_input (char *env_name, char *input_prompt, int NL_cursor, int input_env_value_buff, int reprompt_loop);
 void clear_tty (void);
 void raise_not_msg (not_msg message, FILE *stream);
@@ -211,6 +218,7 @@ str_len (char *str)
     return res;
 }
 
+/* 2022-01-09 */
 int
 format_w_color_seq (char *msg, tty_clr color)
 {
@@ -224,10 +232,9 @@ format_w_color_seq (char *msg, tty_clr color)
     {
         if (i == buf)
         {
-            /*  */
+            /* ??? */
             break;
         }
-
     }
 
     return res;
