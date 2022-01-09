@@ -78,11 +78,11 @@ not_msg;
 
 /* Fn */
 running_ok set_env_from_user_input (char *env_name, char *input_prompt, int NL_cursor, int input_env_value_buff, int reprompt_loop);
+running_ok format_w_color_seq (char *msg, tty_clr color);
 void clear_tty (void);
 void raise_not_msg (not_msg message, FILE *stream);
 void raise_unknown_err (char *program_name, char *file, int line);
 char *int_to_charptr (int n);
-int format_w_color_seq (char *msg, tty_clr color);
 int does_path_exists (char *path_str);
 
 #ifdef YEP_ISON_MACINTOSH
@@ -219,10 +219,10 @@ str_len (char *str)
 }
 
 /* 2022-01-09 */
-int
+running_ok
 format_w_color_seq (char *msg, tty_clr color)
 {
-    char *res;
+    running_ok status = dne;
     char *swap;
     int str_buf = str_len (msg);
     int buf = (sizeof(char) * 6) + ((sizeof(char) * str_buf) + 1);
@@ -237,7 +237,7 @@ format_w_color_seq (char *msg, tty_clr color)
         }
     }
 
-    return res;
+    return status;
 }
 
 void
