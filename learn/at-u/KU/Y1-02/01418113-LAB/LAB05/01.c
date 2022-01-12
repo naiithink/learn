@@ -51,7 +51,7 @@ int main(void)
 
     printf("n^2 = %li\n", res);
     if (is_automorphic)
-        printf("Yes. %li is automorphic number.\n", prt);
+        printf("\033[1;31mYes. %li is automorphic number.\033[0;39m\n", prt);
     else
         printf("No. %li is not automorphic number.\n", prt);
 
