@@ -8,7 +8,8 @@ typedef struct
 
 int main(void)
 {
-    test z.a = 'a';
-    test z.b = 'b';
+    test z;
+    z.a = 'a';
+    z.b = 'b';
     printf("%c, %c\n", z.a, z.b);
 }
