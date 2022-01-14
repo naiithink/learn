@@ -278,7 +278,7 @@ An unknown error occurs.\033[0m\n", program_name, file, line);
 char *
 int_to_charptr (int n)
 {
-    void *res;
+    /* pointer */ void *res;
 
     if (n && YEP_TYPE(n) >= 1 && YEP_TYPE(n) <= 11)
     {
