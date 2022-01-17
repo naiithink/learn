@@ -28,6 +28,6 @@
         "yep.h": "c",
         "stat.h": "c"
     },
-    "jupyter.jupyterServerType": "local",
+    "jupyter.jupyterServerType": "remote",
     "python.pythonPath": "/usr/local/bin/python3"
 }
