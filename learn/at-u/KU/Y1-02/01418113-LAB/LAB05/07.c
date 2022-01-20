@@ -8,15 +8,19 @@ int main()
     int a[n][n];
 
     // Assign value to array a
-    /* sec 1 --- */
-
-    /* sec 1 ... */
+    /* */
+    for (i = 0; i < n; i++)
+    {
+        for (j = 0; j < n; j++)
+            a[i][j] = i+j+1;
+    }
+    /* */
 
     // Print all values in array a
-    for (/**/  /**/)
+    for (/* */ i = 0; i < n; i++ /* */)
     {
-        for (/**/  /**/)
-            printf(/**/"  "/**/, a/**/  /**/);
+        for (/* */ j = 0; j < n; j++ /* */)
+            printf(/* */"%2d "/* */, /* */ a[i][j] /* */);
         printf("\n");
     }
     return 0;
