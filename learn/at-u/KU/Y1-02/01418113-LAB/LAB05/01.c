@@ -49,11 +49,11 @@ int main(void)
         is_automorphic = 1;
     }
 
-    printf("n^2 = %li\n", res);
+    printf("n^2 = %lli\n", res);
     if (is_automorphic)
-        printf("\033[1;31mYes. %li is automorphic number.\033[0;39m\n", prt);
+        printf("Yes. %lli is automorphic number.\n", prt);
     else
-        printf("No. %li is not automorphic number.\n", prt);
+        printf("No. %lli is not automorphic number.\n", prt);
 
     return 0;
 }
