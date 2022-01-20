@@ -1,39 +1,47 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include <unistd.h>
 
-#define STDIN_NUM_SIZE 10
+#define STR_IN_SIZE 12
 
 int main(void)
 {
-    char num_str[STDIN_NUM_SIZE];
-    int n = 0, c = 0, b = 0, a = 0, ctl = 1, sine = 0, sum = 0;
+    char n_str[STR_IN_SIZE];
+    unsigned int found = 0, n = 0, c = 0, result[3] = {0, 0, 0};
+    float slope = 0, prop = 0;
 
-    fgets(num_str, sizeof(STDIN_NUM_SIZE), stdin);
-    n = atof(num_str);
+    fgets(n_str, STR_IN_SIZE, stdin);
+    n = atoi(n_str);
 
-    if (n < 0)
-        ctl = -1;
-
-    for (c = 1; c < n; c += ctl)
+    for (unsigned int b = 4; b < n && !found; b++)
     {
-        for (b = 1; b < c; b += ctl)
+        for (unsigned int a = 3; a < b; a++)
         {
-            for (a = 1; a < b; a += ctl)
+            slope = (float)(a) / (float)(b);
+            if (slope >= 1)
+                continue;
+            else
             {
-                sum = a + b + c;
-                if (((int) a / (int) c) >= sin(M_PI / 3.0))
-                    continue;
-                else if (n == round(sum) && c == (pow ((pow (a, 2.0) + pow (b, 2.0)), 0.5)))
+                c = n - (a + b);
+                prop = pow((pow((double)(a), 2.0) + pow((double)(b), 2.0)), 0.5);
+                if (c == prop && (a + b + c) == n)
                 {
-                    printf("(%i, %i, %i)\n", a, b, c);
-                    return 0;
+                    result[0] = a;
+                    result[1] = b;
+                    result[2] = c;
+                    found = 1;
+                    break;
                 }
             }
         }
     }
-    printf("No triple found.\n");
-    
-    return 1;
+
+    if (!found)
+        printf("No triple found.\n");
+    else if (found == 1)
+        printf("(%d, %d, %d)\n", result[0], result[1], result[2]);
+    else
+        return 1;
+
+    return 0;
 }
