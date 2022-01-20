@@ -6,8 +6,8 @@
 
 int main(void)
 {
-    char sym[SYM_CNT+1] = "-O^", hgt_str[STR_IN_SIZE], cstep_str[STR_IN_SIZE], mv_str[STR_IN_SIZE];
-    int hgt = 0, rnd = 0, remain = 0, head_index = 0, new_head_index = 0, cstep = 0, mv = 0;
+    char sym[SYM_CNT+1] = "-O^", hgt_str[STR_IN_SIZE], cstep_str[STR_IN_SIZE];
+    int hgt = 0, rnd = 0, head_index = 0, new_head_index = 0, cstep = 0;
     int sig = 0;
 
     printf("Input number of stairs: ");
@@ -18,7 +18,6 @@ int main(void)
 
     char lad[hgt+1];
     head_index = hgt - 2;
-    remain = hgt - (SYM_CNT - 2);
     
     do
     {
