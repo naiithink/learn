@@ -47,19 +47,24 @@ int main(void)
         {
             if (temp[1] == 'm' || temp[1] == 'M')
             {
-                switch (temp[0])
+                if ((temp[0] < 90 && temp[1] < 90) || (temp[0] > 90 && temp[1] > 90))
                 {
-                    case 'a':
-                    case 'A':
-                        time12.tt = 0;
-                        break;
-                    case 'p':
-                    case 'P':
-                        time12.tt = 1;
-                        break;
-                    default:
-                        return 1;
+                    switch (temp[0])
+                    {
+                        case 'a':
+                        case 'A':
+                            time12.tt = 0;
+                            break;
+                        case 'p':
+                        case 'P':
+                            time12.tt = 1;
+                            break;
+                        default:
+                            return 1;
+                    }
                 }
+                else
+                    return 1;
             }
             else
                 return 1;
@@ -81,9 +86,7 @@ int main(void)
 
     if (time12.hh < 1       \
         || time12.hh > 12   \
-        || time12.mm > 59   \
-        || (time12.hh == 12 \
-        && time12.mm > 0)   )
+        || time12.mm > 59   )
         return 1;
 
     time24 = time12;
