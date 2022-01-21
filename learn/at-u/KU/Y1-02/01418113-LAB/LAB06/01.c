@@ -2,17 +2,8 @@
 #include <stdlib.h>
 
 #define STR_IN_SIZE 12
-#define TEMP_SIZE 3
 
-typedef struct
-{
-    int hh;
-    int mm;
-    int tt;
-}
-time;
-
-int isnum(char c)
+int isnumchar(char c)
 {
     if (c > 47 && c < 58)
         return 1;
@@ -20,83 +11,86 @@ int isnum(char c)
         return 0;
 }
 
+int isupperchar(char c)
+{
+    if (c > 64 && c < 123)
+    {
+        if (c < 91)
+            return 1;
+        else if (c > 96)
+            return 0;
+    }
+    return -1;
+}
+
 int main(void)
 {
-    char time12_str[STR_IN_SIZE], temp[3] = "\0\0";
-    int added = 0;
-    time time12, time24;
-
-    time24.tt = -1;
+    char time12_str[STR_IN_SIZE];
+    char temp_time[5] = "\0\0\0\0";
+    int is_pm = -1, temp_index = 0;
+    unsigned int secs = 0, hh = 0, mm = 0;
+    void *temp_time_hr, *temp_time_min;
 
     printf("Enter a 12-hour time [eg. 12:34 am]: ");
     fgets(time12_str, STR_IN_SIZE, stdin);
 
-    for (int i = 0, temp_index = 0, temp_obj_index = 0; time12_str[i] != '\0'; i++)
+    for (int i = 0; time12_str[i] != '\0'; i++)
     {
-        if (time12_str[i] == ':')
+        if (isnumchar(time12_str[i]))
         {
-            time12.hh = atoi(temp);
-            added++;
+            temp_time[temp_index] = time12_str[i];
+            temp_index++;
         }
         else if (time12_str[i] == 32)
         {
-            time12.mm = atoi(temp);
-            added++;
-        }
-        else if (time12_str[i+1] == '\0')
-        {
-            if (temp[1] == 'm' || temp[1] == 'M')
+            if (time12_str[i+2] == 'm' || time12_str[i+2] == 'M')
             {
-                if ((temp[0] < 90 && temp[1] < 90) || (temp[0] > 90 && temp[1] > 90))
+                switch (time12_str[i+1])
                 {
-                    switch (temp[0])
-                    {
-                        case 'a':
-                        case 'A':
-                            time12.tt = 0;
+                    case 'P':
+                    case 'p':
+                        if (isupperchar(time12_str[i+1]) == isupperchar(time12_str[i+2]))
+                        {
+                            is_pm = 1;
                             break;
-                        case 'p':
-                        case 'P':
-                            time12.tt = 1;
+                        }
+                    case 'A':
+                    case 'a':
+                        if (isupperchar(time12_str[i+1]) == isupperchar(time12_str[i+2]))
+                        {
+                            is_pm = 0;
                             break;
-                        default:
-                            return 1;
-                    }
+                        }
+                    default:
+                        fprintf(stderr, "Unmatched case for `%c%c'.\n", time12_str[i+1], time12_str[i+2]);
+                        exit(1);
+                    break;
                 }
-                else
-                    return 1;
             }
-            else
-                return 1;
-            added++;
-        }
-        else
-        {
-            temp[temp_index] = time12_str[i];
-            temp_index++;
-        }
-
-        if (added)
-        {
-            char *temp = "\0\0";
-            temp_index = 0;
-            added--;
         }
     }
 
-    if (time12.hh < 1       \
-        || time12.hh > 12   \
-        || time12.mm > 59   )
+    if (temp_index < 4)
+    {
+        char *temp_time_min = &temp_time[1];
+        secs += atoi(temp_time_hr) * 3600;
+        temp_time[1] = "\0";
+        char *temp_time_hr = &temp_time[0];
+        secs += atoi(temp_time) * 60;
+    }
+    /*
+    else if (temp_index == 4)
+    {
+        char *temp_time_min = &temp_time[2];
+        char *temp_time_hr = &temp_time[0];
+    }
+    else
         return 1;
+    */
 
-    time24 = time12;
-
-    if (time12.tt && (time24.hh += 12) > 23)
-            time24.hh = 12;
-    else if (!time12.tt && time12.hh == 12)
-            time24.hh = 0;
-
-    printf("Equivalent 24-hour time: %02d:%02d\n", time24.hh, time24.mm);
+    printf("%s\n", (char *)(temp_time_hr));
+    printf("%s\n", (char *)(temp_time_min));
+    printf("%d\n", secs);
 
     return 0;
 }
