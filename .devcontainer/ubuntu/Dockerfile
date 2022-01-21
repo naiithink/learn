@@ -6,23 +6,31 @@ RUN     apt-get update && apt-get -y upgrade &&\
         apt-get install -y python3 python3-dev python3-pip python3-venv &&\
         apt-get install -y nodejs npm
 
-RUN     git clone https://github.com/vim/vim.git
-WORKDIR /vim/src
+RUN     git clone git://sourceware.org/git/binutils-gdb.git /opt/gdb
+WORKDIR /opt/gdb
+RUN     ./configure --prefix=/usr/local &&\
+        make &&\
+        make install
+
+WORKDIR /
+
+RUN     git clone https://github.com/vim/vim.git /opt/vim
+WORKDIR /opt/vim/src
 RUN     make &&\
         make install
 
 WORKDIR /
 
-RUN     git clone git://sourceware.org/git/valgrind.git
-WORKDIR /valgrind
+RUN     git clone git://sourceware.org/git/valgrind.git /opt/valgrind
+WORKDIR /opt/valgrind
 RUN     ./autogen.sh &&\
-        mkdir -p /opt/valgrind &&\
-        ./configure --prefix=/opt/valgrind/ &&\
-        make && make install
+        # ./configure --prefix=/usr/local &&\
+        make &&\
+        make install
 
 WORKDIR /
 
 RUN     echo "" >> /etc/bash.bashrc &&\
         echo "# Custom config" >> /etc/bash.bashrc &&\
-        echo "export PATH="$PATH:/opt/valgrind/bin"" >> /etc/bash.bashrc &&\
-        echo "export alias valgrind="/opt/valgrind/bin/valgrind"" >> /etc/bash.bashrc
+        # echo "export PATH="$PATH:/opt/valgrind/bin"" >> /etc/bash.bashrc &&\
+        # echo "export alias valgrind="/opt/valgrind/bin/valgrind"" >> /etc/bash.bashrc
