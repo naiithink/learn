@@ -20,7 +20,7 @@
             }
         },
         {
-            "name": "Mac",
+            "name": "Darwin",
             "includePath": [
                 "${workspaceFolder}/**"
             ],

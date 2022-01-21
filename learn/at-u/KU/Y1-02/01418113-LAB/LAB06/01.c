@@ -1,96 +1,62 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define STR_IN_SIZE 12
-
-int isnumchar(char c)
-{
-    if (c > 47 && c < 58)
-        return 1;
-    else
-        return 0;
-}
-
-int isupperchar(char c)
-{
-    if (c > 64 && c < 123)
-    {
-        if (c < 91)
-            return 1;
-        else if (c > 96)
-            return 0;
-    }
-    return -1;
-}
+#define STR_IN_SIZE_T 12
 
 int main(void)
 {
-    char time12_str[STR_IN_SIZE];
-    char temp_time[5] = "\0\0\0\0";
-    int is_pm = -1, temp_index = 0;
-    unsigned int secs = 0, hh = 0, mm = 0;
-    void *temp_time_hr, *temp_time_min;
+    char time12_str[STR_IN_SIZE_T];
+    char temp_time12[3][3] = { "\0\0", "\0\0", "\0\0" };
+    int time12[] = { 0, 0, 0 }, time24[] = { 0, 0 };
 
     printf("Enter a 12-hour time [eg. 12:34 am]: ");
-    fgets(time12_str, STR_IN_SIZE, stdin);
+    fgets(time12_str, STR_IN_SIZE_T, stdin);
 
-    for (int i = 0; time12_str[i] != '\0'; i++)
+    for (int i = 0, temp_time12_list = 0, temp_time12_index = 0; time12_str[i] != '\0'; i++)
     {
-        if (isnumchar(time12_str[i]))
+        if (time12_str[i] == ':' || time12_str[i] == 32)
         {
-            temp_time[temp_index] = time12_str[i];
-            temp_index++;
+            temp_time12_list++;
+            temp_time12_index = 0;
+            continue;
         }
-        else if (time12_str[i] == 32)
-        {
-            if (time12_str[i+2] == 'm' || time12_str[i+2] == 'M')
-            {
-                switch (time12_str[i+1])
-                {
-                    case 'P':
-                    case 'p':
-                        if (isupperchar(time12_str[i+1]) == isupperchar(time12_str[i+2]))
-                        {
-                            is_pm = 1;
-                            break;
-                        }
-                    case 'A':
-                    case 'a':
-                        if (isupperchar(time12_str[i+1]) == isupperchar(time12_str[i+2]))
-                        {
-                            is_pm = 0;
-                            break;
-                        }
-                    default:
-                        fprintf(stderr, "Unmatched case for `%c%c'.\n", time12_str[i+1], time12_str[i+2]);
-                        exit(1);
-                    break;
-                }
-            }
-        }
+        temp_time12[temp_time12_list][temp_time12_index] = time12_str[i];
+        temp_time12_index++;
     }
 
-    if (temp_index < 4)
+    switch (temp_time12[2][0])
     {
-        char *temp_time_min = &temp_time[1];
-        secs += atoi(temp_time_hr) * 3600;
-        temp_time[1] = "\0";
-        char *temp_time_hr = &temp_time[0];
-        secs += atoi(temp_time) * 60;
+        case 'A':
+        case 'a':
+            time12[2] = 0;
+            break;
+        case 'P':
+        case 'p':
+            time12[2] = 1;
+            break;
+        default:
+            exit(1);
     }
-    /*
-    else if (temp_index == 4)
-    {
-        char *temp_time_min = &temp_time[2];
-        char *temp_time_hr = &temp_time[0];
-    }
-    else
+
+    time12[0] = atoi(&temp_time12[0][0]);
+    time12[1] = atoi(&temp_time12[1][0]);
+
+    if (time12[0] < 1       \
+        || time12[0] > 12   \
+        || time12[1] < 0    \
+        || time12[1] > 59   )
         return 1;
-    */
+    
+    if (!time12[2])
+    {
+        if ((time24[0] = time12[0]) >= 12)
+            time24[0] = 0;
+    }
+    else if ((time24[0] = time12[0] + 12) >= 24)
+        time24[0] = time12[0];
+    time24[1] = time12[1];
 
-    printf("%s\n", (char *)(temp_time_hr));
-    printf("%s\n", (char *)(temp_time_min));
-    printf("%d\n", secs);
+    printf("Equivalent 24-hour time: %02d:%02d\n", time24[0], time24[1]);
 
     return 0;
 }
