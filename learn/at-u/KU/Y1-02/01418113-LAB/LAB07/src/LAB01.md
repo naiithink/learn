@@ -12,6 +12,10 @@
 - [GNU Compiler Collection](#gnu-compiler-collection-\(GCC\))
 - [Visual Studio Code](#visual-studio-code)
 - [The C Programming Language](#the-c-programming-language)
+- [Variable Declaration](#variable-declaration)
+- [Operators in C](#operators-in-c)
+
+[comment]: <body>
 
 ## Command Line Interface
 
@@ -32,7 +36,7 @@
 ```c
 #include <stdio.h>          // Header file ที่ใช้ในโปรแกรมนี้
 
-int main()                  // ประกาศฟังก์ชัน `main' และกำหนด return type
+int main()                  // ประกาศฟังก์ชัน `main' ที่มี return type เป็น `integer`
 {
     /* Instructions */      // Instruction สำหรับฟังก์ชัน `main'
 
@@ -45,13 +49,13 @@ int main()                  // ประกาศฟังก์ชัน `main'
 **Include Header File(s)**
 
 ```
-#include <header file ที่จะใช้ในโปรแกรมนี้>
+#include <header_file>
 ```
 
 **Declaration of `main`**
 
 ```
-<return type> main
+<return_type> main
 ```
 
 return type ของ `main` ควรจะเป็น `int`<br>
@@ -67,3 +71,45 @@ return type ของ `main` ควรจะเป็น `int`<br>
     return [value];
 }
 ```
+
+## Variable Declaration
+
+```
+<datatype> <var_name> [= <value>];
+```
+
+> หากเรา declare ตัวแปรภายใน `main` โดยที่ไม่ได้ assign ค่าใด ๆ ให้ ค่าของตัวแปรจะเป็น garbage value
+
+## Operators in C
+
+### Unary Operator
+
+`!` not
+
+### Binary Operator
+
+| Operator | Description |
+| :------: | :---------- |
+| `+`      | addition    |
+| `-`      | subtraction |
+| `*`      | multiplication |
+| `/`      | division    |
+| `=`      | assignment  |
+| `&`      | bitwise and |
+| `\|`     | bitwise or  |
+| `>>, <<` | bit shifting |
+
+[comment]: <footer>
+
+<br>
+
+---
+
+<table width="100%">
+    <td><div class="foot-previous">
+        <a href="/contents.md"><b>&#x2190; Contents</b><br>Table of Contents</a>
+    </div></td>
+    <td><div class="foot-next">
+        <a href="/src/LAB02.md"><b>LAB02 &#x2192;</b><br>Input, Output, and Control Flow</a>
+    </div></td>
+</table>
