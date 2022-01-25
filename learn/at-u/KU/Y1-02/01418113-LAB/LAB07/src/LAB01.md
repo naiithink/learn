@@ -9,7 +9,7 @@
 ## Jump to...
 
 - [Command Line Interface](#command-line-interface)
-- [GNU Compiler Collection](#gnu-compiler-collection-\(GCC\))
+- [GNU Compiler Collection](#gnu-compiler-collection)
 - [Visual Studio Code](#visual-studio-code)
 - [The C Programming Language](#the-c-programming-language)
 - [Variable Declaration](#variable-declaration)
@@ -21,7 +21,7 @@
 
 **Command Line** คือ สิ่งที่ไว้ใช้สั่งงานคอมพิวเตอร์ผ่านทางการสั่งคำสั่ง ทีละบรรทัด
 
-## GNU Compiler Collection (GCC)
+## GNU Compiler Collection
 
 **GCC** คือ สิ่งที่ใช้สร้างไฟล์ binary หรือ machine code จาก source code และ library ต่าง ๆ – compilation
 
