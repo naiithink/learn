@@ -5,8 +5,9 @@ ARG VARIANT="hirsute"
 FROM mcr.microsoft.com/vscode/devcontainers/base:0-${VARIANT}
 
 # [Optional] Uncomment this section to install additional OS packages.
-RUN     apt-get update && export DEBIAN_FRONTEND=noninteractive \
-        && apt-get -y install --no-install-recommends clang-format clang-tidy clang-tools clang clangd libc++-dev libc++1 libc++abi-dev libc++abi1 libclang-dev libclang1 liblldb-dev libllvm-ocaml-dev libomp-dev libomp5 lld lldb llvm-dev llvm-runtime llvm python3-clang
+RUN     apt-get update && export DEBIAN_FRONTEND=noninteractive &&\
+        #--no-install-recommends
+        apt-get -y install clang-format clang-tidy clang-tools clang clangd libc++-dev libc++1 libc++abi-dev libc++abi1 libclang-dev libclang1 liblldb-dev libllvm-ocaml-dev libomp-dev libomp5 lld lldb llvm-dev llvm-runtime llvm python3-clang
 
 RUN     git clone https://github.com/vim/vim.git /usr/local/src/vim
 RUN     cd /usr/local/src/vim/src &&\
