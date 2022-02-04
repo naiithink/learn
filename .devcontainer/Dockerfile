@@ -16,12 +16,3 @@ RUN     mkdir /usr/local/src/valgrind &&\
         ./usr/local/src/valgrind/configure &&\
         make -C /usr/local/src/valgrind &&\
         make -C /usr/local/src/valgrind install
-
-# RUN     git clone git://sourceware.org/git/valgrind.git
-# WORKDIR /usr/local/src/valgrind
-# RUN     ./autogen.sh &&\
-#         mkdir -p /opt/valgrind &&\
-#         ./configure --prefix=/opt/valgrind/ &&\
-#         make && make install
-# 
-# WORKDIR /
