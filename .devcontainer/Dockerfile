@@ -12,7 +12,7 @@ RUN     apt-get update && export DEBIAN_FRONTEND=noninteractive &&\
 # valgrind
 RUN     mkdir /usr/local/src/valgrind &&\
         git clone git://sourceware.org/git/valgrind.git /usr/local/src/valgrind &&\
-        ./usr/local/src/valgrind/autogen.sh &&\
+        # ./usr/local/src/valgrind/autogen.sh &&\
         ./usr/local/src/valgrind/configure &&\
         make -C /usr/local/src/valgrind &&\
         make -C /usr/local/src/valgrind install
