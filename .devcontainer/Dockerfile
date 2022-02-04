@@ -6,16 +6,22 @@ FROM --platform=linux/amd64 mcr.microsoft.com/vscode/devcontainers/base:0-${VARI
 
 # [Optional] Uncomment this section to install additional OS packages.
 RUN     apt-get update && export DEBIAN_FRONTEND=noninteractive &&\
+        apt-get -y install build-essential libtool-bin libncurses-dev libc6-dbg &&\
         apt-get -y install clang-format clang-tidy clang-tools clang clangd libc++-dev libc++1 libc++abi-dev libc++abi1 libclang-dev libclang1 liblldb-dev libllvm-ocaml-dev libomp-dev libomp5 lld lldb llvm-dev llvm-runtime llvm python3-clang
 
 # valgrind
-WORKDIR /usr/local/src
+RUN     mkdir /usr/local/src/valgrind &&\
+        git clone git://sourceware.org/git/valgrind.git /usr/local/src/valgrind &&\
+        ./usr/local/src/valgrind/autogen.sh &&\
+        ./usr/local/src/valgrind/configure &&\
+        make -C /usr/local/src/valgrind &&\
+        make -C /usr/local/src/valgrind install
 
-RUN     git clone git://sourceware.org/git/valgrind.git
-WORKDIR /usr/local/src/valgrind
-RUN     ./autogen.sh &&\
-        mkdir -p /opt/valgrind &&\
-        ./configure --prefix=/opt/valgrind/ &&\
-        make && make install
-
-WORKDIR /
+# RUN     git clone git://sourceware.org/git/valgrind.git
+# WORKDIR /usr/local/src/valgrind
+# RUN     ./autogen.sh &&\
+#         mkdir -p /opt/valgrind &&\
+#         ./configure --prefix=/opt/valgrind/ &&\
+#         make && make install
+# 
+# WORKDIR /
