@@ -19,10 +19,3 @@ RUN     apt-get update && apt-get -y upgrade \
         && apt-get install -y valgrind \
         && apt-get install -y python3 python3-dev python3-pip python3-venv \
         && apt-get install -y nodejs npm
-
-# vim
-ARG     PKG_DIR="vim"
-RUN     mkdir -p ${SRC_DIR}/${PKG_DIR} \
-        && git clone https://github.com/vim/vim.git ${SRC_DIR}/${PKG_DIR} \
-        && make -C ${SRC_DIR}/${PKG_DIR} \
-        && make -C ${SRC_DIR}/${PKG_DIR} install
