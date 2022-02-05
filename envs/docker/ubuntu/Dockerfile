@@ -1,8 +1,10 @@
 FROM    ubuntu:20.04
 
 # buildx
-ARG     TARGETPLATFORM=linux/amd64 \
-        MAINTAINER="naiithink" \
+ARG     TARGETPLATFORM=linux/amd64
+
+# build info
+ARG     MAINTAINER="naiithink" \
         DOCKERFILE_UPDATE="2022-02-05, 21:50 GMT+07" \
         MAINTAINER_MSG=":D"
 
