@@ -1,43 +1,36 @@
+# buildx - uncomment the line below to specify a target platform
+# ARG     TARGETPLATFORM="linux/amd64"
+
+# build info
 FROM    ubuntu:20.04
+LABEL   os=${TARGETOS} \
+        variant=${TARGETVARIANT} \
+        build-platform=${BUILDPLATFORM} \
+        target-platform=${TARGETPLATFORM} \
+        maintainer="naiithink" \
+        dockerfile_update="2022-02-05" \
+        maintainer-message=":D"
 
-ENV     DEBIAN_FRONTEND=noninteractive
+# build time
+ARG     SRC_DIR=/home/src \
+        DEBIAN_FRONTEND=noninteractive
 
-RUN     apt-get yes | unminimize &&\
-        apt-get update && apt-get -y upgrade &&\
-        apt-get install -y automake autotools-dev build-essential libtool-bin libncurses-dev libc6-dbg &&\
-        apt-get install -y git &&\
-        apt-get install -y python3 python3-dev python3-pip python3-venv &&\
-        apt-get install -y nodejs npm
+# general packages
+RUN     apt-get yes | unminimize \
+        && apt-get update && apt-get -y upgrade \
+        && apt-get install -y --no-install-recommends build-essential libtool-bin libncurses-dev libc6-dbg \
+        && apt-get install -y --no-install-recommends git
 
-#llvm-project
-RUN     apt-get install -y clang-format clang-tidy clang-tools clang clangd libc++-dev libc++1 libc++abi-dev libc++abi1 libclang-dev libclang1 liblldb-dev libllvm-ocaml-dev libomp-dev libomp5 lld lldb llvm-dev llvm-runtime llvm python3-clang
+# more packages
+RUN     apt-get update && apt-get -y upgrade \
+        && apt-get install -y clang-format clang-tidy clang-tools clang clangd libc++-dev libc++1 libc++abi-dev libc++abi1 libclang-dev libclang1 liblldb-dev libllvm-ocaml-dev libomp-dev libomp5 lld lldb llvm-dev llvm-runtime llvm python3-clang \
+        && apt-get install -y valgrind \
+        && apt-get install -y python3 python3-dev python3-pip python3-venv \
+        && apt-get install -y nodejs npm
 
-# WORKDIR /usr/local/src
-
-# RUN     git clone https://github.com/vim/vim.git
-# WORKDIR /usr/local/src/vim/src
-# RUN     make &&\
-#         make install
-
-WORKDIR /usr/local/src
-
-RUN     git clone https://github.com/vim/vim.git
-WORKDIR /usr/local/src/vim/src
-RUN     make &&\
-        make install
-
-WORKDIR /usr/local/src
-
-RUN     git clone git://sourceware.org/git/valgrind.git
-WORKDIR /usr/local/src/valgrind
-RUN     ./autogen.sh &&\
-        mkdir -p /opt/valgrind &&\
-        ./configure --prefix=/opt/valgrind/ &&\
-        make && make install
-
-WORKDIR /
-
-RUN     echo "" >> /etc/bash.bashrc &&\
-        echo "# Custom Configs" >> /etc/bash.bashrc &&\
-        echo "export PATH=\"$PATH:/opt/valgrind/bin\"" >> /etc/bash.bashrc &&\
-        echo "alias valgrind=\"/opt/valgrind/bin/valgrind\"" >> /etc/bash.bashrc
+# vim
+ARG     PKG_DIR="vim"
+RUN     mkdir -p ${SRC_DIR}/${PKG_DIR} \
+        && git clone https://github.com/vim/vim.git ${SRC_DIR}/${PKG_DIR} \
+        && make -C ${SRC_DIR}/${PKG_DIR} \
+        && make -C ${SRC_DIR}/${PKG_DIR} install
