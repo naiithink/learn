@@ -37,7 +37,9 @@
             ...
         ... [ '/' ]$*
     projects/
-        ... [ '/' ]$    // private project repositories
+        ... [ '/' ]$    // mountable private repositories
+    sprojects/
+        ... [ '/' ]$    // unmountable private repositories
     usr/
         bin/
             ... [ '*' | '/' -> '*' ]$
