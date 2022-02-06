@@ -13,6 +13,7 @@
     entries/
         lambda/
             ...
+        projects@ -> ~/projects
         ... [ '@' | '/' ]$    // mount point
     etc/
         docker/
