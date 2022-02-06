@@ -1,4 +1,3 @@
-```
 ~/
     etc/
         docker/
@@ -12,7 +11,7 @@
         videos/
             ...
     src/
-        ... (by orgs)
+        ... <by orgs>
     var/
         lambda/
         templates/
@@ -23,11 +22,10 @@
     volumes/
         mountable/
             git/
-                ... (repos)
+                ... <repos>
             packages/
-                ... (by orgs)
+                ... <by orgs>
             projects/
                 ...
         private/
             ...
-```
