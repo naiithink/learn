@@ -37,6 +37,8 @@
         videos/
             ...
         ... [ '/' ]$*
+    mnt/
+        ... [ '/' ]$    // mount point for cloud storage and virtual drive
     projects/
         ... [ '/' ]$    // mountable private repositories
     sprojects/
