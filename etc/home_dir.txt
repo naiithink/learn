@@ -1,0 +1,61 @@
+`ls -F`
+
+'/'     directory
+'*'     executable
+'@'     symbolic link
+'='     socket
+'%'     whiteout
+'|'     FIFO
+
+---
+
+~/
+    entries/
+        lambda/
+            ...
+        ... [ '@' | '/' ]$    // mount point
+    etc/
+        docker/
+            build/
+                ... [ '/' ]$
+            ... [ '/' ]$*
+        obs/
+            profiles/
+                ...
+            scenes/
+                ...
+            ... [ '/' ]$*
+        ... [ '/' ]$
+    files/
+        music/
+            ...
+        pictures/
+            ...
+        screenshots/
+            ...
+        videos/
+            ...
+        ... [ '/' ]$*
+    projects/
+        ... [ '/' ]$    // private project repositories
+    usr/
+        bin/
+            ... [ '*' | '/' -> '*' ]$
+        include/
+            ...
+        lib/
+            ...
+        libexec/
+            ...
+        share/
+            ...
+    var/
+        src/
+            ... [ '/' ]$    // named by orgs
+        templates/
+            email/
+                ...
+            office/
+                ...
+        ... [ '/' ]$
+    ...
