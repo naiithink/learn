@@ -1,25 +1,27 @@
 ```
 ~/
-    configs/
-        OBS/
-            ...
-    hope/
-        containers/
-            Docker/
+    etc/
+        docker/
+            build/
                 ...
-        lambda/
-    media/
+        obs/
+            ...
+    multimedia/
+        pictures/
+            ...
         videos/
             ...
-    sources/
+    src/
         ... (by orgs)
-    templates/
-        email/
-            ...
-        office/
-            ...
+    var/
+        lambda/
+        templates/
+            email/
+                ...
+            office/
+                ...
     volumes/
-        moutable/
+        mountable/
             git/
                 ... (repos)
             packages/
