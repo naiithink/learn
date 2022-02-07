@@ -4,7 +4,7 @@
 # build info
 FROM    ubuntu:20.04
 LABEL   maintainer="naiithink" \
-        dockerfile_update="2022-02-05" \
+        dockerfile_update="2022-02-07" \
         maintainer-message=":D"
 
 # build time
