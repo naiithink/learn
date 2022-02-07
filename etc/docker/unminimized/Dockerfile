@@ -3,11 +3,7 @@
 
 # build info
 FROM    ubuntu:20.04
-LABEL   os=${TARGETOS} \
-        variant=${TARGETVARIANT} \
-        build-platform=${BUILDPLATFORM} \
-        target-platform=${TARGETPLATFORM} \
-        maintainer="naiithink" \
+LABEL   maintainer="naiithink" \
         dockerfile_update="2022-02-05" \
         maintainer-message=":D"
 
