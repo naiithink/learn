@@ -20,7 +20,7 @@ docker run \
 --mount type=bind,source=/Users/naiithink/entries,target=/mnt \
 --mount type=bind,source="$(readlink /Users/naiithink/entries/projects)",target=/mnt/projects \
 --mount type=bind,source="$(readlink /Users/naiithink/entries/terminal)",target=/mnt/terminal \
-<image>
+<image> \
 ```
 
 ---
