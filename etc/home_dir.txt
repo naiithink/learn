@@ -14,6 +14,7 @@
         lambda/
             ...
         projects@ -> ~/projects
+        terminal@ -> ~/terminal
         ... [ '@' | '/' ]$    // mount point
     etc/
         docker/
@@ -43,6 +44,8 @@
         ... [ '/' ]$    // mountable private repositories
     sprojects/
         ... [ '/' ]$    // unmountable private repositories
+    terminal/
+        ...    // shared area between host and VMs
     usr/
         bin/
             ... [ '*' | '/' -> '*' ]$
