@@ -2,7 +2,6 @@
 
 int main(void)
 {
-    // int VOWEL[] = { 97, 101, 105, 111, 117 };
     char sbuff[255];
     char svowl[255];
     char s = '\0';
@@ -36,8 +35,9 @@ int main(void)
 
     for (int i = 0; svowl[i] != '\0'; i++)
     {
-        if (found[i])
-            printf("%c ", vowel[i] + 32);
+        // if (found[i])
+        //     printf("%c ", vowel[i] + 32);
+        printf("%c ", svowl[i]);
     }
     printf("\n");
     printf("This string contains %d vowel%c.\n", count, s);
