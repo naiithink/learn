@@ -21,23 +21,19 @@ int main(void)
             {
                 svowl[k] = sbuff[i];
                 k++;
-                if (!found[j])
-                {
-                    found[j] = 1;
-                    count++;
-                    if (count > 1)
-                        s = 's';
-                }
+                found[j] = 1;
+                count++;
+                if (count > 1)
+                    s = 's';
             }
         }
     }
     svowl[k+1] = '\0';
 
-    for (int i = 0; svowl[i] != '\0'; i++)
+    for (int i = 0; i < 5; i++)
     {
-        // if (found[i])
-        //     printf("%c ", vowel[i] + 32);
-        printf("%c ", svowl[i]);
+        if (found[i])
+            printf("%c ", vowel[i] + 32);
     }
     printf("\n");
     printf("This string contains %d vowel%c.\n", count, s);
