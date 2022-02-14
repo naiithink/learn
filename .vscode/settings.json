@@ -27,7 +27,6 @@
         "ostream": "c",
         "yep.h": "c",
         "stat.h": "c",
-        "05.C": "cpp"
     },
     "jupyter.jupyterServerType": "local",
     "python.pythonPath": "/usr/local/bin/python3"
