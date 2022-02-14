@@ -10,6 +10,7 @@ ARG     SRC_DIR=/home/src \
 
 # general packages
 RUN     apt-get update && apt-get -y upgrade \
+        && apt-get install -y gnupg2 \
         && apt-get install -y --no-install-recommends build-essential ca-certificates libtool-bin libncurses-dev libc6-dbg
 
 # more packages
