@@ -30,8 +30,7 @@
 		"ms-vscode.live-server",
 		"ms-vsliveshare.vsliveshare-pack",
 		"ms-python.python",
-		"ms-python.vscode-pylance",
-		"ms-vscode.powershell"
+		"ms-python.vscode-pylance"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
@@ -48,6 +47,5 @@
 		"github-cli": "latest",
 		"node": "lts",
 		"python": "3.10",
-		"powershell": "7.1"
 	}
 }
