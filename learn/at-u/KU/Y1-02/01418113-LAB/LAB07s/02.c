@@ -2,30 +2,22 @@
 
 int remove_vowel(char *str)
 {
-    size_t size = sizeof(str);
-    char temp[size];
-    int temp_ind = 0;
     int vowel[] = { 65, 69, 73, 79, 85, 97, 101, 105, 111, 117 };
+    int new_i = 0;
 
     for (int i = 0; str[i] != '\0'; i++)
     {
-        for (int j = 0, n = sizeof(vowel)/sizeof(int), found = 0; j < n && !found; j++)
+        for (int j = 0, n = (sizeof(vowel)/sizeof(int))+1, found = 0; j < n && !found; j++)
         {
-            if (str[i] == vowel[j])
-                continue;
-            else
-            {
-                temp[temp_ind] = str[i];
-                temp_ind++;
+            if ((j+1) == n)
+                str[new_i++] = str[i];
+            else if (str[i] == vowel[j])
                 found = 1;
-            }
         }
     }
-    temp[temp_ind] = '\0';
+    str[new_i] = '\0';
 
-    printf(">> %s\n", temp);
-
-    return 0;
+    return 1;
 }
 
 int main()
