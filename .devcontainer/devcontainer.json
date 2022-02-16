@@ -1,31 +1,31 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.217.1/containers/ubuntu
 {
-	/* COMPOSE */
-	"name": "compose/ubuntu",
-	"dockerComposeFile": "compose/docker-compose.yml",
-	"service": "ubuntu",
-	"shutdownAction": "stopCompose",
-	"runServices": [
-		"ubuntu",
-		"jupyter"
-	],
-	"workspaceFolder": "/",
+	/* BUILD */
+	"name": "ubuntu",
+	"build": {
+		"dockerfile": "dev/Dockerfile",
+		// Update 'VARIANT' to pick an Ubuntu version: hirsute, focal, bionic
+		// Use hirsute or bionic on local arm64/Apple Silicon.
+		"args": {
+			"VARIANT": "hirsute"
+		}
+	},
+	"containerEnv": {
+		"CC": "clang",
+		"CFLAGS": "-g"
+	},
 
-	// /* BUILD */
-	// "name": "ubuntu",
-	// "build": {
-	// 	"dockerfile": "dev/Dockerfile",
-	// 	// Update 'VARIANT' to pick an Ubuntu version: hirsute, focal, bionic
-	// 	// Use hirsute or bionic on local arm64/Apple Silicon.
-	// 	"args": {
-	// 		"VARIANT": "hirsute"
-	// 	}
-	// },
-	// "containerEnv": {
-	// 	"CC": "clang",
-	// 	"CFLAGS": "-g"
-	// },
+	// /* COMPOSE */
+	// "name": "compose/ubuntu",
+	// "dockerComposeFile": "compose/docker-compose.yml",
+	// "service": "ubuntu",
+	// "shutdownAction": "stopCompose",
+	// "runServices": [
+	// 	"ubuntu",
+	// 	"jupyter"
+	// ],
+	// "workspaceFolder": "/",
 
 	// Set *default* container specific settings.json values on container create.
 	"settings": {
