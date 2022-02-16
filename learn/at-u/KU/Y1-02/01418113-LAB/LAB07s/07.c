@@ -7,6 +7,9 @@ void roman2arabic(char input[],char output[])
 
     for (int i = 0, o = 0, prev = 0, curr = 0, sum = 0; input[i] != '\0'; i++)
     {
+        if (!vdating)
+            output[o++] = input[i];
+        
         switch (input[i])
         {
             case 32:
@@ -17,14 +20,13 @@ void roman2arabic(char input[],char output[])
                 if (sum)
                 {
                     output[o++] = sum + 48;
-                    output[o++] = 32;
+                    // output[o++] = 32;
                     curr = 0;
                     sum = 0;
                     prev = 0;
                 }
-                else
-                    output[o++] = input[i];
-                break;
+                output[o++] = input[i];
+                continue;
             case 'I':
                 curr = 1;
                 break;
