@@ -30,7 +30,8 @@
 		"ms-vscode.live-server",
 		"ms-vsliveshare.vsliveshare-pack",
 		"ms-python.python",
-		"ms-python.vscode-pylance"
+		"ms-python.vscode-pylance",
+		"ms-azuretools.vscode-docker"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
