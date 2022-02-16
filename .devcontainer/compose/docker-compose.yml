@@ -2,8 +2,11 @@ version: "3.9"
 
 services:
   ubuntu:
-    build: ubuntu
+    build:
+      context: ./ubuntu
+    command: /bin/sh -c "while sleep 1000; do :; done"
   jupyter:
-    build: jupyter
+    build:
+      context: ./jupyter
     ports:
       - 5001:8888
