@@ -2,8 +2,8 @@ version: "3.9"
 
 services:
   ubuntu:
-    build: /.devcontainer/ubuntu
+    build: ubuntu
   jupyter:
-    build: /.devcontainer/jupyter-lab
+    build: jupyter
     ports:
       - 5001:8888
