@@ -2,78 +2,59 @@
 
 void roman2arabic(char input[],char output[])
 {
-    char ch = '\0';
-    char buf[80];
-    int grep = 1;
-    int prev = 0;
-    int curr = 0;
-    int sum = 0;
+    int oi = 0;
 
-    for (int i = 0, bufi = 0, oi = 0; input[i] != '\0'; i++)
+    for (int i = 0, grep = 1, curr = 0, sum = 0, ni = 0, nv = 0; input[i] != '\0'; i++, grep = 1)
     {
-        ch = input[i];
-
-        if (ch == 32 || input[i+1] == '\0')
+        switch (input[i])
         {
-            buf[bufi++] = ch;
-            buf[bufi] = '\0';
-            printf(":: %s\n", buf);
-            if (!grep)
-            {
-                for (int j = 0; j < bufi; j++)
-                    output[oi++] = buf[j];
-                bufi = 0;
-            }
-            else
-            {
-                printf(">> %d\n", sum);
-                output[oi++] = sum + 48;
-                grep = !grep;
-                sum = 0;
-            }
-            if (input[i+1] == '\0')
-            {
-                // if (!grep)
-                //     output[oi++] = ch;
-                output[oi] = '\0';
+            case 'I':
+                curr = 1;
+                ni++;
                 break;
-            }
-            // output[oi++] = 32;
-            buf[0] = '\0';
-            grep = 1;
+            case 'V':
+                curr = 5;
+                nv++;
+                break;
+            case 'X':
+                curr = 10;
+                break;
+            default:
+                grep = 0;
         }
-        else
-        {
-            switch (ch)
-            {
-                case 'I':
-                    curr = 1;
-                    break;
-                case 'V':
-                    curr = 5;
-                    break;
-                case 'X':
-                    curr = 10;
-                    break;
-                default:
-                    if (grep)
-                        grep = !grep;
-                    buf[bufi++] = ch;
-            }
 
-            if (grep)
+        if (grep)
+        {
+            if (curr > sum || ni > 3 || nv > 1)
             {
-                if (!prev)
-                    prev = curr;
-                if (curr > prev)
+                if (sum == 1)
                     sum = curr - sum;
                 else
-                    sum += curr;
+                {
+                    output[oi++] = sum + 48;
+                    sum = curr;
+                }
             }
-
-            // buf[bufi++] = ch;
+            else
+                sum += curr;
+            if (input[i+1] == '\0')
+            {
+                if (sum)
+                    output[oi++] = sum + 48;
+                else
+                    output[oi++] = input[i];
+            }
         }
+        else if (sum)
+        {
+            output[oi++] = sum + 48;
+            output[oi++] = input[i];
+            sum = 0;
+        }
+        else
+            output[oi++] = input[i];
     }
+    output[oi] = '\0';
 }
 
 int main()

@@ -2,31 +2,12 @@
 
 void roman2arabic(char input[],char output[])
 {
-    int grep = 0;
-    int vdating = 1;
+    int oi = 0;
 
-    for (int i = 0, o = 0, prev = 0, curr = 0, sum = 0; input[i] != '\0'; i++)
+    for (int i = 0, grep = 1, curr = 0, prev = 0, sum = 0; input[i] != '\0'; i++)
     {
-        if (!vdating)
-            output[o++] = input[i];
-        
         switch (input[i])
         {
-            case 32:
-                if (!vdating)
-                    vdating = !vdating;
-                if (grep)
-                    grep = !grep;
-                if (sum)
-                {
-                    output[o++] = sum + 48;
-                    // output[o++] = 32;
-                    curr = 0;
-                    sum = 0;
-                    prev = 0;
-                }
-                output[o++] = input[i];
-                continue;
             case 'I':
                 curr = 1;
                 break;
@@ -37,32 +18,41 @@ void roman2arabic(char input[],char output[])
                 curr = 10;
                 break;
             default:
-                output[o++] = input[i];
+                grep = 0;
         }
 
-        if (vdating && curr)
-            grep = 1;
-        else
-            vdating = !vdating;
-        
-        if (grep)
+        grep *= curr;
+
+        if (grep || input[i+1] == '\0')
         {
             if (!prev)
                 prev = curr;
-            if (curr > prev)
-                sum = curr - sum;
-            else
+            if (curr > sum)
+            {
+                if (sum == 1)
+                    sum = curr - sum;
+                else
+                {
+                    output[oi++] = sum + 48;
+                    sum = 0;
+                    grep = 1;
+                }
+            }
+            else if (curr)
                 sum += curr;
-            prev = curr;
-            curr = 0;
-        }
+            else
 
-        if (input[i+1] == '\0' && sum)
-        {
-            output[o++] = sum + 48;
-            output[o] = '\0';
         }
+        else if (sum)
+        {
+            output[oi++] = sum + 48;
+            sum = 0;
+            grep = 1;
+        }
+        else
+            output[oi++] = input[i];
     }
+    output[oi] = '\0';
 }
 
 int main()
