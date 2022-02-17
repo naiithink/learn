@@ -5,7 +5,7 @@ void roman2arabic(char input[],char output[])
     char buf[80];
     int oi = 0;
 
-    for (int i = 0, size = 0, bufi = 0, sum = 0, len = 0; input[i] != '\0'; i++)
+    for (int i = 0, size = 0, bufi = 0, sum = 0, len = 0; input[i] != '\0'; i++, sum = 0)
     {
         if (input[i] == 32 || input[i+1] == '\0')
         {
@@ -36,7 +36,7 @@ void roman2arabic(char input[],char output[])
 
                 if (!prev)
                     prev = curr;
-                if (curr > prev && curr - sum == 1)
+                if (curr > prev && prev == 1)
                     sum = curr - sum;
                 else
                     sum += curr;
@@ -46,7 +46,6 @@ void roman2arabic(char input[],char output[])
             if (sum && sum <= 9)
             {
                 output[oi++] = sum + 48;
-                if (!(input[i+1] == '\0'))
                     output[oi++] = 32;
             }
             else
