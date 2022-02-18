@@ -3,24 +3,24 @@
 typedef enum { SUN, MON, TUE, WED, THU, FRI, SAT } DayOfWeek;
 
 DayOfWeek findDayOfWeek(int day, int month) {
+    int d = 1;
     int aWeek = 7;
     int mi = 0;
-    int wptr = 2;
+    int wptr = 1;
     int aMon[] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31 };
 
-    for (int m = 1; m < month; m++)
+    for (int m = 1, monthlim = month + 1; m < monthlim; m++)
     {
-        for (int d = 1, daylim = aMon[mi++]; d < daylim && d < day; d++)
+        for (int d = 1, daylim = aMon[mi++] + 1; d < daylim; d++)
         {
             wptr++;
             if (wptr >= aWeek)
                 wptr = 0;
-            printf("%d\n", );
+            if (d == day && m == month)
+                return wptr;
         }
         d = 1;
     }
-
-    return wptr;
 }
 
 int main()
