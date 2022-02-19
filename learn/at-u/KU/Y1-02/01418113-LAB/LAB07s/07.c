@@ -4,53 +4,74 @@ void roman2arabic(char input[],char output[])
 {
     int oi = 0;
 
-    for (int i = 0, grep = 1, curr = 0, prev = 0, sum = 0; input[i] != '\0'; i++)
+    for (int i = 0, prev = 0, sum = 0, curr = 0, ni = 0, nv = 0; input[i] != '\0'; i++, curr = 0)
     {
         switch (input[i])
         {
             case 'I':
                 curr = 1;
+                ni++;
                 break;
             case 'V':
                 curr = 5;
+                nv++;
                 break;
             case 'X':
                 curr = 10;
                 break;
-            default:
-                grep = 0;
         }
 
-        grep *= curr;
+        prev = sum;
+        sum += curr;
 
-        if (grep || input[i+1] == '\0')
+        if (!curr)
         {
-            if (!prev)
-                prev = curr;
-            if (curr > sum)
+            if (sum)
             {
-                if (sum == 1)
-                    sum = curr - sum;
-                else
-                {
-                    output[oi++] = sum + 48;
-                    sum = 0;
-                    grep = 1;
-                }
+                output[oi++] = sum + 48;
+                output[oi++] = input[i];
             }
-            else if (curr)
-                sum += curr;
             else
-
-        }
-        else if (sum)
-        {
-            output[oi++] = sum + 48;
+                output[oi++] = input[i];
             sum = 0;
-            grep = 1;
+            ni = 0;
+            nv = 0;
         }
         else
-            output[oi++] = input[i];
+        {
+            if (sum)
+            {
+                if (curr > prev)
+                {
+                    if (ni == 1)
+                        sum = curr - prev;
+                    else if (prev)
+                    {
+                        output[oi++] = prev + 48;
+                        sum = curr;
+                    }
+                }
+                else if (sum > 9 || ni > 3 || nv > 1)
+                {
+                    if (ni > 3)
+                    {
+                        sum -= curr;
+                        ni = 1;
+                    }
+                    else if (nv > 1)
+                    {
+                        sum -= curr;
+                        nv = 1;
+                    }
+                    output[oi++] = sum + 48;
+                    sum = curr;
+                }
+            }
+            else
+                sum += curr;
+            if (input[i+1] == '\0' && sum)
+                output[oi++] = sum + 48;
+        }
     }
     output[oi] = '\0';
 }
