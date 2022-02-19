@@ -9,8 +9,8 @@ int main(void)
     cin >> num;
 
     int pris[num];
-    int odd[num];
-    int even[num];
+    int odd[num] = { 0 };
+    int even[num] = { 0 };
     int maxx = 0;
     int oi = 0;
     int ei = 0;
@@ -24,14 +24,7 @@ int main(void)
 
     sort(pris, pris + num);
 
-    int numm[maxx];
-
-    for (int i = 0; i < maxx; i++)
-    {
-        numm[i] = 0;
-        odd[i] = 0;
-        even[i] = 0;
-    }
+    int numm[maxx] = { 0 };
 
     for (int i = 0, index = 0; i < num; i++)
     {
@@ -44,24 +37,24 @@ int main(void)
         val = numm[i];
         if (!val)
         {
-            if (val % 2)
-                odd[oi++] = i;
+            if (i % 2)
+                even[ei++] = i + 1;
             else
-                even[ei++] = i;
+                odd[oi++] = i + 1;
         }
     }
 
-    for (int i = 0; i < maxx; i++)
+    for (int i = 0; i < oi; i++)
     {
         if (odd[i])
-            cout << odd[i];
+            cout << odd[i] << " ";
     }
     cout << endl;
 
-    for (int i = 0; i < maxx; i++)
+    for (int i = 0; i < ei; i++)
     {
         if (even[i])
-            cout << even[i];
+            cout << even[i] << " ";
     }
     cout << endl;
 

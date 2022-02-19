@@ -25,7 +25,7 @@
         },
         {
             "type": "cppbuild",
-            "label": "CPP: g++ build active file, customized",
+            "label": "C++: g++ build active file",
             "command": "/usr/bin/g++",
             "args": [
                 "-fdiagnostics-color=always",
@@ -48,7 +48,7 @@
         },
         {
             "type": "cppbuild",
-            "label": "C/C++: clang build active file, customized",
+            "label": "C/C++: clang build active file",
             "command": "/usr/bin/clang",
             "args": [
                 "-g",
@@ -63,10 +63,9 @@
                 "kind": "build",
                 "isDefault": true
             }
-        },
-        {
+        },        {
             "type": "cppbuild",
-            "label": "C++: clang++ build active file, customized",
+            "label": "C++: clang++ build active file",
             "command": "/usr/bin/clang++",
             "args": [
                 "-g",
