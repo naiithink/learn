@@ -6,13 +6,13 @@
                 "${workspaceFolder}/**"
             ],
             "defines": [
-                "NAIITHINKDBFLAGS:-g",
-                "NAIITHINKC:clang",
-                "NAIITHINKCXX:clang++",
-                "CC:${NAIITHINKC}",
-                "CXX:${NAIITHINKCXX}",
-                "CFLAGS:${NAIITHINKDBFLAGS}",
-                "CXXFLAGS:${NAIITHINKDBFLAGS}"
+                "NDBF:-g",
+                "NC:clang",
+                "NCX:clang++",
+                "CC:${NC}",
+                "CXX:${NCX}",
+                "CFLAGS:${NDBF}",
+                "CXXFLAGS:${NDBF}"
             ],
             "compilerPath": "/usr/bin/gcc",
             "cStandard": "c99",
@@ -33,13 +33,13 @@
                 "${workspaceFolder}/**"
             ],
             "defines": [
-                "NAIITHINKDBFLAGS:-g",
-                "NAIITHINKC:clang",
-                "NAIITHINKCXX:clang++",
-                "CC:${NAIITHINKC}",
-                "CXX:${NAIITHINKCXX}",
-                "CFLAGS:${NAIITHINKDBFLAGS}",
-                "CXXFLAGS:${NAIITHINKDBFLAGS}"
+                "NDBF:-g",
+                "NC:clang",
+                "NCX:clang++",
+                "CC:${NC}",
+                "CXX:${NCX}",
+                "CFLAGS:${NDBF}",
+                "CXXFLAGS:${NDBF}"
             ],
             "macFrameworkPath": [
                 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks"
