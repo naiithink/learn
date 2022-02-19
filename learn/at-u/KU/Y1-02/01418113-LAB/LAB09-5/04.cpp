@@ -19,19 +19,15 @@ int main() {
 
         for (int i = 0, find = 0; !find; i++)
         {
-            if (!last_word)
-            {
-                data[i].word = input;
-                data[i].count = 1;
-                last_word++;
-            }
-            else if (input == data[i].word)
+            if (input == data[i].word)
             {
                 data[i].count++;
                 find = 1;
             }
-            else if (i + 1 == last_word)
+            else if (!last_word || i == last_word - 1)
             {
+                if (last_word)
+                    i++;
                 data[i].word = input;
                 data[i].count = 1;
                 last_word++;
