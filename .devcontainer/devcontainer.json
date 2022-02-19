@@ -13,7 +13,9 @@
 	},
 	"containerEnv": {
 		"CC": "clang",
-		"CFLAGS": "-g"
+		"CFLAGS": "-g -lm",
+		"CXX": "clang++",
+		"CXXFLAGS": "-g -lm"
 	},
 
 	// /* COMPOSE */
