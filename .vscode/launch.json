@@ -5,28 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: Current File",
-            "type": "python",
-            "request": "launch",
-            "program": "${file}",
-            "console": "integratedTerminal"
-        },
-        {
-            "name": "(lldb) Launch",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "${fileDirname}/${fileBasenameNoExtension}",
-            "args": [],
-            "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",
-            "environment": [],
-            "externalConsole": false,
-            "MIMode": "lldb",
-            "preLaunchTask": "C/C++: clang build active file, customized"
-            // "targetArchitecture": "arm64"
-        },
-        {
-            "name": "(gdb) Launch",
+            "name": "Launch (gdb)",
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}/${fileBasenameNoExtension}",
@@ -46,7 +25,7 @@
             "preLaunchTask": "C/C++: gcc build active file"
         },
         {
-            "name": "(gdb)++ Launch",
+            "name": "Launch (gdb): CPP",
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}/${fileBasenameNoExtension}",
@@ -63,7 +42,27 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "C++: g++ build active file, customized"
+            "preLaunchTask": "CPP: g++ build active file, customized"
+        },
+        {
+            "name": "Launch (lldb)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}/${fileBasenameNoExtension}",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            // "MIMode": "lldb",
+            "preLaunchTask": "C/C++: clang build active file, customized"
+        },
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
         }
     ]
 }
