@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Launch (gdb)",
+            "name": "C: (gdb) Launch",
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}/${fileBasenameNoExtension}",
@@ -25,7 +25,7 @@
             "preLaunchTask": "C/C++: gcc build active file"
         },
         {
-            "name": "Launch (gdb): CPP",
+            "name": "C++: (gdb) Launch",
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}/${fileBasenameNoExtension}",
@@ -42,10 +42,10 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "CPP: g++ build active file, customized"
+            "preLaunchTask": "C++: g++ build active file"
         },
         {
-            "name": "Launch (lldb)",
+            "name": "C: (lldb) Launch",
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}/${fileBasenameNoExtension}",
@@ -55,7 +55,20 @@
             "environment": [],
             "externalConsole": false,
             // "MIMode": "lldb",
-            "preLaunchTask": "C/C++: clang build active file, customized"
+            "preLaunchTask": "C/C++: clang build active file"
+        },
+        {
+            "name": "C++: (lldb) Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}/${fileBasenameNoExtension}",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            // "MIMode": "lldb",
+            "preLaunchTask": "C++: clang++ build active file"
         },
         {
             "name": "Python: Current File",
