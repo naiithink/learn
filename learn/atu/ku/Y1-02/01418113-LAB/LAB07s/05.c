@@ -9,12 +9,7 @@ char *stoupper(const char *str)
     char *temp = (char *)malloc(100);
 
     for (; str[i] != '\0'; i++)
-    {
-        if (islower(str[i]))
-            temp[i] = toupper(str[i]);
-        else
-            temp[i] = str[i];
-    }
+        temp[i] = toupper(str[i]);
     temp[++i] = '\0';
 
     return temp;
