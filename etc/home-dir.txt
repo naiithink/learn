@@ -48,6 +48,7 @@ docker run -it --name amd64_ubuntu --mount type=bind,source="C:\Users\naiithink\
         lambda/
             ...
         projects@ -> ~/projects
+        QuickNote.txt@ -> */OneDrive-Personal/QuickNote.txt
         terminal@ -> ~/terminal
         ... [ '@' | '/' ]$    // mount point
     etc/
@@ -66,6 +67,9 @@ docker run -it --name amd64_ubuntu --mount type=bind,source="C:\Users\naiithink\
         music/
             ...
         pictures/
+            stock@ -> */OneDrive-Personal/Pictures/stock/
+            profile/
+            wallpapers/
             ...
         screenshots/
             ...
@@ -77,6 +81,7 @@ docker run -it --name amd64_ubuntu --mount type=bind,source="C:\Users\naiithink\
     projects/
         ... [ '/' ]$    // mountable private repositories
     sprojects/
+        pages/          // git
         ... [ '/' ]$    // unmountable private repositories
     terminal/
         ...    // shared area between host and VMs
