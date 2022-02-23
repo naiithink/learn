@@ -58,7 +58,10 @@
         "stdexcept": "cpp",
         "streambuf": "cpp",
         "cinttypes": "cpp",
-        "typeinfo": "cpp"
+        "typeinfo": "cpp",
+        "iomanip": "cpp",
+        "chrono": "cpp",
+        "sstream": "cpp"
     },
     "jupyter.jupyterServerType": "local",
     "python.pythonPath": "/usr/local/bin/python3"

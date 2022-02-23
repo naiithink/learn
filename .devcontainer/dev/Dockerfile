@@ -5,6 +5,10 @@ ARG     VARIANT="hirsute"
 FROM    mcr.microsoft.com/vscode/devcontainers/base:0-${VARIANT}
 
 # build time
+ENV     CC="clang" \
+        CFLAGS="-g" \
+        CXX="clang++" \
+        CXXFLAGS="-g"
 ARG     SRC_DIR=/home/src \
         DEBIAN_FRONTEND=noninteractive
 
