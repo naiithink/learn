@@ -30,7 +30,7 @@ void reportStock(char *filename)
 
     for (int i = 0;; i++)
     {
-        if (fscanf(fp, "%[^,],%[^,],%[^,],%d,%lf\n", index1, index2, index3, &index4, &average) == EOF)
+        if (fscanf(fp, "%[^,],%[^,],%[^,],%d,%lf", index1, index2, index3, &index4, &average) == EOF)
         {
             break;
         }
