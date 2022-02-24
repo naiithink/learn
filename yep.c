@@ -10,7 +10,7 @@ main (int argc, char **argv)
     printf("\n\n\n\n");
 
     printf("\033[3F");
-    printf("yep 1.0\n\n\n");
+    printf("\033[1myep 1.0\033[0m\n\n\n");
     sleep(1);
 
     printf("\033[2F");
