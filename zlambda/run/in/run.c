@@ -44,6 +44,17 @@ void
 raise_helper (void)
 {
     fprintf (stderr, "\
-%%BOLDyep Help\n\
-", );
+    \033[1myep Help\033[0m\n\
+    \n\
+    Synopsis:\n\
+    yep [options] <command> <target>\n\
+    \n\
+    Options:\n\
+    -h, --help                  Display help text.\n\
+    -s, --set <subcommand>      Invoke subcommand flags.\n\
+    -U, --update                Check for updates.\n\
+    -v, --version               Display verion information.\n\
+    \n\
+    Sub-options:\n\
+    ", );
 }
