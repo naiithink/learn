@@ -12,6 +12,32 @@ private:
     int hour;
     int minute;
     int second;
+
+    Time duration2Time(int duration)
+    {
+        Time res(0);
+        int temp_hour = 0;
+        int temp_minute = 0;
+        int temp_second = 0;
+
+        temp_hour = (int)duration / 3600;
+
+        if (temp_hour > 24 || duration < 0)
+        {
+            hour = 0;
+            minute = 0;
+            second = 0;
+        }
+        else
+        {
+            duration -= this->hour * 3600;
+            minute = (int)duration / 60;
+            duration -= this->minute * 60;
+            second = duration;
+        }
+
+        return res;
+    }
 //     int duration;
 
 public:
@@ -85,12 +111,13 @@ public:
 
     void setMinute(const int in_minute)
     {
-        minute = in_minute;
+        // minute = in_minute;
     }
 
     void setSecond(const int in_second)
     {
-        second = in_second;
+        // second = in_second;
+        duration2Time();
     }
 
     Time add(Time other)
