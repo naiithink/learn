@@ -35,7 +35,7 @@ void reportStock(char *filename)
 
     Product stock[name_cnt];
 
-    while (fscanf(file, "%[^,],%[^,],%[^,],%d,%lf\n", date_buf, time_buf, name_buf, &amt_buf, &cst_buf) != EOF)
+    while (fscanf(file, "%[^,],%[^,],%[^,],%d,%lf", date_buf, time_buf, name_buf, &amt_buf, &cst_buf) != EOF)
     {
         done = 0;
         for (int i = 0; i < name_cnt; i++)
