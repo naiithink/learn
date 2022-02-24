@@ -1,4 +1,40 @@
 {
+    "terminal.integrated.profiles.windows": {
+        "PowerShell": {
+            "source": "PowerShell",
+            "icon": "terminal-powershell"
+        },
+        "Command Prompt": {
+            "path": [
+                "${env:windir}\\Sysnative\\cmd.exe",
+                "${env:windir}\\System32\\cmd.exe"
+            ],
+            "args": [],
+            "icon": "terminal-cmd"
+        },
+        "Developer PowerShell for VS 2022": {
+            "path": "C:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell.exe",
+            "args": ["-noe", "-c", "&{Import-Module \"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\Tools\\Microsoft.VisualStudio.DevShell.dll\"; Enter-VsDevShell 69e18fd0}"],
+            "icon": "terminal-powershell",
+            "overrideName": true
+        },
+        "Developer Command Prompt for VS 2022": {
+            "path": "${env:windir}\\System32\\cmd.exe",
+            "args": ["%comspec%", "/k", "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\Tools\\VsDevCmd.bat"],
+            "icon": "terminal-cmd",
+            "overrideName": true
+        },
+        /* "Ubuntu": {
+            "path": "wsl.exe",
+            "args": ["-d Ubuntu"]\
+        }, */
+        "Git Bash": {
+            "source": "Git Bash"
+        }
+    },
+    "terminal.integrated.env.windows": {
+        "PATH": "${env:PATH}"
+    },
     "files.associations": {
         "stdio.h": "c",
         "stdlib.h": "c",
