@@ -1,8 +1,6 @@
 #include <iostream>
-#include <sstream>
 #include <cmath>
 #include <string>
-#include <iomanip>
 
 using namespace std;
 
@@ -143,10 +141,17 @@ public:
     string toString(void)
     {
         string res;
-        stringstream buf;
+        string hour, minute, second;
 
-        buf << setfill('0') << setw(2) << this->hour << ":" << setw(2) << this->minute << ":" << setw(2) << this->second;
-        buf >> res;
+        hour = to_string(this->hour);
+        minute = to_string(this->minute);
+        second = to_string(this->second);
+
+        hour.insert(hour.begin(), 2 - hour.length(), '0');
+        minute.insert(minute.begin(), 2 - minute.length(), '0');
+        second.insert(second.begin(), 2 - second.length(), '0');
+
+        res = hour + ":" + minute + ":" + second;
 
         return res;
     }
