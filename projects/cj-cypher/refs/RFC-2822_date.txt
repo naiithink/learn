@@ -1,0 +1,40 @@
+3.3. Date and Time Specification
+
+   Date and time occur in several header fields.  This section specifies
+   the syntax for a full date and time specification.  Though folding
+   white space is permitted throughout the date-time specification, it
+   is RECOMMENDED that a single space be used in each place that FWS
+   appears (whether it is required or optional); some older
+   implementations may not interpret other occurrences of folding white
+   space correctly.
+
+date-time       =       [ day-of-week "," ] date FWS time [CFWS]
+
+day-of-week     =       ([FWS] day-name) / obs-day-of-week
+
+day-name        =       "Mon" / "Tue" / "Wed" / "Thu" /
+                        "Fri" / "Sat" / "Sun"
+
+date            =       day month year
+
+year            =       4*DIGIT / obs-year
+
+month           =       (FWS month-name FWS) / obs-month
+
+month-name      =       "Jan" / "Feb" / "Mar" / "Apr" /
+                        "May" / "Jun" / "Jul" / "Aug" /
+                        "Sep" / "Oct" / "Nov" / "Dec"
+
+day             =       ([FWS] 1*2DIGIT) / obs-day
+
+time            =       time-of-day FWS zone
+
+time-of-day     =       hour ":" minute [ ":" second ]
+
+hour            =       2DIGIT / obs-hour
+
+minute          =       2DIGIT / obs-minute
+
+second          =       2DIGIT / obs-second
+
+zone            =       (( "+" / "-" ) 4DIGIT) / obs-zone
