@@ -4,20 +4,20 @@
 ARG     VARIANT="hirsute"
 FROM    mcr.microsoft.com/vscode/devcontainers/base:0-${VARIANT}
 
-# build time
+# On Build
 ENV     CC="clang" \
         CFLAGS="-g" \
         CXX="clang++" \
         CXXFLAGS="-g"
-ARG     SRC_DIR=/home/src \
-        DEBIAN_FRONTEND=noninteractive
+ARG     DEBIAN_FRONTEND=noninteractive \
+        SRC_DIR=/home/src
 
-# general packages
+# General Packages
 RUN     apt-get update && apt-get -y upgrade \
         && apt-get install -y gnupg2 \
-        && apt-get install -y --no-install-recommends build-essential ca-certificates libtool-bin libncurses-dev libc6-dbg
+        && apt-get install -y --no-install-recommends build-essential curl ca-certificates libtool-bin libncurses-dev libc6-dbg
 
-# more packages
+# Some More Packages
 RUN     apt-get update && apt-get -y upgrade \
         && apt-get install -y clang-format clang-tidy clang-tools clang clangd libc++-dev libc++1 libc++abi-dev libc++abi1 libclang-dev libclang1 liblldb-dev libllvm-ocaml-dev libomp-dev libomp5 lld lldb llvm-dev llvm-runtime llvm python3-clang \
         && apt-get install -y valgrind
