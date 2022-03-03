@@ -1,0 +1,1 @@
+jupyter lab --ip <> --port <> --notebook-dir=/mnt --allow-root
