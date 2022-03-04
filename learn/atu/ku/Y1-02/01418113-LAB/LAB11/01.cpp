@@ -52,7 +52,7 @@ double Rectangle::getHeight(void)
 
 SquareRectangle::SquareRectangle(double side)
 {
-    this->side = side;
+    
 }
 
 int main()
