@@ -100,7 +100,7 @@
         "sstream": "cpp",
         "unistd.h": "c"
     },
-    "jupyter.jupyterServerType": "local",
+    "jupyter.jupyterServerType": "remote",
     "python.pythonPath": "/usr/local/bin/python3",
     "latex-workshop.latex.tools": [
         {
