@@ -37,7 +37,7 @@ double Rectangle::area(void)
 
 double Rectangle::circumference(void)
 {
-    return 2 * (width * height);
+    return 2 * (width + height);
 }
 
 double Rectangle::getWidth(void)
@@ -51,8 +51,14 @@ double Rectangle::getHeight(void)
 }
 
 SquareRectangle::SquareRectangle(double side)
+: Rectangle(side, side)
 {
-    
+    this->side = side;
+}
+
+double SquareRectangle::getSide(void)
+{
+    return side;
 }
 
 int main()
