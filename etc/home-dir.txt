@@ -38,6 +38,21 @@ sudo docker run \
 Windows ?
 
 ```
+docker run \
+-it \
+--name <name> \
+--mount type=bind,source=/Users/naiithink/entries,target=/mnt \
+--mount type=bind,source="$(readlink /Users/naiithink/entries/projects)",target=/mnt/projects \
+--mount type=bind,source="$(readlink /Users/naiithink/entries/terminal)",target=/mnt/terminal \
+```
+
+```
+docker run -it --name <name> --mount type=bind,source=C:\Users\naiithink\entries,target=/mnt --mount type=bind,source="$(readlink C:\Users\naiithink\entries\projects)",target=/mnt/projects --mount type=bind,source="$(readlink C:\Users\naiithink\entries\terminal)",target=/mnt/terminal 
+```
+docker run -it --name ubuntu_arm64 --mount type=bind,source=C:\Users\naiithink\entries,target=/mnt --mount type=bind,source="$(readlink C:\Users\naiithink\entries\projects)",target=/mnt/projects --mount type=bind,source="$(readlink C:\Users\naiithink\entries\terminal)",target=/mnt/terminal 6d5e620f799c
+docker run -it --name ubuntu_arm64 --mount type=bind,source=C:\Users\naiithink\entries,target=/mnt 6d5e620f799c
+
+```
 docker run -it --name amd64_ubuntu --mount type=bind,source="C:\Users\naiithink\entries",target="/mnt" --mount type=bind,source="C:\Users\naiithink\entries",target="/mnt" <image>
 ```
 
