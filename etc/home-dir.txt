@@ -35,6 +35,10 @@ sudo docker run \
 <image>
 ```
 
+```
+sudo docker run -it --name <name> --mount type=bind,source=/home/naiithink/entries,target=/mnt --mount type=bind,source="$(readlink /home/naiithink/entries/projects)",target=/mnt/projects --mount type=bind,source="$(readlink /home/naiithink/entries/terminal)",target=/mnt/terminal \
+```
+
 Windows ?
 
 ```
