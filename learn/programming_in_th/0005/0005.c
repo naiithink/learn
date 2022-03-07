@@ -1,17 +1,32 @@
 #include <stdio.h>
-#include <math.h>
 
 /* double pow(double x, double y); */
 
 int main(void)
 {
-    double o = 0.0, a = 0.0, h = 0.0;
+    float o = 0.0, a = 0.0, h = 0.0, f = 0.0, pow = 0.0;
 
-    scanf("%lf %lf", &o, &a);
+    scanf("%f %f", &o, &a);
 
-    h = pow(((o * o) + (a * a)), 0.5);
+    f = (o * o) + (a * a);
 
-    printf("%.6lf\n", h);
+    printf(":: %f\n", f);
+
+    while (pow != f)
+    {
+        pow = h * h;
+        if (pow <= f)
+        {
+            h = pow;
+        }
+        else
+        {
+            h += 1;
+        }
+        printf("%f\n", h);
+    }
+
+    printf("%.6f\n", h);
 
     return 0;
 }
