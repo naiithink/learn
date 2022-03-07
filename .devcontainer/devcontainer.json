@@ -62,6 +62,7 @@
 		"git": "latest",
 		"git-lfs": "latest",
 		"github-cli": "latest",
+		"java": "lts",
 		"node": "lts",
 		"python": "3.10"
 	}
