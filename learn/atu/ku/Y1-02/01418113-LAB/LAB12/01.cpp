@@ -31,12 +31,8 @@ class RightRectangularPyramid : public Shape3D
         {
             double res = 0.0;
             res = ((length * width)
-                   + length * sqrt(pow((width / 2.0), 2.0)
-                                   + pow(height, 2.0)
-                              )
-                   + width * sqrt(pow((length / 2.0), 2.0)
-                                  + pow(height, 2.0)
-                             )
+                   + length * sqrt(pow((width / 2.0), 2.0) + pow(height, 2.0))
+                   + width * sqrt(pow((length / 2.0), 2.0) + pow(height, 2.0))
             );
             return res;
         }
