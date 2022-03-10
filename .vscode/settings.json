@@ -99,7 +99,9 @@
         "chrono": "cpp",
         "sstream": "cpp",
         "unistd.h": "c",
-        "math.h": "c"
+        "math.h": "c",
+        "tree.h": "c",
+        "htmlparser.h": "c"
     },
     "jupyter.jupyterServerType": "local",
     "python.pythonPath": "/usr/local/bin/python3",
