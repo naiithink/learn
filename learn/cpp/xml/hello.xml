@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<hello>
+<hi>
     <child0>
         <word>nought</word>
     </child0>
     <child1>
         <word>one</word>
     </child1>
-</hello>
+</hi>
