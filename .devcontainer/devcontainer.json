@@ -47,7 +47,9 @@
 		"ms-python.python",
 		"ms-python.vscode-pylance",
 		"ms-azuretools.vscode-docker",
-		"vscjava.vscode-java-pack"
+		"vscjava.vscode-java-pack",
+		"redhat.vscode-yaml",
+		"analytic-signal.preview-pdf"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
