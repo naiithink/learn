@@ -106,9 +106,10 @@ readXML (const xmlDocPtr docPtr, const xmlNodePtr nodePtr)
             node_p = node_p->next;
         }
 
-        xmlCleanupMemory ();
+        // xmlCleanupMemory ();
         xmlFree (value);
     }
 
-    xmlFreeDoc (doc_p);
+    // xmlFreeDoc (doc_p);
+    // xmlCleanupMemory ();
 }
