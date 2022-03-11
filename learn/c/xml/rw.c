@@ -7,7 +7,12 @@
  * 
  * @copyright Copyright (c) 2022
  * 
- * clang -g -v rw.c -o rw -I/usr/include/libxml2 -lxml2
+ * depends:
+ *      - libxml2
+ * 
+ * compilation:
+ *      - make
+ *      - clang -g -v rw.c -o rw -I/usr/include/libxml2 -lxml2
  */
 
 #include <libxml2/libxml/parser.h>
@@ -47,11 +52,6 @@ main (int argc, char **argv)
         node_p = xmlDocGetRootElement (doc_p);
 
         readXML (doc_p, node_p);
-
-        xmlCleanupMemory ();
-
-        xmlFreeNodeList (node_p);
-        xmlFreeDoc (doc_p);
     }
 
     return exit_status = ok ? EXIT_SUCCESS : EXIT_FAILURE;
