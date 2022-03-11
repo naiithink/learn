@@ -1,4 +1,5 @@
 #include <libxml2/libxml/parser.h>
+#include <libxml2/libxml/xmlmemory.h>
 #include <libxml2/libxml/xmlstring.h>
 #include <libxml2/libxml/tree.h>
 #include <stdio.h>
@@ -34,6 +35,11 @@ main (int argc, char **argv)
         node_p = xmlDocGetRootElement (doc_p);
 
         readXML (doc_p, node_p);
+
+        xmlCleanupMemory ();
+
+        xmlFreeNodeList (node_p);
+        xmlFreeDoc (doc_p);
     }
 
     return exit_status = ok ? EXIT_SUCCESS : EXIT_FAILURE;
@@ -42,7 +48,6 @@ main (int argc, char **argv)
 void
 readXML (const xmlDocPtr docPtr, const xmlNodePtr nodePtr)
 {
-    char *check = "done.";
     char *name;
     xmlChar *value;
     xmlDocPtr doc_p = docPtr;
@@ -57,28 +62,27 @@ readXML (const xmlDocPtr docPtr, const xmlNodePtr nodePtr)
             parent_p = node_p;
             name = (char *) parent_p->name;
             node_p = node_p->children;
-            value = xmlNodeListGetString (doc_p, node_p, 1);
+            value = xmlNodeListGetString (doc_p, node_p, 0);
 
             if (parent_p == root_p)
             {
-                printf("%s :\n", name);
+                printf("%s \t:\n", name);
             }
             else if (strcmp (name, "word"))
             {
-                printf("\t%s \t-> ", name);
+                printf("\t%s \t:\n ", name);
             }
             else
             {
-                printf("\t%s \t-> \t%s", name, (char *) value);
+                printf("\t\t%s -> %s", name, (char *) value);
+
                 if (!strcmp (name, "word"))
                 {
                     printf("\n");
                 }
             }
 
-
-            // value = (xmlChar *) check;
-            strcpy ((char *) value, check);
+            /* value = (xmlChar *) check; */
         }
         else if (node_p->next != NULL)
         {
@@ -89,7 +93,10 @@ readXML (const xmlDocPtr docPtr, const xmlNodePtr nodePtr)
             node_p = node_p->parent;
             node_p = node_p->next;
         }
+
+        xmlCleanupMemory ();
+        xmlFree (value);
     }
 
-    // xmlFree (value);
+    xmlFreeDoc (doc_p);
 }
