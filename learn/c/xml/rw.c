@@ -1,3 +1,15 @@
+/**
+ * @file rw.c
+ * @author your name (you@domain.com)
+ * @brief 
+ * @version 0.1
+ * @date 2022-03-11
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ * clang -g -v rw.c -o rw -I/usr/include/libxml2 -lxml2
+ */
+
 #include <libxml2/libxml/parser.h>
 #include <libxml2/libxml/xmlmemory.h>
 #include <libxml2/libxml/xmlstring.h>
