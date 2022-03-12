@@ -1,45 +1,82 @@
+#include <cstring>
+#include <iostream>
 #include <libxml2/libxml/xmlmemory.h>
 #include <libxml2/libxml/parser.h>
 #include <libxml2/libxml/tree.h>
-#include <iostream>
 
 using namespace std;
 
-int main(void)
+int
+containChar (char *str)
 {
-    xmlDocPtr doc = xmlParseFile("test.xml");
+    int res;
+    int len = strlen (str);
+
+    for (int i = 0; i < len; ++i)
+    {
+        if (str[i] >= 33 && str[i] <= 126)
+        {
+            res = 1;
+            break;
+        }
+    }
+
+    return res;
+}
+
+int main(int argc, char **argv)
+{
+    if (argc == 1)
+        return 1;
+    
+    xmlDocPtr doc = xmlParseFile(argv[1]);
     xmlNodePtr root = xmlDocGetRootElement(doc);
     xmlNodePtr node = root;
+    xmlElementType nodeType;
     char *name;
+    char *content;
+    char *foundWhiteSpaces;
+    char *foundNewLine;
+    int foundChar;
 
     while (node != NULL)
     {
         if (node->children != NULL)
         {
-            name = (char *) node->name;
-            printf("%s :", (char *) name);
-            xmlFreeNode(node);
             node = node->children;
+
+            if (!strcmp ((char *) node->name, "text"))
+            {
+                printf("%s : ", (char *) node->parent->name);
+            }
+
+            content = (char *) xmlNodeGetContent (node);
+            foundWhiteSpaces = strstr (content, " ");
+            foundNewLine = strstr (content, "\n");
+            foundChar = containChar (content);
+
+            if (!foundChar && (foundWhiteSpaces || foundNewLine))
+            {
+                printf("\n");
+            }
+            else if (foundChar)
+            {
+                printf("%s.\n", (char *) content);
+            }
         }
         else if (node->next != NULL)
         {
-            name = (char *) node->name;
-            printf("%s\n", name);
-            xmlFreeNode(node);
             node = node->next;
         }
         else
         {
-            name = (char *) node->name;
-            printf("%s\n", name);
-            // node = node->parent;
-            xmlFreeNode(node);
+            node = node->parent;
             node = node->next;
         }
+
+        // printf(">> %s\n", (char *) xmlGetNodePath(node));
     }
 
-    xmlCleanupParser();
-    // xmlFreeNodeList(root);
-    // xmlFreeDoc (doc);
+    xmlFreeDoc (doc);
     return 0;
 }

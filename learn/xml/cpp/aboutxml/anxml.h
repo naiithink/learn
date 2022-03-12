@@ -1,6 +1,7 @@
 #ifndef MYXML
 #define MYXML
 
+#include <libxml2/libxml/nanohttp.h>
 #include <libxml2/libxml/parser.h>
 #include <libxml2/libxml/tree.h>
 
@@ -17,6 +18,10 @@ namespace Tree
     }
     Node;
 };
+
+// Utils
+int containChar (const char *str);
+int fetchFile (const char * URL, const char * filename, char ** contentType);
 
 // initMode
 // 0 : bispoken
@@ -48,18 +53,20 @@ class MyTree
         Tree::Node *pTreeRoot;
 };
 
-// MyXML -- pointer-free for users
+// MyXML
 class MyXML
 {
     public:
         explicit MyXML (const char *filepath);
         // preorder traversal
-        void fprintTree (FILE * __restrict __stream);
         void fprintNode (FILE * __restrict __stream,
-                         xmlNodePtr pNode = NULL);
+                         xmlNodePtr pNode = NULL,
+                         const int indent = 0);
+        void fprintTree (FILE * __restrict __stream,
+                         const int indent = 0);
         unsigned long getArity (void);
-        int closeDoc (void);
-        ~MyXML (void);
+        void closeDoc (void);
+        // ~MyXML (void);
 
     protected:
         xmlDocPtr pDoc;
@@ -73,12 +80,12 @@ class MyXML
         xmlNodePtr getRootNodePtr (const xmlDocPtr pDoc);
 };
 
-// MyHTML was derived from MyXML
-class MyHTML : protected MyXML
+// MyHTML
+class MyHTML : public MyXML
 {
     public:
-        ~MyHTML (void);
-    private:
+        explicit MyHTML (const char *filepath);
+        // ~MyHTML (void);
 };
 
 #endif

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss    version="2.0"
+        xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+        xmlns:content="http://purl.org/rss/1.0/modules/content/"
+        xmlns:media="http://search.yahoo.com/mrss/">
+        <channel>
+                <title>cj-cypher</title>
+                <link>https://examples.com</link>
+                <language>th</language>
+                <copyright></copyright>
+                <description>
+                        foo bar baz zoo.
+                </description>
+                <media:restriction type="country" relationship="allow">
+                        th
+                </media:restriction>
+                <!-- iTunes -->
+                <!--            The podcast show or hide status.
+                                If you want your show removed from the Apple directory, use this tag.
+                                Specifying the <itunes:block> tag with a Yes value, prevents the entire podcast from appearing in Apple Podcasts.
+                                Specifying any value other than Yes has no effect.
+                        <itunes:block>Yes</itunes:block>
+                -->
+                <itunes:author>cj cypher</itunes:author>
+                <itunes:type>episodic</itunes:type>
+                <itunes:owner>
+                        <itunes:name></itunes:name>
+                        <itunes:email></itunes:email>
+                </itunes:owner>
+                <itunes:image
+                        href=""
+                />
+                <itunes:category text="Fiction">
+                        <itunes:category text="Science Fiction" />
+                </itunes:category>
+                <itunes:explicit>true</itunes:explicit>
+                <!--            If you change the URL of your podcast feed, you should use this tag in your new feed.
+                        <itunes:new-feed-url>https://newlocation.com/example.rss</itunes:new-feed-url>
+                -->
+                <!--            The podcast update status.
+                                If you will never publish another episode to your show, use this tag.
+                                Specifying the <itunes:complete> tag with a Yes value indicates that a podcast is complete and you will not post any more episodes in the future.
+                                Specifying any value other than Yes has no effect.
+                        <itunes:complete>Yes</itunes:complete>
+                -->
+                <!-- /iTunes -->
+                <!-- Spotify -->
+                <!--            recentCount ::= <integer>
+                                Number of concurrent episodes (items) to display starting from the latest release.
+                                E.g. a podcast with 10 episodes and the limit 3 will display episodes 10, 9 and 8 but not 1 through 7
+                        <spotify:limit recentCount="0" />
+                -->
+                <!-- /Spotify -->
+                <!-- S0 E1 -->
+                <item>
+                        <title>S0 E1 Hello, Listeners</title>
+                        <!-- EPISODETYPE: full, trailer or bonus -->
+                        <itunes:episodeType>full</itunes:episodeType>
+                        <itunes:episode>1</itunes:episode>
+                        <itunes:season>0</itunes:season>
+                        <description>
+                                <![CDATA[
+                                <a href="/items/01/description.rst">S0 E1 Description</a>
+                                ]]>
+                        </description>
+                        <itunes:image
+                                href=""
+                        />
+                        <link>
+                                href=""
+                        </link>
+                        <enclosure
+                                length="5650889"
+                                type="audio/mpeg"
+                                url="http://mypodcast.com/episode001.mp3"
+                        />
+                        <pubDate>Wed, 2 Mar 2022 01:37:37 +0007</pubDate>
+                        <guid></guid>
+                        <!-- Duration in secs -->
+                        <itunes:duration>120</itunes:duration>
+                        <itunes:explicit>true</itunes:explicit>
+                        <itunes:keywords>eiei,ahiahi</itunes:keywords>
+                </item>
+        </channel>
+</rss>
