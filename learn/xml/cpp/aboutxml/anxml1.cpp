@@ -1,9 +1,9 @@
+#include <libxml2/libxml/xmlmemory.h>
+#include <libxml2/libxml/parser.h>
+#include <libxml2/libxml/tree.h>
 #include <cstdio>
 #include <cstring>
 #include <iostream>
-#include <libxml2/libxml/nanohttp.h>
-#include <libxml2/libxml/parser.h>
-#include <libxml2/libxml/tree.h>
 #include "anxml.h"
 
 // Utils
@@ -22,18 +22,6 @@ containChar (const char *str)
         }
     }
 
-    return res;
-}
-
-int
-fetchFile (const char * URL,
-           const char * filename,
-           char ** contentType)
-{
-    int res = 0;
-    res = xmlNanoHTTPFetch (URL,
-                            filename,
-                            contentType);
     return res;
 }
 
@@ -175,21 +163,16 @@ MyXML::fprintNode (FILE * __restrict __stream,
         pCur = pNode;
     }
 
-    if (pCur == pNode)
+    if (pCur == pRootNode)
     {
         if (pCur->children != NULL)
         {
             pCur = pCur->children;
+            depth++;
         }
         else
         {
             return ;
-        }
-        fprintf (__stream, "%s :\n", (char *) pCur->name);
-
-        if (pCur->children != NULL)
-        {
-            pCur = pCur->children;
         }
     }
 
@@ -198,12 +181,11 @@ MyXML::fprintNode (FILE * __restrict __stream,
         if (pCur->children != NULL)
         {
             pCur = pCur->children;
-            depth++;
             name = (char *) pCur->parent->name;
             
-            for (int i = 0; indent && i < depth; ++i)
+            if (!strcmp ((char *) pCur->name, "text"))
             {
-                fprintf (__stream, "\t");
+                fprintf (__stream, "%s :", name);
             }
 
             content = (char *) xmlNodeGetContent (pCur);
@@ -211,19 +193,19 @@ MyXML::fprintNode (FILE * __restrict __stream,
             foundWhiteSpace = strstr (content, " ");
             foundChar = containChar (content);
 
-            if (!strcmp ((char *) pCur->name, "text"))
+            if (!foundChar && (foundNewLine || foundWhiteSpace))
+            {
+                continue;
+            }
+            else if (foundChar)
             {
                 if (pCur->children == NULL)
                 {
-                    fprintf (__stream, "%s : ", name);
-                    if (!foundChar && (foundNewLine || foundWhiteSpace))
-                    {
-                        fprintf (__stream, "\n");
-                    }
-                    if (foundChar && pCur->next == NULL)
-                    {
-                        fprintf (__stream, "%s\n", content);
-                    }
+                    fprintf (__stream, "\t%s .\n", content);
+                }
+                else
+                {
+                    fprintf (__stream, "\t%s :", content);
                 }
             }
 
@@ -236,8 +218,8 @@ MyXML::fprintNode (FILE * __restrict __stream,
         else
         {
             pCur = pCur->parent;
-            depth--;
             pCur = pCur->next;
+            depth--;
         }
     }
 }
@@ -256,11 +238,4 @@ MyXML::closeDoc (void)
 {
     xmlCleanupParser ();
     xmlFreeDoc (this->pDoc);
-}
-
-// MyHTML
-MyHTML::MyHTML (const char *filepath)
-: MyXML (filepath)
-{
-    // done construction
 }

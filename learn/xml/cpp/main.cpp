@@ -9,9 +9,14 @@ main (int argc, char **argv)
     
     MyXML foo (argv[1]);
 
-    foo.fprintTree (1);
+    foo.fprintTree (stdout, 1);
 
     foo.closeDoc ();
+
+    // This function is causing memory leak.
+    char *type;
+    fetchFile (argv[2], "out.txt", &type);
+    printf("%s\n", type);
     
     return 0;
 }
