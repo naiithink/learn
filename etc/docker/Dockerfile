@@ -21,8 +21,7 @@ ARG     DEBIAN_FRONTEND=noninteractive
 
 # General Packages
 RUN     apt-get update && apt-get -y upgrade \
-        && apt-get install -y --no-install-recommends automake build-essential curl libtool-bin libncurses-dev libc6-dbg \
-        && apt-get install -y libxml2 \
+        && apt-get install -y --no-install-recommends automake build-essential curl libtool-bin libncurses-dev libc6-dbg libxml2-dev \
         && apt-get install -y --no-install-recommends git vim
 
 # Some More Packages
