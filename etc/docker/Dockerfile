@@ -3,10 +3,10 @@ ARG     IMAGE="ubuntu" \
         IMAGE_TAG="20.04" \
         SRC_DIR=/home/src \
         MAINTAINER="naiithink" \
-        DATE_MODIFIED="2022-03-03"
+        DATE_MODIFIED="2022-03-12"
 
 # buildx
-# ARG     TARGETPLATFORM="linux/amd64"
+ARG     TARGETPLATFORM="linux/amd64"
 
 # Unminimizing
 # ARG     apt-get yes | unminimize
@@ -21,7 +21,8 @@ ARG     DEBIAN_FRONTEND=noninteractive
 
 # General Packages
 RUN     apt-get update && apt-get -y upgrade \
-        && apt-get install -y --no-install-recommends build-essential curl libtool-bin libncurses-dev libc6-dbg \
+        && apt-get install -y --no-install-recommends automake build-essential curl libtool-bin libncurses-dev libc6-dbg \
+        && apt-get install -y libxml2 \
         && apt-get install -y --no-install-recommends git vim
 
 # Some More Packages
