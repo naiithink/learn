@@ -1,18 +1,6 @@
-/**
- * @file rw.c
- * @author your name (you@domain.com)
- * @brief 
- * @version 0.1
- * @date 2022-03-11
- * 
- * @copyright Copyright (c) 2022
- * 
+/*
  * depends:
- *      - libxml2
- * 
- * compilation:
- *      - make
- *      - clang -g -v rw.c -o rw -I/usr/include/libxml2 -lxml2
+ *  - libxml2
  */
 
 #include <libxml2/libxml/parser.h>
