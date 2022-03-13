@@ -1,0 +1,70 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.217.1/containers/ubuntu
+{
+	/* BUILD */
+	"name": "Ubuntu",
+	"build": {
+		"dockerfile": "dev/Dockerfile",
+		// Update 'VARIANT' to pick an Ubuntu version: hirsute, focal, bionic
+		// Use hirsute or bionic on local arm64/Apple Silicon.
+		"args": {
+			"VARIANT": "hirsute"
+		}
+	},
+	"containerEnv": {
+		"CC": "clang",
+		"CFLAGS": "-g",
+		"CXX": "clang++",
+		"CXXFLAGS": "-g"
+	},
+
+	// /* COMPOSE */
+	// "name": "compose/ubuntu",
+	// "dockerComposeFile": "compose/docker-compose.yml",
+	// "service": "ubuntu",
+	// "shutdownAction": "stopCompose",
+	// "runServices": [
+	// 	"ubuntu",
+	// 	"jupyter"
+	// ],
+	// "workspaceFolder": "/",
+
+	// Set *default* container specific settings.json values on container create.
+	"settings": {
+		"jupyter.jupyterServerType": "local",
+	},
+
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [
+		"ms-vscode-remote.vscode-remote-extensionpack",
+		"ms-vscode.live-server",
+		"ms-vsliveshare.vsliveshare-pack",
+		"GitHub.vscode-pull-request-github",
+		"GitHub.remotehub",
+		"ms-vscode.cpptools-extension-pack",
+		"ms-python.python",
+		"ms-python.vscode-pylance",
+		"ms-toolsai.jupyter",
+		"ms-azuretools.vscode-docker",
+		"vscjava.vscode-java-pack",
+		"redhat.vscode-yaml",
+		"analytic-signal.preview-pdf"
+	],
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "uname -a",
+
+	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "vscode",
+	"features": {
+		"git": "latest",
+		"git-lfs": "latest",
+		"github-cli": "latest",
+		"java": "lts",
+		"node": "lts",
+		"python": "3.10"
+	}
+}

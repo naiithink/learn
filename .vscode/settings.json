@@ -205,5 +205,6 @@
                 "%DOC%"
             ]
         }
-    ]
+    ],
+    "esbonio.server.enabled": false
 }
