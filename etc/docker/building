@@ -1,0 +1,5 @@
+# Single-arch
+docker buildx build --no-cache --load --platform linux/arm64,linux/amd64 -t naiithink/private:ubuntu-focal .
+
+# Multi-arch
+docker buildx build --no-cache --push --platform linux/arm64,linux/amd64 -t naiithink/private:ubuntu-focal .

@@ -1,5 +1,5 @@
-# [Choice] Debian version (use bullseye on local arm64/Apple Silicon): bullseye, buster
-ARG     VARIANT="bullseye"
+# [Choice] Ubuntu version (use hirsute or bionic on local arm64/Apple Silicon): hirsute, focal, bionic
+ARG     VARIANT="focal"
 FROM    amd64/buildpack-deps:${VARIANT}-curl
 
 # [Option] Install zsh
@@ -16,10 +16,9 @@ RUN     bash /tmp/library-scripts/common-debian.sh "${INSTALL_ZSH}" "${USERNAME}
 
 RUN     git config oh-my-zsh.hide-info 1
 
-# ** [Optional] Uncomment this section to install additional packages. **
+# [Optional] Uncomment this section to install additional OS packages.
 RUN     apt-get update && export DEBIAN_FRONTEND=noninteractive \
-        && apt-get -y install --no-install-recommends automake build-essential libtool-bin libncurses-dev libc6-dbg libxml2-dev \
-        && apt-get install -y --no-install-recommends vim
+        && apt-get -y install --no-install-recommends automake build-essential libtool-bin libncurses-dev libc6-dbg libxml2-dev
 
 # Some More Packages
 RUN     apt-get update && apt-get -y upgrade \
