@@ -1,62 +1,48 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
-// https://github.com/microsoft/vscode-dev-containers/tree/v0.217.1/containers/ubuntu
 {
-	/* BUILD */
-	"name": "ubuntu",
+	"name": "Debian",
 	"build": {
-		"dockerfile": "dev/Dockerfile",
-		// Update 'VARIANT' to pick an Ubuntu version: hirsute, focal, bionic
-		// Use hirsute or bionic on local arm64/Apple Silicon.
-		"args": {
-			"VARIANT": "hirsute"
-		}
+		"dockerfile": "base.Dockerfile",
+		// Update 'VARIANT' to pick an Debian version: bullseye, buster
+		// Use bullseye on local arm64/Apple Silicon.
+		"args": { "VARIANT": "bullseye" }
 	},
 	"containerEnv": {
 		"CC": "clang",
-		"CFLAGS": "-g -lm",
+		"CFLAGS": "-g",
 		"CXX": "clang++",
-		"CXXFLAGS": "-g -lm"
+		"CXXFLAGS": "-g"
 	},
-
-	// /* COMPOSE */
-	// "name": "compose/ubuntu",
-	// "dockerComposeFile": "compose/docker-compose.yml",
-	// "service": "ubuntu",
-	// "shutdownAction": "stopCompose",
-	// "runServices": [
-	// 	"ubuntu",
-	// 	"jupyter"
-	// ],
-	// "workspaceFolder": "/",
 
 	// Set *default* container specific settings.json values on container create.
-	"settings": {
-		"jupyter.jupyterServerType": "local",
-	},
+	"settings": {},
 
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
-		"ms-vscode.cpptools-extension-pack",
-		"GitHub.vscode-pull-request-github",
-		"GitHub.remotehub",
-		"ms-toolsai.jupyter",
-		"ms-toolsai.jupyter-keymap",
-		"ms-toolsai.jupyter-renderers",
+		"ms-vscode-remote.vscode-remote-extensionpack",
 		"ms-vscode.live-server",
 		"ms-vsliveshare.vsliveshare-pack",
+		"GitHub.vscode-pull-request-github",
+		"GitHub.remotehub",
+		"ms-vscode.cpptools-extension-pack",
+		"ms-vscode.cmake-tools",
 		"ms-python.python",
 		"ms-python.vscode-pylance",
-		"ms-azuretools.vscode-docker",
+		"ms-toolsai.jupyter",
 		"vscjava.vscode-java-pack",
+		"redhat.vscode-xml",
 		"redhat.vscode-yaml",
-		"analytic-signal.preview-pdf"
+		"bierner.github-markdown-preview",
+		"lextudio.restructuredtext-pack"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 
-	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "uname -a",
+	// Uncomment to use the Docker CLI from inside the container. See https://aka.ms/vscode-remote/samples/docker-from-docker.
+	// "mounts": [ "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind" ],
+
+	// Uncomment when using a ptrace-based debugger like C++, Go, and Rust
+	// "runArgs": [ "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined" ],
 
 	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "vscode",
@@ -66,6 +52,6 @@
 		"github-cli": "latest",
 		"java": "lts",
 		"node": "lts",
-		"python": "3.10"
+		"python": "latest"
 	}
 }
