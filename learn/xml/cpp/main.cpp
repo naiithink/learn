@@ -1,17 +1,36 @@
 #include <iostream>
-#include "aboutxml/anxml.h"
+#include <cstdio>
+// #include "aboutxml/anxml.h"
+#include <libxml2/libxml/nanohttp.h>
 
 int
 main (int argc, char **argv)
 {
     if (argc == 1)
         return 1;
+
+
+
+    // int xmlNanoHTTPFetch (const char * URL, 
+    //                       const char * filename, 
+    //                       char ** contentType)
+
+    char *type = NULL;
+    const char *outfile = "out.txt";
+    int status = 0;
     
-    MyXML foo (argv[1]);
+    status = xmlNanoHTTPFetch (argv[1], outfile, &type);
 
-    foo.fprintTree (stdout, 1);
+    std::cout << status << std::endl;
 
-    foo.closeDoc ();
+
+
+
+    // MyXML foo (argv[1]);
+
+    // foo.fprintTree (stdout, 1);
+
+    // foo.closeDoc ();
 
     // This function is causing memory leak.
     // char *type;

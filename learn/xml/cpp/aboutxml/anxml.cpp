@@ -6,6 +6,31 @@
 #include <libxml2/libxml/tree.h>
 #include "anxml.h"
 
+// enum xmlElementType
+// {
+//     XML_ELEMENT_NODE         =  1
+//     XML_ATTRIBUTE_NODE       =  2
+//     XML_TEXT_NODE            =  3
+//     XML_CDATA_SECTION_NODE   =  4
+//     XML_ENTITY_REF_NODE      =  5
+//     XML_ENTITY_NODE          =  6
+//     XML_PI_NODE              =  7
+//     XML_COMMENT_NODE         =  8
+//     XML_DOCUMENT_NODE        =  9
+//     XML_DOCUMENT_TYPE_NODE   = 10
+//     XML_DOCUMENT_FRAG_NODE   = 11
+//     XML_NOTATION_NODE        = 12
+//     XML_HTML_DOCUMENT_NODE   = 13
+//     XML_DTD_NODE             = 14
+//     XML_ELEMENT_DECL         = 15
+//     XML_ATTRIBUTE_DECL       = 16
+//     XML_ENTITY_DECL          = 17
+//     XML_NAMESPACE_DECL       = 18
+//     XML_XINCLUDE_START       = 19
+//     XML_XINCLUDE_END         = 20
+//     XML_DOCB_DOCUMENT_NODE   = 21
+// };
+
 // Utils
 int
 containChar (const char *str)
@@ -197,9 +222,10 @@ MyXML::fprintNode (FILE * __restrict __stream,
     {
         if (pCur->children != NULL)
         {
-            pCur = pCur->children;
+            
             depth++;
-            name = (char *) pCur->parent->name;
+            name = (char *) pCur->name;
+            pCur = pCur->children;
 
             for (int i = 0; indent && i < depth; ++i)
             {
@@ -210,11 +236,16 @@ MyXML::fprintNode (FILE * __restrict __stream,
             foundNewLine = strstr (content, "\n");
             foundWhiteSpace = strstr (content, " ");
             foundChar = containChar (content);
-            
 
-            if (!strcmp ((char *) pCur->name, "text"))
+            if (!strcmp ((char *) pCur->parent->name, "text"))
             {
                 fprintf (__stream, "%s : ", name);
+                if (!foundChar && (foundNewLine || foundWhiteSpace))
+                {
+                    fprintf (__stream, "\n");
+                }
+                else if (foundChar)
+                {
                     if (!foundChar && (foundNewLine || foundWhiteSpace))
                     {
                         fprintf (__stream, "%s\n", content);
@@ -223,6 +254,7 @@ MyXML::fprintNode (FILE * __restrict __stream,
                     {
                         fprintf (__stream, "\n");
                     }
+                }
             }
 
             xmlFree (content);

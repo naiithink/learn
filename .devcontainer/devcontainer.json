@@ -18,7 +18,8 @@
 			"zsh": {
 				"path": "/usr/bin/zsh"
 			}
-		}
+		},
+		"python.defaultInterpreterPath": "/usr/bin/python3"
 	},
 
 	// Add the IDs of extensions you want installed when the container is created.

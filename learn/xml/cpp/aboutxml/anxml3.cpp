@@ -211,9 +211,16 @@ MyXML::fprintNode (FILE * __restrict __stream,
             foundWhiteSpace = strstr (content, " ");
             foundChar = containChar (content);
             
-            if (!strcmp ((char *) pCur->name, "text"))
+
+            if (!strcmp ((char *) pCur->parent->name, "text"))
             {
                 fprintf (__stream, "%s : ", name);
+                if (!foundChar && (foundNewLine || foundWhiteSpace))
+                {
+                    fprintf (__stream, "\n");
+                }
+                else if (foundChar)
+                {
                     if (!foundChar && (foundNewLine || foundWhiteSpace))
                     {
                         fprintf (__stream, "%s\n", content);
@@ -222,11 +229,23 @@ MyXML::fprintNode (FILE * __restrict __stream,
                     {
                         fprintf (__stream, "\n");
                     }
+                }
             }
 
             xmlFree (content);
         }
-        else if (pCur->next != NULL)
+        else if (pCur->children == NULL)
+        {
+            name = (char *) pCur->name;
+
+            for (int i = 0; indent && i < depth; ++i)
+            {
+                fprintf (__stream, "\t");
+            }
+            fprintf (__stream, "%s :\n", name);
+        }
+        
+        if (pCur->next != NULL)
         {
             pCur = pCur->next;
         }
