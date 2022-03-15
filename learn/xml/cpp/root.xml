@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <bin>executables</bin>
+    <boot></boot>
+    <dev>internal devices</dev>
+    <etc></etc>
+    <home>~</home>
+    <media></media>
+    <mnt></mnt>
+    <opt></opt>
+    <proc></proc>
+    <root></root>
+    <srv></srv>
+    <tmp></tmp>
+    <usr>
+        <bin>executables</bin>
+        <etc></etc>
+        <include></include>
+        <lib>libraries</lib>
+        <libexec></libexec>
+        <local>
+            <bin></bin>
+            <lib></lib>
+            <include></include>
+            <sbin></sbin>
+            <share>
+                <man></man>
+            </share>
+            <src></src>
+        </local>
+        <sbin></sbin>
+        <share>
+            <man></man>
+        </share>
+        <src></src>
+    </usr>
+    <var>
+        <mail></mail>
+        <spool></spool>
+    </var>
+</root>

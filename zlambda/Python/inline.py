@@ -1,0 +1,2 @@
+from instant import inline
+
