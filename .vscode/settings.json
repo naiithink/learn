@@ -102,7 +102,9 @@
         "math.h": "c",
         "tree.h": "c",
         "htmlparser.h": "c",
-        "ctime": "cpp"
+        "ctime": "cpp",
+        "cstring": "cpp",
+        "fstream": "cpp"
     },
     "jupyter.jupyterServerType": "local",
     "python.pythonPath": "/usr/local/bin/python3",
