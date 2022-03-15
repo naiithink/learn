@@ -14,9 +14,9 @@ main (int argc, char **argv)
     foo.closeDoc ();
 
     // This function is causing memory leak.
-    char *type;
-    fetchFile (argv[2], "out.txt", &type);
-    printf("%s\n", type);
+    // char *type;
+    // fetchFile (argv[2], "out.txt", &type);
+    // printf("%s\n", type);
     
     return 0;
 }
