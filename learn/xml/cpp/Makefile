@@ -1,3 +1,7 @@
+# curl -O "https://download.gnome.org/sources/libxml++/5.0/libxml++-5.0.1.tar.xz"
+# tar -xvf "libxml++-5.0.1.tar.xz"
+
+
 TESTFILE = main
 SRCDIR = aboutxml
 SRCFILENAME = anxml
@@ -5,7 +9,7 @@ BINDIR = bin
 CXX = clang++
 CXXFLAGS = -g
 CXXINCLUDE = -I/usr/include/libxml2
-LDFLAGS = -lxml2
+LDFLAGS = -lxml2 
 
 make : config
 	$(CXX) -c $(CXXINCLUDE) $(SRCDIR)/$(SRCFILENAME).cpp -o $(SRCDIR)/$(SRCFILENAME).o

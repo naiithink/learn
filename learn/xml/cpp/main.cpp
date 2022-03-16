@@ -3,6 +3,10 @@
 // #include "aboutxml/anxml.h"
 #include <libxml2/libxml/nanohttp.h>
 
+#ifndef _WINSOCKAPI_
+#define _WINSOCKAPI_
+#endif
+
 int
 main (int argc, char **argv)
 {
