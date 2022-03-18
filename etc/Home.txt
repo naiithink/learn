@@ -39,15 +39,16 @@ sudo docker run \
 sudo docker run -it --name <name> --mount type=bind,source=/home/naiithink/entries,target=/mnt --mount type=bind,source="$(readlink /home/naiithink/entries/projects)",target=/mnt/projects --mount type=bind,source="$(readlink /home/naiithink/entries/terminal)",target=/mnt/terminal \
 ```
 
-Windows ?
+Windows (via WSL)
 
 ```
 docker run \
 -it \
 --name <name> \
---mount type=bind,source=/Users/naiithink/entries,target=/mnt \
---mount type=bind,source="$(readlink /Users/naiithink/entries/projects)",target=/mnt/projects \
---mount type=bind,source="$(readlink /Users/naiithink/entries/terminal)",target=/mnt/terminal \
+--mount type=bind,source=/mnt/c/Users/naiithink/entries,target=/mnt \
+--mount type=bind,source="$(readlink /mnt/c/Users/naiithink/entries/projects)",target=/mnt/projects \
+--mount type=bind,source="$(readlink /mnt/c/Users/naiithink/entries/terminal)",target=/mnt/terminal \
+<image>
 ```
 
 ```
