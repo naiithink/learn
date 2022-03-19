@@ -64,66 +64,76 @@ docker run -it --name amd64_ubuntu --mount type=bind,source="C:\Users\naiithink\
 ---
 
 ~/
-    entries/
-        lambda/
-            ...
-        projects@ -> ~/projects
-        QuickNote.txt@ -> */OneDrive-Personal/QuickNote.txt
-        terminal@ -> ~/terminal
-        ... [ '@' | '/' ]$    // mount point
-    etc/
-        docker/
-            build/
+        entries/
+                lambda/
+                        ...
+                projects@ -> ~/projects
+                QuickNote.txt@ -> */OneDrive-Personal/QuickNote.txt
+                terminal@ -> ~/terminal
+                ... [ '@' | '/' ]$      // mount point
+
+        etc/
+                docker/
+                        build/
+                                ... [ '/' ]$
+                        ... [ '/' ]$*
+                obs/
+                        profiles/
+                                ...
+                        scenes/
+                                ...
+                        ... [ '/' ]$*
                 ... [ '/' ]$
-            ... [ '/' ]$*
-        obs/
-            profiles/
+
+        files/
+                screenshots@ -> */OneDrive-Personal/Pictures/Screenshots/
+                music/
+                        ...
+                pictures/
+                        stock@ -> */OneDrive-Personal/Pictures/stock/
+                        profile/
+                        wallpapers/
+                        ...
+                videos/
+                        ...
+                ... [ '/' ]$*
+
+        mnt/
+                ... [ '/' ]$            // mount point for cloud storage and virtual drive
+
+        projects/
+                ... [ '/' ]$            // mountable private repositories
+
+        sprojects/
+                pages/                  // git
+                ... [ '/' ]$            // unmountable private repositories
+
+        terminal/
+                ...                     // shared area between host and VMs
+
+        usr/
+                bin/
+                        ... [ '*' | '/' -> '*' ]$
+                include/
+                        ...
+                lib/
+                        ...
+                libexec/
+                        ...
+                share/
+                        ...
+
+        var/
+                src/
+                        ... [ '/' ]$    // named by orgs
+                templates/
+                        email/
+                                ...
+                        office/
+                                ...
+                ... [ '/' ]$
+
+        volumes/
                 ...
-            scenes/
-                ...
-            ... [ '/' ]$*
-        ... [ '/' ]$
-    files/
-        screenshots@ -> */OneDrive-Personal/Pictures/Screenshots/
-        music/
-            ...
-        pictures/
-            stock@ -> */OneDrive-Personal/Pictures/stock/
-            profile/
-            wallpapers/
-            ...
-        videos/
-            ...
-        ... [ '/' ]$*
-    mnt/
-        ... [ '/' ]$    // mount point for cloud storage and virtual drive
-    projects/
-        ... [ '/' ]$    // mountable private repositories
-    sprojects/
-        pages/          // git
-        ... [ '/' ]$    // unmountable private repositories
-    terminal/
-        ...    // shared area between host and VMs
-    usr/
-        bin/
-            ... [ '*' | '/' -> '*' ]$
-        include/
-            ...
-        lib/
-            ...
-        libexec/
-            ...
-        share/
-            ...
-    var/
-        src/
-            ... [ '/' ]$    // named by orgs
-        templates/
-            email/
-                ...
-            office/
-                ...
-        ... [ '/' ]$
-    volumes/
+                
         ...
-    ...
