@@ -124,6 +124,9 @@ docker run -it --name amd64_ubuntu --mount type=bind,source="C:\Users\naiithink\
                         ...
 
         var/
+				fonts/
+						static/
+								...
                 src/
                         ... [ '/' ]$    // named by orgs
                 templates/
