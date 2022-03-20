@@ -129,7 +129,7 @@ MyTree::freeTree (void)
 {
     int ok = 0;
     unsigned long       childCount = 0;
-    const unsigned long	arity = MyTree::childCount (pTreeRoot);
+    const unsigned long arity = MyTree::childCount (pTreeRoot);
     unsigned long       remainArity = arity;
     Tree::Node          *pNode = pTreeRoot;
 
