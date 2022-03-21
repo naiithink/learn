@@ -1,9 +1,0 @@
-{
-    "foo-docs": "/docs/build/html/index.html",
-    "linux": {
-        "uno": "/usr/lib/libreoffice/program/"
-    },
-    "darwin": {
-        "uno": "/Applications/LibreOffice.app/Contents/Resources/"
-    }
-}
