@@ -107,7 +107,7 @@
         "fstream": "cpp"
     },
     "jupyter.jupyterServerType": "local",
-    "python.pythonPath": "/usr/local/bin/python3",
+    "python.defaultInterpreterPath": "/usr/local/bin/python3",
     "latex-workshop.latex.tools": [
         {
             "name": "latexmk",
@@ -208,5 +208,6 @@
             ]
         }
     ],
-    "esbonio.server.enabled": true
+    "esbonio.server.enabled": true,
+    "esbonio.sphinx.confDir": ""
 }
