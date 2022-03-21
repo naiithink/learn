@@ -104,7 +104,9 @@
         "htmlparser.h": "c",
         "ctime": "cpp",
         "cstring": "cpp",
-        "fstream": "cpp"
+        "fstream": "cpp",
+        "modman.h": "c",
+        "flight.h": "c"
     },
     "jupyter.jupyterServerType": "local",
     "python.defaultInterpreterPath": "/usr/local/bin/python3",
@@ -208,6 +210,6 @@
             ]
         }
     ],
-    "esbonio.server.enabled": true,
+    "esbonio.server.enabled": false,
     "esbonio.sphinx.confDir": ""
 }
