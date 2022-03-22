@@ -22,24 +22,28 @@ struct modman
     int value
 };
 
-modman init (const int value)
+modman
+init (const int value)
 {
     modman this;
     this->_printHello = &__printHello;
     return this;
 }
 
-void __br(void)
+void
+__br (void)
 {
-    fputs("\n", stdout);
+    fputs ("\n", stdout);
 }
 
-void __printHello(void)
+void
+__printHello (void)
 {
-    fputs("hello", stdout);
+    fputs ("hello", stdout);
 }
 
-void __printWorld(void)
+void
+__printWorld (void)
 {
-    fputs("world", stdout);
+    fputs ("world", stdout);
 }
