@@ -1,14 +1,25 @@
+#if os(macOS) || os(iOS) || os(tvOS) || os(watchOS)
+import Darwin
+#elseif os(Linux)
+import Glibc
+#endif
+
 import Foundation
 
 let args = CommandLine.arguments
 let dir = NSHomeDirectory()
 var pwd = FileManager.default.currentDirectoryPath
 var ls = try FileManager.default.contentsOfDirectory(atPath: pwd)
-var file: String
+var fileName: String
+var filePath: String
+// var fileContents = open()
 
 if args.count > 1 {
-    file = args[1]
+    fileName = args[1]
+} else {
+    fileName = ""
 }
 
-print(pwd)
-print(ls)
+filePath = pwd + fileName
+
+print(filePath)
