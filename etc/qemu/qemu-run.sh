@@ -71,7 +71,7 @@ fi
 SOUND="intel-hda"
 
 # FORMUP THE COMMAND
-TORUN="qemu-ss-$ARCH \
+TORUN="qemu-system-$ARCH \
  -machine $MACHINE \
  -cpu $CPU \
  -accel $ACCEL \
