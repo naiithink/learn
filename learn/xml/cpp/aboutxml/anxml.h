@@ -7,14 +7,14 @@
 
 namespace Tree
 {
-    typedef struct __Node
+    typedef struct Node
     {
         unsigned long childCount;
         char *elem;
         char *attr;
-        struct __Node *parent;
-        struct __Node *child;
-        struct __Node *next;
+        struct Node *parent;
+        struct Node *child;
+        struct Node *next;
     }
     Node;
 };
