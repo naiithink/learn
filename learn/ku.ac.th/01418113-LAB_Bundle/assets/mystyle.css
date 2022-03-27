@@ -1,0 +1,9 @@
+textarea.singleline {
+    height: 1em;
+    overflow: hidden;
+    resize: none;
+}
+
+th, td {
+    text-align: left;
+}
