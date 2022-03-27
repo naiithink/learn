@@ -1,0 +1,6 @@
+                "deletable": false,
+                "editable": false,
+                "scrolled": false,
+                "jupyter": {
+                    "source_hidden": true
+                }
