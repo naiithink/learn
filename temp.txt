@@ -1,0 +1,91 @@
+.bdg-jupyter {
+    display: inline-block;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    box-sizing: border-box;
+    padding-bottom: 0.35em;
+    padding-top: 0.35em;
+    padding-left: 0.65em;
+    padding-right: 0.65em;
+    font-size: 0.75em;
+    font-weight: 700;
+    line-height: 1;
+    background-color: #E07C3C;
+    color: #FFFFFF;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.25rem;
+}
+
+|BDG-TEMPLATE|
+
+**01418113-LAB**
+
+.. grid:: 1 1 2 3
+    :gutter: 3
+
+    .. grid-item-card:: LAB07s
+        :shadow: lg
+
+        |01417113-LAB07s|_ |nbsp| |nbsp| |nbsp| |nbsp| |SUM-01417113-LAB07s|
+
+    .. grid-item-card:: LAB08
+        :shadow: lg
+
+        |01417113-LAB08|_ |nbsp| |nbsp| |nbsp| |nbsp| |SUM-01417113-LAB08|
+
+    .. grid-item-card:: LAB09
+        :shadow: lg
+
+        |01417113-LAB09|_ |nbsp| |nbsp| |nbsp| |nbsp| |SUM-01417113-LAB09|
+
+    .. grid-item-card:: LAB09.5
+        :shadow: lg
+
+        |01417113-LAB09.5|_ |nbsp| |nbsp| |nbsp| |nbsp| |SUM-01417113-LAB09.5|
+
+    .. grid-item-card:: LAB10
+        :shadow: lg
+
+        |01417113-LAB10|_ |nbsp| |nbsp| |nbsp| |nbsp| |SUM-01417113-LAB10|
+
+    .. grid-item-card:: LAB11
+        :shadow: lg
+
+        |01417113-LAB11|_ |nbsp| |nbsp| |nbsp| |nbsp| |SUM-01417113-LAB11|
+
+    .. grid-item-card:: LAB12
+        :shadow: lg
+
+        |01417113-LAB12|_ |nbsp| |nbsp| |nbsp| |nbsp| |SUM-01417113-LAB12|
+
+.. |01417113-LAB07s|        replace::   :download:`Download <src/ipynb/LAB07s_tmpl.ipynb>`
+.. _01417113-LAB07s:                    https://www.amazon.com/clouddrive/share/CpEnZyco15vWqyC3Dg9IWpjdLfxYfpCxvC8Vo4XYIAW
+.. |SUM-01417113-LAB07s|    replace::   :bdg-link-warning-line:`sha256 <src/ipynb/LAB07s_tmpl.ipynb.sha256.txt>`
+
+.. |01417113-LAB08|         replace::   Download
+.. _01417113-LAB08:                     https://www.amazon.com/clouddrive/share/Dj9Q3iJ7RuhzO3CsMmigJa3AH0EmrNN6ApH64lBdnUr
+.. |SUM-01417113-LAB08|     replace::   :bdg-link-warning-line:`sha256 <src/ipynb/LAB08_tmpl.ipynb.sha256.txt>`
+
+.. |01417113-LAB09|         replace::   Download
+.. _01417113-LAB09:                     https://www.amazon.com/clouddrive/share/VUOrnD186ddMVvA0qRnjbEMj8jXnhT0d8ndKXazhFHq
+.. |SUM-01417113-LAB09|     replace::   :bdg-link-warning-line:`sha256 <src/ipynb/LAB09_tmpl.ipynb.sha256.txt>`
+
+.. |01417113-LAB09.5|       replace::   Download
+.. _01417113-LAB09.5:                   https://www.amazon.com/clouddrive/share/Vu13aFXEHH7QP2ENFLGaiJAvcdHJ4PgpQZM7IIo73Rt
+.. |SUM-01417113-LAB09.5|   replace::   :bdg-link-warning-line:`sha256 <src/ipynb/LAB09.5_tmpl.ipynb.sha256.txt>`
+
+.. |01417113-LAB10|         replace::   Download
+.. _01417113-LAB10:                     https://www.amazon.com/clouddrive/share/ujPtKVQCgfoDHLKpbOauT9CkkPIYo0gWgdIRz4zKXpF
+.. |SUM-01417113-LAB10|     replace::   :bdg-link-warning-line:`sha256 <src/ipynb/LAB10_tmpl.ipynb.sha256.txt>`
+
+.. |01417113-LAB11|         replace::   Download
+.. _01417113-LAB11:                     https://www.amazon.com/clouddrive/share/Brp8KLAI9mRQaxuvOWwgkkxeyQSQZhCGbFwC4jMn4Pa
+.. |SUM-01417113-LAB11|     replace::   :bdg-link-warning-line:`sha256 <src/ipynb/LAB11_tmpl.ipynb.sha256.txt>`
+
+.. |01417113-LAB12|         replace::   Download
+.. _01417113-LAB12:                     https://www.amazon.com/clouddrive/share/Ous6xDxgyCmOL81NnzU1hprc7ucfI2cKOOWimghsJxQ
+.. |SUM-01417113-LAB12|     replace::   :bdg-link-warning-line:`sha256 <src/ipynb/LAB12_tmpl.ipynb.sha256.txt>`
