@@ -1,4 +1,5 @@
 {
+    "editor.renderWhitespace": "all",
     "terminal.integrated.profiles.windows": {
         "PowerShell": {
             "source": "PowerShell",
@@ -210,6 +211,7 @@
             ]
         }
     ],
+    "markdown-preview-github-styles.colorTheme": "system",
     "esbonio.server.enabled": false,
     "esbonio.sphinx.confDir": ""
 }
