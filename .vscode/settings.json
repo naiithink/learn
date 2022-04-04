@@ -1,5 +1,14 @@
 {
+    "diffEditor.ignoreTrimWhitespace": false,
     "editor.renderWhitespace": "all",
+    "editor.fontLigatures": false,
+    "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace",
+    "editor.minimap.enabled": false,
+    "breadcrumbs.enabled": false,
+    "workbench.startupEditor": "none",
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "git.enableSmartCommit": true,
     "terminal.integrated.profiles.windows": {
         "PowerShell": {
             "source": "PowerShell",
@@ -13,105 +22,38 @@
             "args": [],
             "icon": "terminal-cmd"
         },
+        "Ubuntu": {
+            /* "icon": "ms-appx:///ProfileIcons/{9acb9455-ca41-5af7-950f-6bca1bc9722f}.png", */
+            "path": "wsl.exe -d Ubuntu"
+        },
         "Developer PowerShell for VS 2022": {
-            "path": "C:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell.exe",
-            "args": ["-noe", "-c", "&{Import-Module \"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\Tools\\Microsoft.VisualStudio.DevShell.dll\"; Enter-VsDevShell 69e18fd0}"],
-            "icon": "terminal-powershell",
-            "overrideName": true
+            "path": "C:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell.exe -noe -c \"&{Import-Module \"\"\"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\Tools\\Microsoft.VisualStudio.DevShell.dll\"\"\"; Enter-VsDevShell 69e18fd0}\""
         },
         "Developer Command Prompt for VS 2022": {
-            "path": "${env:windir}\\System32\\cmd.exe",
-            "args": ["%comspec%", "/k", "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\Tools\\VsDevCmd.bat"],
-            "icon": "terminal-cmd",
-            "overrideName": true
+            "path": "%comspec% /k \"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\Tools\\VsDevCmd.bat\""
         },
-        /* "Ubuntu": {
-            "path": "wsl.exe",
-            "args": ["-d Ubuntu"]\
-        }, */
         "Git Bash": {
             "source": "Git Bash"
         }
     },
-    "terminal.integrated.env.windows": {
-        "PATH": "${env:PATH}"
+    /* "telemetry.enableTelemetry": false, */
+    /* "telemetry.enableCrashReporter": false, */
+    "telemetry.telemetryLevel": "off",
+    "liveshare.presence": false,
+    "remote.SSH.defaultExtensions": [
+        "gitpod.gitpod-remote-ssh"
+    ],
+    "remote.SSH.configFile": "/var/folders/47/s0wp1vrn0t9_1pnm05mkbkdr0000gn/T/gitpod_ssh_config-35206-9Xwqxe0ak7sy",
+    "python.pythonPath": "/usr/local/bin/python3",
+    "jupyter.askForKernelRestart": false,
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "right"
     },
-    "files.associations": {
-        "stdio.h": "c",
-        "stdlib.h": "c",
-        "__locale": "c",
-        "atomic": "c",
-        "bit": "c",
-        "cstddef": "c",
-        "ios": "c",
-        "limits": "c",
-        "locale": "c",
-        "memory": "c",
-        "new": "c",
-        "string": "c",
-        "type_traits": "c",
-        "array": "c",
-        "string_view": "c",
-        "unordered_map": "c",
-        "vector": "c",
-        "algorithm": "c",
-        "iostream": "cpp",
-        "stdarg.h": "c",
-        "limits.h": "c",
-        "types.h": "c",
-        "dir.h": "c",
-        "bitset": "c",
-        "ostream": "c",
-        "yep.h": "c",
-        "stat.h": "c",
-        "dirent.h": "c",
-        "*.tcc": "cpp",
-        "cctype": "cpp",
-        "clocale": "cpp",
-        "cmath": "cpp",
-        "compare": "cpp",
-        "concepts": "cpp",
-        "cstdarg": "cpp",
-        "cstdint": "cpp",
-        "cstdio": "cpp",
-        "cstdlib": "cpp",
-        "cwchar": "cpp",
-        "cwctype": "cpp",
-        "deque": "cpp",
-        "exception": "cpp",
-        "functional": "cpp",
-        "iterator": "cpp",
-        "memory_resource": "cpp",
-        "numeric": "cpp",
-        "optional": "cpp",
-        "random": "cpp",
-        "system_error": "cpp",
-        "tuple": "cpp",
-        "utility": "cpp",
-        "initializer_list": "cpp",
-        "iosfwd": "cpp",
-        "istream": "cpp",
-        "ranges": "cpp",
-        "stdexcept": "cpp",
-        "streambuf": "cpp",
-        "cinttypes": "cpp",
-        "typeinfo": "cpp",
-        "iomanip": "cpp",
-        "chrono": "cpp",
-        "sstream": "cpp",
-        "unistd.h": "c",
-        "math.h": "c",
-        "tree.h": "c",
-        "htmlparser.h": "c",
-        "ctime": "cpp",
-        "cstring": "cpp",
-        "fstream": "cpp",
-        "modman.h": "c",
-        "flight.h": "c",
-        "xlib.h": "c"
-    },
-    "jupyter.jupyterServerType": "local",
-    "python.defaultInterpreterPath": "/usr/local/bin/python3",
+    "notebook.lineNumbers": "on",
+    "notebook.cellFocusIndicator": "border",
+    "notebook.cellToolbarVisibility": "hover",
+    "latex-workshop.view.pdf.viewer": "tab",
     "latex-workshop.latex.tools": [
         {
             "name": "latexmk",
@@ -212,7 +154,10 @@
             ]
         }
     ],
-    "markdown-preview-github-styles.colorTheme": "system",
     "esbonio.server.enabled": false,
-    "esbonio.sphinx.confDir": ""
+    "esbonio.sphinx.confDir": "",
+    "yaml.schemas": {
+        "file:///Users/naiithink/.vscode/extensions/atlassian.atlascode-2.10.11/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+    },
+    "redhat.telemetry.enabled": false,
 }
