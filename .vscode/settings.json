@@ -107,7 +107,8 @@
         "cstring": "cpp",
         "fstream": "cpp",
         "modman.h": "c",
-        "flight.h": "c"
+        "flight.h": "c",
+        "xlib.h": "c"
     },
     "jupyter.jupyterServerType": "local",
     "python.defaultInterpreterPath": "/usr/local/bin/python3",
