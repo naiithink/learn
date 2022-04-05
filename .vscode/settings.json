@@ -2,7 +2,7 @@
     "diffEditor.ignoreTrimWhitespace": false,
     "editor.renderWhitespace": "all",
     "editor.fontLigatures": false,
-    "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontFamily": "Consolas, Menlo, Monaco, 'Courier New', monospace",
     "editor.minimap.enabled": false,
     "breadcrumbs.enabled": false,
     "workbench.startupEditor": "none",
