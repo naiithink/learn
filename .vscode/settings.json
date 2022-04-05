@@ -34,6 +34,12 @@
         },
         "Git Bash": {
             "source": "Git Bash"
+        },
+        "MSYS2": {
+            "path": "%CSIDL_PROGRAM_FILES%\\msys64\\msys2.exe"
+        },
+        "MinGW": {
+            "path": "%CSIDL_PROGRAM_FILES%\\msys64\\mingw64.exe"
         }
     },
     /* "telemetry.enableTelemetry": false, */
