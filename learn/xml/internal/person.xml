@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE person [
+    <!ELEMENT person (name,phone,email?,password*)>
+    <!ATTLIST person id ID #REQUIRED>
+        <!ELEMENT name (#PCDATA)>
+        <!ELEMENT phone (#PCDATA)>
+        <!ELEMENT email (#PCDATA)>
+        <!ELEMENT password (#PCDATA)>
+]>
+
+<person>
+    <person id="155">
+        <name>naiithink</name>
+        <phone>+66-96-964-0404</phone>
+    </person>
+</person>

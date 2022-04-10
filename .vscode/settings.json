@@ -49,7 +49,8 @@
     "remote.SSH.defaultExtensions": [
         "gitpod.gitpod-remote-ssh"
     ],
-    "remote.SSH.configFile": "/var/folders/47/s0wp1vrn0t9_1pnm05mkbkdr0000gn/T/gitpod_ssh_config-35206-9Xwqxe0ak7sy",
+    "remote.SSH.configFile": "/var/folders/dm/wqycl49j13b9nnps13glqj5h0000gn/T/gitpod_ssh_config-16338-iC9xFlm9K0Kx",
+    "markdown-preview-github-styles.colorTheme": "system",
     "python.pythonPath": "/usr/local/bin/python3",
     "jupyter.askForKernelRestart": false,
     "notebook.cellToolbarLocation": {
@@ -166,4 +167,17 @@
         "file:///Users/naiithink/.vscode/extensions/atlassian.atlascode-2.10.11/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
     },
     "redhat.telemetry.enabled": false,
+    "markdown-pdf.outputDirectoryRelativePathFile": true,
+    "markdown-pdf.outputDirectory": "../../output",
+    "markdown-pdf.highlightStyle": "vs.css",
+    "markdown-pdf.displayHeaderFooter": false,
+    "markdown-pdf.format": "A4",
+    "markdown-pdf.margin.top": "1.5",
+    "markdown-pdf.margin.bottom": "1cm",
+    "markdown-pdf.margin.right": "1cm",
+    "markdown-pdf.margin.left": "1cm",
+    "markdown-pdf.orientation": "portrait",
+    "markdown-pdf.styles": [],
+    "markdown-pdf.quality": 100,
+    "markdown-pdf.mermaidServer": "https://unpkg.com/mermaid/dist/mermaid.min.js"
 }

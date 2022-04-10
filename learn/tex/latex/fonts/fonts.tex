@@ -1,0 +1,56 @@
+\documentclass{report}
+
+\usepackage{fontspec}
+
+% page number
+% \pagenumbering{gobble}
+
+% dummy text
+\usepackage[nopar=true]{lipsum}
+
+% visualizing layout
+% \usepackage{layout}
+
+% configuring `geometry` package
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	margin=1in,
+	includehead=true,
+	includefoot=true,
+	marginparwidth=100pt,
+	marginparsep=10pt
+}
+
+% ---
+
+% without `fancyhdr`
+% pagestyle{headings}
+
+% chapter format
+\usepackage{titlesec}
+
+% with `fancyhdr`
+\usepackage{fancyhdr}
+
+% ---
+
+\pagestyle{fancy}
+
+\begin{document}
+
+\chapter*{Foo}
+\thispagestyle{empty}
+
+\lipsum[1]
+
+\pagebreak
+
+\lhead{Foo}
+\rhead{Page \thepage}
+
+\section*{Foo Bar}
+\lipsum[1-16]
+\marginpar{hello, world}
+
+\end{document}

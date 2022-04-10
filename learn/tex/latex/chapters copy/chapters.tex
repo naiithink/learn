@@ -1,0 +1,43 @@
+\documentclass{report}
+
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage[nopar=true]{lipsum}
+
+\pagestyle{fancy}
+\geometry{
+	a4paper,
+	tmargin=72pt,
+	bmargin=72pt,
+	lmargin=36pt,
+	rmargin=72pt,
+	marginparwidth=126pt,
+	marginparsep=20pt,
+	textwidth=300pt,
+	includehead=true,
+	includefoot=true
+}
+\pagenumbering{arabic}
+\fancyhf[HL]{\chaptermark}
+\fancyhf[HR]{Page \thepage}
+
+% ---
+
+\begin{document}
+
+\begin{titlepage}
+
+\thispagestyle{empty}
+\chapter*{Foo}
+\lipsum[1]
+
+\end{titlepage}
+
+\section*{Some dummy text}
+\marginpar{\lipsum[5]}
+\lipsum[2-15]
+
+\end{document}
+
+% eiei

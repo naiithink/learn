@@ -1,0 +1,47 @@
+\documentclass{report}
+
+% page number
+% \pagenumbering{gobble}
+
+% dummy text
+\usepackage[nopar=true]{lipsum}
+
+% visualizing layout
+% \usepackage{layout}
+
+% configuring `geometry` package
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	margin=1in,
+	includehead=true,
+	includefoot=true
+}
+
+% ---
+
+% without `fancyhdr`
+% pagestyle{headings}
+
+% with `fancyhdr`
+\usepackage{fancyhdr}
+
+% ---
+
+\begin{document}
+
+\chapter[\chapterprefix=false]{Foo}
+\thispagestyle{empty}
+
+\lipsum[1]
+
+\pagebreak
+
+\thispagestyle{fancy}
+\lhead{Foo}
+\rhead{Page \thepage}
+
+\section{Some dummy text}
+\lipsum[1-18]
+
+\end{document}
