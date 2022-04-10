@@ -1,0 +1,45 @@
+\documentclass{article}
+
+\pagenumbering{gobble}
+
+% dummy text
+\usepackage[nopar=true]{lipsum}
+
+% visualizing layout
+\usepackage{layout}
+
+% ---
+
+% configuring `geometry` package
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	% margin=1in,
+	tmargin=0.5in,
+	bmargin=0.5in,
+	lmargin=1in,
+	rmargin=0.5in,
+	includehead=true,
+	includefoot=true
+}
+
+	% \usepackage[a4paper, margin=1in]{geometry}
+
+    % \usepackage{geometry}
+    % \geometry{a4paper, margin=1in}
+    
+    % \usepackage[a4paper, landscape]{geometry}
+    
+    %							  wdt  hgt
+    % \usepackage[a4paper, total={6in, 9in}]{geometry}
+
+\begin{document}
+
+\layout
+
+\rhead{Some dummy text}
+
+\section{Some dummy text}
+\lipsum[1-18]
+
+\end{document}

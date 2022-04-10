@@ -1,0 +1,21 @@
+.pkg {
+    font-size: small;
+    background-color: #F1BE47;
+    color: white;
+    padding-top: 2px;
+    padding-bottom: 4px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 5px;
+}
+
+.pkg-suggest {
+    font-size: small;
+    background-color: #808080;
+    color: white;
+    padding-top: 2px;
+    padding-bottom: 4px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 5px;
+}

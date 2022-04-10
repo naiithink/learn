@@ -1,0 +1,40 @@
+\documentclass{report}
+
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage[nopar=true]{lipsum}
+
+\pagestyle{fancy}
+\fancyhf{}
+\geometry{
+	a4paper,
+	margin=1in,
+	includehead=true,
+	includefoot=true
+}
+\pagenumbering{arabic}
+
+% ---
+
+\begin{document}
+
+\begin{titlepage}
+
+% \thispagestyle{empty}
+% \pagenumbering{gobble}
+
+\chapter*{Foo}
+\lipsum[1]
+
+\end{titlepage}
+
+\lhead{\textbf{Foo}}
+\rhead{Page \thepage}
+
+\section*{Some dummy text}
+\lipsum[2-18]
+
+\end{document}
+
+% eiei
