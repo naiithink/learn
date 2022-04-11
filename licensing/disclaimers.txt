@@ -1,0 +1,5 @@
+Copyright (C) 2022 naiithink.
+
+This file is a part of naiithink/dcowiz project.
+
+naiithink/dcowiz project is a a free software
