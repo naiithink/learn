@@ -179,5 +179,8 @@
     "markdown-pdf.orientation": "portrait",
     "markdown-pdf.styles": [],
     "markdown-pdf.quality": 100,
-    "markdown-pdf.mermaidServer": "https://unpkg.com/mermaid/dist/mermaid.min.js"
+    "markdown-pdf.mermaidServer": "https://unpkg.com/mermaid/dist/mermaid.min.js",
+    "files.associations": {
+        "stdio.h": "c"
+    }
 }
