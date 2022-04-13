@@ -182,6 +182,8 @@
     "markdown-pdf.mermaidServer": "https://unpkg.com/mermaid/dist/mermaid.min.js",
     "files.associations": {
         "stdio.h": "c",
-        "locale.h": "c"
+        "locale.h": "c",
+        "limits.h": "c",
+        "stdlib.h": "c"
     }
 }
