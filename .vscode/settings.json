@@ -184,6 +184,7 @@
         "stdio.h": "c",
         "locale.h": "c",
         "limits.h": "c",
-        "stdlib.h": "c"
+        "stdlib.h": "c",
+        "gcrypt.h": "c"
     }
 }
