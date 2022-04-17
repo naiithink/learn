@@ -51,7 +51,7 @@
     ],
     "remote.SSH.configFile": "/var/folders/dm/wqycl49j13b9nnps13glqj5h0000gn/T/gitpod_ssh_config-16338-iC9xFlm9K0Kx",
     "markdown-preview-github-styles.colorTheme": "system",
-    "python.pythonPath": "/usr/local/bin/python3",
+    "python.defaultInterpreterPath": "/usr/local/bin/python3",
     "jupyter.askForKernelRestart": false,
     "notebook.cellToolbarLocation": {
         "default": "right",
