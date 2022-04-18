@@ -1,0 +1,160 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.7)  7 APR 2022 23:32
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**headers-footers.tex
+(./headers-footers.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-02-24>
+(/usr/local/texlive/2021/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/local/texlive/2021/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count185
+\c@chapter=\count186
+\c@section=\count187
+\c@subsection=\count188
+\c@subsubsection=\count189
+\c@paragraph=\count190
+\c@subparagraph=\count191
+\c@figure=\count192
+\c@table=\count193
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen138
+)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/lipsum/lipsum.sty
+(/usr/local/texlive/2021/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+(/usr/local/texlive/2021/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2022-02-24 L3 programming layer (loader) 
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count194
+\l__pdf_internal_box=\box50
+))
+Package: l3keys2e 2022-01-12 LaTeX2e option processing using LaTeX3 keys
+)
+Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
+\g__lipsum_par_int=\count195
+\l__lipsum_a_int=\count196
+\l__lipsum_b_int=\count197
+(/usr/local/texlive/2021/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex))
+(/usr/local/texlive/2021/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+
+(/usr/local/texlive/2021/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+))
+\Gm@cnth=\count198
+\Gm@cntv=\count199
+\c@Gm@tempcnt=\count266
+\Gm@bindingoffset=\dimen139
+\Gm@wd@mp=\dimen140
+\Gm@odd@mp=\dimen141
+\Gm@even@mp=\dimen142
+\Gm@layoutwidth=\dimen143
+\Gm@layoutheight=\dimen144
+\Gm@layouthoffset=\dimen145
+\Gm@layoutvoffset=\dimen146
+\Gm@dimlist=\toks17
+)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2021/01/28 v4.0.1 Extensive control of page headers and foote
+rs
+\f@nch@headwidth=\skip49
+\f@nch@O@elh=\skip50
+\f@nch@O@erh=\skip51
+\f@nch@O@olh=\skip52
+\f@nch@O@orh=\skip53
+\f@nch@O@elf=\skip54
+\f@nch@O@erf=\skip55
+\f@nch@O@olf=\skip56
+\f@nch@O@orf=\skip57
+)
+(./headers-footers.aux)
+\openout1 = `headers-footers.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: includehead includefoot 
+* h-part:(L,W,R)=(72.26999pt, 452.9679pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 700.50687pt, 72.26999pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=452.9679pt
+* \textheight=633.50687pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
+* \topmargin=0.0pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+Chapter 1.
+./headers-footers.tex:33: Undefined control sequence.
+<argument> ...erline {\thechapter }\chapterprefix 
+                                                  =false}{\thepage }{}\prote...
+l.33 \chapter[\chapterprefix=false]{Foo}
+                                        
+? 
+./headers-footers.tex:33: Emergency stop.
+<argument> ...erline {\thechapter }\chapterprefix 
+                                                  =false}{\thepage }{}\prote...
+l.33 \chapter[\chapterprefix=false]{Foo}
+                                        
+End of file on the terminal!
+
+ 
+Here is how much of TeX's memory you used:
+ 1636 strings out of 478268
+ 30752 string characters out of 5846348
+ 411072 words of memory out of 5000000
+ 19898 multiletter control sequences out of 15000+600000
+ 469259 words of font info for 28 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 68i,0n,77p,227b,36s stack positions out of 10000i,1000n,20000p,200000b,200000s
+./headers-footers.tex:33:  ==> Fatal error occurred, no output PDF file produce
+d!
