@@ -1,0 +1,2090 @@
+<!-- 
+Original Work - Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+Free for personal and commercial use under the MIT license
+https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+
+
+Modified Work - Copyright 2019 OpenPrinting - Apache 2.0 License
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License. 
+-->
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Designing Printer Drivers - OpenPrinting</title>
+<meta name="description" content="Making Printing Just Work.">
+
+
+  <meta name="author" content="OpenPrinting">
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="OpenPrinting">
+<meta property="og:title" content="Designing Printer Drivers">
+<meta property="og:url" content="https://openprinting.github.io/documentation/02-designing-printer-drivers/">
+
+
+  <meta property="og:description" content="Making Printing Just Work.">
+
+
+
+  <meta property="og:image" content="https://openprinting.github.io/assets/images/bio-photo.jpg">
+
+
+
+  <meta name="twitter:site" content="@mmistakes">
+  <meta name="twitter:title" content="Designing Printer Drivers">
+  <meta name="twitter:description" content="Making Printing Just Work.">
+  <meta name="twitter:url" content="https://openprinting.github.io/documentation/02-designing-printer-drivers/">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+      <meta name="twitter:image" content="https://openprinting.github.io/assets/images/bio-photo.jpg">
+    
+  
+
+  
+
+
+
+  <meta property="article:published_time" content="2022-04-13T20:02:51+00:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://openprinting.github.io/documentation/02-designing-printer-drivers/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "OpenPrinting",
+      "url": "https://openprinting.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="OpenPrinting Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/custom.css">
+    <link rel="shortcut icon" type="image/png" href="/assets/images/favicon.ico"/>
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <!-- <a class="site-title" href="/">OpenPrinting</a> -->
+        <a class="site-title left-space" href="/">
+          <img src="/assets/images/logo.png" class="nav-logo">
+          OpenPrinting
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about-us/" >About Us</a>
+            </li><li class="masthead__menu-item">
+              <a href="/news/" >News and Events</a>
+            </li><li class="masthead__menu-item">
+              <a href="/projects/" >Projects</a>
+            </li><li class="masthead__menu-item">
+              <a href="/downloads/" >Downloads</a>
+            </li><li class="masthead__menu-item">
+              <a href="/documentation/" >Documentation</a>
+            </li><li class="masthead__menu-item">
+              <a href="/upcoming-technologies/" >Upcoming Technologies</a>
+            </li><li class="masthead__menu-item">
+              <a href="/driverless/" >Driverless Printing</a>
+            </li><li class="masthead__menu-item">
+              <a href="https://openprinting.org/printers" >Printers</a>
+            </li><li class="masthead__menu-item">
+              <a href="https://openprinting.org/drivers" >Printer Drivers</a>
+            </li><li class="masthead__menu-item">
+              <a href="/contact/" >Contact Us</a>
+            </li><li class="masthead__menu-item">
+              <a href="/donations/" >Donations</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle Menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">OpenPrinting</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Making Printing Just Work!</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Linux Foundation</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="https://openprinting.github.io" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/openprinting" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Designing Printer Drivers">
+    <meta itemprop="description" content="">
+    <meta itemprop="datePublished" content="2022-04-13T20:02:51+00:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Designing Printer Drivers
+</h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <!-- h_min is h_range[0] and h_max is h_range[1] -->
+              
+                <!-- YES h_min-->
+                
+                  <!-- if you provided h_min and h_max take care you have h_min is smaller than or equal to h_max -->
+                  
+                  
+                  <ul class="toc__menu">
+  <li><a href="#introduction"> Introduction </a></li>
+  <li><a href="#components"> Components for PAPPL-based Printer Driver </a></li>
+  <li><a href="#design"> Designing Components </a></li>
+  <li><a href="#non-raster"> Add Support for Non-Raster Printers</a></li>
+  <li><a href="#template"> Template for PAPPL-based Printer Driver </a></li>
+  <li><a href="#guidelines"> Design Guidelines </a></li>
+  <li><a href="#resources"> Resources </a></li>
+</ul>
+
+                
+              
+            </nav>
+          </aside>
+        
+        <p><strong>This document contains a complete tutorial as well as information for manufacturers with examples for designing printer drivers. If you are looking for information regarding the use of printer drivers, kindly refer to <a href="../05-User-Manual/">User Manual</a></strong></p>
+
+<h2 id="introduction"> Introduction </h2>
+
+<p>A driver is a code or data specific to a certain model or group of hardware devices, needed to make the hardware work with the hardware-model-independent code of the operating system. Printing in Linux has moved towards <a href="https://openprinting.github.io/driverless/">Driverless Printing</a>, which means there is no need for any hardware-model-specific code or data. However, there are some problems with the current framework. For example, some printers(especially the old ones) that cannot handle IPP requests are devoid of driverless printing capability. Printer Applications help to address these issues. Kindly refer <a href="../01-printer-application/">Printer Applications - A new way to print in Linux</a> to learn more about Printer Applications, its working and benefits.</p>
+
+<p>For Designing the Printer Application Driver, it would be a lot of re-inventing the wheel if everyone who wants to create a printer driver has to implement all things from scratch. Therefore Michael Sweet has developed <a href="https://github.com/michaelrsweet/pappl/">PAPPL</a>, a library that provides all the common functionality which is required in every Printer Application.</p>
+
+<p>The flowchart below mentions the components of the driver that needs to be designed by you (boxes in blue color), along with the PAPPL utilities (boxes in red color) that would be used by your designed components.</p>
+
+<p><img src="../../assets/images/flowchart.png" alt="Flowchart" /></p>
+
+<p>The following tutorial helps you to understand how to design each component and integrate the PAPPL Utilities to reduce your work.</p>
+
+<h2 id="components"> Components for PAPPL-based Printer Driver </h2>
+
+<ul>
+  <li>
+    <h3 id="papplmainloop">papplMainLoop</h3>
+
+    <p>papplMainLoop is the main entry point for the application. It runs a standard main loop with a <a href="#system_cb()">system callback</a>. Also allows the printer application to define its own <a href="#usage_cb()">usage callback</a> and have an <a href="#subcmd_cb()">application specific subcommand</a>.</p>
+
+    <p>The <code class="language-plaintext highlighter-rouge">papplMainloop</code> function runs until all processing for the current sub-command is complete, returning the exit status for the program.</p>
+
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kt">int</span>					        <span class="c1">// O - Exit status</span>
+  <span class="n">papplMainloop</span><span class="p">(</span>
+      <span class="kt">int</span>                   <span class="n">argc</span><span class="p">,</span>		<span class="c1">// I - Number of command line arguments</span>
+      <span class="kt">char</span>                  <span class="o">*</span><span class="n">argv</span><span class="p">[],</span>	        <span class="c1">// I - Command line arguments</span>
+      <span class="k">const</span> <span class="kt">char</span>            <span class="o">*</span><span class="n">version</span><span class="p">,</span>	        <span class="c1">// I - Version number</span>
+      <span class="k">const</span> <span class="kt">char</span>            <span class="o">*</span><span class="n">footer_html</span><span class="p">,</span>	<span class="c1">// I - Footer HTML or `NULL` for none</span>
+      <span class="kt">int</span>                   <span class="n">num_drivers</span><span class="p">,</span>	<span class="c1">// I - Number of drivers</span>
+      <span class="n">pappl_pr_driver_t</span>     <span class="o">*</span><span class="n">drivers</span><span class="p">,</span>	        <span class="c1">// I - Drivers</span>
+      <span class="n">pappl_pr_driver_cb_t</span>  <span class="n">driver_cb</span><span class="p">,</span>	        <span class="c1">// I - Driver callback</span>
+      <span class="n">pappl_ml_autoadd_cb_t</span> <span class="n">autoadd_cb</span><span class="p">,</span>	        <span class="c1">// I - Auto-add callback or `NULL` for none</span>
+      <span class="k">const</span> <span class="kt">char</span>            <span class="o">*</span><span class="n">subcmd_name</span><span class="p">,</span>	<span class="c1">// I - Sub-command name or `NULL` for none</span>
+      <span class="n">pappl_ml_subcmd_cb_t</span>  <span class="n">subcmd_cb</span><span class="p">,</span>	        <span class="c1">// I - Sub-command callback or `NULL` for none</span>
+      <span class="n">pappl_ml_system_cb_t</span>  <span class="n">system_cb</span><span class="p">,</span>	        <span class="c1">// I - System callback or `NULL` for default</span>
+      <span class="n">pappl_ml_usage_cb_t</span>   <span class="n">usage_cb</span><span class="p">,</span>	        <span class="c1">// I - Usage callback or `NULL` for default</span>
+      <span class="kt">void</span>                  <span class="o">*</span><span class="n">data</span>               <span class="c1">// I - Context pointer</span>
+  <span class="p">)</span>
+</code></pre></div>    </div>
+
+    <p>Before looking at the arguments, you must be aware that there are two ways to configure the papplMainloop:</p>
+
+    <ol>
+      <li>
+        <p><strong>Use system callback argument</strong></p>
+
+        <p>The system is an object of type <code class="language-plaintext highlighter-rouge">pappl_system_t</code> that manages client and device connections, listeners, the log, printers, and resources. In addition, it provides an optional embedded web interface, raw socket printing, and USB printer gadget (Linux only).</p>
+
+        <p>The system callback argument specifies a function that will create a new system, i.e. a <code class="language-plaintext highlighter-rouge">pappl_system_t</code> object. You can use the callback function to customisably configure system properties using the <a href="../../pappl-system-utilities/">PAPPL System Utilities</a>. This includes configuring Footer HTML on your web interface and setting up drivers.</p>
+
+        <p>You can refer <a href="#systemcallback">designing system callback</a> guidelines for retrieving more information about the System Callback function.</p>
+      </li>
+      <li>
+        <p><strong>Without system callback function</strong></p>
+
+        <p>PAPPL allows the manufacture to refrain from the hardships of designing a system callback to create a system. You can specify the system callback as <code class="language-plaintext highlighter-rouge">NULL</code> and pass on only a few arguments:</p>
+
+        <ul>
+          <li><a href="#footer">Footer HTML</a></li>
+          <li><a href="#num-of-driver">Number of drivers</a></li>
+          <li><a href="#drivers">Drivers</a></li>
+          <li><a href="#driver-callback">Driver Callback</a></li>
+        </ul>
+
+        <p>If the “system_cb” argument is passed as <code class="language-plaintext highlighter-rouge">NULL</code>, PAPPL automatically sets up the list of drivers passed as “drivers” arguments and add the Footer HTML for the web interface (in “footer” argument is not <code class="language-plaintext highlighter-rouge">NULL</code>). A default system object is created for the printer application, which supports multiple printers and a web interface.</p>
+      </li>
+    </ol>
+
+    <hr />
+
+    <p>The <code class="language-plaintext highlighter-rouge">argc</code> and <code class="language-plaintext highlighter-rouge">argv</code> arguments for <code class="language-plaintext highlighter-rouge">papplMainLoop</code> are those provided to the <code class="language-plaintext highlighter-rouge">main</code> function. Other arguments are given below.</p>
+
+    <ol>
+      <li>
+        <h3 id="version-number">Version number</h3>
+
+        <p>This argument is simply a string literal, denoting the numeric version of the printer driver that conforms to semantic versioning guidelines with up to four numbers, for example “1.2.3.4”</p>
+
+        <p>Examples of valid version number are “1.0”, “2.1”, etc.</p>
+      </li>
+      <li>
+        <h3 id="footer">  Footer HTML </h3>
+
+        <p>The “footer_html” argument can be provided to override the default footer text that appears at the bottom of the web interface.</p>
+
+        <p>As mentioned above, you can pass this argument as <code class="language-plaintext highlighter-rouge">NULL</code> and add the footer in system callback function. If system callback and “footer_html” argument both are <code class="language-plaintext highlighter-rouge">NULL</code> the default is used.</p>
+      </li>
+      <li>
+        <h3 id="num-of-driver">  Number of drivers </h3>
+
+        <p>The “num_drivers” argument specifies the number of drivers for printers. Specify <code class="language-plaintext highlighter-rouge">0</code> if the drivers are configured in the system callback.</p>
+      </li>
+      <li>
+        <h3 id="drivers"> Drivers </h3>
+
+        <p>The drivers list is a collection of names, descriptions, IEEE-1284 device IDs, and extension pointers. You can pass this argument as <code class="language-plaintext highlighter-rouge">NULL</code> if the drivers are configured in the system callback.</p>
+
+        <p>A valid example for HP DeskJet, HP LaserJet, and a generic PCL driver, looks like this:</p>
+
+        <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">static</span> <span class="n">pappl_pr_driver_t</span> <span class="n">pcl_drivers</span><span class="p">[]</span> <span class="o">=</span><span class="c1">// Driver information</span>
+ <span class="p">{</span>   <span class="cm">/* name */</span>          <span class="cm">/* description */</span>       <span class="cm">/* device ID */</span> <span class="cm">/* extension */</span>
+ <span class="p">{</span> <span class="s">"hp_deskjet"</span><span class="p">,</span>       <span class="s">"HP Deskjet"</span><span class="p">,</span>           <span class="nb">NULL</span><span class="p">,</span>           <span class="nb">NULL</span> <span class="p">},</span>
+ <span class="p">{</span> <span class="s">"hp_generic"</span><span class="p">,</span>       <span class="s">"Generic PCL"</span><span class="p">,</span>          <span class="s">"CMD:PCL;"</span><span class="p">,</span>     <span class="nb">NULL</span> <span class="p">},</span>
+ <span class="p">{</span> <span class="s">"hp_laserjet"</span><span class="p">,</span>      <span class="s">"HP LaserJet"</span><span class="p">,</span>          <span class="nb">NULL</span><span class="p">,</span>           <span class="nb">NULL</span> <span class="p">}</span>
+ <span class="p">};</span>
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <h3 id="driver-callback"> Driver Callback </h3>
+
+        <p>The driver callback is responsible for providing the data associated with each driver and is called when the system is creating a new printer. It also responsible for letting the application know what functions to call when performing job functions like starting a job, starting a page, writing a line, ending a page, ending a job, printing a raw job, etc.</p>
+
+        <p>You can pass this argument as <code class="language-plaintext highlighter-rouge">NULL</code> if the drivers are configured in the system callback. Else, for designing the driver callback function, refer to the <a href="#callback">design driver callback</a> guidelines.</p>
+      </li>
+      <li>
+        <h3 id="autoadd-callback">Autoadd Callback</h3>
+
+        <p>The “autoadd_cb” argument specifies a callback for automatically adding new printers with the “autoadd” sub-command. It tells PAPPL which driver to use for the printers it finds.</p>
+      </li>
+      <li>
+        <h3 id="sub-command-name">Sub-command name</h3>
+
+        <p>This argument is a string literal that denotes the additional custom sub-command supported by your printer driver. By default, PAPPL helps each driver to support the following sub-commands:</p>
+
+        <ul>
+          <li>add</li>
+          <li>cancel</li>
+          <li>default</li>
+          <li>delete</li>
+          <li>devices</li>
+          <li>drivers</li>
+          <li>jobs</li>
+          <li>modify</li>
+          <li>options</li>
+          <li>printers</li>
+          <li>server</li>
+          <li>shutdown</li>
+          <li>status</li>
+          <li>submit</li>
+        </ul>
+
+        <p>If your printer doesn’t support any additional custom sub-command, you may specify the argument as <code class="language-plaintext highlighter-rouge">NULL</code>.</p>
+      </li>
+      <li>
+        <h3 id="subcmd_cb()">  Sub-command Callback </h3>
+
+        <p>This callback argument is the function that is to be executed when the sub-command(other than the default sub-commands) is specified.</p>
+
+        <p>Since each driver is not bound to support additional sub-command, one may specify this argument as <code class="language-plaintext highlighter-rouge">NULL</code> in case the printer driver does not support any additional sub-command.</p>
+
+        <p>If you wish to support additional sub-command, then specify the name of the sub-command in the <strong>sub-command name</strong> argument and design a function using the <strong><a href="#subcommandcallback">design sub-command callback</a></strong> guidelines.</p>
+      </li>
+      <li>
+        <h3 id="system_cb()"> System Callback </h3>
+
+        <p>The System Callback function creates a system object and allows restoring the previous system configuration(if any). Kindly refer to the <strong><a href="#systemcallback">Design system callback</a></strong> guidelines for retrieving more information about the System Callback function.</p>
+      </li>
+      <li>
+        <h3 id="usage_cb()">  Usage Callback </h3>
+
+        <p>This function helps the user to know about the capabilities of your printer by showing the set of sub-commands and options supported by your printer. For retrieving the output of this function, the user needs to pass the <code class="language-plaintext highlighter-rouge">--help</code> argument.</p>
+
+        <p>One may specify the usage callback argument as <code class="language-plaintext highlighter-rouge">NULL</code> in the papplMainloop function. The <code class="language-plaintext highlighter-rouge">default</code> function is utilized in this situation. The default function shows the default list of sub-commands and options. The output of the default usage callback function is shown below.</p>
+
+        <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">Usage:</span> <span class="o">&lt;</span><span class="n">basename</span><span class="o">&gt;</span> <span class="n">SUB</span><span class="o">-</span><span class="n">COMMAND</span> <span class="p">[</span><span class="n">OPTIONS</span><span class="p">]</span> <span class="p">[</span><span class="n">FILENAME</span><span class="p">]</span>
+        <span class="o">&lt;</span><span class="n">basename</span><span class="o">&gt;</span> <span class="p">[</span><span class="n">OPTIONS</span><span class="p">]</span> <span class="p">[</span><span class="n">FILENAME</span><span class="p">]</span>
+        <span class="o">&lt;</span><span class="n">basename</span><span class="o">&gt;</span> <span class="p">[</span><span class="n">OPTIONS</span><span class="p">]</span> <span class="o">-</span>
+
+<span class="n">Sub</span><span class="o">-</span><span class="n">commands</span><span class="o">:</span>
+    <span class="n">add</span> <span class="n">PRINTER</span>      <span class="n">Add</span> <span class="n">a</span> <span class="n">printer</span><span class="p">.</span>
+    <span class="p">[</span><span class="n">autoadd</span>          <span class="n">Automatically</span> <span class="n">add</span> <span class="n">supported</span> <span class="n">printers</span><span class="p">.]</span>
+    <span class="n">cancel</span>           <span class="n">Cancel</span> <span class="n">one</span> <span class="n">or</span> <span class="n">more</span> <span class="n">jobs</span><span class="p">.</span>
+    <span class="k">default</span>          <span class="n">Set</span> <span class="n">the</span> <span class="k">default</span> <span class="n">printer</span><span class="p">.</span>
+    <span class="n">delete</span>           <span class="n">Delete</span> <span class="n">a</span> <span class="n">printer</span><span class="p">.</span>
+    <span class="n">devices</span>          <span class="n">List</span> <span class="n">devices</span><span class="p">.</span>
+    <span class="n">drivers</span>          <span class="n">List</span> <span class="n">drivers</span><span class="p">.</span>
+    <span class="n">jobs</span>             <span class="n">List</span> <span class="n">jobs</span><span class="p">.</span>
+    <span class="n">modify</span>           <span class="n">Modify</span> <span class="n">a</span> <span class="n">printer</span><span class="p">.</span>
+    <span class="n">options</span>          <span class="n">List</span> <span class="n">printer</span> <span class="n">options</span><span class="p">.</span>
+    <span class="n">printers</span>         <span class="n">List</span> <span class="n">printers</span><span class="p">.</span>
+    <span class="n">server</span>           <span class="n">Run</span> <span class="n">a</span> <span class="n">server</span><span class="p">.</span>
+    <span class="n">shutdown</span>         <span class="n">Shutdown</span> <span class="n">a</span> <span class="n">running</span> <span class="n">server</span><span class="p">.</span>
+    <span class="n">status</span>           <span class="n">Show</span> <span class="n">server</span><span class="o">/</span><span class="n">printer</span><span class="o">/</span><span class="n">job</span> <span class="n">status</span><span class="p">.</span>
+    <span class="n">submit</span>           <span class="n">Submit</span> <span class="n">a</span> <span class="n">file</span> <span class="k">for</span> <span class="n">printing</span><span class="p">.</span>
+
+<span class="n">Options</span><span class="o">:</span>
+    <span class="o">-</span><span class="n">a</span>               <span class="n">Cancel</span> <span class="n">all</span> <span class="n">jobs</span> <span class="p">(</span><span class="n">cancel</span><span class="p">).</span>
+    <span class="o">-</span><span class="n">d</span> <span class="n">PRINTER</span>       <span class="n">Specify</span> <span class="n">printer</span><span class="p">.</span>
+    <span class="o">-</span><span class="n">j</span> <span class="n">JOB</span><span class="o">-</span><span class="n">ID</span>        <span class="n">Specify</span> <span class="n">job</span> <span class="n">ID</span> <span class="p">(</span><span class="n">cancel</span><span class="p">).</span>
+    <span class="o">-</span><span class="n">m</span> <span class="n">DRIVER</span><span class="o">-</span><span class="n">NAME</span>   <span class="n">Specify</span> <span class="n">driver</span> <span class="p">(</span><span class="n">add</span><span class="o">/</span><span class="n">modify</span><span class="p">).</span>
+    <span class="o">-</span><span class="n">n</span> <span class="n">COPIES</span>        <span class="n">Specify</span> <span class="n">number</span> <span class="n">of</span> <span class="n">copies</span> <span class="p">(</span><span class="n">submit</span><span class="p">).</span>
+    <span class="o">-</span><span class="n">o</span> <span class="n">NAME</span><span class="o">=</span><span class="n">VALUE</span>    <span class="n">Specify</span> <span class="n">option</span> <span class="p">(</span><span class="n">add</span><span class="p">,</span><span class="n">modify</span><span class="p">,</span><span class="n">server</span><span class="p">,</span><span class="n">submit</span><span class="p">).</span>
+    <span class="o">-</span><span class="n">u</span> <span class="n">URI</span>           <span class="n">Specify</span> <span class="n">ipp</span><span class="o">:</span> <span class="n">or</span> <span class="n">ipps</span><span class="o">:</span> <span class="n">printer</span><span class="o">/</span><span class="n">server</span><span class="p">.</span>
+    <span class="o">-</span><span class="n">v</span> <span class="n">DEVICE</span><span class="o">-</span><span class="n">URI</span>    <span class="n">Specify</span> <span class="n">socket</span><span class="o">:</span> <span class="n">or</span> <span class="n">usb</span><span class="o">:</span> <span class="n">device</span> <span class="p">(</span><span class="n">add</span><span class="o">/</span><span class="n">modify</span><span class="p">).</span>
+</code></pre></div>        </div>
+
+        <p>If your printer supports only the default set of sub-commands, you can use the default usage callback function. If you wish to output different information when the user uses –help command-line argument, follow the designing <strong><a href="#usagecallback">usage callback function</a></strong> guidelines.</p>
+      </li>
+      <li>
+        <h3 id="data">Data</h3>
+
+        <p>This argument is a string literal and provides the application-specific data for any of the callback functions.</p>
+      </li>
+    </ol>
+  </li>
+</ul>
+
+<h2 id="design"> Designing Components </h2>
+
+<ul>
+  <li>
+    <h3 id="usagecallback"> Usage Callback </h3>
+
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">pappl_ml_usage_cb_t</span>  <span class="nf">usage_cb</span> <span class="p">(</span>
+      <span class="kt">void</span> <span class="o">*</span><span class="n">data</span>
+  <span class="p">);</span>
+</code></pre></div>    </div>
+
+    <p>The usage callback function receives only one argument, i.e. the callback data.</p>
+
+    <p>The function objective is to show the usage details of the printer. Hence, the design guidelines for this function is quite trivial. It consists of a series of <code class="language-plaintext highlighter-rouge">printf</code> statements describing each supported sub-command and option. It can then return.</p>
+  </li>
+</ul>
+
+<hr />
+
+<ul>
+  <li>
+    <h3 id="subcommandcallback"> Sub-Command Callback </h3>
+
+    <p>This function allows the printer application to have an application-specific subcommand.</p>
+
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">pappl_ml_subcmd_cb_t</span> <span class="nf">subcmd_cb</span> <span class="p">(</span>
+      <span class="k">const</span> <span class="kt">char</span>      <span class="o">*</span><span class="n">base_name</span><span class="p">,</span>
+      <span class="kt">int</span>             <span class="n">options</span><span class="p">,</span>
+      <span class="n">cups_option_t</span>   <span class="o">*</span><span class="n">options</span><span class="p">,</span>
+      <span class="kt">int</span>             <span class="n">num_files</span><span class="p">,</span>
+      <span class="kt">char</span>            <span class="o">**</span><span class="n">files</span><span class="p">,</span>
+      <span class="kt">void</span>            <span class="o">*</span><span class="n">data</span>
+  <span class="p">);</span>
+</code></pre></div>    </div>
+
+    <p>The Sub-Command callback function receives six arguments Basename, Number of options, Options, Number of files, Name of files, and Callback data. It then returns a new sub-command object.</p>
+  </li>
+</ul>
+
+<hr />
+
+<ul>
+  <li>
+    <h3 id="systemcallback"> System Callback </h3>
+
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">pappl_ml_system_cb_t</span> <span class="o">*</span><span class="nf">system_cb</span> <span class="p">(</span>
+      <span class="kt">int</span>             <span class="n">num_options</span><span class="p">,</span>
+      <span class="n">cups_option_t</span>   <span class="o">*</span><span class="n">options</span><span class="p">,</span>
+      <span class="kt">void</span>            <span class="o">*</span><span class="n">data</span>
+  <span class="p">);</span>
+</code></pre></div>    </div>
+
+    <p>The system callback function receives three arguments Number of options, Options, and Callback data. It then returns a new system object.</p>
+
+    <p><strong>Design Guidelines:</strong></p>
+
+    <ol>
+      <li>
+        <p><strong>Declare Objects and Variables</strong></p>
+
+        <p>The following objects and variables have to be declared:</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>DataType</th>
+              <th>Variable Name</th>
+              <th>Significance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>pappl_system_t*</td>
+              <td>system</td>
+              <td>System object</td>
+            </tr>
+            <tr>
+              <td>char*</td>
+              <td>val</td>
+              <td>Current option value</td>
+            </tr>
+            <tr>
+              <td>char*</td>
+              <td>hostname</td>
+              <td>Hostname</td>
+            </tr>
+            <tr>
+              <td>char*</td>
+              <td>logfile</td>
+              <td>Log file</td>
+            </tr>
+            <tr>
+              <td>char*</td>
+              <td>system_name</td>
+              <td>System name</td>
+            </tr>
+            <tr>
+              <td>char*</td>
+              <td>spooldir_name</td>
+              <td>spool-directory</td>
+            </tr>
+            <tr>
+              <td>char*</td>
+              <td>authservice</td>
+              <td>auth-service</td>
+            </tr>
+            <tr>
+              <td>pappl_loglevel_t</td>
+              <td>loglevel</td>
+              <td>Log level</td>
+            </tr>
+            <tr>
+              <td>int</td>
+              <td>port</td>
+              <td>Port number</td>
+            </tr>
+            <tr>
+              <td>pappl_soptions_t</td>
+              <td>soptions</td>
+              <td>System options</td>
+            </tr>
+            <tr>
+              <td>pappl_version_t</td>
+              <td>versions</td>
+              <td>Software versions</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Note</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Naturally, you can define other names for variables. We have assumed them as given in the table to reduce ambiguity in the subsequent steps.</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <p><strong>Fetch values using cupsGetOption</strong></p>
+
+        <p>From the above listed objects/variables, the following variables can get their values from corressponding option name, using <code class="language-plaintext highlighter-rouge">cupsGetOption</code> PAPPL utility:</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Variable Name</th>
+              <th>Option name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>loglevel</td>
+              <td>log-level</td>
+            </tr>
+            <tr>
+              <td>logfile</td>
+              <td>log-file</td>
+            </tr>
+            <tr>
+              <td>hostname</td>
+              <td>server-hostname</td>
+            </tr>
+            <tr>
+              <td>system_name</td>
+              <td>system-name</td>
+            </tr>
+            <tr>
+              <td>port</td>
+              <td>server-port</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>The syntax for using <code class="language-plaintext highlighter-rouge">cupsGetOption</code> is:</p>
+
+        <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="o">&lt;</span><span class="n">variable_name</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">cupsGetOption</span><span class="p">(</span><span class="o">&lt;</span><span class="n">option_name</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">num_options</span><span class="p">,</span> <span class="n">options</span><span class="p">)</span>
+</code></pre></div>        </div>
+
+        <p>Notes:</p>
+
+        <ul>
+          <li>
+            <p>The return type for <code class="language-plaintext highlighter-rouge">cupsGetOption</code> utility is char*. Hence for “log-level” and “server-port” options, first fetch them into the <code class="language-plaintext highlighter-rouge">val</code> variable.</p>
+          </li>
+          <li>
+            <p>The values taken by <code class="language-plaintext highlighter-rouge">loglevel</code> variable based on value returned by “log-level” <code class="language-plaintext highlighter-rouge">cupsGetOption</code> can be summarised using the following table:</p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>log-level Option</th>
+                  <th>Value for loglevel variable</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>fatal</td>
+                  <td>PAPPL_LOGLEVEL_FATAL</td>
+                </tr>
+                <tr>
+                  <td>error</td>
+                  <td>PAPPL_LOGLEVEL_ERROR</td>
+                </tr>
+                <tr>
+                  <td>warn</td>
+                  <td>PAPPL_LOGLEVEL_WARN</td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>PAPPL_LOGLEVEL_INFO</td>
+                </tr>
+                <tr>
+                  <td>debug</td>
+                  <td>PAPPL_LOGLEVEL_DEBUG</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+          <li>
+            <p>The <code class="language-plaintext highlighter-rouge">port</code> variable can be retrived from “server-port” option using <a href="https://linux.die.net/man/3/atoi">atoi</a> function.</p>
+          </li>
+          <li>
+            <p>Don’t forget to add a check for the port number. It must be between 0 to 65535(both inclusive).</p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p><strong>Create a system using papplSystemCreate</strong></p>
+
+        <p>The variables defined and fetched above are passed to papplSystemCreate utility to create a system.</p>
+
+        <p>The system is an object of type <code class="language-plaintext highlighter-rouge">pappl_system_t</code> that manages client and device connections, listeners, the log, printers, and resources.  It implements a subset of the IPP System Service (<a href="https://ftp.pwg.org/pub/pwg/candidates/cs-ippsystem10-20191122-5100.22.pdf">PWG 5100.22</a>) with each printer implementing IPP Everywhere™ (<a href="https://ftp.pwg.org/pub/pwg/candidates/cs-ippeve11-20200515-5100.14.pdf">PWG 5100.14</a>) and some extensions to provide compatibility with the full range of mobile and desktop client devices.  In addition, it provides an optional embedded web interface, raw socket printing, and USB printer gadget (Linux only).</p>
+
+        <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">pappl_system_t</span><span class="o">*</span> <span class="nf">papplSystemCreate</span><span class="p">(</span>
+     <span class="n">pappl_soptions_t</span>    <span class="n">options</span><span class="p">,</span>
+     <span class="k">const</span> <span class="kt">char</span>          <span class="o">*</span><span class="n">name</span><span class="p">,</span>
+     <span class="kt">int</span>                 <span class="n">port</span><span class="p">,</span>
+     <span class="k">const</span> <span class="kt">char</span>          <span class="o">*</span><span class="n">subtypes</span><span class="p">,</span>
+     <span class="k">const</span> <span class="kt">char</span>          <span class="o">*</span><span class="n">spooldir</span><span class="p">,</span>
+     <span class="k">const</span> <span class="kt">char</span>          <span class="o">*</span><span class="n">logfile</span><span class="p">,</span>
+     <span class="n">pappl_loglevel_t</span>    <span class="n">loglevel</span><span class="p">,</span>
+     <span class="k">const</span> <span class="kt">char</span>          <span class="o">*</span><span class="n">auth_service</span><span class="p">,</span>
+     <span class="n">bool</span>                <span class="n">tls_only</span>
+ <span class="p">);</span>
+</code></pre></div>        </div>
+
+        <ul>
+          <li>
+            <p>The <code class="language-plaintext highlighter-rouge">soptions</code> variable is passed as the first argument, which is an bitwise <code class="language-plaintext highlighter-rouge">ORed</code> of the following options:</p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th style="text-align: center">System Option</th>
+                  <th style="text-align: center">Significance</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="text-align: center">PAPPL_SOPTIONS_DNSSD_HOST</td>
+                  <td style="text-align: center">Use hostname in DNS-SD service names instead of serial number/UUID</td>
+                </tr>
+                <tr>
+                  <td style="text-align: center">PAPPL_SOPTIONS_LOG</td>
+                  <td style="text-align: center">Include link to log file</td>
+                </tr>
+                <tr>
+                  <td style="text-align: center">PAPPL_SOPTIONS_MULTI_QUEUE</td>
+                  <td style="text-align: center">Support multiple printers</td>
+                </tr>
+                <tr>
+                  <td style="text-align: center">PAPPL_SOPTIONS_NETWORK</td>
+                  <td style="text-align: center">Include network settings page</td>
+                </tr>
+                <tr>
+                  <td style="text-align: center">PAPPL_SOPTIONS_NONE</td>
+                  <td style="text-align: center">No options</td>
+                </tr>
+                <tr>
+                  <td style="text-align: center">PAPPL_SOPTIONS_RAW_SOCKET</td>
+                  <td style="text-align: center">Accept jobs via raw sockets</td>
+                </tr>
+                <tr>
+                  <td style="text-align: center">PAPPL_SOPTIONS_REMOTE_ADMIN</td>
+                  <td style="text-align: center">Allow remote queue management (vs. localhost only)</td>
+                </tr>
+                <tr>
+                  <td style="text-align: center">PAPPL_SOPTIONS_SECURITY</td>
+                  <td style="text-align: center">Include user/password settings page</td>
+                </tr>
+                <tr>
+                  <td style="text-align: center">PAPPL_SOPTIONS_STANDARD</td>
+                  <td style="text-align: center">Include the standard web pages</td>
+                </tr>
+                <tr>
+                  <td style="text-align: center">PAPPL_SOPTIONS_TLS</td>
+                  <td style="text-align: center">Include TLS settings page</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+          <li>The <code class="language-plaintext highlighter-rouge">system_name</code> variable fetched in 2<sup>nd</sup> Step is passed as second argument. Note that the system-name might be <code class="language-plaintext highlighter-rouge">NULL</code>. So, don’t forget to add a check and pass a default value, in case the fetched system-name is <code class="language-plaintext highlighter-rouge">NULL</code>.</li>
+          <li>The port number is passed as the third argument. You may pass it as <code class="language-plaintext highlighter-rouge">0</code> for auto.</li>
+          <li>The 4th argument is a string literal that signifies DNS-SD sub-types. One may pass <code class="language-plaintext highlighter-rouge">NULL</code> for none.</li>
+          <li>Pass the <code class="language-plaintext highlighter-rouge">spooldir</code>, <code class="language-plaintext highlighter-rouge">logfile</code> and <code class="language-plaintext highlighter-rouge">loglevel</code> variable fetched in 2<sup>nd</sup> Step as fifth, sixth and seventh argument respectively. You can pass <code class="language-plaintext highlighter-rouge">NULL</code> for the fifth and sixth arguments for default values.</li>
+          <li>The 8th argument signifies the PAM authentication service. You may pass <code class="language-plaintext highlighter-rouge">auth_service</code> variable fetched in 2<sup>nd</sup> Step or <code class="language-plaintext highlighter-rouge">NULL</code> for none.</li>
+          <li>If the system only supports TLS connection, pass true in the 9th argument, else false.</li>
+        </ul>
+      </li>
+      <li>
+        <p><strong>Add system configurations</strong></p>
+
+        <p>The system object has tons of configurable attributes and correspondingly a huge number of PAPPL utilities to configure them. These include utilities like Setting Hostname, Setting the footer HTML for the web interface, etc. A detailed list of these function can be found at <a href="../../pappl-system-utilities/">PAPPL System Utilities</a>.</p>
+      </li>
+      <li>
+        <p><strong>Call the <a href="#setup">Driver setup function</a></strong></p>
+
+        <p>Pass the system object created in previous steps as an argument to the Driver setup function. See the <a href="#setup">design guidlines</a> for knowing about the Driver setup function.</p>
+      </li>
+      <li>
+        <p><strong>Return System Object</strong></p>
+
+        <p>The system object created and set up in the previous steps is returned in this step.</p>
+      </li>
+    </ol>
+  </li>
+</ul>
+
+<hr />
+
+<ul>
+  <li>
+    <h3 id="setup"> Driver setup Function </h3>
+
+    <p>This function defines the list of printer drivers and <a href="#callback">driver callback function</a>.</p>
+
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kt">void</span> <span class="nf">pcl_setup</span> <span class="p">(</span>
+      <span class="n">pappl_system_t</span> <span class="o">*</span><span class="n">system</span>
+  <span class="p">);</span>
+</code></pre></div>    </div>
+
+    <p>The Driver setup function receives only one argument, i.e. system object.</p>
+
+    <p><strong>Design Guidelines:</strong></p>
+
+    <ol>
+      <li>
+        <p><strong>Define Drivers name and description</strong></p>
+
+        <p>Create two arrays of string literals, one for the names of the drivers and the other for their corresponding descriptions. Initialise them suitably and use as directed in 2<sup>nd</sup> Step.</p>
+      </li>
+      <li>
+        <p><strong>Call papplSystemSetPrintDrivers</strong></p>
+
+        <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kt">void</span> <span class="nf">papplSystemSetPrintDrivers</span><span class="p">(</span>
+     <span class="n">pappl_system_t</span>      <span class="o">*</span><span class="n">system</span><span class="p">,</span>
+     <span class="kt">int</span>                 <span class="n">num_names</span><span class="p">,</span>
+     <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="k">const</span>  <span class="o">*</span><span class="n">names</span><span class="p">,</span>
+     <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="k">const</span>  <span class="o">*</span><span class="n">desc</span><span class="p">,</span>
+     <span class="n">pappl_pdriver_cb_t</span>  <span class="n">cb</span><span class="p">,</span>
+     <span class="kt">void</span>                <span class="o">*</span><span class="n">data</span>
+ <span class="p">);</span>
+</code></pre></div>        </div>
+
+        <ul>
+          <li>The received pappl_system_t object is passed as the first argument.</li>
+          <li>Pass the number of drivers as the second argument</li>
+          <li>The defined driver name and description array are passed as the third and fourth arguments respectively.</li>
+          <li>Pass the <a href="#callback">Driver Callback Function</a> as fifth argument.</li>
+          <li>Pass the callback data as the 6th argument.</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+</ul>
+
+<hr />
+
+<ul>
+  <li>
+    <h3 id="callback"> Driver Callback Function </h3>
+
+    <p>This function tells the printer application what functions to call when performing job functions like starting a job, starting a page, writing a line, ending a page, ending a job, printing a raw job. Driver capability information and defaults(such as resolution, color, etc.) are also provided here.</p>
+
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">bool</span> <span class="nf">pcl_callback</span> <span class="p">(</span>
+      <span class="n">pappl_system_t</span>          <span class="o">*</span><span class="n">system</span><span class="p">,</span>
+      <span class="k">const</span> <span class="kt">char</span>              <span class="o">*</span><span class="n">driver_name</span><span class="p">,</span>
+      <span class="k">const</span> <span class="kt">char</span>              <span class="o">*</span><span class="n">device_uri</span><span class="p">,</span>
+      <span class="k">const</span> <span class="kt">char</span>              <span class="o">*</span><span class="n">device_id</span><span class="p">,</span>
+      <span class="n">pappl_pdriver_data_t</span>    <span class="o">*</span><span class="n">driver_data</span><span class="p">,</span>
+      <span class="n">ipp_t</span>                   <span class="o">**</span><span class="n">driver_attrs</span><span class="p">,</span>
+      <span class="kt">void</span>                    <span class="o">*</span><span class="n">data</span>
+  <span class="p">);</span>
+</code></pre></div>    </div>
+
+    <p>The callback function receives six arguments System object, Driver name, Device URI, Driver data, Driver Attributes, and Callback data. It then returns either <code class="language-plaintext highlighter-rouge">true</code> on success or <code class="language-plaintext highlighter-rouge">false</code> on failure.</p>
+
+    <p><strong>Design Guidelines:</strong></p>
+
+    <ol>
+      <li>
+        <p><strong>Add suitable checks</strong></p>
+
+        <p>You may check that the passed values of <code class="language-plaintext highlighter-rouge">driver_name</code>, <code class="language-plaintext highlighter-rouge">device_uri</code>, <code class="language-plaintext highlighter-rouge">driver_data</code>, and <code class="language-plaintext highlighter-rouge">data</code> variable is non-NULL. Further, you must verify that the callback data is the same as the <code class="language-plaintext highlighter-rouge">data</code> variable.</p>
+      </li>
+      <li>
+        <p><strong>Assign values to common <code class="language-plaintext highlighter-rouge">driver_data</code> members</strong></p>
+
+        <p>All the required information is stored in the <code class="language-plaintext highlighter-rouge">pappl_pdriver_data_t</code> <a href="#structdriverdata"><sup>[1]</sup></a> structure. These are a few examples of common driver attributes. For the entire list of attributes that can be provided, please look at the <code class="language-plaintext highlighter-rouge">pappl_pdriver_data_t</code> <a href="#structdriverdata"><sup>[1]</sup></a> structure.</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Member</th>
+              <th>Significance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>identify</td>
+              <td><a href="#identify">Identify-Printer function</a></td>
+            </tr>
+            <tr>
+              <td>identify_default</td>
+              <td>“identify-actions-default” values</td>
+            </tr>
+            <tr>
+              <td>identify_supported</td>
+              <td>“identify-actions-supported” values</td>
+            </tr>
+            <tr>
+              <td>print</td>
+              <td><a href="#print">Print (file) function</a></td>
+            </tr>
+            <tr>
+              <td>rendjob</td>
+              <td><a href="#rendjob">End raster job function</a></td>
+            </tr>
+            <tr>
+              <td>rendpage</td>
+              <td><a href="#rendpage">End raster page function</a></td>
+            </tr>
+            <tr>
+              <td>rstartjob</td>
+              <td><a href="#rstartjob">Start raster job function</a></td>
+            </tr>
+            <tr>
+              <td>rstartpage</td>
+              <td><a href="#rstartpage">Start raster page function</a></td>
+            </tr>
+            <tr>
+              <td>rwrite</td>
+              <td><a href="#writeline">Write raster line function</a></td>
+            </tr>
+            <tr>
+              <td>status</td>
+              <td><a href="#status">Status function</a></td>
+            </tr>
+            <tr>
+              <td>format</td>
+              <td>Printer-specific format</td>
+            </tr>
+            <tr>
+              <td>orient_default</td>
+              <td>“orientation-requested-default” value</td>
+            </tr>
+            <tr>
+              <td>quality_default</td>
+              <td>“print-quality-default” value</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <p><strong>Assign rest of the values <code class="language-plaintext highlighter-rouge">driver_data</code> members based on <code class="language-plaintext highlighter-rouge">driver_name</code></strong></p>
+
+        <p>Here is the list of all the attributes of <code class="language-plaintext highlighter-rouge">pappl_pdriver_data_t</code> structure, used to describe driver capability information and defaults. The ones that were not assigned in the previous step may be assigned depending on the name of the driver.</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Member</th>
+              <th>Significance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>bin[PAPPL_MAX_BIN]</td>
+              <td>Output bins</td>
+            </tr>
+            <tr>
+              <td>bin_default</td>
+              <td>Default output bin</td>
+            </tr>
+            <tr>
+              <td>borderless</td>
+              <td>Borderless margins supported?</td>
+            </tr>
+            <tr>
+              <td>bottom_top</td>
+              <td>Bottom and top margins in hundredths of millimeters</td>
+            </tr>
+            <tr>
+              <td>color_default</td>
+              <td>“print-color-mode-default” value</td>
+            </tr>
+            <tr>
+              <td>content_default</td>
+              <td>“print-content-default” value</td>
+            </tr>
+            <tr>
+              <td>darkness_supported</td>
+              <td>printer/print-darkness-supported (0 for none)</td>
+            </tr>
+            <tr>
+              <td>duplex</td>
+              <td>Duplex printing modes supported</td>
+            </tr>
+            <tr>
+              <td>features[PAPPL_MAX_VENDOR]</td>
+              <td>“ipp-features-supported” values</td>
+            </tr>
+            <tr>
+              <td>finishings</td>
+              <td>“finishings-supported” values</td>
+            </tr>
+            <tr>
+              <td>force_raster_type</td>
+              <td>Force a particular raster type?</td>
+            </tr>
+            <tr>
+              <td>format</td>
+              <td>Printer-specific format</td>
+            </tr>
+            <tr>
+              <td>gdither</td>
+              <td>, ‘text’, and ‘graphic’ dither array</td>
+            </tr>
+            <tr>
+              <td>icons[3]</td>
+              <td>“printer-icons” values</td>
+            </tr>
+            <tr>
+              <td>identify</td>
+              <td>Identify-Printer function</td>
+            </tr>
+            <tr>
+              <td>identify_supported</td>
+              <td>“identify-actions-supported” values</td>
+            </tr>
+            <tr>
+              <td>kind</td>
+              <td>“printer-kind” values</td>
+            </tr>
+            <tr>
+              <td>make_and_model[128]</td>
+              <td>“printer-make-and-model” value</td>
+            </tr>
+            <tr>
+              <td>media[PAPPL_MAX_MEDIA]</td>
+              <td>Supported media</td>
+            </tr>
+            <tr>
+              <td>media_ready[PAPPL_MAX_SOURCE]</td>
+              <td>Ready media</td>
+            </tr>
+            <tr>
+              <td>mode_supported</td>
+              <td>label-mode-supported</td>
+            </tr>
+            <tr>
+              <td>num_bin</td>
+              <td>Number of output bins</td>
+            </tr>
+            <tr>
+              <td>num_features</td>
+              <td>Number of “ipp-features-supported” values</td>
+            </tr>
+            <tr>
+              <td>num_media</td>
+              <td>Number of supported media</td>
+            </tr>
+            <tr>
+              <td>num_source</td>
+              <td>Number of media sources (trays/rolls)</td>
+            </tr>
+            <tr>
+              <td>num_type</td>
+              <td>Number of media types</td>
+            </tr>
+            <tr>
+              <td>num_vendor</td>
+              <td>Number of vendor attributes</td>
+            </tr>
+            <tr>
+              <td>orient_default</td>
+              <td>“orientation-requested-default” value</td>
+            </tr>
+            <tr>
+              <td>output_face_up</td>
+              <td>Does output media come out face-up?</td>
+            </tr>
+            <tr>
+              <td>pdither</td>
+              <td>dither array</td>
+            </tr>
+            <tr>
+              <td>ppm_color</td>
+              <td>“pages-per-minute-color” value, if any</td>
+            </tr>
+            <tr>
+              <td>print</td>
+              <td>Print (file) function</td>
+            </tr>
+            <tr>
+              <td>quality_default</td>
+              <td>“print-quality-default” value</td>
+            </tr>
+            <tr>
+              <td>raster_types</td>
+              <td>“pwg-raster-document-type-supported” values</td>
+            </tr>
+            <tr>
+              <td>rendjob</td>
+              <td>End raster job function</td>
+            </tr>
+            <tr>
+              <td>rendpage</td>
+              <td>End raster page function</td>
+            </tr>
+            <tr>
+              <td>rstartjob</td>
+              <td>Start raster job function</td>
+            </tr>
+            <tr>
+              <td>rstartpage</td>
+              <td>Start raster page function</td>
+            </tr>
+            <tr>
+              <td>rwrite</td>
+              <td>Write raster line function</td>
+            </tr>
+            <tr>
+              <td>scaling_default</td>
+              <td>“print-scaling-default” value</td>
+            </tr>
+            <tr>
+              <td>sides_default</td>
+              <td>“sides-default” value</td>
+            </tr>
+            <tr>
+              <td>source[PAPPL_MAX_SOURCE]</td>
+              <td>Media sources</td>
+            </tr>
+            <tr>
+              <td>speed_default</td>
+              <td>print-speed-default</td>
+            </tr>
+            <tr>
+              <td>status</td>
+              <td>Status function</td>
+            </tr>
+            <tr>
+              <td>tear_offset_supported[2]</td>
+              <td>label-tear-offset-supported (0,0 for none)</td>
+            </tr>
+            <tr>
+              <td>top_offset_supported[2]</td>
+              <td>media-top-offset-supported (0,0 for none)</td>
+            </tr>
+            <tr>
+              <td>tracking_supported</td>
+              <td>media-tracking-supported</td>
+            </tr>
+            <tr>
+              <td>type[PAPPL_MAX_TYPE]</td>
+              <td>Media types</td>
+            </tr>
+            <tr>
+              <td>vendor[PAPPL_MAX_VENDOR]</td>
+              <td>Vendor attribute names</td>
+            </tr>
+            <tr>
+              <td>y_default</td>
+              <td>Default resolution</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+    </ol>
+
+    <p><br /></p>
+
+    <p><strong>Difference between <a href="#print">print</a> and <a href="#writeline">write</a> function</strong></p>
+
+    <p>Both the print and write functions execute a similar task, but they are invoked by the printer application in a different situation.</p>
+
+    <p>If the printer-specific format, i.e. the format which is understood by the printer and the format of the Job supplied is the same, then the <code class="language-plaintext highlighter-rouge">print</code> function is invoked. One may rightly guess that this is the case of raw print since no format conversion or processing is required.</p>
+
+    <p>In the other case, the <code class="language-plaintext highlighter-rouge">write</code> function is used. This is complemented using other functions such as <code class="language-plaintext highlighter-rouge">rstartpage</code>, <code class="language-plaintext highlighter-rouge">rendpage</code>, <code class="language-plaintext highlighter-rouge">rstartjob</code>, and <code class="language-plaintext highlighter-rouge">rendjob</code>.</p>
+
+    <p><img src="../../assets/images/rwriteVsrprint.png" alt="rwriteVSrprint" /></p>
+  </li>
+</ul>
+
+<hr />
+
+<ul>
+  <li>
+    <h3 id="identify"> Identify Function </h3>
+
+    <p>The function helps to identify a printer using display, flash, sound, or speech.</p>
+
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kt">void</span> <span class="nf">pcl_identify</span><span class="p">(</span>
+      <span class="n">pappl_printer_t</span>          <span class="o">*</span><span class="n">printer</span><span class="p">,</span>
+      <span class="n">pappl_identify_actions_t</span> <span class="n">actions</span><span class="p">,</span>
+      <span class="k">const</span> <span class="kt">char</span>               <span class="o">*</span><span class="n">message</span>
+  <span class="p">);</span>
+</code></pre></div>    </div>
+
+    <p>The Identify function receives three arguments that are the Printer, Actions to take, and Messages (if any).</p>
+
+    <p>The Identification methods are summarised in the table:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Identification Method</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>PAPPL_IDENTIFY_ACTIONS_SOUND</td>
+          <td>Make a sound</td>
+        </tr>
+        <tr>
+          <td>PAPPL_IDENTIFY_ACTIONS_DISPLAY</td>
+          <td>display a message (argument)</td>
+        </tr>
+        <tr>
+          <td>PAPPL_IDENTIFY_ACTIONS_SPEAK</td>
+          <td>speak a message (argument)</td>
+        </tr>
+        <tr>
+          <td>PAPPL_IDENTIFY_ACTIONS_FLASH</td>
+          <td>flashes a light on the printer</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<hr />
+
+<ul>
+  <li>
+    <h3 id="print"> Print Function </h3>
+
+    <p>It is used to print a raw job (printer-ready) file, i.e. if the job format is the same as the format specified by the <a href="#callback">driver callback</a>.</p>
+
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">bool</span> <span class="nf">pcl_print</span><span class="p">(</span>
+      <span class="n">pappl_job_t</span>      <span class="o">*</span><span class="n">job</span><span class="p">,</span>
+      <span class="n">pappl_poptions_t</span> <span class="o">*</span><span class="n">options</span><span class="p">,</span>
+      <span class="n">pappl_device_t</span>   <span class="o">*</span><span class="n">device</span>
+  <span class="p">);</span>
+</code></pre></div>    </div>
+
+    <p>The Print function receives three arguments that are Job, Job Options, and device.</p>
+
+    <ul>
+      <li>The “job” argument provides the current job object.</li>
+      <li>The “options” pointer provides the current <a href="#pappl_pr_options_s">print job options</a>.</li>
+      <li>The “device” argument is a pointer used to send data to the printer.</li>
+    </ul>
+
+    <p>The function returns true on success and false on failure.</p>
+
+    <p>This callback will sometimes send some printer initialization commands followed by the job file and then any cleanup commands. It may also be able to count the number of pages (impressions) in the file, although that is not a requirement.</p>
+  </li>
+</ul>
+
+<hr />
+
+<ul>
+  <li>
+    <h3 id="rendjob"> End Job Function </h3>
+
+    <p>This function is called at the end of each page where the driver will typically eject the current page.</p>
+
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">bool</span> <span class="nf">pcl_rendjob</span><span class="p">(</span>
+      <span class="n">pappl_job_t</span>      <span class="o">*</span><span class="n">job</span><span class="p">,</span>
+      <span class="n">pappl_poptions_t</span> <span class="o">*</span><span class="n">options</span><span class="p">,</span>
+      <span class="n">pappl_device_t</span>   <span class="o">*</span><span class="n">device</span>
+  <span class="p">);</span>
+</code></pre></div>    </div>
+
+    <p>The End Job function receives three arguments that are Job, Job Options, and device.</p>
+
+    <ul>
+      <li>The “job” argument provides the current job object.</li>
+      <li>The “options” pointer provides the current <a href="#pappl_pr_options_s">print job options</a>.</li>
+      <li>The “device” argument is a pointer used to send data to the printer.</li>
+    </ul>
+
+    <p>The function returns true on success and false on failure.</p>
+
+    <p>Note that the job data set by <a href="#rstartjob">Start Job Function</a> must be freed in this function.</p>
+  </li>
+</ul>
+
+<hr />
+
+<ul>
+  <li>
+    <h3 id="rendpage"> End Page Function </h3>
+
+    <p>This function is called each time a page is completed. It helps in resetting the buffers used by the driver.</p>
+
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">bool</span> <span class="n">pcl_rendpage</span><span class="p">(</span>
+      <span class="n">pappl_job_t</span>      <span class="o">*</span><span class="n">job</span><span class="p">,</span>
+      <span class="n">pappl_poptions_t</span> <span class="o">*</span><span class="n">options</span><span class="p">,</span>
+      <span class="n">pappl_device_t</span>   <span class="o">*</span><span class="n">device</span><span class="p">,</span>
+      <span class="kt">unsigned</span>         <span class="n">page</span>
+  <span class="p">)</span>
+</code></pre></div>    </div>
+
+    <p>The End Page function receives four arguments that are Job, Job Options, Device, and Page Number.</p>
+
+    <ul>
+      <li>The “job” argument provides the current job object.</li>
+      <li>The “options” pointer provides the current <a href="#pappl_pr_options_s">print job options</a>.</li>
+      <li>The “device” argument is a pointer used to send data to the printer.</li>
+      <li>The “page” argument specifies the current page number staring at <code class="language-plaintext highlighter-rouge">0</code>.</li>
+    </ul>
+
+    <p>The function returns true on success and false on failure.</p>
+  </li>
+</ul>
+
+<hr />
+
+<ul>
+  <li>
+    <h3 id="rstartjob"> Start Job Function </h3>
+
+    <p>This function is called at the beginning of a job to allow the driver to initialize the printer for the current job.</p>
+
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">bool</span> <span class="nf">pcl_rstartjob</span><span class="p">(</span>
+      <span class="n">pappl_job_t</span>      <span class="o">*</span><span class="n">job</span><span class="p">,</span>
+      <span class="n">pappl_poptions_t</span> <span class="o">*</span><span class="n">options</span><span class="p">,</span>
+      <span class="n">pappl_device_t</span>   <span class="o">*</span><span class="n">device</span>
+  <span class="p">);</span>
+</code></pre></div>    </div>
+
+    <p>The Start-Job function, like the End Job Function, receives three arguments that are Job, Job Options, and device.</p>
+
+    <ul>
+      <li>The “job” argument provides the current job object.</li>
+      <li>The “options” pointer provides the current <a href="#pappl_pr_options_s">print job options</a>.</li>
+      <li>The “device” argument is a pointer used to send data to the printer.</li>
+    </ul>
+
+    <p>The function returns true on success and false on failure.</p>
+  </li>
+</ul>
+
+<hr />
+
+<ul>
+  <li>
+    <h3 id="rstartpage"> Start Page Function </h3>
+
+    <p>This function is called when starting a page to allow the driver to do any per-page initialization and/or memory allocations and send any printer commands that are necessary to start a new page. Information regarding the page is obtained from the page header and attributes like resolution, margins, page size, orientation, and graphics are set appropriately.</p>
+
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">bool</span> <span class="n">pcl_rstartpage</span><span class="p">(</span>
+      <span class="n">pappl_job_t</span>      <span class="o">*</span><span class="n">job</span><span class="p">,</span>
+      <span class="n">pappl_poptions_t</span> <span class="o">*</span><span class="n">options</span><span class="p">,</span>
+      <span class="n">pappl_device_t</span>   <span class="o">*</span><span class="n">device</span><span class="p">,</span>
+      <span class="kt">unsigned</span>         <span class="n">page</span>
+  <span class="p">)</span>
+</code></pre></div>    </div>
+
+    <p>The Start Page function receives four arguments that are Job, Job Options, Device, and Page Number.</p>
+
+    <ul>
+      <li>The “job” argument provides the current job object.</li>
+      <li>The “options” pointer provides the current <a href="#pappl_pr_options_s">print job options</a>.</li>
+      <li>The “device” argument is a pointer used to send data to the printer.</li>
+      <li>The “page” argument specifies the current page number staring at <code class="language-plaintext highlighter-rouge">0</code>.</li>
+    </ul>
+
+    <p>The function returns true on success and false on failure.</p>
+  </li>
+</ul>
+
+<hr />
+
+<ul>
+  <li>
+    <h3 id="writeline"> Write Line Function </h3>
+
+    <p>This function writes a line of graphics and is called for each raster line on the page. It is typically responsible for dithering and compressing the raster data for the printer.</p>
+
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">bool</span> <span class="n">pcl_rwrite</span><span class="p">(</span>
+      <span class="n">pappl_job_t</span>         <span class="o">*</span><span class="n">job</span><span class="p">,</span>
+      <span class="n">pappl_poptions_t</span>    <span class="o">*</span><span class="n">options</span><span class="p">,</span>
+      <span class="n">pappl_device_t</span>      <span class="o">*</span><span class="n">device</span><span class="p">,</span>
+      <span class="kt">unsigned</span>            <span class="n">y</span><span class="p">,</span>
+      <span class="k">const</span> <span class="kt">unsigned</span> <span class="kt">char</span> <span class="o">*</span><span class="n">pixels</span>
+  <span class="p">)</span>
+</code></pre></div>    </div>
+
+    <p>The Write Line function receives five arguments that are Job, Job Options, Device, Line number, and Line.</p>
+
+    <ul>
+      <li>The “job” argument provides the current job object.</li>
+      <li>The “options” pointer provides the current <a href="#pappl_pr_options_s">print job options</a>.</li>
+      <li>The “device” argument is a pointer used to send data to the printer.</li>
+      <li>The “y” argument specifies the current line number.</li>
+      <li>The “pixels” argument is a pointer to the content of current line.</li>
+    </ul>
+
+    <p>The function returns true on success and false on failure.</p>
+  </li>
+</ul>
+
+<hr />
+
+<ul>
+  <li>
+    <h3 id="status"> Printer Status Function </h3>
+
+    <p>The PAPPL status callback is used to update the printer state, supply levels, and/or ready media for the printer:</p>
+
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">bool</span> <span class="n">pcl_status</span><span class="p">(</span>
+      <span class="n">pappl_printer_t</span> <span class="o">*</span><span class="n">printer</span>
+  <span class="p">)</span>
+</code></pre></div>    </div>
+
+    <p>The Printer Status Function receives only one argument and that is the printer. It returns true on success and false on failure.</p>
+
+    <p>The callback can open a connection to the printer using the <code class="language-plaintext highlighter-rouge">papplPrinterOpenDevice</code> function.</p>
+  </li>
+</ul>
+
+<h2 id="non-raster"> Add Support for Non-Raster Printers</h2>
+
+<p>Currently, PAPPL supports only raster printers and that too for very few specific input formats like JPEG and PNG. For adding support for non-raster printers like PDF and PostScript printers, you need to supply an external utility that converts the whole job’s data into a data stream which the printer understands. Refer to the below-mentioned steps to know how to implement the same.</p>
+
+<ul>
+  <li>
+    <p><strong>Set the printer-specific format in <a href="#callback">callback function</a>.</strong></p>
+
+    <p>You need to set <code class="language-plaintext highlighter-rouge">driver_data.format</code> in <a href="#callback">callback function</a> to the printer-specific format, i.e. the format/language accepted by the printer. A few examples could be “application/postscript”, “application/pdf”, etc.</p>
+  </li>
+  <li>
+    <p><strong>Add a filter callback</strong></p>
+
+    <p>You need to add filter callback from format received by the printer application(formats which you wish your printer can support and accept the job in) to printer-specific format(format/languages that the printer actually understands) using <code class="language-plaintext highlighter-rouge">papplSystemAddMIMEFilter</code> utility.</p>
+
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kt">void</span> <span class="nf">papplSystemAddMIMEFilter</span><span class="p">(</span>
+      <span class="n">pappl_system_t</span> <span class="o">*</span><span class="n">system</span><span class="p">,</span>
+      <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">srctype</span><span class="p">,</span>
+      <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">dsttype</span><span class="p">,</span>
+      <span class="n">pappl_mime_filter_cb_t</span> <span class="n">cb</span><span class="p">,</span>
+      <span class="kt">void</span> <span class="o">*</span><span class="n">data</span>
+  <span class="p">);</span>
+</code></pre></div>    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Parameter</th>
+          <th>Significance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>system</td>
+          <td>System</td>
+        </tr>
+        <tr>
+          <td>srctype</td>
+          <td>Source MIME media type (constant) string</td>
+        </tr>
+        <tr>
+          <td>dsttype</td>
+          <td>Destination MIME media type (constant) string</td>
+        </tr>
+        <tr>
+          <td>cb</td>
+          <td><a href="#filtercallback">Filter callback function</a></td>
+        </tr>
+        <tr>
+          <td>data</td>
+          <td>Filter callback data</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>This utility is added in <a href="#systemcallback">system callback</a> after calling <a href="#setup">setup function</a> in Step 5.</p>
+  </li>
+  <li>
+    <h4 id="filtercallback" style="font-weight: bold;"> Define filter callback function</h4>
+
+    <p>The filter callback function converts the whole job’s data into a data stream which the printer understands.</p>
+
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">bool</span> <span class="n">papplJobFilter</span><span class="p">(</span>
+      <span class="n">pappl_job_t</span>    <span class="o">*</span><span class="n">job</span><span class="p">,</span>
+      <span class="n">pappl_device_t</span> <span class="o">*</span><span class="n">device</span><span class="p">,</span>
+      <span class="kt">void</span>           <span class="o">*</span><span class="n">data</span>
+  <span class="p">)</span>
+</code></pre></div>    </div>
+
+    <p>The filter callback function receives 3 parameters, that are the Job, the Device, and the Filter data.</p>
+
+    <p>Depending upon the features, stability, ease of use, documentation, pricing, and license you may use any third party API to perform this task of conversion.</p>
+
+    <p>The default filter callback function added in PAPPL are <code class="language-plaintext highlighter-rouge">_papplJobFilterJPEG</code> and <code class="language-plaintext highlighter-rouge">_papplJobFilterPNG</code> which can be found in the file <a href="https://github.com/michaelrsweet/pappl/blob/master/pappl/job-filter.c">Job-Filter.c</a> and can be referenced for writing your own callback function.</p>
+  </li>
+</ul>
+
+<h2 id="template"> Template for PAPPL-based Printer Driver </h2>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//</span>
+<span class="c1">// Include necessary headers...</span>
+<span class="c1">//</span>
+<span class="cp"># include &lt;pappl/pappl.h&gt;
+</span>
+
+<span class="c1">// Declare structure for Job Data</span>
+
+
+<span class="c1">// Declare supported media sizes for different models of printers</span>
+
+
+<span class="c1">//</span>
+<span class="c1">// Declare local functions</span>
+<span class="c1">//</span>
+
+<span class="k">static</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="nf">pcl_autoadd</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">device_info</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">device_uri</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">device_id</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">data</span><span class="p">);</span>
+<span class="k">static</span> <span class="n">bool</span>   <span class="nf">pcl_callback</span><span class="p">(</span><span class="n">pappl_system_t</span> <span class="o">*</span><span class="n">system</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">driver_name</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">device_uri</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">device_id</span><span class="p">,</span> <span class="n">pappl_pr_driver_data_t</span> <span class="o">*</span><span class="n">driver_data</span><span class="p">,</span> <span class="n">ipp_t</span> <span class="o">**</span><span class="n">driver_attrs</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">data</span><span class="p">);</span>
+<span class="k">static</span> <span class="kt">void</span>   <span class="nf">pcl_compress_data</span><span class="p">(</span><span class="n">pappl_job_t</span> <span class="o">*</span><span class="n">job</span><span class="p">,</span> <span class="n">pappl_device_t</span> <span class="o">*</span><span class="n">device</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">char</span> <span class="o">*</span><span class="n">line</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="n">length</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="n">plane</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="n">type</span><span class="p">);</span>
+<span class="k">static</span> <span class="n">bool</span>   <span class="nf">pcl_print</span><span class="p">(</span><span class="n">pappl_job_t</span> <span class="o">*</span><span class="n">job</span><span class="p">,</span> <span class="n">pappl_pr_options_t</span> <span class="o">*</span><span class="n">options</span><span class="p">,</span> <span class="n">pappl_device_t</span> <span class="o">*</span><span class="n">device</span><span class="p">);</span>
+<span class="k">static</span> <span class="n">bool</span>   <span class="nf">pcl_rendjob</span><span class="p">(</span><span class="n">pappl_job_t</span> <span class="o">*</span><span class="n">job</span><span class="p">,</span> <span class="n">pappl_pr_options_t</span> <span class="o">*</span><span class="n">options</span><span class="p">,</span> <span class="n">pappl_device_t</span> <span class="o">*</span><span class="n">device</span><span class="p">);</span>
+<span class="k">static</span> <span class="n">bool</span>   <span class="nf">pcl_rendpage</span><span class="p">(</span><span class="n">pappl_job_t</span> <span class="o">*</span><span class="n">job</span><span class="p">,</span> <span class="n">pappl_pr_options_t</span> <span class="o">*</span><span class="n">options</span><span class="p">,</span> <span class="n">pappl_device_t</span> <span class="o">*</span><span class="n">device</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="n">page</span><span class="p">);</span>
+<span class="k">static</span> <span class="n">bool</span>   <span class="nf">pcl_rstartjob</span><span class="p">(</span><span class="n">pappl_job_t</span> <span class="o">*</span><span class="n">job</span><span class="p">,</span> <span class="n">pappl_pr_options_t</span> <span class="o">*</span><span class="n">options</span><span class="p">,</span> <span class="n">pappl_device_t</span> <span class="o">*</span><span class="n">device</span><span class="p">);</span>
+<span class="k">static</span> <span class="n">bool</span>   <span class="nf">pcl_rstartpage</span><span class="p">(</span><span class="n">pappl_job_t</span> <span class="o">*</span><span class="n">job</span><span class="p">,</span> <span class="n">pappl_pr_options_t</span> <span class="o">*</span><span class="n">options</span><span class="p">,</span> <span class="n">pappl_device_t</span> <span class="o">*</span><span class="n">device</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="n">page</span><span class="p">);</span>
+<span class="k">static</span> <span class="n">bool</span>   <span class="nf">pcl_rwriteline</span><span class="p">(</span><span class="n">pappl_job_t</span> <span class="o">*</span><span class="n">job</span><span class="p">,</span> <span class="n">pappl_pr_options_t</span> <span class="o">*</span><span class="n">options</span><span class="p">,</span> <span class="n">pappl_device_t</span> <span class="o">*</span><span class="n">device</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="n">y</span><span class="p">,</span> <span class="k">const</span> <span class="kt">unsigned</span> <span class="kt">char</span> <span class="o">*</span><span class="n">pixels</span><span class="p">);</span>
+<span class="k">static</span> <span class="kt">void</span>   <span class="nf">pcl_setup</span><span class="p">(</span><span class="n">pappl_system_t</span> <span class="o">*</span><span class="n">system</span><span class="p">);</span>
+<span class="k">static</span> <span class="n">bool</span>   <span class="nf">pcl_status</span><span class="p">(</span><span class="n">pappl_printer_t</span> <span class="o">*</span><span class="n">printer</span><span class="p">);</span>
+<span class="k">static</span> <span class="kt">void</span>   <span class="nf">setup</span><span class="p">(</span><span class="n">pappl_system_t</span> <span class="o">*</span><span class="n">system</span><span class="p">);</span>
+<span class="k">static</span> <span class="n">pappl_system_t</span>   <span class="o">*</span><span class="nf">system_cb</span><span class="p">(</span><span class="kt">int</span> <span class="n">num_options</span><span class="p">,</span> <span class="n">cups_option_t</span> <span class="o">*</span><span class="n">options</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">data</span><span class="p">);</span>
+
+
+<span class="c1">//</span>
+<span class="c1">// 'main()' - Main entry for the application.</span>
+<span class="c1">//</span>
+
+<span class="kt">int</span>
+<span class="nf">main</span><span class="p">(</span><span class="kt">int</span>  <span class="n">argc</span><span class="p">,</span>				<span class="c1">// I - Number of command-line arguments</span>
+     <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span>			<span class="c1">// I - Command-line arguments</span>
+<span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span><span class="n">papplMainloop</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span> <span class="n">argv</span><span class="p">,</span>
+                        <span class="cm">/*version*/</span><span class="s">"1.0"</span><span class="p">,</span>
+                        <span class="cm">/*footer_html*/</span><span class="nb">NULL</span><span class="p">,</span>
+                        <span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">pcl_drivers</span><span class="p">)</span> <span class="o">/</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">pcl_drivers</span><span class="p">[</span><span class="mi">0</span><span class="p">])),</span>
+                        <span class="n">pcl_drivers</span><span class="p">,</span> <span class="n">pcl_callback</span><span class="p">,</span> <span class="n">pcl_autoadd</span><span class="p">,</span>
+                        <span class="cm">/*subcmd_name*/</span><span class="nb">NULL</span><span class="p">,</span> <span class="cm">/*subcmd_cb*/</span><span class="nb">NULL</span><span class="p">,</span>
+                        <span class="cm">/*system_cb*/</span><span class="nb">NULL</span><span class="p">,</span>
+                        <span class="cm">/*usage_cb*/</span><span class="nb">NULL</span><span class="p">,</span>
+                        <span class="cm">/*data*/</span><span class="nb">NULL</span><span class="p">));</span>
+<span class="p">}</span>
+
+
+<span class="c1">//</span>
+<span class="c1">// 'pcl_autoadd()' - Auto-add PCL printers.</span>
+<span class="c1">//</span>
+
+<span class="k">static</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span>			<span class="c1">// O - Driver name or `NULL` for none</span>
+<span class="n">pcl_autoadd</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">device_info</span><span class="p">,</span>	<span class="c1">// I - Device name</span>
+            <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">device_uri</span><span class="p">,</span>	<span class="c1">// I - Device URI</span>
+            <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">device_id</span><span class="p">,</span>	<span class="c1">// I - IEEE-1284 device ID</span>
+            <span class="kt">void</span>       <span class="o">*</span><span class="n">data</span><span class="p">)</span>		<span class="c1">// I - Callback data (not used)</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+
+
+<span class="c1">//</span>
+<span class="c1">// 'pcl_callback()' - PCL callback.</span>
+<span class="c1">//</span>
+
+<span class="k">static</span> <span class="n">bool</span>				<span class="c1">// O - `true` on success, `false` on failure</span>
+<span class="n">pcl_callback</span><span class="p">(</span>
+    <span class="n">pappl_system_t</span>         <span class="o">*</span><span class="n">system</span><span class="p">,</span>	<span class="c1">// I - System</span>
+    <span class="k">const</span> <span class="kt">char</span>             <span class="o">*</span><span class="n">driver_name</span><span class="p">,</span>
+					<span class="c1">// I - Driver name</span>
+    <span class="k">const</span> <span class="kt">char</span>             <span class="o">*</span><span class="n">device_uri</span><span class="p">,</span><span class="c1">// I - Device URI (not used)</span>
+    <span class="k">const</span> <span class="kt">char</span>             <span class="o">*</span><span class="n">device_id</span><span class="p">,</span>	<span class="c1">// I - IEEE-1284 device ID (not used)</span>
+    <span class="n">pappl_pr_driver_data_t</span> <span class="o">*</span><span class="n">driver_data</span><span class="p">,</span>
+					<span class="c1">// O - Driver data</span>
+    <span class="n">ipp_t</span>                  <span class="o">**</span><span class="n">driver_attrs</span><span class="p">,</span>
+					<span class="c1">// O - Driver attributes (not used)</span>
+    <span class="kt">void</span>                   <span class="o">*</span><span class="n">data</span><span class="p">)</span>	<span class="c1">// I - Callback data (not used)</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+
+
+<span class="c1">//</span>
+<span class="c1">// 'pcl_compress_data()' - Compress a line of graphics.</span>
+<span class="c1">//</span>
+
+<span class="k">static</span> <span class="kt">void</span>
+<span class="nf">pcl_compress_data</span><span class="p">(</span>
+    <span class="n">pappl_job_t</span>    <span class="o">*</span><span class="n">job</span><span class="p">,</span>		<span class="c1">// I - Job object</span>
+    <span class="n">pappl_device_t</span> <span class="o">*</span><span class="n">device</span><span class="p">,</span>		<span class="c1">// I - Device</span>
+    <span class="kt">unsigned</span> <span class="kt">char</span>  <span class="o">*</span><span class="n">line</span><span class="p">,</span>		<span class="c1">// I - Data to compress</span>
+    <span class="kt">unsigned</span>       <span class="n">length</span><span class="p">,</span>		<span class="c1">// I - Number of bytes</span>
+    <span class="kt">unsigned</span>       <span class="n">plane</span><span class="p">,</span>		<span class="c1">// I - Color plane</span>
+    <span class="kt">unsigned</span>       <span class="n">type</span><span class="p">)</span>		<span class="c1">// I - Type of compression</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+
+
+<span class="c1">//</span>
+<span class="c1">// 'identify()' - Identify the printer.</span>
+<span class="c1">//</span>
+
+<span class="k">static</span> <span class="kt">void</span>
+<span class="nf">identify</span><span class="p">(</span>
+    <span class="n">pappl_printer_t</span>          <span class="o">*</span><span class="n">printer</span><span class="p">,</span>  <span class="c1">// I - Printer</span>
+    <span class="n">pappl_identify_actions_t</span> <span class="n">actions</span><span class="p">,</span>   <span class="c1">// I - Actions to take</span>
+    <span class="k">const</span> <span class="kt">char</span>               <span class="o">*</span><span class="n">message</span><span class="p">)</span>  <span class="c1">// I - Message, if any</span>
+<span class="p">{</span>
+<span class="c1">// Identify a printer using display, flash, sound, or speech.</span>
+<span class="p">}</span>
+
+
+<span class="c1">//</span>
+<span class="c1">// 'pcl_print()' - Print file.</span>
+<span class="c1">//</span>
+
+<span class="k">static</span> <span class="n">bool</span>				<span class="c1">// O - `true` on success, `false` on failure</span>
+<span class="n">pcl_print</span><span class="p">(</span>
+    <span class="n">pappl_job_t</span>      <span class="o">*</span><span class="n">job</span><span class="p">,</span>		<span class="c1">// I - Job</span>
+    <span class="n">pappl_pr_options_t</span> <span class="o">*</span><span class="n">options</span><span class="p">,</span>		<span class="c1">// I - Options</span>
+    <span class="n">pappl_device_t</span>   <span class="o">*</span><span class="n">device</span><span class="p">)</span>		<span class="c1">// I - Device</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+
+
+<span class="c1">//</span>
+<span class="c1">// 'pcl_rendjob()' - End a job.</span>
+<span class="c1">//</span>
+
+<span class="k">static</span> <span class="n">bool</span>				<span class="c1">// O - `true` on success, `false` on failure</span>
+<span class="n">pcl_rendjob</span><span class="p">(</span>
+    <span class="n">pappl_job_t</span>      <span class="o">*</span><span class="n">job</span><span class="p">,</span>		<span class="c1">// I - Job</span>
+    <span class="n">pappl_pr_options_t</span> <span class="o">*</span><span class="n">options</span><span class="p">,</span>		<span class="c1">// I - Options</span>
+    <span class="n">pappl_device_t</span>   <span class="o">*</span><span class="n">device</span><span class="p">)</span>		<span class="c1">// I - Device</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+
+
+<span class="c1">//</span>
+<span class="c1">// 'pcl_rendpage()' - End a page.</span>
+<span class="c1">//</span>
+
+<span class="k">static</span> <span class="n">bool</span>				<span class="c1">// O - `true` on success, `false` on failure</span>
+<span class="n">pcl_rendpage</span><span class="p">(</span>
+    <span class="n">pappl_job_t</span>      <span class="o">*</span><span class="n">job</span><span class="p">,</span>		<span class="c1">// I - Job</span>
+    <span class="n">pappl_pr_options_t</span> <span class="o">*</span><span class="n">options</span><span class="p">,</span>		<span class="c1">// I - Job options</span>
+    <span class="n">pappl_device_t</span>   <span class="o">*</span><span class="n">device</span><span class="p">,</span>		<span class="c1">// I - Device</span>
+    <span class="kt">unsigned</span>         <span class="n">page</span><span class="p">)</span>		<span class="c1">// I - Page number</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+
+
+<span class="c1">//</span>
+<span class="c1">// 'pcl_rstartjob()' - Start a job.</span>
+<span class="c1">//</span>
+
+<span class="k">static</span> <span class="n">bool</span>				<span class="c1">// O - `true` on success, `false` on failure</span>
+<span class="n">pcl_rstartjob</span><span class="p">(</span>
+    <span class="n">pappl_job_t</span>      <span class="o">*</span><span class="n">job</span><span class="p">,</span>		<span class="c1">// I - Job</span>
+    <span class="n">pappl_pr_options_t</span> <span class="o">*</span><span class="n">options</span><span class="p">,</span>		<span class="c1">// I - Job options</span>
+    <span class="n">pappl_device_t</span>   <span class="o">*</span><span class="n">device</span><span class="p">)</span>		<span class="c1">// I - Device</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+
+
+<span class="c1">//</span>
+<span class="c1">// 'pcl_rstartpage()' - Start a page.</span>
+<span class="c1">//</span>
+
+<span class="k">static</span> <span class="n">bool</span>				<span class="c1">// O - `true` on success, `false` on failure</span>
+<span class="n">pcl_rstartpage</span><span class="p">(</span>
+    <span class="n">pappl_job_t</span>      <span class="o">*</span><span class="n">job</span><span class="p">,</span>		<span class="c1">// I - Job</span>
+    <span class="n">pappl_pr_options_t</span> <span class="o">*</span><span class="n">options</span><span class="p">,</span>		<span class="c1">// I - Job options</span>
+    <span class="n">pappl_device_t</span>   <span class="o">*</span><span class="n">device</span><span class="p">,</span>		<span class="c1">// I - Device</span>
+    <span class="kt">unsigned</span>         <span class="n">page</span><span class="p">)</span>		<span class="c1">// I - Page number</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+
+
+<span class="c1">//</span>
+<span class="c1">// 'pcl_rwriteline()' - Write a line.</span>
+<span class="c1">//</span>
+
+<span class="k">static</span> <span class="n">bool</span>				<span class="c1">// O - `true` on success, `false` on failure</span>
+<span class="n">pcl_rwriteline</span><span class="p">(</span>
+    <span class="n">pappl_job_t</span>         <span class="o">*</span><span class="n">job</span><span class="p">,</span>		<span class="c1">// I - Job</span>
+    <span class="n">pappl_pr_options_t</span>    <span class="o">*</span><span class="n">options</span><span class="p">,</span>	<span class="c1">// I - Job options</span>
+    <span class="n">pappl_device_t</span>      <span class="o">*</span><span class="n">device</span><span class="p">,</span>	<span class="c1">// I - Device</span>
+    <span class="kt">unsigned</span>            <span class="n">y</span><span class="p">,</span>		<span class="c1">// I - Line number</span>
+    <span class="k">const</span> <span class="kt">unsigned</span> <span class="kt">char</span> <span class="o">*</span><span class="n">pixels</span><span class="p">)</span>	<span class="c1">// I - Line</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+
+
+<span class="c1">//</span>
+<span class="c1">// 'pcl_status()' - Get printer status.</span>
+<span class="c1">//</span>
+
+<span class="k">static</span> <span class="n">bool</span>				<span class="c1">// O - `true` on success, `false` on failure</span>
+<span class="n">pcl_status</span><span class="p">(</span>
+    <span class="n">pappl_printer_t</span> <span class="o">*</span><span class="n">printer</span><span class="p">)</span>		<span class="c1">// I - Printer</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+
+
+<span class="c1">//</span>
+<span class="c1">// 'setup()' - Setup PCL drivers.</span>
+<span class="c1">//</span>
+
+<span class="k">static</span> <span class="kt">void</span>
+<span class="nf">setup</span><span class="p">(</span>
+    <span class="n">pappl_system_t</span> <span class="o">*</span><span class="n">system</span><span class="p">)</span>      <span class="c1">// I - System</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+
+
+<span class="c1">//</span>
+<span class="c1">// 'system_cb()' - System callback.</span>
+<span class="c1">//</span>
+
+<span class="n">pappl_system_t</span> <span class="o">*</span>            <span class="c1">// O - New system object</span>
+<span class="n">system_cb</span><span class="p">(</span><span class="kt">int</span>           <span class="n">num_options</span><span class="p">,</span>    <span class="c1">// I - Number of options</span>
+    <span class="n">cups_option_t</span> <span class="o">*</span><span class="n">options</span><span class="p">,</span> <span class="c1">// I - Options</span>
+    <span class="kt">void</span>          <span class="o">*</span><span class="n">data</span><span class="p">)</span>        <span class="c1">// I - Callback data</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="guidelines"> Design Guidelines </h2>
+
+<ul>
+  <li>
+    <p><strong>1 Printer/Scanner Application = 1 Snap:</strong>
+Don’t make a Snap which contains tons of different printer and scanner applications. This is to ensure that you don’t occupy lots of ports and network resources when you have many printer and scanner applications.</p>
+  </li>
+  <li>
+    <p><strong>Printer/Scanner/Fax support can be in a single application:</strong>
+To support multi-function devices you can put all the printer, scanner, and fax support into one application.
+For example, we recommend <a href="https://developers.hp.com/hp-linux-imaging-and-printing">HPLIP</a> to be put into one single application.</p>
+  </li>
+  <li>
+    <p><strong>Recommended: 1 Printer/Scanner Application per project or manufacturer/product line:</strong>
+It may be possible that a multi-function device may be served by different applications for printing and scanning. For example for legacy devices, scanning may be supported by retrofitted sane-airscan scanner application while printing is supported by the Gutenprint printer application. But here it is easier and better for the project, organization, and management that each project has its own printer/scanner application snap. So SANE will maintain a SANE scanner application snap and they put it on the Snap Store. Similarly, Gutenprint, HPLIP, foo2zjs, Epson, Canon, Ricoh, and so on will do the same.</p>
+  </li>
+  <li>
+    <p><strong>NOT make 1 Printer/Scanner Application for each device:</strong> 
+For example, HP Laserjet 4 and HP Laserjet 5 should not have different applications. Otherwise, Snap Store will be cluttered with thousands of applications, and spotting the real application would be difficult. Also, it would result in a lot of code duplication, requiring more storage on the user’s machine.</p>
+  </li>
+  <li>
+    <p><strong>1 Printer/Scanner Application = 1 Port:</strong>
+If there are several devices connected to the system and they are served by one printer/scanner application, do not open ports for each device. Because you may run out of ports. Also, ports are not always the same on each boot as other applications may start up before on the next boot.</p>
+  </li>
+  <li>
+    <p><strong>For more than 1 device on 1 Application use URI: ipp://localhost:&lt;PORT&gt;/ipp/print/&lt;NAME&gt;</strong>
+This is the recommended way to cope up with several devices by only using a single port.</p>
+  </li>
+  <li>
+    <p><strong>DNS-SD service names must be always the same:</strong>
+They must be independent of order application start at boot or of device discovery. To make sure that a printer application can serve several devices of the same model include the DNS-SD service name the CEON number of the devices.</p>
+  </li>
+  <li><strong>Web admin interface should allow:</strong>
+    <ol>
+      <li>
+        <p><strong>suppressing auto-setup for selected devices:</strong>
+  Auto detecting devices might be unsuitable for some cases. For example, if two printer applications support the same device, the user must be able to select with which application he wishes to print. So web interface must contain the option to somehow blacklist a printer application.</p>
+      </li>
+      <li>
+        <p><strong>manual setup of additional devices/instances</strong>
+  Necessary for legacy printers that cannot be auto-discovered in the network.</p>
+      </li>
+      <li>
+        <p><strong>configuration of options not accessible via IPP</strong>
+  Many manufacturers have options that cannot be translated into IPP attributes. So web interface has to provide the possibility to set up these options.</p>
+      </li>
+    </ol>
+  </li>
+  <li><strong>sane-airscan in SANE Scanner Application must be built without IPP Scan to avoid recursive discovery infinite loop (“Scanner bomb”)</strong></li>
+</ul>
+
+<h2 id="resources"> Resources </h2>
+
+<p>[1] <a href="../01-printer-application/">Printer Application</a>
+<br />
+[2] <a href="https://github.com/michaelrsweet/hp-printer-app">HP Printer App Example</a>
+<br />
+[3] <a href="https://github.com/michaelrsweet/pappl/">PAPPL</a>
+<br />
+[4] <a href="../../pappl-system-utilities/">PAPPL System Utilities</a>
+<br />
+[5] <a href="../04-packaging-drivers/">Packaging Drivers and Uploading them to Snap Store</a>
+<br />
+[6] <a href="../05-User-Manual/">User Manual</a>
+<br />
+[7] <a href="https://github.com/OpenPrinting/ps-printer-app">PS Printer App Example</a></p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-04-13T20:02:51+00:00">April 13, 2022</time></p>
+
+
+      </footer>
+
+      
+        <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">Comments</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+      
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?via=mmistakes&text=Designing+Printer+Drivers%20https%3A%2F%2Fopenprinting.github.io%2Fdocumentation%2F02-designing-printer-drivers%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fopenprinting.github.io%2Fdocumentation%2F02-designing-printer-drivers%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fopenprinting.github.io%2Fdocumentation%2F02-designing-printer-drivers%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/documentation/01-printer-application/" class="pagination--pager" title="Printer Applications - A new way to print in Linux
+">Previous</a>
+    
+    
+      <a href="/documentation/03-designing-scanner-drivers/" class="pagination--pager" title="Designing Scanner Drivers
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><div class="search-searchbar"></div>
+  <div class="search-hits"></div></div>
+
+      </div>
+    
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://twitter.com/intent/tweet?button_hashtag=OpenPrinting&ref_src=twsrc%5Etfw" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+        
+          <li><a href="https://github.com/openprinting" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fopenprinting.github.io%2F&amp;src=sdkpreparse" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i> Facebook</a></li>
+        
+      
+        
+          <li><a href="/codeofconduct/" rel="nofollow noopener noreferrer"><i class="fas fa-file-contract" aria-hidden="true"></i> Code of Conduct</a></li>
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 OpenPrinting. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+<!-- Including InstantSearch.js library and styling -->
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch-theme-algolia.min.css">
+
+<script>
+// Instanciating InstantSearch.js with Algolia credentials
+const search = instantsearch({
+  appId: 'QB6HVGBSBA',
+  apiKey: '9d5014e5bbc77372547bce778dfa5663',
+  indexName: 'dev_minimal-mistakes',
+  searchParameters: {
+    restrictSearchableAttributes: [
+      'title',
+      'content'
+    ]
+  }
+});
+
+const hitTemplate = function(hit) {
+  const url = hit.url;
+  const title = hit._highlightResult.title.value;
+  const content = hit._highlightResult.html.value;
+
+  return `
+    <div class="list__item">
+      <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+        <h2 class="archive__item-title" itemprop="headline"><a href="${url}">${title}</a></h2>
+        <div class="archive__item-excerpt" itemprop="description">${content}</div>
+      </article>
+    </div>
+  `;
+}
+
+// Adding searchbar and results widgets
+search.addWidget(
+  instantsearch.widgets.searchBox({
+    container: '.search-searchbar',
+    poweredBy: true,
+    placeholder: 'Enter your search term...'
+  })
+);
+search.addWidget(
+  instantsearch.widgets.hits({
+    container: '.search-hits',
+    templates: {
+      item: hitTemplate,
+      empty: 'No results',
+    }
+  })
+);
+
+// Starting the search only when toggle is clicked
+$(document).ready(function () {
+  $(".search__toggle").on("click", function() {
+    if(!search.started) {
+      search.start();
+    }
+  });
+});
+</script>
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://openprinting.github.io/documentation/02-designing-printer-drivers/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/documentation/02-designing-printer-drivers"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://openprinting-org.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>
