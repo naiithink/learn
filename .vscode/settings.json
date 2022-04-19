@@ -1,6 +1,9 @@
 {
     "diffEditor.ignoreTrimWhitespace": false,
     "editor.renderWhitespace": "all",
+    "editor.wordWrap": "on",
+    "editor.wordWrapColumn": 80,
+    "editor.wrappingIndent": "indent",
     "editor.fontLigatures": false,
     "editor.fontFamily": "Consolas, Menlo, Monaco, 'Courier New', monospace",
     "editor.minimap.enabled": false,
@@ -164,7 +167,7 @@
     "esbonio.server.enabled": false,
     "esbonio.sphinx.confDir": "",
     "yaml.schemas": {
-        "file:///Users/naiithink/.vscode/extensions/atlassian.atlascode-2.10.11/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+        "file:///Users/naiithink/.vscode/extensions/atlassian.atlascode-2.10.12/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
     },
     "redhat.telemetry.enabled": false,
     "markdown-pdf.outputDirectoryRelativePathFile": true,
