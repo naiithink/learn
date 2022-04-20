@@ -1,5 +1,4 @@
 {
-    "better-comments.multilineComments": true,
     "diffEditor.ignoreTrimWhitespace": false,
     "editor.renderWhitespace": "all",
     "editor.wordWrap": "on",
@@ -189,6 +188,18 @@
         "locale.h": "c",
         "limits.h": "c",
         "stdlib.h": "c",
-        "gcrypt.h": "c"
+        "gcrypt.h": "c",
+        "cstdlib": "c",
+        "exception": "c",
+        "ios": "c",
+        "optional": "c",
+        "stdexcept": "c",
+        "string": "c",
+        "typeinfo": "c",
+        "variant": "c",
+        "vector": "c",
+        "functional": "c",
+        "memory": "c",
+        "*.idl": "c"
     }
 }
