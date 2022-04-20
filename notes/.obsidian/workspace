@@ -7,12 +7,8 @@
         "id": "d442991849836433",
         "type": "leaf",
         "state": {
-          "type": "markdown",
-          "state": {
-            "file": "general/PermBits.md",
-            "mode": "source",
-            "source": false
-          }
+          "type": "empty",
+          "state": {}
         }
       }
     ],
@@ -69,7 +65,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "general/PermBits.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -90,7 +85,7 @@
   "active": "d442991849836433",
   "lastOpenFiles": [
     "general/PermBits.md",
-    "Quick Note.md",
-    "To Do.md"
+    "To Do.md",
+    "Quick Note.md"
   ]
 }
