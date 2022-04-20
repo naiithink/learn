@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Quick Note.md",
+            "file": "general/PermBits.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Quick Note.md",
+                "file": "general/PermBits.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,8 +89,8 @@
   },
   "active": "d442991849836433",
   "lastOpenFiles": [
-    "Quick Note.md",
     "general/PermBits.md",
+    "Quick Note.md",
     "To Do.md"
   ]
 }
