@@ -1,4 +1,5 @@
 {
+    "better-comments.multilineComments": true,
     "diffEditor.ignoreTrimWhitespace": false,
     "editor.renderWhitespace": "all",
     "editor.wordWrap": "on",
@@ -167,7 +168,7 @@
     "esbonio.server.enabled": false,
     "esbonio.sphinx.confDir": "",
     "yaml.schemas": {
-        "file:///Users/naiithink/.vscode/extensions/atlassian.atlascode-2.10.12/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+        "file:///home/naiithink/.vscode/extensions/atlassian.atlascode-2.10.12/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
     },
     "redhat.telemetry.enabled": false,
     "markdown-pdf.outputDirectoryRelativePathFile": true,
