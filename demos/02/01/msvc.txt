@@ -1,0 +1,50 @@
+0.1.0.c
+=======
+
+> cl 01.c
+Microsoft (R) C/C++ Optimizing Compiler Version 19.31.31106.2 for x86
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+01.c
+01.c(7): fatal error C1083: Cannot open include file: 'studio.h': No such file or directory
+
+0.1.1.c
+=======
+
+> cl 01.c
+Microsoft (R) C/C++ Optimizing Compiler Version 19.31.31106.2 for x86
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+01.c
+01.c(16): error C2143: syntax error: missing ';' before ':'
+01.c(19): error C2143: syntax error: missing ';' before ':'
+01.c(23): error C2065: 'minute': undeclared identifier
+01.c(23): error C2065: 'minstr': undeclared identifier
+01.c(23): warning C4047: 'function': 'const char *' differs in levels of indirection from 'int'
+01.c(23): warning C4024: 'atoi': different types for formal and actual parameter 1
+01.c(25): warning C4473: 'printf' : not enough arguments passed for format string
+01.c(25): note: placeholders and their parameters expect 2 variadic arguments, but 0 were provided
+01.c(25): note: the missing variadic argument 1 is required by format string '%d'
+
+0.1.2.c
+=======
+
+> cl 01.c
+Microsoft (R) C/C++ Optimizing Compiler Version 19.31.31106.2 for x86
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+01.c
+Microsoft (R) Incremental Linker Version 14.31.31106.2
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+/out:01.exe
+01.obj
+
+0.1.2.exe
+=========
+
+> .\01.exe
+Enter hour: 3
+Enter minute: 14
+Time is 3:14
+PS C:\>
