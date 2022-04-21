@@ -54,7 +54,7 @@
     ],
     "remote.SSH.configFile": "/var/folders/dm/wqycl49j13b9nnps13glqj5h0000gn/T/gitpod_ssh_config-16338-iC9xFlm9K0Kx",
     "markdown-preview-github-styles.colorTheme": "system",
-    "python.defaultInterpreterPath": "/usr/local/bin/python3",
+    "python.defaultInterpreterPath": "/usr/bin/python3",
     "jupyter.askForKernelRestart": false,
     "notebook.cellToolbarLocation": {
         "default": "right",
@@ -188,18 +188,6 @@
         "locale.h": "c",
         "limits.h": "c",
         "stdlib.h": "c",
-        "gcrypt.h": "c",
-        "cstdlib": "c",
-        "exception": "c",
-        "ios": "c",
-        "optional": "c",
-        "stdexcept": "c",
-        "string": "c",
-        "typeinfo": "c",
-        "variant": "c",
-        "vector": "c",
-        "functional": "c",
-        "memory": "c",
-        "*.idl": "c"
+        "gcrypt.h": "c"
     }
 }
