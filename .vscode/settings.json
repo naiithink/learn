@@ -9,6 +9,7 @@
     "editor.minimap.enabled": false,
     "breadcrumbs.enabled": false,
     "workbench.startupEditor": "none",
+    "window.titleBarStyle": "custom",
     "git.autofetch": true,
     "git.confirmSync": false,
     "git.enableSmartCommit": true,
