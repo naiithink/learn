@@ -1,4 +1,6 @@
 {
+    "extensions.autoCheckUpdates": true,
+    "extensions.autoUpdate": "onlyEnabledExtensions",
     "diffEditor.ignoreTrimWhitespace": false,
     "editor.renderWhitespace": "all",
     "editor.wordWrap": "on",
@@ -55,7 +57,7 @@
     ],
     "remote.SSH.configFile": "/var/folders/dm/wqycl49j13b9nnps13glqj5h0000gn/T/gitpod_ssh_config-16338-iC9xFlm9K0Kx",
     "markdown-preview-github-styles.colorTheme": "system",
-    "python.defaultInterpreterPath": "/usr/bin/python3",
+    "python.defaultInterpreterPath": "/usr/local/bin/python3",
     "jupyter.askForKernelRestart": false,
     "notebook.cellToolbarLocation": {
         "default": "right",
@@ -168,7 +170,7 @@
     "esbonio.server.enabled": false,
     "esbonio.sphinx.confDir": "",
     "yaml.schemas": {
-        "file:///home/naiithink/.vscode/extensions/atlassian.atlascode-2.10.12/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+        "file:///Users/naiithink/.vscode/extensions/atlassian.atlascode-2.10.12/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
     },
     "redhat.telemetry.enabled": false,
     "markdown-pdf.outputDirectoryRelativePathFile": true,
