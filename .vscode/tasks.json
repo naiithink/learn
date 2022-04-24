@@ -1,4 +1,22 @@
 {
+    "version": "2.0.0",
+    "windows": {
+        "options": {
+            "shell": {
+                "executable": "cmd.exe",
+                "args": [
+                    "/C",
+                    // The path to VsDevCmd.bat depends on the version of Visual Studio you have installed.
+                    // You can find the path to `VsDevCmd.bat` by opening a Command Prompt and running `dir "\VsDevCmd*" /s`
+                    // e.g.,
+                    // "\"C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/Tools/VsDevCmd.bat\"",
+                    // "&&"
+                    "\"C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/Tools/VsDevCmd.bat\"",
+                    "&&"
+                ]
+            }
+        }
+    },
     "tasks": [
         {
             "type": "cppbuild",
@@ -63,7 +81,8 @@
                 "kind": "build",
                 "isDefault": true
             }
-        },        {
+        },
+        {
             "type": "cppbuild",
             "label": "C++: clang++ build active file",
             "command": "/usr/bin/clang++",
@@ -81,6 +100,24 @@
                 "isDefault": true
             }
         },
-    ],
-    "version": "2.0.0"
+        {
+            "type": "shell",
+            "label": "cl.exe build active file",
+            "command": "cl.exe",
+            "args": [
+                "/Zi",
+                "/EHsc",
+                "/Fe:",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe",
+                "${file}"
+            ],
+            "problemMatcher": [
+                "$msCompile"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
 }
