@@ -12,7 +12,9 @@
     "breadcrumbs.enabled": false,
     "workbench.startupEditor": "none",
     "window.titleBarStyle": "custom",
+    "git.autorefresh": true,
     "git.autofetch": true,
+    "git.autofetchPeriod": 180,
     "git.confirmSync": false,
     "git.enableSmartCommit": true,
     "terminal.integrated.profiles.windows": {
@@ -36,7 +38,11 @@
             "path": "C:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell.exe -noe -c \"&{Import-Module \"\"\"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\Tools\\Microsoft.VisualStudio.DevShell.dll\"\"\"; Enter-VsDevShell 69e18fd0}\""
         },
         "Developer Command Prompt for VS 2022": {
-            "path": "%comspec% /k \"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\Tools\\VsDevCmd.bat\""
+            // "path": "%comspec% /k \"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\Tools\\VsDevCmd.bat\""
+            "path": "\"C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/Tools/VsDevCmd.bat\"",
+            "args": [
+                "&" /* , "\"C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/Tools/VsDevCmd.bat\"" */
+            ]
         },
         "Git Bash": {
             "source": "Git Bash"
@@ -57,7 +63,6 @@
     ],
     "remote.SSH.configFile": "/var/folders/dm/wqycl49j13b9nnps13glqj5h0000gn/T/gitpod_ssh_config-16338-iC9xFlm9K0Kx",
     "markdown-preview-github-styles.colorTheme": "system",
-    "python.defaultInterpreterPath": "/usr/local/bin/python3",
     "jupyter.askForKernelRestart": false,
     "notebook.cellToolbarLocation": {
         "default": "right",
@@ -170,7 +175,7 @@
     "esbonio.server.enabled": false,
     "esbonio.sphinx.confDir": "",
     "yaml.schemas": {
-        "file:///Users/naiithink/.vscode/extensions/atlassian.atlascode-2.10.12/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+        "file:///c%3A/Users/naiithink/.vscode/extensions/atlassian.atlascode-2.10.12/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
     },
     "redhat.telemetry.enabled": false,
     "markdown-pdf.outputDirectoryRelativePathFile": true,
