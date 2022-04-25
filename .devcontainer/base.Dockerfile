@@ -8,6 +8,9 @@ ARG     UPGRADE_PACKAGES="true"
 ARG     USERNAME=vscode
 ARG     USER_UID=1000
 ARG     USER_GID=$USER_UID
+
+RUN     ulimit -c unlimited
+
 # Install needed packages and setup non-root user. Use a separate RUN statement to add your own dependencies.
 COPY    library-scripts/*.sh library-scripts/*.env /tmp/library-scripts/
 RUN     yes | unminimize 2>&1 \ 
