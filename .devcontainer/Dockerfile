@@ -2,6 +2,8 @@
 ARG     VARIANT="hirsute"
 FROM    mcr.microsoft.com/vscode/devcontainers/base:${VARIANT}
 
+RUN     ulimit -c unlimited
+
 # [Optional] Uncomment this section to install additional OS packages.
 RUN     apt-get update && export DEBIAN_FRONTEND=noninteractive \
         && apt-get -y install --no-install-recommends automake build-essential gnupg2 libtool-bin libncurses-dev libc6-dbg libxml2-dev
