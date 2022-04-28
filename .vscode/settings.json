@@ -197,6 +197,11 @@
         "limits.h": "c",
         "stdlib.h": "c",
         "gcrypt.h": "c",
-        "foo.h": "c"
+        "foo.h": "c",
+        "fileapi.h": "c",
+        "filesys.h": "c",
+        "file.h": "c",
+        "errno.h": "c",
+        "features.h": "c"
     }
 }
