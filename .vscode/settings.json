@@ -71,6 +71,8 @@
     "notebook.lineNumbers": "on",
     "notebook.cellFocusIndicator": "border",
     "notebook.cellToolbarVisibility": "hover",
+    "latex-workshop.latex.autoBuild.run": "never",
+    "latex-workshop.latex.autoBuild.cleanAndRetry.enabled": true,
     "latex-workshop.view.pdf.viewer": "tab",
     "latex-workshop.latex.tools": [
         {
@@ -202,6 +204,8 @@
         "filesys.h": "c",
         "file.h": "c",
         "errno.h": "c",
-        "features.h": "c"
+        "features.h": "c",
+        "cstdlib": "cpp",
+        "*.idl": "c"
     }
 }
