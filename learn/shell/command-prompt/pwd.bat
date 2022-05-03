@@ -1,0 +1,5 @@
+@ECHO OFF
+ECHO %PWD%
+FOR /F %%R IN (pwd) DO (SET PWD=%%R)
+ECHO %PWD%
+PAUSE
