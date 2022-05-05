@@ -1,0 +1,76 @@
+\documentclass{article}
+\usepackage{textcomp}
+
+\begin{document}
+
+\section*{Ready-Made Strings}
+
+\fbox{\textbackslash{}today}~~~~\today{}\\
+\fbox{\textbackslash{}TeX}~~~~~~\TeX{}\\
+\fbox{\textbackslash{}LaTeX}~~~~\LaTeX{}\\
+\fbox{\textbackslash{}LaTeXe}~~~\LaTeXe{}
+
+\section*{Special Chars and Symbs}
+
+\subsection*{Quotation Marks}
+
+``Please press the `x' key.''\\
+````hello'''''
+
+\subsection*{Dashed and Hyphens}
+
+daughter-in-law, X-rated\\
+pages 13--67\\
+yes---or no? \\
+$0$, $1$ and $-1$
+
+\subsection*{Tilde ($\sim$)}
+
+http://www.rich.edu/\~{}bush \\
+http://www.clever.edu/$\sim$demo
+
+\subsection*{Slash (\slash)}
+
+read\slash write\\
+read/write\\
+5 MB/s
+
+\subsection*{Degree Symbol ($\circ$)}
+
+It's $-30\,^{\circ}\mathrm{C}$.
+I will soon start to super-conduct.
+
+\subsubsection*{Using \texttt{textcomp} Package}
+
+30 \textcelsius{} is
+86 \textdegree{}F.
+
+\subsubsection*{Currency}
+
+\textbaht{} 100
+\texteuro{} 4
+
+\subsubsection*{Ellipsis (\ldots)}
+
+Not like this ... but like this:\\
+New York, Tokyo, Budapest, \ldots
+
+\subsubsection*{Ligatures}
+
+Ligatures can be prohibited by inserting an \mbox{} between the two letters.
+
+\Large Not shelfful\\
+but shelf\mbox{}ful
+
+\subsubsection*{Accents and Special Chars}
+
+To place an accent on top of an i or a j, its dots have to be removed.
+This is accomplished by typing \texttt{\textbackslash i} and \texttt{\textbackslash j}.
+
+\fbox{\i{} \j{}}
+
+H\^otel, na\"\i ve, \'el\`eve,\\
+sm\o rrebr\o d, !`Se\~norita!,\\
+Sch\"onbrunner Schlo\ss{}
+Stra\ss e
+\end{document}
