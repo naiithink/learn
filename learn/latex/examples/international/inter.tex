@@ -1,0 +1,53 @@
+\documentclass{article}
+\usepackage{iftex}
+
+\ifxetex
+    \usepackage{fontspec}
+\else
+    \usepackage{luatextra}
+\fi
+\defaultfontfeatures{Ligatures=TeX}
+\usepackage{polyglossia}
+
+\usepackage[autostyle=true]{csquotes}
+\setdefaultlanguage{english}
+\setotherlanguages{thai}
+
+\setmainfont{CMU Serif}
+\setsansfont{CMU Sans Serif}
+\setmonofont{CMU Typewriter Text}
+For XƎLATEX you have to be a bit more explicit:
+\setmainfont{cmun}[
+   Extension=.otf,UprightFont=*rm,ItalicFont=*ti,
+   BoldFont=*bx,BoldItalicFont=*bi,
+ ]
+ \setsansfont{cmun}[
+   Extension=.otf,UprightFont=*ss,ItalicFont=*si,
+   BoldFont=*sx,BoldItalicFont=*so,
+ ]
+ \setmonofont{cmun}[
+   Extension=.otf,UprightFont=*btl,ItalicFont=*bto,
+   BoldFont=*tb,BoldItalicFont=*tx,
+]
+
+\begin{document}
+\section*{Three Areas Configuration}
+
+When you write documents in languages other than English, there are three areas where LATEX has to be configured appropriately:
+
+1. All automatically generated text strings (TOC, List of Figures, ...) have to be adapted to the new language.
+
+2. \LaTeX{} needs to know the hyphenation rules for the current language.
+
+3. Language specific typographic rules. In French for example, there is a mandatory space before each colon character (:).
+
+
+% \fbox{\textthai{สวัสดี}}
+
+\textrussian{Правда} is
+a russian newspaper.
+\textgreek{ἀλήθεια} is truth
+or disclosure in philosophy
+
+
+\end{document}

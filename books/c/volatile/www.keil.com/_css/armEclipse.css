@@ -1,0 +1,409 @@
+/* Hide ARM Tags */
+div.Bdy div.headers   { display: none; }
+div.Bdy div.footers   { display: none; }
+div.Bdy div.navheader { display: none; }
+div.Bdy div.navfooter { display: none; }
+div.Bdy h1.title      { display: none; }
+div.Bdy h2.title      { display: none; }
+div.Bdy h3.title      { display: none; }
+/*
+div.Bdy div.toc       { display: none; }
+div.Bdy div.list-of-figures   { display: none; }
+div.Bdy div.list-of-tables    { display: none; }
+div.Bdy div.list-of-examples  { display: none; }
+*/
+/* Hide Keil Tags */
+/* div.Bdy h1.mptitle   { display: none; } */
+
+
+
+div.Bdy h1            { font: bold 16pt verdana; clear: both; padding-top: 6px; margin-top: 0; }
+div.Bdy h2            { font: bold 14pt verdana; clear: both; padding-top: 15px; }
+div.Bdy h3            { font: bold 13pt verdana; clear: both; padding-top: 15px; }
+div.Bdy h4            { font: bold 12pt verdana; clear: both; padding-top: 15px; }
+div.Bdy h5            { font: bold 10pt verdana; clear: both; padding-top: 15px; }
+div.Bdy h6            { font: bold 10pt verdana; clear: both; padding-top: 15px; }
+
+div.Bdy p             { font-size: 10pt; padding: 0; margin: 16px 0; }
+div.Bdy b             {  }
+div.Bdy i             {  }
+div.Bdy a             { font-size: 10pt; }
+div.Bdy blockquote    { font: normal 10pt verdana; }
+div.Bdy ul            { font-size: 10pt; }
+div.Bdy ol            { font-size: 10pt; }
+div.Bdy dl            { font-size: 10pt;  }
+
+span.term { font-weight:bold; } 
+
+div.Bdy table tr th   { font: 10pt Verdana; }
+div.Bdy table tr td   { font: 10pt Verdana; }
+
+div.Bdy pre           { font: 9pt/120% Courier New, Courier; color: #000000; background: #E0E0E0; margin-bottom: 0; }
+
+div.Bdy div.itemizedlist ul       { list-style-type: square; }
+div.Bdy div.itemizedlist ul ul    { list-style-type: square; }
+
+/*-----------------------------------------------------------
+Breadcrumbs
+-----------------------------------------------------------*/
+div.Bdy h1.mptitle  { padding-bottom: 0; margin-bottom: 0; }
+div.Bdy p.navbc     { font-size: 8pt; padding: 0; margin: 0 0 18px 0; color: #999; background: #FFF; }
+div.Bdy p.navbc a   { font-size: 8pt; }
+
+/*-----------------------------------------------------------
+ECLIPSE Stuff
+-----------------------------------------------------------*/
+div.Bdy P.Code {
+	display: block;
+	text-align: left;
+	text-indent: 0.00pt;
+	margin-top: 0.000000pt;
+	margin-bottom: 0.000000pt;
+	margin-right: 0.000000pt;
+	margin-left: 15pt;
+	font-size: 10.000000pt;
+	font-weight: normal;
+	font-style: normal;
+	color: #4444CC;
+	text-decoration: none;
+	vertical-align: baseline;
+	text-transform: none;
+	font-family: "Courier New", Courier, monospace;
+}
+
+div.Bdy H6.CaptionFigColumn {
+	display: block;
+	text-align: left;
+	text-indent: 0.000000pt;
+	margin-top: 3.000000pt;
+	margin-bottom: 11.000000pt;
+	margin-right: 0.000000pt;
+	margin-left: 0.000000pt;
+	font-size: 9.000000pt;
+	font-weight: bold;
+	font-style: Italic;
+	color: #000000;
+	text-decoration: none;
+	vertical-align: baseline;
+	text-transform: none;
+}
+
+div.Bdy P.Note {
+	display: block;
+	text-align: left;
+	text-indent: 0pt;
+	margin-top: 19.500000pt;
+	margin-bottom: 19.500000pt;
+	margin-right: 0.000000pt;
+	margin-left: 30pt;
+	font-size: 11.000000pt;
+	font-weight: normal;
+	font-style: Italic;
+	color: #000000;
+	text-decoration: none;
+	vertical-align: baseline;
+	text-transform: none;
+}
+
+div.Bdy EM.UILabel {
+	font-weight: Bold;
+	font-style: normal;
+	text-decoration: none;
+	vertical-align: baseline;
+	text-transform: none;
+}
+
+div.Bdy EM.CodeName {
+	font-weight: Bold;
+	font-style: normal;
+	text-decoration: none;
+	vertical-align: baseline;
+	text-transform: none;
+	font-family: "Courier New", Courier, monospace;
+}
+
+/*-----------------------------------------------------------
+ARM Stuff
+-----------------------------------------------------------*/
+
+/* Override the defaults */
+
+div.Bdy .logo {
+}
+
+div.Bdy .navbar {
+	background-color: #003366;
+}
+
+div.Bdy .titlebar td {
+	color: white;
+    font-weight: bold;
+    font-size: 125%;
+}
+
+div.Bdy .titlebar {
+	background-color: #d76b04;
+}
+
+div.Bdy .titlebar td {
+	padding-left: 17px;
+	padding-right: 17px;
+	padding-top: 0.2em;
+	padding-bottom: 0.2em;
+}
+
+div.Bdy .breadcrumbs td, .breadcrumbs :link, .breadcrumbs :visited {
+	color: #999999;
+}
+
+div.Bdy .breadcrumbs td {
+	padding-top: 0.25em;
+	padding-bottom: 0.25em;
+}
+
+div.Bdy .legalfooter td {
+	color: #003366;
+}
+
+div.Bdy .legalfooter {
+	margin-top: 1em;
+	background-color: #faede0;
+}
+
+div.Bdy .legalfooter td {
+	padding-left: 1em;
+	padding-right: 1em;
+	padding-top: 0.25em;
+	padding-bottom: 0.25em;
+}
+
+div.Bdy .TABLE .title {
+	font-family: sans-serif;
+}
+
+div.Bdy .TABLE table {
+	border-collapse: collapse;
+	border-width: 0;
+	text-align: left;
+}
+
+div.Bdy .TABLE th,
+div.Bdy .TABLE td {
+	padding: 0.5em;
+}
+
+div.Bdy .TABLE thead th,
+div.Bdy .TABLE thead td {
+	border-left:0 hidden black; border-right:0 hidden black; border-top:2px solid black; border-bottom:2px solid black; 
+}
+
+div.Bdy .TABLE tbody th,
+div.Bdy .TABLE tbody td,
+div.Bdy .TABLE tfoot th,
+div.Bdy .TABLE tfoot td {
+	border-left:0 hidden black; border-right:0 hidden black; border-top:1px solid black; border-bottom:1px solid black; 
+}
+
+div.Bdy .ENCODING table {
+	border-collapse: collapse;
+	border-width: 0;
+	text-align: center;
+}
+
+div.Bdy .ENCODING th,
+div.Bdy .ENCODING td {
+	padding: 0.25em;
+}
+
+div.Bdy .ENCODING thead th,
+div.Bdy .ENCODING thead td {
+	border-left:0 hidden black; border-right:0 hidden black; border-top:0 hidden black; border-bottom:1px solid black; font-weight: normal
+}
+
+div.Bdy .ENCODING tbody th,
+div.Bdy .ENCODING tbody td,
+div.Bdy .ENCODING tfoot th,
+div.Bdy .ENCODING tfoot td {
+	border-width: 1px;
+	border-style: solid;
+	border-color: black;
+}
+
+
+/******************************************************************/
+/* from original armEclipse.css                                   */
+/******************************************************************/
+div.note,
+div.caution,
+div.warning {
+	background-color: #f5f5f5;
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+	padding-top: 0.2em;
+	padding-bottom: 0.2em;
+}
+
+@media print {
+    div.note,
+    div.caution,
+    div.warning {
+    	border-left: 1px solid silver;
+    	background-color: inherit;
+    	padding-left: 0.5em;
+    	padding-right: 0;
+    	padding-top: 0;
+    	padding-bottom: 0;
+    }
+}
+
+/* override padding for generic h3 tags for the manual pages */
+div.Bdy h3.note            { padding-top: 0px; }
+
+
+h3.note,
+h3.caution,
+h3.warning {
+	margin-top: 0 !important;
+	padding-top:0;
+}
+
+.note,
+.caution,
+.warning {
+	margin-top: 0.8em;
+	margin-bottom: 0.2em;
+}
+
+.note *,
+.caution *,
+.warning * {
+	margin-top: 0.6em;
+	margin-bottom: 0.2em;
+}
+
+ul .note,
+ul .caution,
+ul .warning,
+ol .note,
+ol .caution,
+ol .warning,
+dl .note,
+dl .caution,
+dl .warning {
+	margin-top: 0.6em;
+	margin-bottom: 0.2em;
+} 
+
+ul .note *,
+ul .caution *,
+ul .warning *,
+ol .note *,
+ol .caution *,
+ol .warning *,
+dl .note *,
+dl .caution *,
+dl .warning * {
+	margin-top: 0.4em;
+	margin-bottom: 0.2em;
+} 
+
+ul[compact] .note,
+ul[compact] .caution,
+ul[compact] .warning,
+ol[compact] .note,
+ol[compact] .caution,
+ol[compact] .warning,
+dl[compact] .note,
+dl[compact] .caution,
+dl[compact] .warning {
+	margin-top: 0.4em;
+	margin-bottom: 0.2em;
+} 
+
+ul[compact] .note *,
+ul[compact] .caution *,
+ul[compact] .warning *,
+ol[compact] .note *,
+ol[compact] .caution *,
+ol[compact] .warning *,
+dl[compact] .note *,
+dl[compact] .caution *,
+dl[compact] .warning * {
+	margin-top: 0.3em;
+	margin-bottom: 0.2em;
+} 
+
+ul ul .note,
+ul ul .caution,
+ul ul .warning,
+ul ol .note,
+ul ol .caution,
+ul ol .warning,
+ul dl .note,
+ul dl .caution,
+ul dl .warning,
+ol ul .note,
+ol ul .caution,
+ol ul .warning,
+ol ol .note,
+ol ol .caution,
+ol ol .warning,
+ol dl .note,
+ol dl .caution,
+ol dl .warning,
+dl ul .note,
+dl ul .caution,
+dl ul .warning,
+dl ol .note,
+dl ol .caution,
+dl ol .warning,
+dl dl dt,
+dl dl .note,
+dl dl .caution,
+dl dl .warning {
+	margin-top: 0.4em;
+	margin-bottom: 0.2em;
+} 
+
+ul ul .note *,
+ul ul .caution *,
+ul ul .warning *,
+ul ol .note *,
+ul ol .caution *,
+ul ol .warning *,
+ul dl .note *,
+ul dl .caution *,
+ul dl .warning *,
+ol ul .note *,
+ol ul .caution *,
+ol ul .warning *,
+ol ol .note *,
+ol ol .caution *,
+ol ol .warning *,
+ol dl .note *,
+ol dl .caution *,
+ol dl .warning *,
+dl ul .note *,
+dl ul .caution *,
+dl ul .warning *,
+dl ol .note *,
+dl ol .caution *,
+dl ol .warning *,
+dl dl .note *,
+dl dl .caution *,
+dl dl .warning * {
+	margin-top: 0.3em;
+	margin-bottom: 0.2em;
+}
+
+/** Hotfixes for unwanted spacing added in fixed width fonts **/
+code code {
+    padding: 0;
+}
+
+span.var code {
+    font-style: italic !important;
+    padding: 0;
+}
