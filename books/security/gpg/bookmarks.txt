@@ -1,0 +1,42 @@
+- offline master key : https://incenp.org/notes/2015/using-an-offline-gnupg-master-key.html
+- https://blog.programster.org/gpg-subkeys
+- https://blog.programster.org/generating-gpg-master-and-subkeys
+
+
+
+Did not try yet (not verified)
+
+#   #!/bin/bash
+#   
+#   # The DOS label of your USB stick
+#   LABEL=mystick
+#   
+#   # The pathname to the file containing your private keys
+#   # on that stick
+#   KEYFILE=alice-private-keys.asc
+#   
+#   # Identify the device file corresponding to your USB stick
+#   device=$(/sbin/findfs LABEL=$LABEL)
+#   
+#   if [ -n "$device" ]; then
+#       # Mount the stick
+#       udisksctl mount --block-device $device
+#   
+#       # Create temporary GnuPG home directory
+#       tmpdir=$(mktemp -d -p $XDG_RUNTIME_DIR gpg.XXXXXX)
+#   
+#       # Import the private keys
+#       gpg2 --homedir $tmpdir --import /run/media/$USER/$LABEL/$KEYFILE
+#   
+#       # Unmount the stick
+#       udisksctl unmount --block-device $device
+#   
+#       # Launch GnuPG from the temporary directory,
+#       # with the default public keyring
+#       # and with any arguments given to us on the command line
+#       gpg2 --homedir $tmpdir --keyring ${GNUPGHOME:-$HOME/.gnupg}/pubring.kbx $@
+#   
+#       # Cleaning up
+#       [ -f $tmpdir/S.gpg-agent ] && gpg-connect-agent --homedir $tmpdir KILLAGENT /bye
+#       rm -rf $tmpdir
+#   fi
