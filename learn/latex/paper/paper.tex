@@ -1,0 +1,72 @@
+\documentclass[%
+    % draft,
+    a4paper,
+    conference,
+    oneside,
+    twocolumn]{IEEEtran}
+
+\usepackage{blindtext}
+
+% captionsoff: \caption{\label}
+
+\usepackage[T1]{fontenc} % optional
+\usepackage{amsmath}
+\usepackage[cmintegrals]{newtxmath}
+\usepackage{bm} % optional
+\usepackage{hyperref}
+
+\newcommand\docTitle{Just a Paper}
+\newcommand\docNotice{An Assignment of Eiei}
+\newcommand\docSubject{A Subject}
+\newcommand\docAuthorN{Potsawat Thinkanwatthana}
+\newcommand\docAuthorA{%
+    Department of Computer Science, Faculty of Science\\
+    Kasetsart University\\
+    Bangkok, Thailand\\
+    Email: potsawat.t@ku.th}
+    % ORCID: 0000-0002-4579-3900}
+\newcommand\docKeywords{naiithink}
+
+\hypersetup{%
+    pdftitle={\docTitle},
+    pdfsubject={\docSubject},
+    pdfauthor={\docAuthorN},
+    pdfkeywords={\docKeywords}}
+    % pdfproducer={Latex with hyperref, or other system},
+    % pdfcreator={pdflatex, or other tool}}
+
+\pagestyle{plain}
+
+\title{\docTitle}
+\IEEEspecialpapernotice{\docNotice}
+\author{%
+    \IEEEauthorblockN{\docAuthorN}
+    \IEEEauthorblockA{\docAuthorA}}
+% \IEEEaftertitletext{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\blindtext
+\end{abstract}
+
+\section{Introduction}
+\blindtext[2]
+
+\section{Methods}
+\blindtext[5]
+
+\section{Results and Discussion}
+\blindtext[3]
+
+\section{Conclusion}
+\blindtext[2]
+
+\section{Acknowledgements}
+\blindtext[1]
+
+\section{References}
+\blindtext[3]
+
+\end{document}
