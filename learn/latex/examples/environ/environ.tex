@@ -1,0 +1,131 @@
+% !TEX program = xelatex
+\documentclass[a4paper]{article}
+
+\usepackage{blindtext}
+
+\title{Environments}
+\author{naiithink}
+\date{}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\newpage
+\section{Lists}
+\flushleft
+\begin{enumerate}
+\item You can nest the list
+environments to your taste:
+\begin{itemize}
+\item But it might start to
+look silly.
+\item[-] With a dash.
+\end{itemize}
+\item Therefore remember:
+\begin{description}
+\item[Stupid] things will not
+become smart because they are
+in a list.
+\item[Smart] things, though,
+can be presented beautifully
+in a list.
+\end{description}
+\end{enumerate}
+
+\newpage
+\section{Alignment}
+\begin{flushleft}
+\blindtext
+\end{flushleft}
+
+\begin{center}
+\blindtext
+\end{center}
+
+\begin{flushright}
+\blindtext
+\end{flushright}
+
+\newpage
+\section{Quotes}
+
+\subsection{\texttt{quote}, \texttt{quotation}}
+\subsubsection{\texttt{quote}}
+A typographical rule of thumb
+for the line length is:
+\begin{quote}
+On average, no line should
+be longer than 66 characters.
+\end{quote}
+This is why \LaTeX{} pages have
+such large borders by default
+and also why multicolumn print
+is used in newspapers.
+
+\subsubsection{\texttt{quotation}}
+The quotation environment is useful for longer quotes
+going over several paragraphs, because it indents the first
+line of each paragraph.
+
+\subsection{\texttt{verse}}
+I know only one English poem by
+heart. It is about Humpty Dumpty.
+\begin{flushleft}
+\begin{verse}
+Humpty Dumpty sat on a wall:\\
+Humpty Dumpty had a great fall.\\
+All the King's horses and all
+the King's men\\
+Couldn't put Humpty together
+again.
+\end{verse}
+\end{flushleft}
+
+\newpage
+\section{Abstract}
+\begin{abstract}
+\blindtext
+\end{abstract}
+
+\newpage
+\section{Printing Verbatim}
+The verbatim environment and the \texttt{\char92 verb} command may not be used within parameters of other commands.
+
+\subsection{As a Block}
+\begin{verbatim}
+#include <stdio.h>
+
+int main(void)
+{
+    printf("hello, world\n");
+    return 0;
+}
+\end{verbatim}
+
+\subsubsection{The \texttt{*} version}
+\begin{verbatim*}
+#include <stdio.h>
+
+int main(void)
+{
+    printf("hello, world\n");
+    return 0;
+}
+\end{verbatim*}
+
+\subsection{Interpolate}
+Or within a \verb+paragraph+ eiei.\\
+The \verb|+| is just an example of a delimiter character.\\
+Use any character except letters, \verb|*| or space. Many \LaTeX{} examples in this booklet are typeset with this command.
+
+\subsubsection{Also has a \texttt{*} version}
+\verb*|like this :-) |
+
+\newpage
+\section{Tabular}
+\begin{verbatim}
+\begin{tabular}[pos]{table spec}
+\end{verbatim}
+
+\end{document}
