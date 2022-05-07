@@ -2,6 +2,7 @@
     "extensions.autoCheckUpdates": true,
     "extensions.autoUpdate": "onlyEnabledExtensions",
     "diffEditor.ignoreTrimWhitespace": false,
+    "editor.useTabStops": true,
     "editor.renderWhitespace": "all",
     "editor.wordWrap": "on",
     "editor.wordWrapColumn": 80,
@@ -176,6 +177,8 @@
     ],
     "esbonio.server.enabled": false,
     "esbonio.sphinx.confDir": "",
+    "restructuredtext.editor.listEditing.list.indentationSize": "inherit",
+    "restructuredtext.preview.name": "docutils",
     "yaml.schemas": {
         "file:///c%3A/Users/naiithink/.vscode/extensions/atlassian.atlascode-2.10.12/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
     },
