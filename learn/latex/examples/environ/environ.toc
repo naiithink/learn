@@ -7,4 +7,5 @@
 \contentsline {section}{\numberline {5}Printing Verbatim}{5}{}%
 \contentsline {subsection}{\numberline {5.1}As a Block}{5}{}%
 \contentsline {subsection}{\numberline {5.2}Interpolate}{5}{}%
-\contentsline {section}{\numberline {6}Tabular}{6}{}%
+\contentsline {section}{\numberline {6}Tabulation}{6}{}%
+\contentsline {subsection}{\numberline {6.1}Long Tables}{7}{}%

@@ -126,19 +126,96 @@ Use any character except letters, \verb|*| or space. Many \LaTeX{} examples in t
 \verb*|like this :-) |
 
 \newpage
-\section{Tabular}
+\section{Tabulation}
 \begin{verbatim}
 \begin{tabular}[pos]{table spec}
 \end{verbatim}
 
 \subsection*{\texttt{table spec}}
-\fbox{l} for a column of left-aligned text\\
-\fbox{r} for right-aligned text\\
-\fbox{c} for centered text\\
-\fbox{p\{width\}} for a column containing justified text with line breaks\\
-\fbox{\textbar} for a vertical line.
+\begin{tabular}{c @{~~~~} l}
+    \texttt{l} & column of left-aligned text\\
+    \texttt{r} & right-aligned text\\
+    \texttt{c} & centered text\\
+    \texttt{p\{width\}} & column containing justified text with line breaks\\
+    \texttt{\textbar} & vertical line
+\end{tabular}
+\newline \newline
 
 If the text in a column is too wide for the page, \LaTeX{} won't automatically wrap it.
-Using \verb+p{width}+ you can define a special type of column which will wrap-around the text as in a normal paragraph.
+Using \verb+p{width}+ you can define a special type of column which will wrap-around the text as in a normal paragraph.\\
+
+\subsection*{Simple Table}
+\begin{tabular}{|r|l|}
+\hline
+7C0 & hexadecimal \\
+3700 & octal \\ \cline{2-2}
+11111000000 & binary \\
+\hline \hline
+1984 & decimal \\
+\hline
+\end{tabular}
+
+\subsection*{Wrapping}
+\begin{tabular}{|p{4.7cm}|}
+\hline
+Welcome to Boxy's paragraph.
+We sincerely hope you'll
+all enjoy the show.\\
+\hline
+\end{tabular}
+
+\subsection*{Leading Spaces}
+\begin{tabular}{l | l}
+\hline \\
+    \begin{tabular}{@{} l @{}}
+    \hline
+    no leading space\\
+    \hline
+    \end{tabular} &
+    \begin{tabular}{l}
+    \hline
+    leading space left and right\\
+    \hline
+    \end{tabular}\\\\
+\hline
+\end{tabular}
+
+\subsection*{Decimal Point}
+\begin{tabular}{c r @{.} l}
+Pi expression       &
+\multicolumn{2}{c}{Value} \\
+\hline
+$\pi$               & 3&1416  \\
+$\pi^{\pi}$         & 36&46   \\
+$(\pi^{\pi})^{\pi}$ & 80662&7 \\
+\end{tabular}
+
+\subsection*{Column Labeling}
+\begin{tabular}{c r @{.} l}
+Pi expression       &
+\multicolumn{2}{c}{Value} \\
+\hline
+$\pi$               & 3&1416  \\
+$\pi^{\pi}$         & 36&46   \\
+$(\pi^{\pi})^{\pi}$ & 80662&7 \\
+\end{tabular}
+
+\rule{\textwidth}{0.5pt}
+
+\begin{tabular}{|c|c|}
+\hline
+\multicolumn{2}{|c|}{Ene} \\
+\hline
+Mene & Muh! \\
+\hline
+\end{tabular}
+
+\newpage
+\subsection{Long Tables}
+\begin{longtable}{| l | l |}
+\hline
+\blindtext[5] & \blindtext[5]\\
+\hline
+\end{longtable}
 
 \end{document}
