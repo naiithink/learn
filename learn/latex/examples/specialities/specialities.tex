@@ -1,19 +1,139 @@
-\documentclass[a4paper]{report}
+\documentclass[a4paper]{article}
+
+\usepackage{blindtext}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{makeidx}
 
 \title{Specialities}
 \author{naiithink}
 \date{}
 
+\setlength{\parindent}{0em}
+
 \begin{document}
 \begin{titlepage}
 \maketitle
-\end{titlepage}
-
-\pagenumbering{gobble}
+\thispagestyle{empty}
 \tableofcontents
+\end{titlepage}
 
 \newpage
 \pagenumbering{arabic}
+\section{Bibliography}
+Produce a bibliography with the \verb|thebibliography| environment.
+
+Each entry starts with
+
+\rule{0em}{2ex}
+
+\fbox{\texttt{\textbackslash{}bibitem[item]\{marker\}}}
+
+\rule{0em}{2ex}
+
+The \texttt{marker} is then used to cite the book, article, or paper within the document.
+
+\rule{0em}{2ex}
+
+\fbox{\texttt{\textbackslash{}cite\{marker\}}}
+
+\rule{0em}{2ex}
+
+If the \verb|label| option is omitted, the entries will get enumerated automatically.
+
+\rule{0em}{2ex}
+
+\verb|\begin{thebibliography}{arg}| takes a numerical argument:\\
+the widest label expected in the list. This help aligning the \mbox{bibliography} list.
+
+% Partl~\cite{pa} has
+% proposed that \ldots
+% \begin{thebibliography}{99}
+% \bibitem{pa} H.~Partl:
+% \emph{German \TeX},
+% TUGboat Volume~9, Issue~1 (1988)
+% \end{thebibliography}
+
+\newpage
+\section{Indexing}
+
+\begin{quote}
+Indexes | Indices, which one would you choose?
+\end{quote}
+
+\subsection{The \texttt{makeidx} Package}
+
+\rule{0em}{2ex}
+
+\fbox{\texttt{\textbackslash{}usepackage\{makeidx\}}}
+
+\rule{0em}{2ex}
+
+Then put \fbox{\texttt{\textbackslash{}makeindex}} in the preamble.
+
+\rule{0em}{2ex}
+
+\rule{\textwidth}{0.5pt}
+
+\rule{0em}{2ex}
+
+The content of the index specified with the command:
+
+\rule{0em}{2ex}
+
+\fbox{\texttt{\textbackslash{}index\{<key>@<formatted entry>\}}}
+
+\rule{0em}{2ex}
+
+\begin{tabular}{l @{~~~~~~~~} l}
+\verb|key|                  &       is for sorting.\\
+\verb|formatted entry|      &       \parbox[t]{8cm}{%
+will appear in the index.\\
+If it is missing, the \texttt{key} will be used.}
+\end{tabular}
+
+\rule{0em}{2ex}
+
+When the input file is processed with \LaTeX{},
+each \verb|\index| command writes an appropriate index entry,
+together with the current page number to a file with the \verb|.idx| extension.
+
+\rule{0em}{2ex}
+
+The \verb|.idx| file can be processed with:
+
+\rule{0em}{2ex}
+
+\fbox{\texttt{makeindex <filename>}}
+
+\rule{0em}{2ex}
+
+This program generates a sorted index with the same base file name,\\
+but with the \mbox{extension} \verb|.ind|.
+
+\rule{0em}{2ex}
+
+\begin{center}
+\fbox{\texttt{.tex} $\rightarrow$ \texttt{.idx} $\rightarrow$ \texttt{.ind}}
+\end{center}
+
+\rule{0em}{2ex}
+
+If now the input file is processed again,\\
+this sorted index gets included into the document at \verb|\printindex|.
+
+\rule{0em}{2ex}
+
+\fbox{\texttt{\textbackslash{}printindex}}
+
+\newpage
+\subsection{The \texttt{showidx} Package}
+The \verb|showidx| package that comes with \LaTeXe{} prints out all index entries
+in the left margin of the text. This quite useful for proofreading a document and verify the index.
+
+\rule{0em}{0.5pt}
+
+\fbox{Note that \texttt{\textbackslash{}index} command can affect the layout if not used carefully.}
 
 
 \end{document}
