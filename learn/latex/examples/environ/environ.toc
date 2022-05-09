@@ -8,4 +8,10 @@
 \contentsline {subsection}{\numberline {5.1}As a Block}{5}{}%
 \contentsline {subsection}{\numberline {5.2}Interpolate}{5}{}%
 \contentsline {section}{\numberline {6}Tabulation}{6}{}%
-\contentsline {subsection}{\numberline {6.1}Long Tables}{7}{}%
+\contentsline {subsection}{\numberline {6.1}Simple Table}{6}{}%
+\contentsline {subsection}{\numberline {6.2}\texttt {\textbackslash {}arraystretch} and \texttt {\textbackslash {}tabcolsep}}{7}{}%
+\contentsline {subsection}{\numberline {6.3}Long Tables}{8}{}%
+\contentsline {section}{\numberline {7}Including Graphics and Images}{9}{}%
+\contentsline {subsection}{\numberline {7.1}\texttt {graphicx} Package}{9}{}%
+\contentsline {section}{\numberline {8}Floating Bodies}{11}{}%
+\contentsline {subsubsection}{\numberline {8.0.1}Captioning}{12}{}%
