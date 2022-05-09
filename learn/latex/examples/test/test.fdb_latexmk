@@ -1,0 +1,23 @@
+# Fdb version 3
+["pdflatex"] 1652101294 "/Users/naiithink/projects/private/learn/latex/examples/test/test.tex" "test.pdf" "test" 1652101294
+  "/Users/naiithink/projects/private/learn/latex/examples/test/test.tex" 1652101294 152 aa02087bfb8fc26ea081e1113e176416 ""
+  "/usr/local/texlive/2021/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
+  "/usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1136768653 1324 c910af8c371558dc20f2d7822f66fe64 ""
+  "/usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmr12.tfm" 1136768653 1288 655e228510b4c2a1abe905c368440826 ""
+  "/usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1248133631 32080 340ef9bf63678554ee606688e7b5339d ""
+  "/usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
+  "/usr/local/texlive/2021/texmf-dist/tex/latex/base/report.cls" 1636758526 23203 8fbc410e29d3fd675970d5f9698c9c11 ""
+  "/usr/local/texlive/2021/texmf-dist/tex/latex/base/size10.clo" 1636758526 8448 96f18c76bf608a36ee6fbf021ac1dd32 ""
+  "/usr/local/texlive/2021/texmf-dist/tex/latex/blindtext/blindtext.sty" 1325892463 47295 de48b7f8ebf4b54709a2f6b2c7106dd5 ""
+  "/usr/local/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def" 1644269979 29921 d0acc05a38bd4aa3af2017f0b7c137ce ""
+  "/usr/local/texlive/2021/texmf-dist/tex/latex/tools/xspace.sty" 1622581934 4545 d84d0b20a11b9c36c6ecf45697be591c ""
+  "/usr/local/texlive/2021/texmf-dist/web2c/texmf.cnf" 1646502317 40171 cdab547de63d26590bebb3baff566530 ""
+  "/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1649332475 4410336 9a0a29906eb859c2474e81197df54e3a ""
+  "/usr/local/texlive/2021/texmf-var/web2c/pdftex/pdflatex.fmt" 1649332509 2826435 4697676762848dd76bdf15c948808278 ""
+  "/usr/local/texlive/2021/texmf.cnf" 1616695596 577 4c1911a7228e554c6032256d3cf5567d ""
+  "test.aux" 1652101294 132 f7bfacdc86e29cd02e0dc6fe077f31b8 "pdflatex"
+  "test.tex" 1652101294 152 aa02087bfb8fc26ea081e1113e176416 ""
+  (generated)
+  "test.aux"
+  "test.log"
+  "test.pdf"
