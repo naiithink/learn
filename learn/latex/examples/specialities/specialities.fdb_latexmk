@@ -1,6 +1,11 @@
 # Fdb version 3
-["pdflatex"] 1652115663 "/Users/naiithink/projects/private/learn/latex/examples/specialities/specialities.tex" "specialities.pdf" "specialities" 1652115663
-  "/Users/naiithink/projects/private/learn/latex/examples/specialities/specialities.tex" 1652115663 3062 77293bbbd333511c433df7a98ae79585 ""
+["makeindex specialities.idx"] 1652199928 "specialities.idx" "specialities.ind" "specialities" 1652203796
+  "specialities.idx" 1652203796 45 b14848cf999cf894fabcee6cc10f5d53 "pdflatex"
+  (generated)
+  "specialities.ilg"
+  "specialities.ind"
+["pdflatex"] 1652203796 "/Users/naiithink/projects/private/learn/latex/examples/specialities/specialities.tex" "specialities.pdf" "specialities" 1652203796
+  "/Users/naiithink/projects/private/learn/latex/examples/specialities/specialities.tex" 1652203796 4993 e2550a111465268b114bcc7b55797cb1 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/jknappen/ec/ecbx1000.tfm" 1136768653 3584 2d666ecf6d466d8b007246bc2f94d9da ""
@@ -40,17 +45,20 @@
   "/usr/local/texlive/2021/texmf-dist/tex/latex/base/size10.clo" 1636758526 8448 96f18c76bf608a36ee6fbf021ac1dd32 ""
   "/usr/local/texlive/2021/texmf-dist/tex/latex/base/t1cmtt.fd" 1622581934 2443 6dd9a5deeddddfcceb01d1932590ebad ""
   "/usr/local/texlive/2021/texmf-dist/tex/latex/blindtext/blindtext.sty" 1325892463 47295 de48b7f8ebf4b54709a2f6b2c7106dd5 ""
+  "/usr/local/texlive/2021/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty" 1612734021 17086 7ed8cbc4d361ec87392817e0dd4f65ec ""
   "/usr/local/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def" 1644269979 29921 d0acc05a38bd4aa3af2017f0b7c137ce ""
   "/usr/local/texlive/2021/texmf-dist/tex/latex/tools/xspace.sty" 1622581934 4545 d84d0b20a11b9c36c6ecf45697be591c ""
   "/usr/local/texlive/2021/texmf-dist/web2c/texmf.cnf" 1646502317 40171 cdab547de63d26590bebb3baff566530 ""
   "/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1649332475 4410336 9a0a29906eb859c2474e81197df54e3a ""
   "/usr/local/texlive/2021/texmf-var/web2c/pdftex/pdflatex.fmt" 1649332509 2826435 4697676762848dd76bdf15c948808278 ""
   "/usr/local/texlive/2021/texmf.cnf" 1616695596 577 4c1911a7228e554c6032256d3cf5567d ""
-  "specialities.aux" 1652115663 474 57f4fa76581c5a8dbc0f397c7398071f "pdflatex"
-  "specialities.tex" 1652115663 3062 77293bbbd333511c433df7a98ae79585 ""
-  "specialities.toc" 1652115663 276 141e4c7833c6d3d2cdc1fc53f632b0f5 "pdflatex"
+  "specialities.aux" 1652203796 700 d1ced186bf3d8e6798330ee5a3407dd3 "pdflatex"
+  "specialities.ind" 1652199928 87 64167d804d8d13bd913a90d7fcaf99a3 "makeindex specialities.idx"
+  "specialities.tex" 1652203796 4993 e2550a111465268b114bcc7b55797cb1 ""
+  "specialities.toc" 1652203796 336 56ff0aa8f78d96ed534a91af810ed161 "pdflatex"
   (generated)
   "specialities.aux"
+  "specialities.idx"
   "specialities.log"
   "specialities.pdf"
   "specialities.toc"

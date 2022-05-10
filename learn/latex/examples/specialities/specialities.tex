@@ -4,12 +4,22 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{makeidx}
+\usepackage{fancyhdr}
 
 \title{Specialities}
 \author{naiithink}
 \date{}
 
+\newcommand{\ex}[2][YYY]{Mandatory arg: #2;
+                         Optional arg: #1.}
+
+% \pagestyle{fancy}
+% \fancyhf{}
+% \fancyhead[L]{\sectionmark}
+
 \setlength{\parindent}{0em}
+
+\makeindex
 
 \begin{document}
 \begin{titlepage}
@@ -21,7 +31,7 @@
 \newpage
 \pagenumbering{arabic}
 \section{Bibliography}
-Produce a bibliography with the \verb|thebibliography| environment.
+Produce a bibliography with the \verb|thebibliography| \index{Bibliography!thebibliography} environment.
 
 Each entry starts with
 
@@ -117,6 +127,12 @@ but with the \mbox{extension} \verb|.ind|.
 \fbox{\texttt{.tex} $\rightarrow$ \texttt{.idx} $\rightarrow$ \texttt{.ind}}
 \end{center}
 
+\subsubsection*{Steps}
+1. pdflatex file.tex\\
+2. makeindex file.ind\\
+3. pdflatex file.tex\\
+4. pdflatex file.tex
+
 \rule{0em}{2ex}
 
 If now the input file is processed again,\\
@@ -135,5 +151,68 @@ in the left margin of the text. This quite useful for proofreading a document an
 
 \fbox{Note that \texttt{\textbackslash{}index} command can affect the layout if not used carefully.}
 
+\newpage
+\section{Fancy Headers}
+The \verb|fancyhdr| package provides a few simple commands that used to customize header and footer lines.
 
+\subsection*{Six Deprecated Commands}
+\subsubsection*{Syntax}
+\fbox{\texttt{\textbackslash{}lhead[<even output>]\{<odd output>\}}}
+
+\rule{0em}{2ex}
+
+\begin{table}[!ht]
+{\renewcommand{\arraystretch}{1.5}
+\renewcommand{\tabcolsep}{6pt}
+\begin{center}
+\caption{Six Deprecated Commands}
+\begin{tabular}[c]{lcr}
+\hline
+\texttt{\textbackslash{}rhead}  &   \texttt{\textbackslash{}chead}  &   \texttt{\textbackslash{}lhead}\\
+\hline
+\texttt{\textbackslash{}rfoot}  &   \texttt{\textbackslash{}cfoot}  &   \texttt{\textbackslash{}lfoot}\\
+\hline
+\end{tabular}
+\end{center}}
+\end{table}
+
+\subsubsection*{Use These Instead}
+
+\rule{0em}{2ex}
+
+\fbox{\texttt{\textbackslash{}fancyhead[selectors]\{output\}}} or \verb|\fancyfoot|
+
+\subsubsection*{Selectors}
+\begin{tabular}{c @{~~~~~~~~} l}
+\verb|E|    &   even page       \\
+\verb|O|    &   odd page        \\
+\verb|L|    &   left side       \\
+\verb|C|    &   centered        \\
+\verb|R|    &   right side
+\end{tabular}
+
+\rule{0em}{2ex}
+
+e.g., \verb|CE,RO|: center of the even pages and to the right side of the off pages.
+
+\rule{0em}{2ex}
+
+To start from scratch, this command will delete the current header/footer configuration.
+
+\rule{0em}{2ex}
+
+\fbox{\texttt{\textbackslash{}fancyhf\{\}}}
+
+\rule{0em}{2ex}
+
+\verb|\fancyhf| is just a merge of \verb|\fancyhead| and \verb|\fancyfoot|.
+
+\rule{0em}{2ex}
+
+% \newcommand{\ex}[2][YYY]{Mandatory arg: #2;
+%                          Optional arg: #1.}
+
+\ex
+
+\printindex
 \end{document}
