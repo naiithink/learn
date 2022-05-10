@@ -2,3 +2,4 @@
 \contentsline {section}{\numberline {2}Indexing}{2}{}%
 \contentsline {subsection}{\numberline {2.1}The \texttt {makeidx} Package}{2}{}%
 \contentsline {subsection}{\numberline {2.2}The \texttt {showidx} Package}{3}{}%
+\contentsline {section}{\numberline {3}Fancy Headers}{4}{}%
