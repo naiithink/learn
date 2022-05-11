@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.7)  11 MAY 2022 02:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.7)  11 MAY 2022 20:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -186,28 +186,28 @@ Writing index file commands.idx
 File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count275
 \l__pdf_internal_box=\box50
-) (./commands.aux)
+) (./commands.aux (./sections/1_python-funtions/python-functions.aux) (./sections/2_latex-keywords/latex-keywords.aux))
 \openout1 = `commands.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-Package hyperref Info: Link coloring OFF on input line 55.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+Package hyperref Info: Link coloring OFF on input line 64.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (/usr/local/texlive/2021/texmf-dist/tex/latex/refcount/refcount.sty
@@ -217,9 +217,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count276
 )
-LaTeX Info: Redefining \ref on input line 55.
-LaTeX Info: Redefining \pageref on input line 55.
-LaTeX Info: Redefining \nameref on input line 55.
+LaTeX Info: Redefining \ref on input line 64.
+LaTeX Info: Redefining \pageref on input line 64.
+LaTeX Info: Redefining \nameref on input line 64.
  (./commands.out) (./commands.out)
 \@outlinefile=\write4
 \openout4 = `commands.out'.
@@ -234,14 +234,14 @@ LaTeX Info: Redefining \nameref on input line 55.
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
 * h-part:(L,W,R)=(50.58878pt, 496.33032pt, 50.58878pt)
-* v-part:(T,H,B)=(72.26999pt, 700.50687pt, 72.26999pt)
+* v-part:(T,H,B)=(108.405pt, 664.37186pt, 72.26999pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
 * \textwidth=496.33032pt
-* \textheight=700.50687pt
+* \textheight=664.37186pt
 * \oddsidemargin=-21.68121pt
 * \evensidemargin=-21.68121pt
-* \topmargin=-37.0pt
+* \topmargin=-0.86499pt
 * \headheight=12.0pt
 * \headsep=25.0pt
 * \topskip=10.0pt
@@ -260,59 +260,65 @@ LaTeX Info: Redefining \nameref on input line 55.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 58.
+(Font)              <7> on input line 67.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 58.
+(Font)              <5> on input line 67.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 58.
-(./commands.toc
+(Font)              <12> on input line 67.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 2.
+(Font)              <8> on input line 67.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 2.
-)
+(Font)              <6> on input line 67.
+(./commands.toc)
 \tf@toc=\write5
 \openout5 = `commands.toc'.
 
  [1
 
 {/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 67.
+\openout2 = `sections/1_python-funtions/python-functions.aux'.
+
+ (./sections/1_python-funtions/python-functions.tex
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 5.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-)
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 73.
- (./commands.ind)
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 22.48724pt, for example:
-(fancyhdr)                \setlength{\headheight}{22.48724pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-10.48724pt}.
-
-
+))
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.93 \end{document}
-                    [1] (./commands.aux)
+l.71 ...ns/1_python-funtions/python-functions.tex}
+                                                   [1
+
+]
+\openout2 = `sections/2_latex-keywords/latex-keywords.aux'.
+
+ (./sections/2_latex-keywords/latex-keywords.tex
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 1.
+) [2
+
+
+
+] (./commands.ind) [3
+
+
+] (./commands.aux (./sections/1_python-funtions/python-functions.aux) (./sections/2_latex-keywords/latex-keywords.aux))
 Package rerunfilecheck Info: File `commands.out' has not changed.
 (rerunfilecheck)             Checksum: 70950E11FA1FFA3A5AEA5A3EDB1B4816;397.
  ) 
 Here is how much of TeX's memory you used:
- 8325 strings out of 478268
- 131495 string characters out of 5846348
- 423495 words of memory out of 5000000
- 26446 multiletter control sequences out of 15000+600000
- 480160 words of font info for 50 fonts, out of 8000000 for 9000
+ 8393 strings out of 478268
+ 134991 string characters out of 5846348
+ 422270 words of memory out of 5000000
+ 26494 multiletter control sequences out of 15000+600000
+ 481710 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,13n,63p,280b,365s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx0700.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on commands.pdf (2 pages, 122869 bytes).
+ 60i,12n,63p,315b,365s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx0700.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
+Output written on commands.pdf (4 pages, 126287 bytes).
 PDF statistics:
- 82 PDF objects out of 1000 (max. 8388607)
- 59 compressed objects within 1 object stream
- 7 named destinations out of 1000 (max. 500000)
+ 90 PDF objects out of 1000 (max. 8388607)
+ 65 compressed objects within 1 object stream
+ 9 named destinations out of 1000 (max. 500000)
  25 words of extra memory for PDF output out of 10000 (max. 10000000)
 

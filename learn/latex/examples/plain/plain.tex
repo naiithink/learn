@@ -1,0 +1,47 @@
+\documentclass[a4paper]{report}
+
+\usepackage[T1]{fontenc}
+\usepackage{fancyhdr}
+\usepackage{blindtext}
+
+\setlength{\parindent}{0em}
+
+% \renewcommand{\chaptermark}[1]{%
+%     \markboth{\chaptername\ \thechapter.\ #1}{}}
+
+% \pagestyle{headings}
+\pagestyle{fancy}
+
+% \fancyhf{}
+% \fancyhead[L]{\markboth{hello}{world}}
+
+\markright{\rightmark}
+
+\title{Plain}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\newpage
+\chapter{hello}
+\blindtext
+
+\newpage
+\section{eiei}
+\blindtext
+
+\newpage
+\begin{table}[!ht]
+\begin{tabular}{l | l}
+\texttt{\textbackslash{}leftmark}       &       \\
+\texttt{\textbackslash{}rightmark}      &
+\end{tabular}
+\end{table}
+
+\leftmark
+
+\rightmark
+\end{document}
