@@ -11,6 +11,8 @@
 
 \makeindex
 
+\includeonly{sections/1_python-funtions/python-functions.tex,sections/2_latex-keywords/latex-keywords.tex}
+
 % \newcommand{\docTitle}[0]{%
 % \flushleft
 % \normalsize{}\LaTeXe{}\\
@@ -19,9 +21,16 @@
 % for Python Developers}}
 
 \newcommand{\docTitle}[0]{%
-Custom Commands\linebreak[3] for Python Developers}
+Custom Commands \mbox{for Python Developers}}
 
-\newcommand{\s}
+\newcommand{\styleTitle}[2][~]{%
+\flushleft
+\normalsize{}#1\\
+\rule{0em}{2ex}\\
+\huge\textbf{#2}}
+
+\newcommand{\myMaxTableWidth}{%
+\textwidth * 1.618}
 
 \hypersetup{%
 pdftitle={Custom Commands for Python Developers},
@@ -32,16 +41,16 @@ pdfproducer=TeX}
 \geometry{%
 a4paper,
 margin = 0.7in,
-top = 1in,
+top = 1.5in,
 bottom = 1in}
 
 \pagenumbering{arabic}
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[L]{\docTitle}
-\fancyfoot[C]{\thepage}
+\fancyhead[L]{\sectionmark}
+\fancyhead[R]{\docTitle~~\textbf{\thepage}}
 
-\title{\docTitle}
+\title{\styleTitle[\LaTeX2{}]{\docTitle}}
 \author{}
 \date{}
 
@@ -59,32 +68,10 @@ bottom = 1in}
 \tableofcontents
 \end{titlepage}
 
-\newpage
-\section{Python Functions}
-How can you define a function in Python?
+\include{sections/1_python-funtions/python-functions.tex}
+\include{sections/2_latex-keywords/latex-keywords.tex}
 
-\subsection{Function Definition}
-\begin{verbatim}
-def foo(arg1[=opt][, arg2[=opt][, ...]]):
-    [statements]
-    [return <expression>]
-\end{verbatim}
-
-\section{\LaTeX{} Keywords}
-{\renewcommand{\tabcolsep}{0em}
-\renewcommand{\arraystretch}{1.4}
-\begin{table}[!ht]
-\begin{tabular}{p{\textwidth / 4} @{} p{\textwidth / 2} @{} p{\textwidth / 4}}
-Keyword                                 &
-\multicolumn{1}{l}{Definition}          &
-\multicolumn{1}{l}{Compatibility}       \\
-\hline
-\texttt{\textbackslash{}def}            &       def     &       \TeX{}          \\
-\texttt{\textbackslash{}newcommand}     &       def     &       \LaTeX{}        \\
-\texttt{\textbackslash{}renewcommand}   &       def     &       \LaTeX{}
-\end{tabular}
-\caption{Keywords for Defining Macros/Commands in \LaTeXe{}}
-\end{table}}
+\thesection
 
 % \setcounter{A}{\goldenRatio{}}
 % \setcounter{B}{\maxTableWidth{}}

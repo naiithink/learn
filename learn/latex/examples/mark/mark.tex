@@ -1,0 +1,17 @@
+\documentclass{article}
+\usepackage{etex}
+\newmarks\mymark
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\topmarks\mymark, \botmarks\mymark, \firstmarks\mymark}
+\begin{document}
+text
+\marks\mymark{A first mark}
+
+\marks\mymark{A second mark}
+
+\newpage
+
+text \marks\mymark{A third mark}
+\end{document}
