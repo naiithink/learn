@@ -81,6 +81,7 @@
     "notebook.lineNumbers": "on",
     "notebook.cellFocusIndicator": "border",
     "notebook.cellToolbarVisibility": "hover",
+    "latex-workshop.latex.build.forceRecipeUsage": false,
     "latex-workshop.latex.autoBuild.run": "onSave",
     "latex-workshop.latex.autoBuild.cleanAndRetry.enabled": true,
     "latex-workshop.view.pdf.viewer": "tab",
@@ -256,7 +257,7 @@
     "restructuredtext.editor.listEditing.list.indentationSize": "inherit",
     "restructuredtext.preview.name": "docutils",
     "yaml.schemas": {
-        "file:///c%3A/Users/naiithink/.vscode/extensions/atlassian.atlascode-2.10.12/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+        "file:///home/naiithink/.vscode/extensions/atlassian.atlascode-2.10.12/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
     },
     "redhat.telemetry.enabled": false,
     "markdown-pdf.outputDirectoryRelativePathFile": true,
