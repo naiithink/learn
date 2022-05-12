@@ -1,0 +1,4 @@
+\defaultfontfeatures[TH Sarabun PSK_Eco]{%
+    Extension = .ttf,
+    Path = boilerplates/fonts/src/THSarabunPSK_Eco/,
+    UprightFont = test}

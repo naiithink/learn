@@ -1,0 +1,8 @@
+% URL: 'https://www.wu.ac.th/th/news/20479?fbclid=IwAR07xA52K6ggIM8_GWVufsMOjJ-qdL1XH5TXK0wHSXXu-muj-R8Wk8qC2YI'
+% SRC: 'https://drive.google.com/file/d/1tHmtVDItz8_FUowe6eycAlQ6v2lkbW-Z/view'
+
+\defaultfontfeatures[TH Sarabun PSK_Eco]{%
+    Extension = .ttf,
+    Path = src/TH Sarabun PSK_Eco/,
+    UprightFont = THSarabunPSK_Eco
+}

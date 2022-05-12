@@ -1,0 +1,75 @@
+% !TEX program = xelatex
+\documentclass{article}
+
+\usepackage{blindtext}
+\usepackage{iftex}
+\usepackage{calc}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{fontspec}
+\usepackage{multicol}
+\usepackage{hyperref}
+
+\newcommand{\assignment}[1][]{Just an Assignment}
+\newcommand{\assignmentTitle}[1][\assignment]{Project Report}
+\newcommand{\assignmentSubtitle}[1][]{The Foo Bar}
+\newcommand{\course}[1][]{Fundamental of Computer Programming}
+
+\newcommand{\authorName}[1][]{\mbox{Potsawat} \mbox{Thinkanwatthana}}
+
+% \newcommand{\authorFKa}[1][]{รหัสประจำตัวนิสิต}
+\newcommand{\authorFKa}[1][]{Student ID}
+\newcommand{\authorFVa}[1][]{6410451199}
+
+\newcommand{\authorFKb}[1][]{}
+\newcommand{\authorFVb}[1][]{\href{potsawat.t@ku.th}{potsawat.t@ku.th}}
+
+\newcommand{\authorORCID}[1][]{}
+
+\hypersetup{%
+pdftitle = assignment,
+pdfauthor = authorName}
+
+\geometry{%
+    a4paper,
+    margin = 0.7in}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{%
+\begin{tabular}{@{} l @{\hfill} l @{}}
+\parbox[t]{(\textwidth / 4) * 3}{%
+\textbf{\assignment}\\
+\course}                            &
+\parbox[t]{\textwidth / 4}{%
+\authorName\\
+\authorFKa{}~\authorFVa{}\\
+\authorFKb{}~\authorFVb{}\\
+\rule{0em}{1ex}}
+\end{tabular}}
+
+% \setmainfont{TH Sarabun New}
+
+\title{\flushleft\assignment}
+\author{}
+\date{}
+
+\begin{document}
+% \flushleft
+
+\rule{0em}{12ex}
+
+\noindent\textbf{\Huge\assignmentTitle{}}
+
+\rule{0em}{1ex}
+
+\noindent\large\assignmentSubtitle{}
+
+\rule{0em}{5ex}
+
+\normalsize
+\begin{multicols*}{2}
+\blindtext[7]
+
+\end{multicols*}
+\end{document}
