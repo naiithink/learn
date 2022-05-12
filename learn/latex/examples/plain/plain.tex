@@ -1,4 +1,4 @@
-\documentclass[a4paper]{report}
+\documentclass[a4paper]{article}
 
 \usepackage[T1]{fontenc}
 \usepackage{fancyhdr}
@@ -9,39 +9,73 @@
 % \renewcommand{\chaptermark}[1]{%
 %     \markboth{\chaptername\ \thechapter.\ #1}{}}
 
-% \pagestyle{headings}
+% \pagestyle{myheadings}
+% \markboth{\leftmark}{}
+% \markright{\rightmark}
+
 \pagestyle{fancy}
 
-% \fancyhf{}
-% \fancyhead[L]{\markboth{hello}{world}}
+\renewcommand{\sectionmark}[1]{%
+\markright{\thesection\ #1}}
+\renewcommand{\subsectionmark}[1]{%
+\markboth{#1}{}}
 
-\markright{\rightmark}
+\fancyhf{}
+\fancyhead[L]{\leftmark}
+\fancyhead[R]{\rightmark~~\thepage}
 
 \title{Plain}
 \author{}
 \date{}
 
 \begin{document}
+\begin{titlepage}
 \maketitle
+\thispagestyle{empty}
 \tableofcontents
+\end{titlepage}
+
+% \tableofcontents
 
 \newpage
-\chapter{hello}
+\section{hello}
+\subsection{eiei}
 \blindtext
 
-\newpage
-\section{eiei}
+% \newpage
+\section{world}
+\subsection{ahiahi}
 \blindtext
 
+\rule{0em}{2ex}
+
+\rule{\textwidth}{1pt}
+\rule{0em}{2ex}
+
+leftmark: \leftmark\\
+rightmark: \rightmark
+
 \newpage
-\begin{table}[!ht]
-\begin{tabular}{l | l}
-\texttt{\textbackslash{}leftmark}       &       \\
-\texttt{\textbackslash{}rightmark}      &
-\end{tabular}
-\end{table}
+\section{foo}
+\subsection{foo A}
+\blindtext
 
-\leftmark
+\section{bar}
+\subsection{bar A}
+\blindtext
+% \begin{table}[!ht]
+% \begin{tabular}{l | l}
+% \texttt{\textbackslash{}leftmark}       &       \\
+% \texttt{\textbackslash{}rightmark}      &
+% \end{tabular}
+% \end{table}
 
-\rightmark
+\rule{0em}{2ex}
+
+\rule{\textwidth}{1pt}
+\rule{0em}{2ex}
+
+leftmark: ~~~~\leftmark\\
+rightmark: ~~\rightmark
+
 \end{document}
