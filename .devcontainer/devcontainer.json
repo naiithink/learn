@@ -58,6 +58,8 @@
 		"vscjava.vscode-java-pack",
 		"redhat.vscode-xml",
 		"redhat.vscode-yaml",
+		"James-Yu.latex-workshop",
+		"lextudio.restructuredtext-pack",
 		"bierner.github-markdown-preview"
 	],
 
