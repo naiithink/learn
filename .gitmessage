@@ -1,0 +1,21 @@
+# -*- coding: utf-8 -*-
+##### 50 CHARACTERS MAX ##########################
+# Subject
+# <type>(<optional scope>): <subject>
+# e.g., chore(git): add commit message template
+
+
+##### 72 CHARACTERS MAX ################################################
+Problem
+# Problem, Task, Reason for Commit
+
+
+Solution
+# Solution or List of Changes (* bullet)
+
+
+Note
+# Special instructions, testing steps, etc
+
+
+# see: <https://www.conventionalcommits.org/en/>
