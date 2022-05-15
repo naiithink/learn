@@ -1,3 +1,7 @@
+/*
+ * From The mind behind Linux | Linus Torvalds <https://youtu.be/o8NPllzkFhE>
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 

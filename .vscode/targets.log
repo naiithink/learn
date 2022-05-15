@@ -10,7 +10,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `all'.  Stop.
 
 
-# Make data base, printed on Sat May 14 02:14:11 2022
+# Make data base, printed on Sun May 15 11:01:44 2022
 
 # Variables
 
@@ -32,6 +32,7 @@ CURDIR := /Users/naiithink/projects/private
 SHELL = /bin/sh
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+ 
 # environment
 _ = /usr/bin/make
 # makefile
@@ -43,11 +44,11 @@ __CFBundleIdentifier = com.microsoft.VSCode
 # environment
 INFOPATH = /opt/homebrew/share/info:
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/dm/wqycl49j13b9nnps13glqj5h0000gn/T/vscode-ipc-4f9265a5-8aaa-43d0-80a9-ef21c8b1b888.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/dm/wqycl49j13b9nnps13glqj5h0000gn/T/vscode-ipc-ca70d6f2-fa4c-44ee-a91a-7a690811fefc.sock
 # environment
 VSCODE_CWD = /
 # environment
-PATH = /opt/homebrew/anaconda3/condabin:/Library/Frameworks/Python.framework/Versions/3.10/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion Tech Preview.app/Contents/Public:/Library/TeX/texbin:/opt/X11/bin:~/.dotnet/tools:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/opt/bin:/usr/local/texlive/2022/bin/universal-darwin
+PATH = /opt/homebrew/anaconda3/condabin:/Library/Frameworks/Python.framework/Versions/3.10/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion Tech Preview.app/Contents/Public:/Library/TeX/texbin:/opt/X11/bin:~/.dotnet/tools:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/usr/local/texlive/2022/bin/universal-darwin
 # environment
 LIBRARY_PATH = :/opt/homebrew/lib
 # environment
@@ -59,11 +60,11 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.25BvfC4Tyg/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.3ASQi6nhgL/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
-DISPLAY = /private/tmp/com.apple.launchd.pRF7RYOAQh/org.xquartz:0
+DISPLAY = /private/tmp/com.apple.launchd.fXvSbmXuZN/org.xquartz:0
 # environment
 CONDA_EXE = /opt/homebrew/anaconda3/bin/conda
 # environment
@@ -102,8 +103,6 @@ MAKE = $(MAKE_COMMAND)
 MAKECMDGOALS := all
 # environment
 SHLVL = 1
-# environment
-LODE_HOME = /Users/naiithink/lode
 # default
 MAKE_VERSION := 3.81
 # environment
@@ -165,12 +164,11 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 1001
+VSCODE_PID = 1187
 # environment
 _CE_CONDA = 
 # variable set hash-table stats:
- 
-# Load=77/1024=8%, Rehash=0, Collisions=1/97=1%
+# Load=76/1024=7%, Rehash=0, Collisions=1/96=1%
 
 # Pattern-specific Variable Values
 
@@ -252,6 +250,6 @@ GNUmakefile:
 # strcache size: total = 0 / max = 0 / min = 4096 / avg = 0
 # strcache free: total = 0 / max = 0 / min = 4096 / avg = 0
 
-# Finished Make data base on Sat May 14 02:14:11 2022
+# Finished Make data base on Sun May 15 11:01:44 2022
 
  
