@@ -6,11 +6,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
- 
-make: *** No rule to make target `all'.  Stop.
 
-
-# Make data base, printed on Sun May 15 11:01:44 2022
+# Make data base, printed on Sun May 15 16:42:20 2022
 
 # Variables
 
@@ -32,7 +29,6 @@ CURDIR := /Users/naiithink/projects/private
 SHELL = /bin/sh
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
- 
 # environment
 _ = /usr/bin/make
 # makefile
@@ -44,7 +40,7 @@ __CFBundleIdentifier = com.microsoft.VSCode
 # environment
 INFOPATH = /opt/homebrew/share/info:
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/dm/wqycl49j13b9nnps13glqj5h0000gn/T/vscode-ipc-ca70d6f2-fa4c-44ee-a91a-7a690811fefc.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/dm/wqycl49j13b9nnps13glqj5h0000gn/T/vscode-ipc-a08e5ecb-f99f-404d-929d-8f7c1fac25b4.sock
 # environment
 VSCODE_CWD = /
 # environment
@@ -176,9 +172,9 @@ _CE_CONDA =
 
 # Directories
 
-# . (device 16777229, inode 5178261): 38 files, no impossibilities.
+# . (device 16777229, inode 5178261): 26 files, no impossibilities.
 
-# 38 files, no impossibilities in 1 directories.
+# 26 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -250,6 +246,8 @@ GNUmakefile:
 # strcache size: total = 0 / max = 0 / min = 4096 / avg = 0
 # strcache free: total = 0 / max = 0 / min = 4096 / avg = 0
 
-# Finished Make data base on Sun May 15 11:01:44 2022
+# Finished Make data base on Sun May 15 16:42:20 2022
 
  
+make: *** No rule to make target `all'.  Stop.
+
