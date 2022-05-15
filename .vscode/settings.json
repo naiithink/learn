@@ -286,6 +286,7 @@
         "errno.h": "c",
         "features.h": "c",
         "cstdlib": "cpp",
-        "*.idl": "c"
+        "*.idl": "c",
+        "stat.h": "c"
     }
 }
