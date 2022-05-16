@@ -1,8 +1,10 @@
 template/tex
 ============
 
-:date:      2022-05-13
-:status:    To be completed.
+:date:      2022-05-16
+:status:    To be completed
+
+.. to-do:
 
 To Do
 -----
@@ -22,6 +24,8 @@ devcontainer
     .. include:: .devcontainer/Dockerfile
         :literal:
 
+.. devcontainer-expected-tex:
+
 Expected TeX
 ~~~~~~~~~~~~
 
@@ -30,11 +34,15 @@ Expected TeX
 * LuaTeX
 * XeLaTeX
 
+.. devcontainer-apt-packages:
+
 APT Packages
 ~~~~~~~~~~~~
 
 * `texlive <https://packages.ubuntu.com/search?keywords=texlive&searchon=names&suite=jammy&section=all>`_
 * `latexmk <https://packages.ubuntu.com/search?keywords=latexmk&searchon=names&suite=jammy&section=all>`_
+
+.. devcontainer-info:
 
 Info
 ~~~~
@@ -46,7 +54,9 @@ Info
 
     * - ``docker run``
       - | According to the |DOCKERDOCS|_,
-        | the exit codes follow the ``chroot`` standard: |CHROOT_EXIT_CODES|_
+        | the exit codes follow the ``chroot`` standard: |CHROOT_EXIT_CODES|_.
+
+.. common-problems:
 
 Common Problems
 ---------------

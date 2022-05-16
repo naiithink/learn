@@ -1,6 +1,6 @@
 make --dry-run --always-make --keep-going --print-directory
-make: Entering directory '/home/naiithink/projects/private'
-make: Leaving directory '/home/naiithink/projects/private'
+make: Entering directory `/Users/naiithink/projects/private'
+make: Leaving directory `/Users/naiithink/projects/private'
  
 make: *** No targets specified and no makefile found.  Stop.
 
