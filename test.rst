@@ -39,7 +39,7 @@ Info
 
 .. list-table::
     :align: left
-    :width: 88
+    :width: 72em
     :widths: 16 72
     :stub-columns: 1
 
@@ -52,7 +52,7 @@ Common Problems
 
 .. list-table::
     :align: left
-    :width: 88
+    :width: 72em
     :widths: 33 55
     :header-rows: 1
 
