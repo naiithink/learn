@@ -2,7 +2,7 @@ template/tex
 ============
 
 :date:      2022-05-16
-:status:    To be completed
+:status:    setup in progress
 
 .. to-do:
 
@@ -53,7 +53,7 @@ Info
     :stub-columns: 1
 
     * - ``docker run``
-      - | According to the |DOCKERDOCS|_,
+      - | According to the |DOCKER_DOCS|_,
         | the exit codes follow the ``chroot`` standard: |CHROOT_EXIT_CODES|_.
 
 .. common-problems:
@@ -69,7 +69,7 @@ Common Problems
 
     * -
       - Problem
-      - Related Information
+      - Related Info
     * - 01
       - | [`devcontainer`_]
         | ``docker build`` returns ``100``
@@ -78,9 +78,9 @@ Common Problems
 
 .. |FONTSPEC_REPO|          replace:: naiithink/fontspec
 .. _FONTSPEC_REPO:          https://github.com/naiithink/fontspec
-.. |DOCKERDOCS|             replace:: documentation
-.. _DOCKERDOCS:             https://docs.docker.com/engine/reference/run/#exit-status
+.. |DOCKER_DOCS|            replace:: documentation
+.. _DOCKER_DOCS:            https://docs.docker.com/engine/reference/run/#exit-status
 .. |CHROOT_EXIT_CODES|      replace:: Appendix E. Exit Codes With Special Meanings
 .. _CHROOT_EXIT_CODES:      https://tldp.org/LDP/abs/html/exitcodes.html
 
-.. _cprob-01:                https://forums.docker.com/t/docker-build-returns-exit-code-100/119303
+.. _cprob-01:               https://forums.docker.com/t/docker-build-returns-exit-code-100/119303
