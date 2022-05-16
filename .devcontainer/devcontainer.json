@@ -55,6 +55,7 @@
 		"ms-python.python",
 		"ms-python.vscode-pylance",
 		"ms-toolsai.jupyter",
+		"ms-vscode.hexeditor",
 		"vscjava.vscode-java-pack",
 		"redhat.vscode-xml",
 		"redhat.vscode-yaml",

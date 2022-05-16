@@ -28,7 +28,7 @@ RUN     apt-get update && apt-get -y upgrade \
         && apt-get install -y --no-install-recommends python3 python3-dev python3-pip python3-venv \
         && apt-get install -y --no-install-recommends default-jdk \
         && apt-get install -y --no-install-recommends nodejs npm \
-        && apt-get install -y --no-install-recommends texlive latexmk\
+        && apt-get install -y --no-install-recommends groff texlive latexmk\
         && apt-get install -y --no-install-recommends valgrind
         # Swift
         # && apt-get install binutils libc6-dev libcurl4 libedit2 libgcc-9-dev libpython2.7 libsqlite3-0 libstdc++-9-dev libz3-dev pkg-config tzdata uuid-dev zlib1g-dev
