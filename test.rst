@@ -58,7 +58,7 @@ Common Problems
 
     * - Problem
       - Related Information
-    * - | `devcontainer`_
+    * - | [`devcontainer`_]
         | ``docker build`` returns ``100``
       - | Try checking the ``EOL`` sequence (``LF``, ``CRLF``).
         | cprob-01_
