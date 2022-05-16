@@ -63,12 +63,15 @@ Common Problems
 
 .. list-table::
     :align: left
-    :widths: 33 55
+    :widths: 2 33 55
     :header-rows: 1
+    :stub-columns: 1
 
-    * - Problem
+    * -
+      - Problem
       - Related Information
-    * - | [`devcontainer`_]
+    * - 01
+      - | [`devcontainer`_]
         | ``docker build`` returns ``100``
       - | Try checking the ``EOL`` sequence (``LF``, ``CRLF``).
         | cprob-01_
