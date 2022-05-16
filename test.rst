@@ -10,6 +10,8 @@ To Do
 * TeX Makefile
 * ``fontspec`` script -> |FONTSPEC_REPO|_
 
+.. devcontainer:
+
 devcontainer
 ------------
 
@@ -31,15 +33,14 @@ Expected TeX
 APT Packages
 ~~~~~~~~~~~~
 
-* `texlive <https://packages.ubuntu.com/jammy/texlive>`_
-* ``latexmk``
+* `texlive <https://packages.ubuntu.com/search?keywords=texlive&searchon=names&suite=jammy&section=all>`_
+* `latexmk <https://packages.ubuntu.com/search?keywords=latexmk&searchon=names&suite=jammy&section=all>`_
 
 Info
 ~~~~
 
 .. list-table::
     :align: left
-    :width: 72em
     :widths: 16 72
     :stub-columns: 1
 
@@ -52,16 +53,15 @@ Common Problems
 
 .. list-table::
     :align: left
-    :width: 72em
     :widths: 33 55
     :header-rows: 1
 
     * - Problem
-      - Related Info
-    * - | [devcontainer]
+      - Related Information
+    * - | `devcontainer`_
         | ``docker build`` returns ``100``
       - | Try checking the ``EOL`` sequence (``LF``, ``CRLF``).
-        | cprob-1_
+        | cprob-01_
 
 .. |FONTSPEC_REPO|          replace:: naiithink/fontspec
 .. _FONTSPEC_REPO:          https://github.com/naiithink/fontspec
@@ -70,4 +70,4 @@ Common Problems
 .. |CHROOT_EXIT_CODES|      replace:: Appendix E. Exit Codes With Special Meanings
 .. _CHROOT_EXIT_CODES:      https://tldp.org/LDP/abs/html/exitcodes.html
 
-.. _cprob-1:                https://forums.docker.com/t/docker-build-returns-exit-code-100/119303
+.. _cprob-01:                https://forums.docker.com/t/docker-build-returns-exit-code-100/119303
