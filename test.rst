@@ -73,7 +73,7 @@ Common Problems
       - Problem
       - Related Info
     * - 01
-      - | [`devcontainer`_]
+      - | [:ref:`devcontainer`]
         | ``docker build`` returns ``100``
       - | Try checking the ``EOL`` sequence (``LF``, ``CRLF``).
         | cprob-01_
