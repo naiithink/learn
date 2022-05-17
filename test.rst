@@ -1,10 +1,10 @@
 template/tex
 ============
 
-:date:      2022-05-16
+:date:      2022-05-17
 :status:    setup in progress
 
-.. to-do:
+.. _to-do:
 
 To Do
 -----
@@ -12,10 +12,10 @@ To Do
 * TeX Makefile
 * ``fontspec`` script -> |FONTSPEC_REPO|_
 
-.. devcontainer:
+.. _devcontainer:
 
-devcontainer
-------------
+Dev Container
+-------------
 
 :Dockerfile: `See <.devcontainer/Dockerfile>`_
 
@@ -24,7 +24,7 @@ devcontainer
     .. include:: .devcontainer/Dockerfile
         :literal:
 
-.. devcontainer-expected-tex:
+.. _devcontainer-expected-tex:
 
 Expected TeX
 ~~~~~~~~~~~~
@@ -34,15 +34,17 @@ Expected TeX
 * LuaTeX
 * XeLaTeX
 
-.. devcontainer-apt-packages:
+.. _devcontainer-apt-packages:
 
 APT Packages
 ~~~~~~~~~~~~
 
 * `texlive <https://packages.ubuntu.com/search?keywords=texlive&searchon=names&suite=jammy&section=all>`_
+* `texlive-xetex <https://packages.ubuntu.com/search?keywords=texlive-xetex&searchon=names&suite=jammy&section=all>`_
 * `latexmk <https://packages.ubuntu.com/search?keywords=latexmk&searchon=names&suite=jammy&section=all>`_
+* `groff <https://packages.ubuntu.com/search?keywords=groff&searchon=names&suite=jammy&section=all>`_
 
-.. devcontainer-info:
+.. _devcontainer-info:
 
 Info
 ~~~~
@@ -56,7 +58,7 @@ Info
       - | According to the |DOCKER_DOCS|_,
         | the exit codes follow the ``chroot`` standard: |CHROOT_EXIT_CODES|_.
 
-.. common-problems:
+.. _common-problems:
 
 Common Problems
 ---------------
@@ -75,7 +77,6 @@ Common Problems
         | ``docker build`` returns ``100``
       - | Try checking the ``EOL`` sequence (``LF``, ``CRLF``).
         | cprob-01_
-
 
 .. |FONTSPEC_REPO|          replace:: naiithink/fontspec
 .. _FONTSPEC_REPO:          https://github.com/naiithink/fontspec
