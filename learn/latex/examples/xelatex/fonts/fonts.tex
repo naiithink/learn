@@ -6,6 +6,7 @@
 \usepackage{blindtext}
 \usepackage[utf8]{inputenc}
 \usepackage{fontspec}
+\usepackage{polyglossia}
 \usepackage{fancyhdr}
 % \usepackage{hyperref}
 
@@ -23,21 +24,26 @@ margin = 1in}
 \markboth{#1}{}}
 
 %\setmainfont[SizeFeatures = {Size=16}]{TH Sarabun New}
-\setmainfont{TH Sarabun New}
+\setmainfont{Sarabun}
 
 % \setmainfont{test}[
 %     Extension=.ttf,
 %     Path=src/,
 %     UprightFont=test]
 
-\title{\flushleft \textbf{เคล็ดลับความสุข จากผู้สูงอายุ 1,000 คน}\\
-\large Single Being EP.120}
+\setdefaultlanguage[numerals=arabic]{thai}
+\setotherlanguages{english}
+
+\title{\flushleft\Huge\textbf{เคล็ดลับความสุข จากผู้สูงอายุ 1,000 คน}\\
+\normalsize\rule{0em}{1ex}\\
+\Large Single Being EP.120}
 \author{}
 \date{}
 
 \begin{document}
 \maketitle
-\flushleft
+\sloppy
+% \flushleft
 
 ในสมัยนี้ เส้นแบ่งระหว่างวัยกลางคนกับวัยสูงอายุเริ่มจางลง สังเกตได้จากคนที่อายุ 60---70 ปีที่ดูภายนอกแล้วเหมือน
 กับว่าอายุเพียงแค่ 40---50 ปี หรือที่เราเรียกว่า \mbox{``Young Old''} ซึ่งสิ่งหนึ่งที่ทำให้เส้นแบ่งนี้จางลงได้คือ องค์ความรู้
