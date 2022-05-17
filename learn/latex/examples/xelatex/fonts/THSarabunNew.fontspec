@@ -1,0 +1,9 @@
+\defaultfontfeatures[TH Sarabun New]
+{
+    Extension = .ttf,
+    Path = boilerplates/fonts/src/THSarabunNew/,
+    UprightFont = THSarabunNew001,
+    BoldFont = THSarabunNew Bold001,
+    ItalicFont = THSarabunNew Italic001,
+    BoldItalicFont = THSarabunNew Bolditalic001
+}
