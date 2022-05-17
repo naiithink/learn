@@ -1,0 +1,9 @@
+\defaultfontfeatures[Sarabun]
+{
+    Extension = .ttf,
+    Path = boilerplates/fonts/src/Sarabun/,
+    UprightFont = *-Regular,
+    BoldFont = *-Semibold,
+    ItalicFont = *-Italic,
+    BoldItalicFont = *-BoldItalic
+}
