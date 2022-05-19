@@ -1,0 +1,11 @@
+\defaultfontfeatures[Noto Sans Thai Looped]
+{
+    Script = Default,
+    Ligatures = TeX,
+    Extension = .ttf,
+    Path = boilerplates/fonts/src/NotoSansThaiLooped/,
+    UprightFont = *-Black-Regular,
+    BoldFont = *-Black-Semibold,
+    ItalicFont = *-Black-Italic,
+    BoldItalicFont = *-Black-BoldItalic
+}

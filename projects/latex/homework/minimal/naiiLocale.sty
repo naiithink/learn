@@ -1,0 +1,19 @@
+\ProvidesPackage{naiiLocale}
+
+\RequirePackage{iftex}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{fontspec}
+\RequirePackage{xunicode}
+\RequirePackage{xltxtra}
+\RequirePackage{polyglossia}
+
+\setdefaultlanguage[numerals=arabic]{thai}
+\setotherlanguages{english}
+
+\XeTeXlinebreaklocale "th"
+% \XeTeXlinebreakskip = 0pt plus 1pt
+% \renewcommand{\baselinestretch}{1.6}
+
+\setmainfont{TH Sarabun New}
+\setmonofont{JetBrainsMono}
+\newfontfamily\thaifont[Script=Default]{TH Sarabun New}

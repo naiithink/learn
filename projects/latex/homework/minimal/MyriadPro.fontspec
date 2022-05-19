@@ -1,0 +1,10 @@
+\defaultfontfeatures[MyriadPro]
+{
+    Script = Default,
+    Scale = 1.4,
+    Ligatures = TeX,
+    Extension = .otf,
+    Path = naiithink/fonts/src/MyriadPro/,
+    UprightFont = *-REGULAR,
+    BoldFont = *-BOLD
+}

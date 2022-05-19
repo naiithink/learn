@@ -1,14 +1,24 @@
 % !TEX program = xelatex
-\documentclass{article}
+\documentclass[a4paper]{article}
 
 \usepackage{geometry}
 \usepackage{calc}
 \usepackage{blindtext}
-\usepackage[utf8]{inputenc}
+% \usepackage[utf8]{inputenc}
 \usepackage{fontspec}
+\usepackage{xunicode}
+\usepackage{xltxtra}
 \usepackage{polyglossia}
 \usepackage{fancyhdr}
-% \usepackage{hyperref}
+\usepackage{hyperref}
+
+\hypersetup{%
+pdftitle = {เคล็ดลับความสุข จากผู้สูงอายุ 1,000 คน},
+pdfsubject = {สุขภาพเพื่อชีวิต — 01999012},
+pdfauthor = {พศวัต ถิ่นกาญจน์วัฒนา},
+pdfkeywords = {Healthcare, Lifestyle}}
+% pdfcreator = XeTeX,
+% pdfproducer = TeX}
 
 \geometry{%
 a4paper,
@@ -18,28 +28,40 @@ margin = 1in}
 % a5paper,
 % margin = 0.5in}
 
-\renewcommand{\sectionmark}[1]{%
-\markright{#1}}
-\renewcommand{\subsectionmark}[1]{%
-\markboth{#1}{}}
+% \setdefaultlanguage{thai}
+\setdefaultlanguage[numerals=arabic]{thai}
+\setotherlanguages{english}
 
+% "th"
+% "th_TH"
+% "th_TH_TRADITIONAL"
+
+\XeTeXlinebreaklocale "th"
+% \XeTeXlinebreakskip = 0pt plus 1pt
+% \renewcommand{\baselinestretch}{1.6}
 % \setmainfont[SizeFeatures = {Size=16}]{TH Sarabun New}
 % \setmainfont{TH Sarabun New}
-\setmainfont[Language=Thai]{Sarabun}
+% \setmainfont[Language=Thai]{TH Sarabun PSK}
+% \setmainfont[Mapping=tex-text]{TH Sarabun New}
+% \setmainfont{TH Sarabun New}[Mapping=tex-text]
+% \setmainfont{Sarabun}
+\setmainfont{TH Sarabun New}
+\newfontfamily\thaifont[Script=Default]{TH Sarabun New}
 
 % \setmainfont{test}[
 %     Extension=.ttf,
 %     Path=src/,
 %     UprightFont=test]
 
-\setdefaultlanguage[numerals=arabic]{thai}
-\setdefaultlanguage{thai}
-\setotherlanguages{english}
+\renewcommand{\sectionmark}[1]{%
+\markright{#1}}
+\renewcommand{\subsectionmark}[1]{%
+\markboth{#1}{}}
 
 \title{\flushleft\Huge\textbf{เคล็ดลับความสุข จากผู้สูงอายุ 1,000 คน}\\
-\normalsize\rule{0em}{1ex}\\
-\Large Single Being EP.120}
-\author{}
+\Large Single Being EP.120\\
+\vspace{-4ex}}
+% \author{}
 \date{}
 
 \begin{document}
@@ -47,8 +69,8 @@ margin = 1in}
 \sloppy
 \flushleft
 
-ในสมัยนี้ เส้นแบ่งระหว่างวัยกลางคนกับวัยสูงอายุเริ่มจางลง สังเกตได้จากคนที่อายุ 60---70 ปีที่ดูภายนอกแล้วเหมือน
-กับว่าอายุเพียงแค่ 40---50 ปี หรือที่เราเรียกว่า \mbox{``Young Old''} ซึ่งสิ่งหนึ่งที่ทำให้เส้นแบ่งนี้จางลงได้คือ องค์ความรู้
+ในสมัยนี้ เส้นแบ่งระหว่างวัยกลางคนกับวัยสูงอายุเริ่มจางลง สังเกตได้จากคนที่อายุ 60--70 ปีที่ดูภายนอกแล้วเหมือน
+กับว่าอายุเพียงแค่ 40--50 ปี หรือที่เราเรียกว่า \mbox{``Young Old''} ซึ่งสิ่งหนึ่งที่ทำให้เส้นแบ่งนี้จางลงได้คือ องค์ความรู้
 ทางการแพทย์ที่ก้าวหน้ามากขึ้น
 
 \rule{0em}{1ex}
@@ -62,9 +84,9 @@ free-style ทำนองว่าอะไรคือกุญแจสำค
 \rule{0em}{1ex}
 
 รวม ๆ แล้ว การศึกษานี้มีผู้ที่อายุมากกว่า 65 ปี เข้าร่วมประมาณ 1,000 คน และได้เกิดเป็นหนังสือ
-``30 Lessons for Living'' โดยใจความที่สำคัญของหนังสือเล่มนี้คือเรื่องของความรักและความสัมพันธ์
-ซึ่งใจความนี้ก็สอดคล้องกับการศึกษา ``The Study of Adult Development'' ของ Harvard University
-ซึ่งพบว่ากุญแจในการมีความสุขใจชีวิตค่ือ การมีความสัมพันธ์ที่ดี --- Good Relationships
+\mbox{``30 Lessons for Living''} โดยใจความที่สำคัญของหนังสือเล่มนี้คือเรื่องของความรักและความสัมพันธ์
+ซึ่งใจความนี้ก็สอดคล้องกับการศึกษา \mbox{``The Study of Adult Development''} ของ Harvard University
+ซึ่งพบว่ากุญแจในการมีความสุขในชีวิตคือ การมีความสัมพันธ์ที่ดี --- Good Relationships
 
 \rule{0em}{1ex}
 
