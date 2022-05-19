@@ -6,11 +6,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
- 
-make: *** No rule to make target `all'.  Stop.
 
-
-# Make data base, printed on Thu May 19 16:56:43 2022
+# Make data base, printed on Thu May 19 17:16:21 2022
 
 # Variables
 
@@ -43,7 +40,7 @@ __CFBundleIdentifier = com.microsoft.VSCode
 # environment
 INFOPATH = /opt/homebrew/share/info:
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/dm/wqycl49j13b9nnps13glqj5h0000gn/T/vscode-ipc-74033b2e-59be-4874-be8b-fde2bcd834e0.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/dm/wqycl49j13b9nnps13glqj5h0000gn/T/vscode-ipc-25f4bf61-f5ef-4292-9683-165a98452e76.sock
 # environment
 VSCODE_CWD = /
 # environment
@@ -63,7 +60,6 @@ SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.4PaJmSTsd3/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
- 
 DISPLAY = /private/tmp/com.apple.launchd.kY46FhHZeC/org.xquartz:0
 # environment
 CONDA_EXE = /opt/homebrew/anaconda3/bin/conda
@@ -107,7 +103,6 @@ SHLVL = 1
 MAKE_VERSION := 3.81
 # environment
 USER = naiithink
- 
 # makefile
 .DEFAULT_GOAL := 
 # automatic
@@ -251,6 +246,8 @@ GNUmakefile:
 # strcache size: total = 0 / max = 0 / min = 4096 / avg = 0
 # strcache free: total = 0 / max = 0 / min = 4096 / avg = 0
 
-# Finished Make data base on Thu May 19 16:56:43 2022
+# Finished Make data base on Thu May 19 17:16:21 2022
 
  
+make: *** No rule to make target `all'.  Stop.
+

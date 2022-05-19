@@ -1,0 +1,11 @@
+# -*- coding: utf-8 -*-
+# Usage: $ conda create --name <env> --file <this file>
+# Sphinx Documentation Dependencies
+docutils == 0.17.1
+mistune == 0.8.4
+nbconvert == 6.5.0
+pydantic == 1.8.2
+pygls >= 0.11.3
+myst-parser >= 0.17.2
+sphinx >= 4.5.0
+sphinx-rtd-theme >= 1.0.0
