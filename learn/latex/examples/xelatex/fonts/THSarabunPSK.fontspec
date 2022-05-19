@@ -1,0 +1,12 @@
+\defaultfontfeatures[TH Sarabun PSK]
+{
+    Script = Thai,
+    Scale = 1.4,
+    Ligatures = TeX,
+    Extension = .ttf,
+    Path = boilerplates/fonts/src/THSarabunPSK/,
+    UprightFont = THSarabunPSK-Regular,
+    BoldFont = THSarabunPSK-Bold,
+    ItalicFont = THSarabunPSK-Italic,
+    BoldItalicFont = THSarabunPSK-BoldItalic
+}

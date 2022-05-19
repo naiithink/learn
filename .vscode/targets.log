@@ -10,7 +10,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `all'.  Stop.
 
 
-# Make data base, printed on Tue May 17 21:06:16 2022
+# Make data base, printed on Thu May 19 16:56:43 2022
 
 # Variables
 
@@ -26,7 +26,6 @@ VSCODE_LOG_NATIVE = false
 @D = $(patsubst %/,%,$(dir $@))
 # automatic
 @F = $(notdir $@)
- 
 # makefile
 CURDIR := /Users/naiithink/projects/private
 # makefile
@@ -44,7 +43,7 @@ __CFBundleIdentifier = com.microsoft.VSCode
 # environment
 INFOPATH = /opt/homebrew/share/info:
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/dm/wqycl49j13b9nnps13glqj5h0000gn/T/vscode-ipc-dab6566a-2db2-47d8-8a71-7642e24dae17.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/dm/wqycl49j13b9nnps13glqj5h0000gn/T/vscode-ipc-74033b2e-59be-4874-be8b-fde2bcd834e0.sock
 # environment
 VSCODE_CWD = /
 # environment
@@ -64,6 +63,7 @@ SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.4PaJmSTsd3/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
+ 
 DISPLAY = /private/tmp/com.apple.launchd.kY46FhHZeC/org.xquartz:0
 # environment
 CONDA_EXE = /opt/homebrew/anaconda3/bin/conda
@@ -86,7 +86,7 @@ LD_LIBRARY_PATH = :/opt/homebrew/lib
 # default
 MAKEFILEPATH := /Applications/Xcode.app/Contents/Developer/Makefiles
 # environment
-VSCODE_CODE_CACHE_PATH = /Users/naiithink/Library/Application Support/Code/CachedData/da15b6fd3ef856477bf6f4fb29ba1b7af717770d
+VSCODE_CODE_CACHE_PATH = /Users/naiithink/Library/Application Support/Code/CachedData/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
 # environment
 LOGNAME = naiithink
 # environment
@@ -107,6 +107,7 @@ SHLVL = 1
 MAKE_VERSION := 3.81
 # environment
 USER = naiithink
+ 
 # makefile
 .DEFAULT_GOAL := 
 # automatic
@@ -124,7 +125,7 @@ TMPDIR = /var/folders/dm/wqycl49j13b9nnps13glqj5h0000gn/T/
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /Users/naiithink/Library/Application Support/Code/1.67.1-main.sock
+VSCODE_IPC_HOOK = /Users/naiithink/Library/Application Support/Code/1.67.2-main.sock
 # makefile
 MAKEFLAGS = Rrqp
 # environment
@@ -164,7 +165,7 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 1208
+VSCODE_PID = 95421
 # environment
 _CE_CONDA = 
 # variable set hash-table stats:
@@ -176,9 +177,9 @@ _CE_CONDA =
 
 # Directories
 
-# . (device 16777229, inode 5178261): 29 files, no impossibilities.
+# . (device 16777229, inode 5178261): 31 files, no impossibilities.
 
-# 29 files, no impossibilities in 1 directories.
+# 31 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -207,7 +208,6 @@ Makefile:
 #  Implicit rule search has been done.
 #  File does not exist.
 #  File has been updated.
- 
 #  Failed to be updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
@@ -251,6 +251,6 @@ GNUmakefile:
 # strcache size: total = 0 / max = 0 / min = 4096 / avg = 0
 # strcache free: total = 0 / max = 0 / min = 4096 / avg = 0
 
-# Finished Make data base on Tue May 17 21:06:16 2022
+# Finished Make data base on Thu May 19 16:56:43 2022
 
  

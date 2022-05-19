@@ -1,0 +1,49 @@
+\ProvidesPackage{naiiLayout}
+
+\RequirePackage{iftex}
+\RequirePackage{calc}
+\RequirePackage{geometry}
+\RequirePackage{fancyhdr}
+
+\geometry{%
+    a4paper,
+    margin = 1in
+}
+
+\newcommand{\Subtitle}[1][\rule{0em}{0ex}]{%
+\Large{}#1}
+
+\newcommand{\Title}[2][\Subtitle{}]{%
+\title{\flushleft\Huge\textbf{#2}\\
+\Large{}#1\\
+\vspace{-4ex}}}
+
+\renewcommand{\sectionmark}[1]{%
+\markright{#1}}
+\renewcommand{\subsectionmark}[1]{%
+\markboth{#1}{}}
+
+\setlength{\headheight}{8ex}
+\renewcommand{\headrule}{}
+\pagestyle{fancy}
+\fancyhf{}
+
+\fancyhead[L]{%
+{\renewcommand{\tabcolsep}{1.5pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{} l}
+\parbox[t]{\textwidth}{Assignment I, Preparing for Elderly}\\
+\parbox[t]{\textwidth}{\textbf{01999012 — Health for Life}}\\
+\parbox[t]{\textwidth}{}
+\end{tabular}}}
+
+\fancyhead[R]{%
+{\renewcommand{\tabcolsep}{1.5pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{} l}
+\parbox[t]{\textwidth / 3}{\textbf{พศวัต ถิ่นกาญจน์วัฒนา}}\\
+\parbox[t]{\textwidth / 3}{รหัสประจำตัวนิสิต 6410451199}\\
+\parbox[t]{\textwidth / 3}{potsawat.t@ku.th}
+\end{tabular}}}
+
+\setlength{\parindent}{0em}

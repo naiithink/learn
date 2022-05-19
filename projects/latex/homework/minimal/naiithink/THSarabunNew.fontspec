@@ -1,0 +1,12 @@
+\defaultfontfeatures[TH Sarabun New]
+{
+    Script = Default,
+    Scale = 1.4,
+    Ligatures = TeX,
+    Extension = .ttf,
+    Path = fonts/src/THSarabunNew/,
+    UprightFont = THSarabunNew-Regular,
+    BoldFont = THSarabunNew-Bold,
+    ItalicFont = THSarabunNew-Italic,
+    BoldItalicFont = THSarabunNew-BoldItalic
+}
