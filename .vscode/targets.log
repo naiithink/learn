@@ -7,7 +7,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 
 # This program built for i386-apple-darwin11.3.0
 
-# Make data base, printed on Thu May 19 17:16:21 2022
+# Make data base, printed on Fri May 20 16:41:20 2022
 
 # Variables
 
@@ -40,7 +40,7 @@ __CFBundleIdentifier = com.microsoft.VSCode
 # environment
 INFOPATH = /opt/homebrew/share/info:
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/dm/wqycl49j13b9nnps13glqj5h0000gn/T/vscode-ipc-25f4bf61-f5ef-4292-9683-165a98452e76.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/dm/wqycl49j13b9nnps13glqj5h0000gn/T/vscode-ipc-57e4b7f5-c0c5-4482-83ba-122e9e740f52.sock
 # environment
 VSCODE_CWD = /
 # environment
@@ -56,11 +56,11 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.4PaJmSTsd3/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.Pid4sJzGYU/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
-DISPLAY = /private/tmp/com.apple.launchd.kY46FhHZeC/org.xquartz:0
+DISPLAY = /private/tmp/com.apple.launchd.2etL9hVGM5/org.xquartz:0
 # environment
 CONDA_EXE = /opt/homebrew/anaconda3/bin/conda
 # environment
@@ -160,7 +160,7 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 95421
+VSCODE_PID = 3705
 # environment
 _CE_CONDA = 
 # variable set hash-table stats:
@@ -246,7 +246,7 @@ GNUmakefile:
 # strcache size: total = 0 / max = 0 / min = 4096 / avg = 0
 # strcache free: total = 0 / max = 0 / min = 4096 / avg = 0
 
-# Finished Make data base on Thu May 19 17:16:21 2022
+# Finished Make data base on Fri May 20 16:41:20 2022
 
  
 make: *** No rule to make target `all'.  Stop.
