@@ -6,8 +6,11 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
+ 
+make: *** No rule to make target `all'.  Stop.
 
-# Make data base, printed on Sat May 21 16:27:58 2022
+
+# Make data base, printed on Tue May 24 23:11:45 2022
 
 # Variables
 
@@ -19,6 +22,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 VSCODE_LOG_NATIVE = false
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
+ 
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
 # automatic
@@ -40,7 +44,7 @@ __CFBundleIdentifier = com.microsoft.VSCode
 # environment
 INFOPATH = /opt/homebrew/share/info:
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/dm/wqycl49j13b9nnps13glqj5h0000gn/T/vscode-ipc-065bb168-163f-45fb-89ad-6aa049222c45.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/dm/wqycl49j13b9nnps13glqj5h0000gn/T/vscode-ipc-175a6006-ee12-4701-abc5-d84edc0f87e8.sock
 # environment
 VSCODE_CWD = /
 # environment
@@ -56,11 +60,11 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.93c4wB8wj3/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.cYfh3fGzfP/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
-DISPLAY = /private/tmp/com.apple.launchd.AthQ5WYGSA/org.xquartz:0
+DISPLAY = /private/tmp/com.apple.launchd.Wqvivu3Pmd/org.xquartz:0
 # environment
 CONDA_EXE = /opt/homebrew/anaconda3/bin/conda
 # environment
@@ -160,7 +164,7 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 2198
+VSCODE_PID = 1098
 # environment
 _CE_CONDA = 
 # variable set hash-table stats:
@@ -245,9 +249,8 @@ GNUmakefile:
 # # of strcache buffers: 0
 # strcache size: total = 0 / max = 0 / min = 4096 / avg = 0
 # strcache free: total = 0 / max = 0 / min = 4096 / avg = 0
+ 
 
-# Finished Make data base on Sat May 21 16:27:58 2022
+# Finished Make data base on Tue May 24 23:11:45 2022
 
  
-make: *** No rule to make target `all'.  Stop.
-
