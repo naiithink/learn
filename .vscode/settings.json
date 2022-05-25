@@ -1,8 +1,12 @@
 {
     "files.eol": "\n",
+    "workbench.editorAssociations": {
+        "*.md": "vscode.markdown.preview.editor"
+    },
     "extensions.autoCheckUpdates": true,
     "extensions.autoUpdate": "onlyEnabledExtensions",
     "diffEditor.ignoreTrimWhitespace": false,
+    "editor.accessibilitySupport": "off",
     "editor.useTabStops": true,
     "editor.renderWhitespace": "all",
     "editor.foldingMaximumRegions": 5000,
@@ -255,10 +259,12 @@
     ],
     "esbonio.server.enabled": false,
     "esbonio.sphinx.confDir": "",
+    "list.indentationSize": 2,
+    "slugifyMode": true,
     "restructuredtext.editor.listEditing.list.indentationSize": "inherit",
     "restructuredtext.preview.name": "docutils",
     "yaml.schemas": {
-        "file:///home/naiithink/.vscode/extensions/atlassian.atlascode-2.10.12/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+        "file:///Users/naiithink/.vscode/extensions/atlassian.atlascode-2.10.12/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
     },
     "redhat.telemetry.enabled": false,
     "markdown-pdf.outputDirectoryRelativePathFile": true,
@@ -288,6 +294,6 @@
         "features.h": "c",
         "cstdlib": "cpp",
         "*.idl": "c",
-        "stat.h": "c"
+        "*.txt": "plaintext"
     }
 }

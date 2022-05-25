@@ -1,0 +1,2 @@
+	# gawk profile, created Mon May  9 01:12:24 2022
+
