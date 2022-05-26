@@ -21,6 +21,9 @@ git remote set-url origin --add --push <primary-remote-url>
 git remote set-url origin --add --push <other-remote-url>
 
 
+# aliasing
+git config --global alias.visions 'log --oneline --decorate --graph --all'
+
 
 ### Create new mirror repo
 git clone --bare <old-repo-url>
