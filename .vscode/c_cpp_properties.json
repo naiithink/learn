@@ -5,8 +5,8 @@
         ],
         "MAC_INCLUDE": [
             "${workspaceFolder}/**",
-            "/opt/homebrew/include/**",
-            "/opt/X11/include/**"
+            "/opt/homebrew/include/**"
+            /* "/opt/X11/include/**" */
         ],
         "WIN32_INCLUDE": [
             "${workspaceFolder}/**"
