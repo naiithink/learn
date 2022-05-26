@@ -1,0 +1,30 @@
+# global
+git config --global user.name naiithink
+git config --global user.email potsawattkw@outlook.com
+git config --global core.editor "emacs -nw"
+git config --global autocrlf input # unix
+# git config --global autocrlf true # windows
+# git config --global autocrlf false # windows-only
+
+# local
+git config --local commit.template .gitmessage
+
+# remotes
+git remote add <name> <primary-remote-url>
+git remote add all <primary-remote-url>
+git remote set-url all --add --push <primary-remote-url>
+git remote set-url all --add --push <other-remote-url>
+
+## or without creating `all'
+## primary-remote-url is `origin'
+git remote set-url origin --add --push <primary-remote-url>
+git remote set-url origin --add --push <other-remote-url>
+
+
+
+### Create new mirror repo
+git clone --bare <old-repo-url>
+cd <old-repo>
+git push --mirror <new-repo-url>
+cd ..
+rm <old-repo>
