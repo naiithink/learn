@@ -1,19 +1,19 @@
 # Text
 *               text=auto
-*.Dockerfile    text
-*.Makefile      text filter=indentTab
-*.awk           text
-*.c             text
-*.cpp           text
-*.cxx           text
-*.h             text
-*.java          text
-*.log           text
-*.ps            text
-*.py            text
-*.rst           text
-*.txt           text
-Dockerfile      text
+# *.Dockerfile    text
+# *.Makefile      text filter=indentTab
+# *.awk           text
+# *.c             text
+# *.cpp           text
+# *.cxx           text
+# *.h             text
+# *.java          text
+# *.log           text
+# *.ps            text
+# *.py            text
+# *.rst           text
+# *.txt           text
+# Dockerfile      text
 
 # ML
 *.dtd           text
@@ -58,3 +58,4 @@ Dockerfile      text
 # CRLF
 *.bat           text eol=crlf
 *.cmd           text eol=crlf
+downloads/Windows-Libs/     text eol=crlf
