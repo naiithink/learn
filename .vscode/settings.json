@@ -1,8 +1,8 @@
 {
     "files.eol": "\n",
-    "workbench.editorAssociations": {
-        "*.md": "vscode.markdown.preview.editor"
-    },
+    // "workbench.editorAssociations": {
+    //     "*.md": "vscode.markdown.preview.editor"
+    // },
     "extensions.autoCheckUpdates": true,
     "extensions.autoUpdate": "onlyEnabledExtensions",
     "diffEditor.ignoreTrimWhitespace": false,
