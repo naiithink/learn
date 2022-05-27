@@ -50,6 +50,7 @@
 *.png           -text -diff
 *.so            -text -diff
 *.tar           -text -diff
+*.xcf           -text -diff
 *.zip           -text -diff
 
 # LF
