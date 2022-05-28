@@ -18,15 +18,15 @@
 		"args": { "VARIANT": "ubuntu-22.04" }
 	},
 
-	"features": {
-		"git": "latest",
-		"git-lfs": "latest",
-		"github-cli": "latest",
-		"java": "lts",
-		"node": "lts",
-		"python": "latest",
-		"jupyterlab": "latest"
-	},
+	// "features": {
+	// 	"git": "latest",
+	// 	"git-lfs": "latest",
+	// 	"github-cli": "latest",
+	// 	"java": "lts",
+	// 	"node": "lts",
+	// 	"python": "latest",
+	// 	"jupyterlab": "latest"
+	// },
 	// <<< VS Code build
 
 	// Set *default* container specific settings.json values on container create.
