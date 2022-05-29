@@ -1,0 +1,87 @@
+@import "onload.css";
+@import "fonts.css";
+
+:root {
+    --GLD: 1.618;
+    --the-red: #FF5433;
+    --link-color: #0074CC;
+    --link-color-hover: #1991F5;
+    --main-font-family: "Inter", "Noto Sans Thai", "-apple-system", "BlinkMacSystemFont", "Avenir Next", "Avenir", "Segoe UI", "Helvetica Neue", "Helvetica", "Cantarell", "Ubuntu", "Roboto", "Noto", "Arial", "Tahoma", sans-serif;
+    --header-font-family: "Inter", "SukhumvitSet", "IBM Plex Sans Thai", "Noto Sans Thai", "-apple-system", "BlinkMacSystemFont", "Avenir Next", "Avenir", "Segoe UI", "Helvetica Neue", "Helvetica", "Cantarell", "Ubuntu", "Roboto", "Noto", "Arial", "Tahoma", sans-serif;
+    --varbatim-font-family: "Noto Sans Mono", "Menlo", "Consolas", "Monaco", "Liberation Mono", "Lucida Console", monospace;
+}
+
+.the-title,
+h1[ctx="not-a-title"],
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--header-font-family);
+    /* padding-top: 1.6ex; */
+    padding-top: calc(var(--GLD) * var(--GLD) * 1.6ex);
+}
+
+body,
+input[type="button"],
+p {
+    font-family: var(--main-font-family);
+}
+
+code,
+pre {
+    font-family: var(--varbatim-font-family);
+}
+
+textarea {
+    font-family: var(--main-font-family);
+    font-size: 1em;
+}
+
+a {
+    color: var(--link-color);
+}
+
+a:hover {
+    color: var(--link-color-hover);
+}
+
+.verb {
+    font-family: var(--varbatim-font-family);
+}
+
+img.ans {
+    height: 4ex;
+}
+
+.ans-button {
+    cursor: url("media/img/GarbageKat.png"), auto;
+    height: 1em;
+    font-size: 1em;
+}
+
+qa[type="container"] {
+    display: flex;
+    gap: calc(10%)
+}
+
+qa[type="container"] > qa[type="item"] {
+    display: block;
+}
+
+qa[type="item"] > ques {
+    display: block;
+    font-family: var(--main-font-family);
+    font-size: larger;
+    font-weight: bold;
+    padding-top: 1.6ex;
+    padding-bottom: 0.8ex;
+}
+
+qa[type="item"] > answ {
+    display: block;
+    font-family: var(--main-font-family);
+    font-size: normal;
+    font-weight: normal;
+}

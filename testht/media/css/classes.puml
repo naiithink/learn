@@ -1,0 +1,11 @@
+@startuml
+object qa.container
+object qa.item
+qa.container <|-- qa.item
+qa.item <|-- quest
+qa.item <|-- answ
+map "<qa type='container'>" as qaContainerMap {
+    display => flex
+    gap => 10%
+}
+@enduml
