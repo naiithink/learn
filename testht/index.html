@@ -14,23 +14,49 @@
         <script type="text/javascript">
             function onloadHandler() {
                 document.getElementById("contents").style.display = "none";
-                /* while (document.readyState != "complete") {
+                document.getElementById("sidebar").style.display = "none";
+                while (document.readyState != "complete") {
                     switch (document.readyState) {
                         case "loading":
                             window.alert("loading...");
-                            setTimeout()
+                            setTimeout();
                             break;
                         case "interactive":
                             window.alert("interactive...");
                             break;
                     }
-                } */
+                }
+                amIGraduated();
                 setTimeout(showPage, 300);
+            }
+
+            function reloadPage() {
+                document.location.reload(true);
             }
 
             function showPage() {
                 document.getElementById("loading").style.display = "none";
+                document.getElementById("sidebar").style.display = "block";
                 document.getElementById("contents").style.display = "block";
+            }
+        </script>
+        <script type="text/javascript">
+            function amIGraduated() {
+                /* UNIX EPOCH, in ms */
+                // let date = Math.round((new Date()).getTime() / 1000);
+                let date = new Date();
+                const thisYear = date.getFullYear();
+                const CSStartYear = 2020;
+                // const CSStartYear = 1590969600;
+                // const oneEpochYear = 31536000;
+                const elapsedYear = thisYear - CSStartYear;
+                if (0 < elapsedYear && elapsedYear <= 4) {
+                    document.getElementById("meAtTheU").innerHTML = "ปัจจุบันเป็นนิสิต";
+                    document.getElementById("meAtTheUYear").innerHTML = " ชั้นปีที่ " + parseInt(elapsedYear) + " ";
+                } else {
+                    document.getElementById("meAtTheU").innerHTML = "เคยเป็นนิสิต";
+                    document.getElementById("meAtTheUYear").innerHTML = null;
+                }
             }
         </script>
         <script type="text/javascript">
@@ -39,24 +65,30 @@
     </head>
     <body onload="onloadHandler()">
         <div id="loading"></div>
-        <div id="contents" style="display: none;">
-            <h1>NAIITHINK</h1>
-            <h3>แนะนำตัวหน่อย เราคือใคร</h3>
+        <div id="sidebar" style="display: none;">
+            <h1 onclick="reloadPage()" style="cursor: pointer; text-align: center; font-weight: 900;"><u>NAIITHINK</u></h1>
+        </div>
+        <div id="contents" class="main" style="display: none;">
+            <h1>แนะนำตัวหน่อย เราคือใคร</h1>
             <p>สวัสดีครับ ผมชื่อเล่นชื่อนาย นะครับ.</p>
-            <h3>เอาดี ๆ ได้ไหม</h3>
-            <p>ผมชื่อ พศวัต ถิ่นกาญจน์วัฒนา ชื่อเล่นชื่อนาย</p>
-            <h3>เล่นโซเชียลมีเดียบ้างไหม</h3>
+            <h1>เอาดี ๆ ได้ไหม</h1>
+            <p>ผมชื่อ พศวัต ถิ่นกาญจน์วัฒนา ชื่อเล่นชื่อนาย<br />
+            <span id="meAtTheU"></span>ภาควิชาวิทยาการคอมพิวเตอร์<span id="meAtTheUYear"></span>ครับ</p>
+            <h1><i>NAIITHINK</i> &trade; &quest;</h1>
+            <p>ชื่อเล่นชื่อ <b>NAI</b> นามสกุล <b>THINK</b>anwatthana<br />
+            ส่วนตัว <b>I</b> ที่เกินมาแค่อยากใส่ครับ</p>
+            <h1>เล่นโซเชียลมีเดียบ้างไหม</h1>
             <img class="ans" alt="twitter-search-naiithink" src="media/img/twitter-search-naiithink-cursor.png" title="ลองเสิร์ชดู เจอผมในไหนก็เล่นอันนั้นแหละ หึ ๆ" />
-            <h3>ฟังเพลงแนวไหน</h3>
+            <h1>ฟังเพลงแนวไหน</h1>
             <p>ฟังทุกแนวครับ<br />
             <a href="https://open.spotify.com/user/rp7yqm8jfydpxgz8vsmirwhc5?si=f8af534799ef40a9" target="_blank" rel="noopener noreferrer">naiithink, a user on Spotify</a></p>
-            <h3>ว่าง ๆ ชอบทำอะไร</h3>
+            <h1>ว่าง ๆ ชอบทำอะไร</h1>
             <ul>
                 <li>นั่งเขียนโปรแกรม</li>
                 <li>นอนดู YouTube</li>
                 <li>ตะแคงเล่นดนตรี &#x266B;</li>
             </ul>
-            <h3>ภาษาโปรแกรมและสคริปต์ที่เคยใช้</h3>
+            <h1>ภาษาโปรแกรมและสคริปต์ที่เคยใช้</h1>
             <ul>
                 <li>C / C&plus;&plus;</li>
                 <li>Python</li>
@@ -65,7 +97,7 @@
                 <li>TeX</li>
                 <li>HTML (<a href="https://youtu.be/4A2mWqLUpzw" target="_blank" rel="noopener noreferrer" title="HTML IS a Programming Language (Imperative vs Declarative) - Computerphile">ใช่ภาษาโปรแกรมรึป่าวนะ</a>)</li>
             </ul>
-            <h3>ภาษาโปรแกรมและสคริปต์ที่สนใจ</h3>
+            <h1>ภาษาโปรแกรมและสคริปต์ที่สนใจ</h1>
             <ul>
                 <li>Assembly</li>
                 <li>PostScript</li>
@@ -75,14 +107,14 @@
                 <li>PHP</li>
                 <li>Ruby</li>
             </ul>
-            <h3>ถ้าเกิดว่าต้องติดเกาะร้าง<br />
-            แล้วเลือกภาษาโปรแกรมติดไปด้วยได้หนึ่งภาษา จะเลือกภาษาอะไร</h3>
+            <h1>ถ้าเกิดว่าต้องติดเกาะร้าง<br />
+            แล้วเลือกภาษาโปรแกรมติดไปด้วยได้หนึ่งภาษา จะเลือกภาษาอะไร</h1>
             <p>C</p>
-            <h3>คลิปที่เคยดูแล้วขำจนแทบขาดใจ</h3>
+            <h1>คลิปที่เคยดูแล้วขำจนแทบขาดใจ</h1>
             <p><a href="https://youtu.be/Dbpzl2C10M8" title="Watch on YouTube" target="_blank" rel="noopener noreferrer">คำต้องห้าม EP.10 | เทพลีลา x @โคตรคูล x @PONGKOOL24</a></p>
-            <h3>คติเตือนใจ</h3>
+            <h1>คติเตือนใจ</h1>
             <p>"หนึ่งบวกหนึ่ง <b>เท่ากับ</b> สอง"</p>
-            <h3>โค้ดเตือนใจ</h3>
+            <h1>โค้ดเตือนใจ</h1>
             <pre>
 def printPython():
     printf("Python")
@@ -92,21 +124,21 @@ printPython()
         <b><pre>
 NameError: name 'printf' is not defined. Did you mean: 'print'?
             </pre></b>
-            <h3>Error ที่เจอบ่อยจนงงใจ</h3>
+            <h1>Error ที่เจอบ่อยจนงงใจ</h1>
             <p><code>Segmentation fault</code></p>
-            <h3>คิดว่าอะไรเกิดก่อนกัน ไก่กับไข่</h3>
+            <h1>คิดว่าอะไรเกิดก่อนกัน ไก่กับไข่</h1>
             <p>ไข่ครับ.<br />
             <a href="https://www.science.org.au/curious/earth-environment/which-came-first-chicken-or-egg" title="Which came first: the chicken or the egg?" target="_blank" rel="noopener noreferrer">เรเฟอเร้นสึ</a></p>
-            <h3>เหงาไหม</h3>
+            <h1>เหงาไหม</h1>
             <p>เหงามั้ยนะเรา</p>
-            <h3>มีอะไรอยากถามคนที่มาอ่านบ้างไหม</h3>
+            <h1>มีอะไรอยากถามคนที่ได้มาอ่านบ้างไหม</h1>
             <p>มีครับ.<br />
             มีอะไรอยากถามผมบ้างไหม<br /><br />
-            <textarea readonly rols="1" cols="16" style="resize: none; cursor: not-allowed;">กล่องปลอม</textarea><br />
-            <div id="the-fake-button" class="ans-button"><input type="button" value="ปุ่มปลอม" title="อย่ากด" onclick="fakeButton()" /></div>
-            <h3>แหล่งข้อมูลที่สืบค้นไป</h3>
+            <textarea rols="1" cols="16" style="resize: none; cursor: not-allowed;">ถามได้ แต่ไม่ตอบนะ</textarea><br />
+            <div id="the-fake-button" class="ans-button"><input type="button" value="ปุ่มนี้เป็นปุ่มปลอม" title="อย่ากด" onclick="fakeButton()" /></div>
+            <h1>แหล่งข้อมูลที่สืบค้นไป</h1>
             <ul>
-                <li><a href="https://developer.mozilla.org/en-US/">mdn</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/" target="_blank" rel="noopener noreferrer">mdn</a></li>
             </ul>
             <object type="text/plain" charset="UTF-8" data="hello.c"></object>
             <qa type="container">
