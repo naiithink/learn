@@ -26,7 +26,7 @@
                             break;
                     }
                 }
-                amIGraduated();
+                amIGraduate();
                 setTimeout(showPage, 300);
             }
 
@@ -41,7 +41,7 @@
             }
         </script>
         <script type="text/javascript">
-            function amIGraduated() {
+            function amIGraduate() {
                 /* UNIX EPOCH, in ms */
                 // let date = Math.round((new Date()).getTime() / 1000);
                 let date = new Date();
@@ -50,9 +50,12 @@
                 // const CSStartYear = 1590969600;
                 // const oneEpochYear = 31536000;
                 const elapsedYear = thisYear - CSStartYear;
-                if (0 < elapsedYear && elapsedYear <= 4) {
+                if (0 < elapsedYear && elapsedYear < 4) {
                     document.getElementById("meAtTheU").innerHTML = "ปัจจุบันเป็นนิสิต";
-                    document.getElementById("meAtTheUYear").innerHTML = " ชั้นปีที่ " + parseInt(elapsedYear) + " ";
+                    document.getElementById("meAtTheUYear").innerHTML = " ชั้นปีที่ " + elapsedYear + " ";
+                } else if (0 < elapsedYear && elapsedYear == 4) {
+                    document.getElementById("meAtTheU").innerHTML = "ปัจจุบันเป็นนิสิต";
+                    document.getElementById("meAtTheUYear").innerHTML = " ชั้นปีสุดท้าย";
                 } else {
                     document.getElementById("meAtTheU").innerHTML = "เคยเป็นนิสิต";
                     document.getElementById("meAtTheUYear").innerHTML = null;
@@ -60,7 +63,7 @@
             }
         </script>
         <script type="text/javascript">
-            fakeButton = () => { document.getElementById("the-fake-button").innerHTML = "ก็บอกอยู่ว่าปุ่มปลอมไง จะกดทำไม"; };
+            fakeButton = () => { document.getElementById("the-fake-button").innerHTML = "ก็บอกอยู่ว่าปุ่มปลอม จะกดทำไม"; };
         </script>
     </head>
     <body onload="onloadHandler()">
@@ -126,7 +129,7 @@ NameError: name 'printf' is not defined. Did you mean: 'print'?
             </pre></b>
             <h1>Error ที่เจอบ่อยจนงงใจ</h1>
             <p><code>Segmentation fault</code></p>
-            <h1>คิดว่าอะไรเกิดก่อนกัน ไก่กับไข่</h1>
+            <h1>คิดว่าอะไรเกิดก่อนกัน ไก่หรือไข่</h1>
             <p>ไข่ครับ.<br />
             <a href="https://www.science.org.au/curious/earth-environment/which-came-first-chicken-or-egg" title="Which came first: the chicken or the egg?" target="_blank" rel="noopener noreferrer">เรเฟอเร้นสึ</a></p>
             <h1>เหงาไหม</h1>
