@@ -1,159 +1,264 @@
 <!DOCTYPE html>
-<html lang="th">
-    <head>
-        <meta charset="utf-8" />
-        <link rel="stylesheet" type="text/css" href="media/css/style.css" />
-        <!-- <link rel="stylesheet" type="text/css" href="/media/css/style.css" /> -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=inter" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=noto+sans+mono" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=noto+sans+thai" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=noto+sans+thai+looped" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ibm+plex+sans+thai" />
-        <title>naiithink</title>
-        <link rel="icon" type="image/jpeg" href="media/img/GarbageKat.png" />
-        <script type="text/javascript">
-            function onloadHandler() {
-                document.getElementById("contents").style.display = "none";
-                document.getElementById("sidebar").style.display = "none";
-                while (document.readyState != "complete") {
-                    switch (document.readyState) {
-                        case "loading":
-                            window.alert("loading...");
-                            setTimeout();
-                            break;
-                        case "interactive":
-                            window.alert("interactive...");
-                            break;
-                    }
-                }
-                amIGraduate();
-                setTimeout(showPage, 300);
-            }
 
-            function reloadPage() {
-                document.location.reload(true);
-            }
+<!--
+  TODO
+  - redesign page layout
+-->
 
-            function showPage() {
-                document.getElementById("loading").style.display = "none";
-                document.getElementById("sidebar").style.display = "block";
-                document.getElementById("contents").style.display = "block";
-            }
-        </script>
-        <script type="text/javascript">
-            function amIGraduate() {
-                /* UNIX EPOCH, in ms */
-                // let date = Math.round((new Date()).getTime() / 1000);
-                let date = new Date();
-                const thisYear = date.getFullYear();
-                const CSStartYear = 2020;
-                // const CSStartYear = 1590969600;
-                // const oneEpochYear = 31536000;
-                const elapsedYear = thisYear - CSStartYear;
-                if (0 < elapsedYear && elapsedYear < 4) {
-                    document.getElementById("meAtTheU").innerHTML = "ปัจจุบันเป็นนิสิต";
-                    document.getElementById("meAtTheUYear").innerHTML = " ชั้นปีที่ " + elapsedYear + " ";
-                } else if (0 < elapsedYear && elapsedYear == 4) {
-                    document.getElementById("meAtTheU").innerHTML = "ปัจจุบันเป็นนิสิต";
-                    document.getElementById("meAtTheUYear").innerHTML = " ชั้นปีสุดท้าย";
-                } else {
-                    document.getElementById("meAtTheU").innerHTML = "เคยเป็นนิสิต";
-                    document.getElementById("meAtTheUYear").innerHTML = null;
-                }
-            }
-        </script>
-        <script type="text/javascript">
-            fakeButton = () => { document.getElementById("the-fake-button").innerHTML = "ก็บอกอยู่ว่าปุ่มปลอม จะกดทำไม"; };
-        </script>
-    </head>
-    <body onload="onloadHandler()">
-        <div id="loading"></div>
-        <div id="sidebar" style="display: none;">
-            <h1 onclick="reloadPage()" style="cursor: pointer; text-align: center; font-weight: 900;"><u>NAIITHINK</u></h1>
-        </div>
-        <div id="contents" class="main" style="display: none;">
-            <h1>แนะนำตัวหน่อย เราคือใคร</h1>
-            <p>สวัสดีครับ ผมชื่อเล่นชื่อนาย นะครับ.</p>
-            <h1>เอาดี ๆ ได้ไหม</h1>
-            <p>ผมชื่อ พศวัต ถิ่นกาญจน์วัฒนา ชื่อเล่นชื่อนาย<br />
-            <span id="meAtTheU"></span>ภาควิชาวิทยาการคอมพิวเตอร์<span id="meAtTheUYear"></span>ครับ</p>
-            <h1><i>NAIITHINK</i> &trade; &quest;</h1>
-            <p>ชื่อเล่นชื่อ <b>NAI</b> นามสกุล <b>THINK</b>anwatthana<br />
-            ส่วนตัว <b>I</b> ที่เกินมาแค่อยากใส่ครับ</p>
-            <h1>เล่นโซเชียลมีเดียบ้างไหม</h1>
-            <img class="ans" alt="twitter-search-naiithink" src="media/img/twitter-search-naiithink-cursor.png" title="ลองเสิร์ชดู เจอผมในไหนก็เล่นอันนั้นแหละ หึ ๆ" />
-            <h1>ฟังเพลงแนวไหน</h1>
-            <p>ฟังทุกแนวครับ<br />
-            <a href="https://open.spotify.com/user/rp7yqm8jfydpxgz8vsmirwhc5?si=f8af534799ef40a9" target="_blank" rel="noopener noreferrer">naiithink, a user on Spotify</a></p>
-            <h1>ว่าง ๆ ชอบทำอะไร</h1>
-            <ul>
-                <li>นั่งเขียนโปรแกรม</li>
-                <li>นอนดู YouTube</li>
-                <li>ตะแคงเล่นดนตรี &#x266B;</li>
-            </ul>
-            <h1>ภาษาโปรแกรมและสคริปต์ที่เคยใช้</h1>
-            <ul>
-                <li>C / C&plus;&plus;</li>
-                <li>Python</li>
-                <li>AWK</li>
-                <li>Bash</li>
-                <li>TeX</li>
-                <li>HTML (<a href="https://youtu.be/4A2mWqLUpzw" target="_blank" rel="noopener noreferrer" title="HTML IS a Programming Language (Imperative vs Declarative) - Computerphile">ใช่ภาษาโปรแกรมรึป่าวนะ</a>)</li>
-            </ul>
-            <h1>ภาษาโปรแกรมและสคริปต์ที่สนใจ</h1>
-            <ul>
-                <li>Assembly</li>
-                <li>PostScript</li>
-                <li>C&num;</li>
-                <li>Swift</li>
-                <li>JavaScript</li>
-                <li>PHP</li>
-                <li>Ruby</li>
-            </ul>
-            <h1>ถ้าเกิดว่าต้องติดเกาะร้าง<br />
-            แล้วเลือกภาษาโปรแกรมติดไปด้วยได้หนึ่งภาษา จะเลือกภาษาอะไร</h1>
-            <p>C</p>
-            <h1>คลิปที่เคยดูแล้วขำจนแทบขาดใจ</h1>
-            <p><a href="https://youtu.be/Dbpzl2C10M8" title="Watch on YouTube" target="_blank" rel="noopener noreferrer">คำต้องห้าม EP.10 | เทพลีลา x @โคตรคูล x @PONGKOOL24</a></p>
-            <h1>คติเตือนใจ</h1>
-            <p>"หนึ่งบวกหนึ่ง <b>เท่ากับ</b> สอง"</p>
-            <h1>โค้ดเตือนใจ</h1>
-            <pre>
+<html
+  lang="th"
+  dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="author" content="naiithink" />
+  <meta name="description" content="CNC, Assignment I -- create a simple self introduction page with HTML and CSS" />
+  <meta name="referrer" content="no-referrer" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=yes" />
+  <meta name="robots" content="none" />
+
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+  <!-- <link rel="stylesheet" type="text/css" href="/assets/css/style.css" /> -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..900&display=fallback" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400..700&display=fallback" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;700&display=fallback" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai+Looped:wght@400;500;700&display=fallback" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=fallback" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=fallback" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Taviraj:wght@400;600&display=fallback" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sriracha:wght@400&display=fallback" />
+  <link rel="icon" type="image/svg+xml" href="assets/img/GarbageKat.svg" />
+  <!-- <link rel="icon" type="image/svg+xml" href="/assets/img/GarbageKat.svg" /> -->
+  <title>naiithink</title>
+
+  <script type="text/javascript">
+    function onloadHandler() {
+      document.getElementById("contents").style.display = "none";
+      document.getElementById("sidebar-v-stack").style.display = "none";
+      while (document.readyState != "complete") {
+        switch (document.readyState) {
+          case "loadingMask":
+            console.log("loading...");
+            setTimeout();
+            break;
+          case "interactive":
+            console.log("interactive...");
+            break;
+        }
+      }
+      amIGraduate();
+      setTimeout(showPage, 390);
+    }
+
+    function reloadPage() {
+      document.location.reload(true);
+    }
+
+    function showPage() {
+      document.getElementById("loadingMask").style.display = "none";
+      document.getElementById("sidebar-v-stack").style.display = "block";
+      document.getElementById("contents").style.display = "block";
+    }
+  </script>
+
+  <script type="text/javascript">
+    function amIGraduate() {
+      let date = new Date();
+      const thisYear = date.getFullYear();
+      const CSStartYear = 2020;
+      const elapsedYear = thisYear - CSStartYear;
+      if (0 < elapsedYear) {
+        if (elapsedYear < 4) {
+          document.getElementById("meAtTheU").innerHTML = "ปัจจุบันเป็น";
+          document.getElementById("meAtTheUYear").innerHTML = " ชั้นปีที่ " + elapsedYear + " ";
+        } else if (elapsedYear == 4) {
+          document.getElementById("meAtTheU").innerHTML = "ปัจจุบันเป็น";
+          document.getElementById("meAtTheUYear").innerHTML = " ชั้นปีสุดท้าย";
+        } else {
+          document.getElementById("meAtTheU").innerHTML = "เคยเป็น";
+          document.getElementById("meAtTheUYear").style.display = "none";
+        }
+      } else
+        document.getElementById("meAtU").style.display = "none";
+    }
+  </script>
+
+  <script type="text/javascript">
+    let fakeButton = () => { document.getElementById("the-fake-button").innerHTML = "ก็บอกอยู่ว่าปุ่มปลอม จะกดทำไม"; };
+  </script>
+</head>
+
+<body onload="onloadHandler()">
+  <div id="loadingMask"></div>
+  <aside
+    id="sidebar-v-stack"
+    style="display: none;">
+    <div id="sidebar-postit" class="unselectable">
+      <div
+        id="the-title-text"
+        href="#"
+        aria-keyshortcuts="Shift+!"
+        onclick="reloadPage()"
+        lang="en-US">NAIITHINK</div>
+      <div id="sub-title-block">
+        <span type="sub-title-text" style="font-family: Taviraj; font-weight: 600;">"น้อยแต่มาก เรียบแต่โก้"</span>
+        <span type="sub-title-text-caption">(นายไม่ได้กล่าว)</span>
+      </div>
+    </div>
+    <footer class="sidebar-footer"></footer>
+  </aside>
+  <main
+    id="contents"
+    class="main"
+    style="display: none;">
+    <section class="main-contents">
+      <h1>แนะนำตัวหน่อย เราเป็นใคร</h1>
+      <p>สวัสดีครับ ผมชื่อนาย นะครับ.</p>
+      <h1>สั้นไป</h1>
+      <span>ผมชื่อ พศวัต ถิ่นกาญจน์วัฒนา ชื่อเล่นชื่อนาย<br />
+        <span id="meAtU">
+          <span id="meAtTheU"></span>นิสิตภาควิชาวิทยาการคอมพิวเตอร์<span id="meAtTheUYear"></span>ครับ
+        </span>
+      </span>
+      <h1><span class="unselectable"><span style="font-weight: 860;"><i>NAIITHINK</i></span> <span style="font-weight: normal;">&copy;</span></span> &quest;</h1>
+      <p>ชื่อเล่นชื่อ <span style="font-weight: 800;">NAI</span> นามสกุล <span style="font-weight: 800;">THINK</span>anwatthana<br />
+      ส่วนตัว <span style="font-weight: 800;">I</span> ที่เกินมาแค่อยากใส่ครับ</p>
+      <h1>เล่นโซเชียลมีเดียบ้างไหม</h1>
+      <picture
+        class="ans"
+        title="ลองเสิร์ชดู เจอผมในไหนก็เล่นอันนั้นแหละ หึ ๆ">
+        <source
+          type="image/png"
+          media="(prefers-color-scheme: light)"
+          srcset="assets/img/light/twitter-search-naiithink-light-cursor.png"
+          alt="twitter-search-naiithink-light-cursor"
+          draggable="false" />
+        <img
+          src="assets/img/dark/twitter-search-naiithink-dark-cursor.png"
+          alt="twitter-search-naiithink-dark-cursor"
+          height="40em"
+          draggable="false" />
+        <!--
+        <source
+          type="image/png"
+          media="(prefers-color-scheme: light)"
+          srcset="/assets/img/light/twitter-search-naiithink-light-cursor.png"
+          alt="twitter-search-naiithink-light-cursor"
+          draggable="false" />
+        <img
+          src="/assets/img/dark/twitter-search-naiithink-dark-cursor.png"
+          alt="twitter-search-naiithink-dark-cursor"
+          height="40em"
+          draggable="false" />
+        -->
+      </picture>
+      <h1>ฟังเพลงแนวไหน</h1>
+      <p>ฟังทุกแนวครับ<br />
+        <a
+          href="https://open.spotify.com/user/rp7yqm8jfydpxgz8vsmirwhc5?si=f8af534799ef40a9"
+          target="_blank"
+          rel="noopener noreferrer">naiithink, a user on Spotify</a>
+      </p>
+      <h1>ว่าง ๆ ชอบทำอะไร</h1>
+      <ul>
+        <li>เล่นดนตรี &#x266B;</li>
+        <li>ดูหนัง ดูซีรีส์</li>
+        <li>เขียนโปรแกรม</li>
+        <li>ทำอะไรก็ได้ที่ผมชอบทำ &ndash; ดั่งที่ <a
+                                            href="https://youtu.be/vI9hu7q-1Sg?t=358"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            title="Watch แงะลูกลื่นจากปากกาได้ไหม? on YouTube">YouTuber ท่านหนึ่งเคยกล่าวไว้</a></li>
+      </ul>
+      <h1>ตอนไม่ว่างทำอะไร</h1>
+      <p>ไม่บอก</p>
+      <h1>ภาษาโปรแกรมและสคริปต์ที่เคยใช้</h1>
+      <ul>
+        <li>C / C&plus;&plus;</li>
+        <li>Python</li>
+        <li>JavaScript (ใช้เขียนเพจนี้ไง)</li>
+        <li>AWK</li>
+        <li>Bash</li>
+        <li>TeX</li>
+        <li>HTML (<a
+                    href="https://youtu.be/4A2mWqLUpzw"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="HTML IS a Programming Language (Imperative vs Declarative) - Computerphile">ใช่ภาษาโปรแกรมรึป่าวนะ</a>)
+        </li>
+      </ul>
+      <h1>ภาษาโปรแกรมและสคริปต์ที่สนใจ</h1>
+      <ul>
+        <li>Assembly</li>
+        <li>PostScript</li>
+        <li>C&num;</li>
+        <li>Swift</li>
+        <li>PHP</li>
+        <li>Ruby</li>
+      </ul>
+      <h1><div
+            style="font-size: 1.6em; cursor: default;"
+            title="อยากไปเที่ยวทะเล">&#x1F3DD;</div><br />
+      ถ้าเกิดว่าต้องไปติดเกาะร้าง<br />
+      แล้วเลือกภาษาโปรแกรมติดไปด้วยได้หนึ่งภาษา จะเลือกภาษาอะไร</h1>
+      <p>C</p>
+      <h1>คลิปที่เคยดูแล้วขำจนแทบขาดใจ</h1>
+      <p><a
+           href="https://youtu.be/Dbpzl2C10M8"
+           target="_blank"
+           rel="noopener noreferrer"
+           title="Watch on YouTube">คำต้องห้าม EP.10 | เทพลีลา x @โคตรคูล x @PONGKOOL24</a> <span class="unselectable"><span class="explicit-tag" style="font-weight: 600;">(EXPLICIT CONTENT)</span></span></p>
+      <h1>คติเตือนใจ</h1>
+      <p>"หนึ่งบวกหนึ่ง <b>เท่ากับ</b> สอง"</p>
+      <h1>โค้ดเตือนใจ</h1>
+      <pre>
 def printPython():
     printf("Python")
 
 printPython()
-        </pre>
-        <b><pre>
+      </pre>
+      <b><pre>
 NameError: name 'printf' is not defined. Did you mean: 'print'?
-            </pre></b>
-            <h1>Error ที่เจอบ่อยจนงงใจ</h1>
-            <p><code>Segmentation fault</code></p>
-            <h1>คิดว่าอะไรเกิดก่อนกัน ไก่หรือไข่</h1>
-            <p>ไข่ครับ.<br />
-            <a href="https://www.science.org.au/curious/earth-environment/which-came-first-chicken-or-egg" title="Which came first: the chicken or the egg?" target="_blank" rel="noopener noreferrer">เรเฟอเร้นสึ</a></p>
-            <h1>เหงาไหม</h1>
-            <p>เหงามั้ยนะเรา</p>
-            <h1>มีอะไรอยากถามคนที่ได้มาอ่านบ้างไหม</h1>
-            <p>มีครับ.<br />
-            มีอะไรอยากถามผมบ้างไหม<br /><br />
-            <textarea rols="1" cols="16" style="resize: none; cursor: not-allowed;">ถามได้ แต่ไม่ตอบนะ</textarea><br />
-            <div id="the-fake-button" class="ans-button"><input type="button" value="ปุ่มนี้เป็นปุ่มปลอม" title="อย่ากด" onclick="fakeButton()" /></div>
-            <h1>แหล่งข้อมูลที่สืบค้นไป</h1>
-            <ul>
-                <li><a href="https://developer.mozilla.org/en-US/" target="_blank" rel="noopener noreferrer">mdn</a></li>
-            </ul>
-            <object type="text/plain" charset="UTF-8" data="hello.c"></object>
-            <qa type="container">
-                <qa type="item">
-                    <ques>แนะนำตัวหน่อย เราคือใคร</ques>
-                    <answ>สวัสดีครับ ผมชื่อเล่นชื่อนาย นะครับ.</answ>
-                </qa>
-                <qa type="item">
-                    <ques>เอาดี ๆ ได้ไหม</ques>
-                    <answ>ผมชื่อ พศวัต ถิ่นกาญจน์วัฒนา ชื่อเล่นชื่อนาย</answ>
-                </qa>
-            </qa>
+      </pre></b>
+      <h1>Error ที่เจอบ่อยจนงงใจ</h1>
+      <p><code>Segmentation fault</code></p>
+      <h1>คิดว่าอะไรเกิดก่อนกัน ไก่หรือไข่</h1>
+      <a
+        href="https://www.science.org.au/curious/earth-environment/which-came-first-chicken-or-egg"
+        title="Which came first: the chicken or the egg?"
+        target="_blank"
+        rel="noopener noreferrer">ไข่ครับ.</a>
+      <h1>เหงาไหม</h1>
+      <p>เหงามั้ยนะเรา</p>
+      <h1>มีอะไรอยากถามคนที่ได้มาอ่านบ้างไหม</h1>
+      <p>มีครับ.<br />
+      มีอะไรอยากถามผมบ้างไหม<br /><br />
+      <textarea rols="1" cols="16" style="resize: none;">ถามได้ แต่ไม่ตอบนะ</textarea><br />
+      <div class="unselectable">
+        <div
+          id="the-fake-button"
+          class="ans-button">
+          <input
+            type="button"
+            onclick="fakeButton()"
+            value="ปุ่มนี้เป็นปุ่มปลอม"
+            style="cursor: not-allowed;"
+            title="อย่ากด" />
         </div>
-    </body>
+      </div>
+      <h1>แหล่งข้อมูลที่สืบค้นไป</h1>
+      <ul>
+        <li><a
+              href="https://developer.mozilla.org/en-US/"
+              target="_blank"
+              rel="noopener noreferrer">mdn</a></li>
+      </ul>
+    </section>
+    <footer class="main-footer">
+      <div class="unselectable">Copyright &copy; 2022 naiithink. All rights reserved.</div>
+    </footer>
+  </main>
+</body>
+
 </html>
