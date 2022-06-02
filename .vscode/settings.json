@@ -15,9 +15,7 @@
         "features.h": "c",
         "cstdlib": "cpp",
         "*.idl": "c",
-        "*.txt": "plaintext",
-        "stdbool.h": "c",
-        "string.h": "c"
+        "*.txt": "plaintext"
     },
     // "workbench.editorAssociations": {
     //     "*.md": "vscode.markdown.preview.editor"
@@ -29,6 +27,7 @@
 
     // Editor
     /// Controls whether suggestions should automatically show up while typing.
+    "editor.guides.indentation": true,
     "editor.quickSuggestions": {
         "other": "on",
         "comments": "off",
@@ -469,5 +468,5 @@
     "doxdocgen.generic.commandSuggestion": true,
 
     /// Add `\\` in doxygen command suggestion for better readbility (need to enable commandSuggestion)
-    "doxdocgen.generic.commandSuggestionAddPrefix": false
+    "doxdocgen.generic.commandSuggestionAddPrefix": false,
 }
