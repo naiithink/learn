@@ -32,6 +32,15 @@
 *.tex           text
 *.toc           text
 
+# Office suites
+*.docx          -text -diff
+*.pptx          -text -diff
+*.xlsx          -text -diff
+*.odg           -text -diff
+*.odp           -text -diff
+*.ods           -text -diff
+*.odt           -text -diff
+
 # Bin
 *.[ot]tf        -text -diff
 *.7z            -text -diff
