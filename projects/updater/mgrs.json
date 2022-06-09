@@ -1,0 +1,14 @@
+{
+    "schemaFile": "mgr_dec.json",
+    "gem": {
+        "paths": [
+            "/usr/bin/env gem"
+        ]
+    },
+    "pip": {
+        "paths": [
+            "/usr/bin/env pip",
+            "/usr/bin/env pip3"
+        ]
+    }
+}

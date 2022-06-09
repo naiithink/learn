@@ -63,7 +63,9 @@
 		"redhat.vscode-yaml",
 		"James-Yu.latex-workshop",
 		"lextudio.restructuredtext-pack",
-		"bierner.github-markdown-preview"
+		"bierner.github-markdown-preview",
+		"GitLab.gitlab-workflow",
+		"atlassian.atlascode"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.

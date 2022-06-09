@@ -1,17 +1,19 @@
-# Executables -- PERSONAL NAMING CONVENTION
-.bin/*
-bin/*
+# -*- coding: utf-8; mode: gitignore; -*-
+# Executables -- PERSONAL
+[._]bin/
+bin/
+out/
 *.bin
-out/*
 *.out
 
 # VS Code
-.vscode/*
+.vscode/
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
 !.vscode/*.code-snippets
+!.vscode/c_cpp_properties.json
 .history/
 *.vsix
 
@@ -33,6 +35,31 @@ Package Control.user-ca-bundle
 oscrypto-ca-bundle.crt
 bh_unicode_properties.cache
 GitHub.sublime-settings
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+.org-id-locations
+*_archive
+*_flymake.*
+/eshell/history
+/eshell/lastdir
+/elpa/
+*.rel
+/auto/
+.cask/
+dist/
+flycheck_*.el
+/server/
+.projectile
+.dir-locals.el
+/network-security.data
 
 # Vim
 [._]*.s[a-v][a-z]
