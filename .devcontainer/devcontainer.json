@@ -51,6 +51,7 @@
 		"ms-vsliveshare.vsliveshare-pack",
 		"GitHub.vscode-pull-request-github",
 		"GitHub.remotehub",
+		"GitLab.gitlab-workflow",
 		"ms-vscode.cpptools-extension-pack",
 		"ms-vscode.cmake-tools",
 		"ms-python.python",
@@ -63,9 +64,7 @@
 		"redhat.vscode-yaml",
 		"James-Yu.latex-workshop",
 		"lextudio.restructuredtext-pack",
-		"bierner.github-markdown-preview",
-		"GitLab.gitlab-workflow",
-		"atlassian.atlascode"
+		"bierner.github-markdown-preview"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
