@@ -1,0 +1,15 @@
+{
+    "smgrs": {
+        "tlmgr": [
+            ["update", "--all"]
+        ]
+    },
+    "mgrs": {
+        "brew": [
+            "update",
+            "upgrade",
+            "autoremove",
+            ["cleanup", "--prune", "all"]
+        ]
+    }
+}

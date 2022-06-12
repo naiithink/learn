@@ -76,6 +76,12 @@
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal"
+        },
+        {
+            "type": "java",
+            "name": "Java: Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
         }
     ]
 }
