@@ -1,10 +1,10 @@
 # global
 git config --global user.name naiithink
 git config --global user.email potsawattkw@outlook.com
-git config --global core.editor "emacs -nw"
-git config --global autocrlf input # unix
-# git config --global autocrlf true # windows
-# git config --global autocrlf false # windows-only
+git config --global core.editor 'emacs -nw'
+git config --global core.autocrlf input # unix
+# git config --global core.autocrlf true # windows
+# git config --global core.autocrlf false # windows-only
 
 # local
 git config --local commit.template .gitmessage
