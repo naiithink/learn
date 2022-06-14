@@ -1,0 +1,35 @@
+---
+HOME:
+  - entries:
+    - lambda
+  - etc
+  - files:
+    - music
+    - pictures:
+      - profile
+      - wallpapers
+    - screenshots
+    - videos
+  - mnt
+  - onlyme
+  - projects:
+    - Temp
+    - Tests
+  - sprojects
+  - terminal
+  - usr:
+    - bin
+    - include
+    - lib
+    - libexec
+    - share
+  - var:
+    - fonts:
+      - static
+    - src
+    - templates:
+      - email:
+        - general
+      - office
+  - volumes
+...

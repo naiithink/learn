@@ -1,0 +1,25 @@
+---
+libs:
+  - ncurses-devel
+---
+dev:
+  - clang
+  - cmake
+---
+langs:
+  - ruby
+---
+utils-base:
+  - emacs
+  - vim
+  - tmux
+  - ghostscript
+  - texlive
+  - ffmpeg
+  - graphviz
+  - pandoc
+---
+utils:
+  - tesseract
+  - tesseract-langpack-tha
+  - tesseract-script-thai
