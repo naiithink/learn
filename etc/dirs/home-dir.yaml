@@ -29,7 +29,7 @@ HOME:
     - Packages
     - Profile
     - Pub
-    - Temp
+    - Tmp
     - Tests
   - [sprojects, *S_IRWXU]:
     - private
