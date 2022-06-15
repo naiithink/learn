@@ -1,4 +1,9 @@
 ---
+PERM:
+  - &S_IRWXU 700
+  - &S_IRUSR 400
+  - &S_IWUSR 200
+  - &S_IXUSR 100
 HOME:
   - entries:
     - lambda
@@ -10,6 +15,12 @@ HOME:
       - wallpapers
     - screenshots
     - videos
+  - jump:
+    - lambda@ -> ~/entries/lambda
+    - projects@ ->  ~/entries/projects
+    - sprojects@ ->  ~/entries/sprojects
+    - private@ -> ~/sprojects/private
+    - terminal@ -> ~/entries/terminal
   - mnt
   - onlyme
   - projects:
@@ -17,9 +28,11 @@ HOME:
     - Org
     - Packages
     - Profile
+    - Pub
     - Temp
     - Tests
-  - sprojects
+  - [sprojects, *S_IRWXU]:
+    - private
   - terminal
   - usr:
     - bin
