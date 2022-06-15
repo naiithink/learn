@@ -2,6 +2,7 @@
     // Files
     "files.eol": "\n",
     "files.associations": {
+        ".gitmessage": "plaintext",
         "stdio.h": "c",
         "locale.h": "c",
         "limits.h": "c",
