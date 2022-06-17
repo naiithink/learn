@@ -26,12 +26,13 @@ HOME:
   - projects:
     - Demos
     - Gen
+    - Obs
     - Org
     - Packages
     - Profile
     - Pub
-    - Tmp
     - Tests
+    - Tmp
     - Try
   - [sprojects, *S_IRWXU]:
     - private
