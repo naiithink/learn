@@ -1,12 +1,12 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 SHELL='zsh'
 PROJ='private'
-USER_NAME='naiithink'
+USER_NAME='Potsawat Thinkanwatthana'
 USER_EMAIL='potsawattkw@outlook.com'
 
-echo "export SHELL=$SHELL" >> $HOME/.zshrc
-echo 'export GPG_TTY=$(tty)' >> $HOME/.zshrc
+echo "export SHELL=$SHELL" >> $HOME/.${SHELL}rc
+echo 'export GPG_TTY=$(tty)' >> $HOME/.${SHELL}rc
 git config --global oh-my-zsh.hide-info 1
 git config --global core.autocrlf input
 git config --global user.name $USER_NAME
