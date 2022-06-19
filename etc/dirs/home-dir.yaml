@@ -7,6 +7,8 @@ PERM:
 HOME:
   - entries:
     - lambda
+    - projects
+    - terminal
   - etc
   - files:
     - music
@@ -17,10 +19,10 @@ HOME:
     - videos
   - jump:
     - lambda@ -> ~/entries/lambda
-    - projects@ ->  ~/entries/projects
-    - sprojects@ ->  ~/entries/sprojects
+    - projects@ ->  ~/projects
+    - sprojects@ ->  ~/sprojects
     - private@ -> ~/sprojects/private
-    - terminal@ -> ~/entries/terminal
+    - terminal@ -> ~/terminal
   - mnt
   - onlyme
   - projects:
