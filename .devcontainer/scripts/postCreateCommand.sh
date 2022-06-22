@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-PROJ='private'
+# PROJ='private'
 # USER_NAME='Potsawat Thinkanwatthana'
 # USER_EMAIL='potsawattkw@outlook.com'
 
@@ -13,3 +13,5 @@ PROJ='private'
 # git remote add all git@gitlab.com:${USER_NAME}/${PROJ}.git
 # git remote set-url --push --add all git@gitlab.com:${USER_NAME}/${PROJ}.git
 # git remote set-url --push --add all git@github.com:${USER_NAME}/${PROJ}.git
+
+exit 0
