@@ -32,5 +32,3 @@ RUN     apt-get install ${APTGET_OPTS} groff latexmk texlive texlive-xetex \
 RUN     apt-get install ${APTGET_OPTS} binutils libc6-dev libcurl4 libedit2 libgcc-9-dev libpython2.7           \
                                                 libsqlite3-0 libstdc++-9-dev libz3-dev pkg-config tzdata        \
                                                 uuid-dev zlib1g-dev
-
-RUN     apt-get update && apt-get upgrade -y
