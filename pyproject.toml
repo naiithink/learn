@@ -1,0 +1,21 @@
+[build-system]
+requires = [
+    "packaging==20.5; platform_machine=='arm64",
+    "setuptools>=60.0.0",
+    "Cython>=0.29.3",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hola_naiithink"
+version = "0.0.1"
+dependencies = []
+
+[tool.setuptools]
+platforms = ["Linux", "Mac OS-X", "Unix"]
+
+[tool.setuptools.packages.find]
+# where = ["."]
+include = ["hola_naiithink*"]
+exclude = ["hola_naiithink.tests*"]
+namespaces = false
