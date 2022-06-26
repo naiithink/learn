@@ -1,6 +1,5 @@
 [build-system]
 requires = [
-    "packaging==20.5; platform_machine=='arm64",
     "setuptools>=60.0.0",
     "Cython>=0.29.3",
 ]

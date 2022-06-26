@@ -1,0 +1,151 @@
+/private/var/folders/hz/8wkz2qcd1bngs_89gq4hws040000gn/T/build-env-cs466z8j/lib/python3.10/site-packages/pip/_internal/locations/_distutils.py:9: DeprecationWarning: The distutils package is deprecated and slated for removal in Python 3.12. Use setuptools or check PEP 632 for potential alternatives
+  from distutils.cmd import Command as DistutilsCommand
+/usr/local/lib/python3.10/distutils/command/install.py:13: DeprecationWarning: The distutils.sysconfig module is deprecated, use sysconfig instead
+  from distutils.sysconfig import get_config_vars
+ERROR: Exception:
+Traceback (most recent call last):
+  File "/private/var/folders/hz/8wkz2qcd1bngs_89gq4hws040000gn/T/build-env-cs466z8j/lib/python3.10/site-packages/pip/_vendor/packaging/markers.py", line 278, in __init__
+    self._markers = _coerce_parse_result(MARKER.parseString(marker))
+  File "/private/var/folders/hz/8wkz2qcd1bngs_89gq4hws040000gn/T/build-env-cs466z8j/lib/python3.10/site-packages/pip/_vendor/pyparsing/core.py", line 1134, in parse_string
+    raise exc.with_traceback(None)
+pip._vendor.pyparsing.exceptions.ParseException: Expected {Group:({'implementation_version' | 'platform_python_implementation' | 'implementation_name' | 'python_full_version' | 'platform_release' | 'platform_version' | 'platform_machine' | 'platform_system' | 'python_version' | 'sys_platform' | 'os_name' | 'os.name' | 'sys.platform' | 'platform.version' | 'platform.machine' | 'platform.python_implementation' | 'python_implementation' | 'extra'} | {string enclosed in "'" | string enclosed in '"'}} {'===' | '==' | '>=' | '<=' | '!=' | '~=' | '>' | '<' | 'not in' | 'in'} {{'implementation_version' | 'platform_python_implementation' | 'implementation_name' | 'python_full_version' | 'platform_release' | 'platform_version' | 'platform_machine' | 'platform_system' | 'python_version' | 'sys_platform' | 'os_name' | 'os.name' | 'sys.platform' | 'platform.version' | 'platform.machine' | 'platform.python_implementation' | 'python_implementation' | 'extra'} | {string enclosed in "'" | string enclosed in '"'}) | Group:({{Suppress:('(') : ...} Suppress:(')')})}, found "'"  (at char 18), (line:1, col:19)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/private/var/folders/hz/8wkz2qcd1bngs_89gq4hws040000gn/T/build-env-cs466z8j/lib/python3.10/site-packages/pip/_internal/cli/base_command.py", line 167, in exc_logging_wrapper
+    status = run_func(*args)
+  File "/private/var/folders/hz/8wkz2qcd1bngs_89gq4hws040000gn/T/build-env-cs466z8j/lib/python3.10/site-packages/pip/_internal/cli/req_command.py", line 205, in wrapper
+    return func(self, options, args)
+  File "/private/var/folders/hz/8wkz2qcd1bngs_89gq4hws040000gn/T/build-env-cs466z8j/lib/python3.10/site-packages/pip/_internal/commands/install.py", line 305, in run
+    reqs = self.get_requirements(args, options, finder, session)
+  File "/private/var/folders/hz/8wkz2qcd1bngs_89gq4hws040000gn/T/build-env-cs466z8j/lib/python3.10/site-packages/pip/_internal/cli/req_command.py", line 439, in get_requirements
+    req_to_add = install_req_from_parsed_requirement(
+  File "/private/var/folders/hz/8wkz2qcd1bngs_89gq4hws040000gn/T/build-env-cs466z8j/lib/python3.10/site-packages/pip/_internal/req/constructors.py", line 463, in install_req_from_parsed_requirement
+    req = install_req_from_line(
+  File "/private/var/folders/hz/8wkz2qcd1bngs_89gq4hws040000gn/T/build-env-cs466z8j/lib/python3.10/site-packages/pip/_internal/req/constructors.py", line 390, in install_req_from_line
+    parts = parse_req_from_line(name, line_source)
+  File "/private/var/folders/hz/8wkz2qcd1bngs_89gq4hws040000gn/T/build-env-cs466z8j/lib/python3.10/site-packages/pip/_internal/req/constructors.py", line 295, in parse_req_from_line
+    markers = Marker(markers_as_string)
+  File "/private/var/folders/hz/8wkz2qcd1bngs_89gq4hws040000gn/T/build-env-cs466z8j/lib/python3.10/site-packages/pip/_vendor/packaging/markers.py", line 280, in __init__
+    raise InvalidMarker(
+pip._vendor.packaging.markers.InvalidMarker: Invalid marker: "platform_machine=='arm64", parse error at "'arm64"
+WARNING: You are using pip version 22.0.4; however, version 22.1.2 is available.
+You should consider upgrading via the '/private/var/folders/hz/8wkz2qcd1bngs_89gq4hws040000gn/T/build-env-cs466z8j/bin/python -m pip install --upgrade pip' command.
+* Creating venv isolated environment...
+* Installing packages in isolated environment... (Cython>=0.29.3, packaging==20.5; platform_machine=='arm64, setuptools>=60.0.0)
+
+Traceback (most recent call last):
+  File "/Users/naiithink/.local/lib/python3.10/site-packages/build/__main__.py", line 370, in main
+    built = build_call(
+  File "/Users/naiithink/.local/lib/python3.10/site-packages/build/__main__.py", line 230, in build_package_via_sdist
+    sdist = _build(isolation, builder, outdir, 'sdist', config_settings, skip_dependency_check)
+  File "/Users/naiithink/.local/lib/python3.10/site-packages/build/__main__.py", line 140, in _build
+    return _build_in_isolated_env(builder, outdir, distribution, config_settings)
+  File "/Users/naiithink/.local/lib/python3.10/site-packages/build/__main__.py", line 108, in _build_in_isolated_env
+    env.install(builder.build_system_requires)
+  File "/Users/naiithink/.local/lib/python3.10/site-packages/build/env.py", line 215, in install
+    _subprocess(cmd)
+  File "/Users/naiithink/.local/lib/python3.10/site-packages/build/env.py", line 80, in _subprocess
+    raise e
+  File "/Users/naiithink/.local/lib/python3.10/site-packages/build/env.py", line 77, in _subprocess
+    subprocess.run(cmd, check=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+  File "/usr/local/lib/python3.10/subprocess.py", line 524, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/private/var/folders/hz/8wkz2qcd1bngs_89gq4hws040000gn/T/build-env-cs466z8j/bin/python', '-Im', 'pip', 'install', '--use-pep517', '--no-warn-script-location', '-r', '/var/folders/hz/8wkz2qcd1bngs_89gq4hws040000gn/T/build-reqs-qzahql1j.txt']' returned non-zero exit status 2.
+
+ERROR Command '['/private/var/folders/hz/8wkz2qcd1bngs_89gq4hws040000gn/T/build-env-cs466z8j/bin/python', '-Im', 'pip', 'install', '--use-pep517', '--no-warn-script-location', '-r', '/var/folders/hz/8wkz2qcd1bngs_89gq4hws040000gn/T/build-reqs-qzahql1j.txt']' returned non-zero exit status 2.
+
+---
+
+/private/var/folders/hz/8wkz2qcd1bngs_89gq4hws040000gn/T/build-env-ihvm6n74/lib/python3.10/site-packages/setuptools/config/pyprojecttoml.py:104: _BetaConfiguration: Support for `[tool.setuptools]` in `pyproject.toml` is still *beta*.
+  warnings.warn(msg, _BetaConfiguration)
+running egg_info
+creating hola_naiithink.egg-info
+writing hola_naiithink.egg-info/PKG-INFO
+writing dependency_links to hola_naiithink.egg-info/dependency_links.txt
+writing top-level names to hola_naiithink.egg-info/top_level.txt
+writing manifest file 'hola_naiithink.egg-info/SOURCES.txt'
+reading manifest file 'hola_naiithink.egg-info/SOURCES.txt'
+writing manifest file 'hola_naiithink.egg-info/SOURCES.txt'
+/private/var/folders/hz/8wkz2qcd1bngs_89gq4hws040000gn/T/build-env-ihvm6n74/lib/python3.10/site-packages/setuptools/config/pyprojecttoml.py:104: _BetaConfiguration: Support for `[tool.setuptools]` in `pyproject.toml` is still *beta*.
+  warnings.warn(msg, _BetaConfiguration)
+running sdist
+running egg_info
+writing hola_naiithink.egg-info/PKG-INFO
+writing dependency_links to hola_naiithink.egg-info/dependency_links.txt
+writing top-level names to hola_naiithink.egg-info/top_level.txt
+reading manifest file 'hola_naiithink.egg-info/SOURCES.txt'
+writing manifest file 'hola_naiithink.egg-info/SOURCES.txt'
+warning: sdist: standard file not found: should have one of README, README.rst, README.txt, README.md
+
+running check
+creating hola_naiithink-0.0.1
+creating hola_naiithink-0.0.1/hola_naiithink
+creating hola_naiithink-0.0.1/hola_naiithink.egg-info
+copying files to hola_naiithink-0.0.1...
+copying pyproject.toml -> hola_naiithink-0.0.1
+copying hola_naiithink/__init__.py -> hola_naiithink-0.0.1/hola_naiithink
+copying hola_naiithink/greeting.py -> hola_naiithink-0.0.1/hola_naiithink
+copying hola_naiithink.egg-info/PKG-INFO -> hola_naiithink-0.0.1/hola_naiithink.egg-info
+copying hola_naiithink.egg-info/SOURCES.txt -> hola_naiithink-0.0.1/hola_naiithink.egg-info
+copying hola_naiithink.egg-info/dependency_links.txt -> hola_naiithink-0.0.1/hola_naiithink.egg-info
+copying hola_naiithink.egg-info/top_level.txt -> hola_naiithink-0.0.1/hola_naiithink.egg-info
+Writing hola_naiithink-0.0.1/setup.cfg
+Creating tar archive
+removing 'hola_naiithink-0.0.1' (and everything under it)
+/private/var/folders/hz/8wkz2qcd1bngs_89gq4hws040000gn/T/build-env-xw1y6z9h/lib/python3.10/site-packages/setuptools/config/pyprojecttoml.py:104: _BetaConfiguration: Support for `[tool.setuptools]` in `pyproject.toml` is still *beta*.
+  warnings.warn(msg, _BetaConfiguration)
+running egg_info
+writing hola_naiithink.egg-info/PKG-INFO
+writing dependency_links to hola_naiithink.egg-info/dependency_links.txt
+writing top-level names to hola_naiithink.egg-info/top_level.txt
+reading manifest file 'hola_naiithink.egg-info/SOURCES.txt'
+writing manifest file 'hola_naiithink.egg-info/SOURCES.txt'
+/private/var/folders/hz/8wkz2qcd1bngs_89gq4hws040000gn/T/build-env-xw1y6z9h/lib/python3.10/site-packages/setuptools/config/pyprojecttoml.py:104: _BetaConfiguration: Support for `[tool.setuptools]` in `pyproject.toml` is still *beta*.
+  warnings.warn(msg, _BetaConfiguration)
+running bdist_wheel
+running build
+running build_py
+creating build
+creating build/lib
+creating build/lib/hola_naiithink
+copying hola_naiithink/greeting.py -> build/lib/hola_naiithink
+copying hola_naiithink/__init__.py -> build/lib/hola_naiithink
+running egg_info
+writing hola_naiithink.egg-info/PKG-INFO
+writing dependency_links to hola_naiithink.egg-info/dependency_links.txt
+writing top-level names to hola_naiithink.egg-info/top_level.txt
+reading manifest file 'hola_naiithink.egg-info/SOURCES.txt'
+writing manifest file 'hola_naiithink.egg-info/SOURCES.txt'
+installing to build/bdist.macosx-12.4-arm64/wheel
+running install
+running install_lib
+creating build/bdist.macosx-12.4-arm64
+creating build/bdist.macosx-12.4-arm64/wheel
+creating build/bdist.macosx-12.4-arm64/wheel/hola_naiithink
+copying build/lib/hola_naiithink/greeting.py -> build/bdist.macosx-12.4-arm64/wheel/hola_naiithink
+copying build/lib/hola_naiithink/__init__.py -> build/bdist.macosx-12.4-arm64/wheel/hola_naiithink
+running install_egg_info
+Copying hola_naiithink.egg-info to build/bdist.macosx-12.4-arm64/wheel/hola_naiithink-0.0.1-py3.10.egg-info
+running install_scripts
+creating build/bdist.macosx-12.4-arm64/wheel/hola_naiithink-0.0.1.dist-info/WHEEL
+creating '/Users/naiithink/sprojects/private/dist/tmpwv0zukw4/hola_naiithink-0.0.1-py3-none-any.whl' and adding 'build/bdist.macosx-12.4-arm64/wheel' to it
+adding 'hola_naiithink/__init__.py'
+adding 'hola_naiithink/greeting.py'
+adding 'hola_naiithink-0.0.1.dist-info/METADATA'
+adding 'hola_naiithink-0.0.1.dist-info/WHEEL'
+adding 'hola_naiithink-0.0.1.dist-info/top_level.txt'
+adding 'hola_naiithink-0.0.1.dist-info/RECORD'
+removing build/bdist.macosx-12.4-arm64/wheel
+* Creating venv isolated environment...
+* Installing packages in isolated environment... (Cython>=0.29.3, setuptools>=60.0.0)
+* Getting dependencies for sdist...
+* Building sdist...
+* Building wheel from sdist
+* Creating venv isolated environment...
+* Installing packages in isolated environment... (Cython>=0.29.3, setuptools>=60.0.0)
+* Getting dependencies for wheel...
+* Installing packages in isolated environment... (wheel)
+* Building wheel...
+Successfully built hola_naiithink-0.0.1.tar.gz and hola_naiithink-0.0.1-py3-none-any.whl
