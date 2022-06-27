@@ -1,3 +1,6 @@
+IntelliJ `.desktop` path: ~/.local/share/applications
+
+
 [naiithink@nai-xxvii idea-IC-221.5921.22]$ pwd
 /home/naiithink/.local/stow/jetbrains/idea-IC-221.5921.22
 [naiithink@nai-xxvii idea-IC-221.5921.22]$ ll
