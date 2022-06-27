@@ -1,0 +1,18 @@
+[naiithink@nai-xxvii idea-IC-221.5921.22]$ pwd
+/home/naiithink/.local/stow/jetbrains/idea-IC-221.5921.22
+[naiithink@nai-xxvii idea-IC-221.5921.22]$ ll
+total 52
+drwxrwxr-x.  3 naiithink naiithink  4096 Jun 27 18:58 bin
+-rw-r--r--.  1 naiithink naiithink    14 Jun 21 14:47 build.txt
+-rw-r--r--.  1 naiithink naiithink  1825 Jun 21 14:47 Install-Linux-tar.txt
+drwxrwxr-x.  7 naiithink naiithink  4096 Jun 27 18:58 jbr
+drwxrwxr-x.  5 naiithink naiithink  4096 Jun 27 18:58 lib
+drwxrwxr-x.  2 naiithink naiithink  4096 Jun 27 18:58 license
+-rw-r--r--.  1 naiithink naiithink 11352 Jun 21 14:47 LICENSE.txt
+-rw-r--r--.  1 naiithink naiithink   128 Jun 21 14:47 NOTICE.txt
+drwxrwxr-x. 72 naiithink naiithink  4096 Jun 27 18:58 plugins
+-rw-r--r--.  1 naiithink naiithink   431 Jun 21 14:49 product-info.json
+-rw-rw-r--.  1 naiithink naiithink  1585 Jun 27 20:33 stowing.txt
+[naiithink@nai-xxvii idea-IC-221.5921.22]$ stow bin -t ../../../bin
+[naiithink@nai-xxvii idea-IC-221.5921.22]$ stow lib -t ../../../lib
+[naiithink@nai-xxvii idea-IC-221.5921.22]$ 
