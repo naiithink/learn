@@ -14,5 +14,4 @@ drwxrwxr-x. 72 naiithink naiithink  4096 Jun 27 18:58 plugins
 -rw-r--r--.  1 naiithink naiithink   431 Jun 21 14:49 product-info.json
 -rw-rw-r--.  1 naiithink naiithink  1585 Jun 27 20:33 stowing.txt
 [naiithink@nai-xxvii idea-IC-221.5921.22]$ stow bin -t ../../../bin
-[naiithink@nai-xxvii idea-IC-221.5921.22]$ stow lib -t ../../../lib
 [naiithink@nai-xxvii idea-IC-221.5921.22]$ 

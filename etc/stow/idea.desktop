@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Version=Unknown
+Name=IntelliJ IDEA Community
+Path=/home/naiithink/.local/bin
+Exec=idea.sh
+Icon=/home/naiithink/.local/bin/idea.svg
+Terminal=false
