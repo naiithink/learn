@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="gnupdf">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/downloads/gnupdf.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
