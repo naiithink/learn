@@ -1,16 +1,16 @@
 <?php
-namespace Me\First;
+namespace Me\Second;
 
 class Person {
     public function __construct($name) {
         $this->name = $name;
     }
 
-    public function getName() {
+    public function getName2() {
         return $this->name;
     }
 
-    public function setName($name) {
+    public function setNam2($name) {
         $this->name = $name;
     }
 

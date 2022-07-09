@@ -6,11 +6,11 @@ class Person {
         $this->name = $name;
     }
 
-    public function getName() {
+    public function getName1() {
         return $this->name;
     }
 
-    public function setName($name) {
+    public function setName1($name) {
         $this->name = $name;
     }
 
