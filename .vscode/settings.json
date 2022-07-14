@@ -154,6 +154,7 @@
     "terminal.integrated.profiles.windows": {
         "PowerShell": {
             "source": "PowerShell",
+            "args": ["-nologo"],
             "icon": "terminal-powershell"
         },
         "Command Prompt": {
