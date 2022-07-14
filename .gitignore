@@ -5,9 +5,9 @@ bin/
 out/
 *.bin
 *.out
-*.a
-*.o
-*.so
+# .a
+# .o
+# .so
 
 # VS Code
 .vscode/
@@ -116,7 +116,7 @@ Temporary Items
 xcuserdata/
 *.xcscmblueprint
 *.xccheckout
-build/
+# build/
 DerivedData/
 *.moved-aside
 *.pbxuser
@@ -150,18 +150,18 @@ __pycache__/
 *$py.class
 
 # C extensions
-*.so
+# *.so
 
 # Distribution / packaging
 .Python
-build/
+# build/
 develop-eggs/
 dist/
 # downloads/
 eggs/
 .eggs/
-lib/
-lib64/
+# lib/
+# lib64/
 parts/
 sdist/
 var/
@@ -217,7 +217,7 @@ instance/
 # Sphinx documentation
 docs/_build/
 
-# PyBuilder
+# Pybuilder
 target/
 
 # Jupyter Notebook
