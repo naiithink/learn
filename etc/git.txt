@@ -1,6 +1,10 @@
 # global
 git config --global user.name naiithink
 git config --global user.email potsawattkw@outlook.com
+git config --global diff.submodule log
+# git config status.submodulesummary 1
+git config submodule.recurse true
+git config push.recurseSubmodules check
 git config --global core.editor 'emacs -nw'
 git config --global core.autocrlf input # unix
 # git config --global core.autocrlf true # windows
@@ -23,7 +27,9 @@ git remote set-url origin --add --push <other-remote-url>
 
 # aliasing
 git config --global alias.visions 'log --oneline --decorate --graph --all'
-
+git config alias.sdiff '!'"git diff && git submodule foreach 'git diff'"
+git config alias.spush 'push --recurse-submodules=on-demand'
+git config alias.supdate 'submodule update --remote --merge'
 
 ### Create new mirror repo
 git clone --bare <old-repo-url>
