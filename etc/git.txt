@@ -37,3 +37,13 @@ cd <old-repo>
 git push --mirror <new-repo-url>
 cd ..
 rm <old-repo>
+
+
+## REMOVING SUBMODULES
+# - detelte relevant sections from `.gitmodules` file
+# - stage `.gitmodules` changes
+# - delete relevant section from `.git/config`
+# - run `git rm --cached <path to submodule without trailing slash>`
+# - run `rm -rf `.git/modules/<path to submodule without trailing slash>`
+# - commit changes
+# - delete untracked submodule in local working tree
