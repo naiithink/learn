@@ -1,0 +1,3 @@
+[submodule "projects/docker-ctrl"]
+	path = projects/docker-ctrl
+	url = git@github.com:GraphZC/docker-ctrl.git
