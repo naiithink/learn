@@ -1,0 +1,90 @@
+naiithink@NAI-XXV API_Node % node docker.js
+{
+  Id: 'a689fe0f014d5a9fd3a6ebb6128bfadaf62c255f364a9798ce886d0bc9937cd1',
+  Names: [ '/hardcore_franklin' ],
+  Image: 'jupyter/scipy-notebook',
+  ImageID: 'sha256:a966c20eb2b0c78ec33207ea5d6e4e58a541cbb6afe5eaeebf2b2b358ed92dbb',
+  Command: 'tini -g -- start-notebook.sh',
+  Created: 1658221749,
+  Ports: [
+    {
+      IP: '0.0.0.0',
+      PrivatePort: 8888,
+      PublicPort: 10001,
+      Type: 'tcp'
+    }
+  ],
+  Labels: { maintainer: 'Jupyter Project <jupyter@googlegroups.com>' },
+  State: 'running',
+  Status: 'Up 11 seconds (health: starting)',
+  HostConfig: { NetworkMode: 'default' },
+  NetworkSettings: { Networks: { bridge: [Object] } },
+  Mounts: []
+}
+{
+  Id: 'a87d734abe4e035d81af1c8c8fa6f8c93e88a2282ef81b1c99aa1a1fdeb6b840',
+  Names: [ '/vigilant_mcnulty' ],
+  Image: 'jupyter/scipy-notebook',
+  ImageID: 'sha256:a966c20eb2b0c78ec33207ea5d6e4e58a541cbb6afe5eaeebf2b2b358ed92dbb',
+  Command: 'tini -g -- start-notebook.sh',
+  Created: 1658221604,
+  Ports: [
+    {
+      IP: '0.0.0.0',
+      PrivatePort: 8888,
+      PublicPort: 10000,
+      Type: 'tcp'
+    }
+  ],
+  Labels: { maintainer: 'Jupyter Project <jupyter@googlegroups.com>' },
+  State: 'running',
+  Status: 'Up 2 minutes (healthy)',
+  HostConfig: { NetworkMode: 'default' },
+  NetworkSettings: { Networks: { bridge: [Object] } },
+  Mounts: []
+}
+{
+  Id: '4bb0b7899918dbaba8cd964503b97b637232cd03668efbbb711a6d7a3de8fcb8',
+  Names: [ '/ahiahi' ],
+  Image: 'sha256:73ff0959deda46f339d673f557ff758f2ea7e1d8366d77b3dfedd5ca906b079c',
+  ImageID: 'sha256:73ff0959deda46f339d673f557ff758f2ea7e1d8366d77b3dfedd5ca906b079c',
+  Command: 'bash',
+  Created: 1658216602,
+  Ports: [],
+  Labels: {},
+  State: 'exited',
+  Status: 'Exited (0) About an hour ago',
+  HostConfig: { NetworkMode: 'default' },
+  NetworkSettings: { Networks: { bridge: [Object] } },
+  Mounts: []
+}
+{
+  Id: '4327f8c5ab4419ced8ac78fb08dca0b0ab98c953d130478309c64f82d27f9ad1',
+  Names: [ '/gallant_gould' ],
+  Image: 'sha256:8dd08b395b9de77313899b573002179255000415d9ece460e8feb888c4efc1b5',
+  ImageID: 'sha256:8dd08b395b9de77313899b573002179255000415d9ece460e8feb888c4efc1b5',
+  Command: '--name ahiahi',
+  Created: 1658216347,
+  Ports: [],
+  Labels: {},
+  State: 'created',
+  Status: 'Created',
+  HostConfig: { NetworkMode: 'default' },
+  NetworkSettings: { Networks: { bridge: [Object] } },
+  Mounts: []
+}
+{
+  Id: 'b1a7ea64f2a7cd7da5e4c10591ee4c488a4c6666e8a5480fbdb0546e4912830e',
+  Names: [ '/eager_keller' ],
+  Image: 'sha256:8dd08b395b9de77313899b573002179255000415d9ece460e8feb888c4efc1b5',
+  ImageID: 'sha256:8dd08b395b9de77313899b573002179255000415d9ece460e8feb888c4efc1b5',
+  Command: '-n ahiahi',
+  Created: 1658216302,
+  Ports: [],
+  Labels: {},
+  State: 'created',
+  Status: 'Created',
+  HostConfig: { NetworkMode: 'default' },
+  NetworkSettings: { Networks: { bridge: [Object] } },
+  Mounts: []
+}
