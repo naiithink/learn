@@ -16,6 +16,7 @@ out/
 !.vscode/launch.json
 !.vscode/extensions.json
 !.vscode/*.code-snippets
+!.vscode/c_cpp_properties.json
 .history/
 *.vsix
 
