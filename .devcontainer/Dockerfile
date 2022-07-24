@@ -9,7 +9,7 @@ RUN     apt-get install ${APTGET_OPTS} libc6-dbg libncurses-dev libtool-bin libx
                                                 automake build-essential cmake curl gawk gdb git git-lfs wget \
         && apt-get install ${APTGET_OPTS} ca-certificates gnupg2 \
         && apt-get install ${APTGET_OPTS} emacs vim \
-        && apt-get install ${APTGET_OPTS} ffmpeg gawk ghostscript pandoc tesseract-ocr
+        && apt-get install ${APTGET_OPTS} ffmpeg ghostscript pandoc tesseract-ocr
 # i686
 #         && apt-get install ${APTGET_OPTS} gcc-multilib
 
