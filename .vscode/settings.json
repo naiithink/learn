@@ -3,6 +3,7 @@
     "remote.SSH.remoteServerListenOnSocket": true,
 
     // Files
+    "files.restoreUndoStack": true,
     "files.eol": "\n",
     "files.associations": {
         ".gitmessage": "plaintext",
