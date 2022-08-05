@@ -3,7 +3,6 @@
     "remote.SSH.remoteServerListenOnSocket": true,
 
     // Files
-    "files.restoreUndoStack": true,
     "files.eol": "\n",
     "files.associations": {
         ".gitmessage": "plaintext",
@@ -71,7 +70,8 @@
     "git.confirmSync": false,
     "git.enableSmartCommit": true,
 
-    // Terminals
+    // Terminal
+    "terminal.integrated.shellIntegration.enabled": false,
     "terminal.integrated.profiles.windows": {
         "PowerShell": {
             "source": "PowerShell",
@@ -486,4 +486,8 @@
 
     /// Add `\\` in doxygen command suggestion for better readbility (need to enable commandSuggestion)
     "doxdocgen.generic.commandSuggestionAddPrefix": false,
+    "remote.SSH.remotePlatform": {
+        "cnc.cs.sci.ku.ac.th": "linux"
+    },
+    "liveshare.connectionMode": "relay",
 }
