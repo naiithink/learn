@@ -1,0 +1,6 @@
+image: python:latest
+
+run:
+  script:
+    - python -m pip install --upgrade build
+    - python -m build
