@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-08-10T14:25:58.368222Z</date>
+  <millis>1660141558368</millis>
+  <nanos>222000</nanos>
+  <sequence>0</sequence>
+  <logger>Logging</logger>
+  <level>INFO</level>
+  <class>Logging</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>test1</message>
+</record>
+<record>
+  <date>2022-08-10T14:25:58.385762Z</date>
+  <millis>1660141558385</millis>
+  <nanos>762000</nanos>
+  <sequence>1</sequence>
+  <logger>Logging</logger>
+  <level>INFO</level>
+  <class>Logging</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>test2</message>
+</record>
+<record>
+  <date>2022-08-10T14:25:58.386097Z</date>
+  <millis>1660141558386</millis>
+  <nanos>97000</nanos>
+  <sequence>2</sequence>
+  <logger>Logging</logger>
+  <level>INFO</level>
+  <class>Logging</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>test3</message>
+</record>
