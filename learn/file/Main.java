@@ -13,10 +13,10 @@ public class Main {
             fileBuffer = new FileReader(FILE_TO_READ);
             readFileBuffer = new BufferedReader(fileBuffer);
             System.out.println(readFileBuffer.readLine());
-        } catch (FileNotFoundException err) {
-            System.err.println(err.toString());
-        } catch (IOException err) {
-            System.err.println(err.toString());
+        } catch (FileNotFoundException e) {
+            System.err.println(e.getMessage());
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
         }
     }
 }
