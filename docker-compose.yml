@@ -1,0 +1,39 @@
+services:
+  web:
+    image: nginx:alpine
+    ports:
+      - 8080:80
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./app1:/var/www/html
+    networks:
+      - app1_net
+      - app2_net
+
+  app1:
+    image: php:8.1-rc-apache
+    networks:
+      - app1_net
+    volumes:
+      - ./app1:/var/www/html
+
+  app2:
+    image: php:8.1-rc-apache
+    networks:
+      - app2_net
+    volumes:
+      - ./app2:/var/www/html
+  
+  jupyter:
+    image: jupyter/base-notebook
+    ports:
+      - 8888:8888
+    volumes:
+      - ./notebooks:/home/jovyan/work
+    # environment:
+    #   JUPYTER_ENALBE_LAB: "yes"
+    command: "start-notebook.sh --NotebookApp.token='' --NotebookApp.password=''"
+
+networks:
+  app1_net:
+  app2_net:
