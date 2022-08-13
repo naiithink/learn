@@ -5,9 +5,65 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa9e0471-4bba-4ea8-ac97-ddaf295c6384" name="Changes" comment="# -*- coding: utf-8; mode: text; -*-&#10;##### 50 CHARS MAX ###############################&#10;## Subject&#10;&#10;&#10;##### 72 CHARS PER LINE ################################################&#10;# Problem&#10;&#10;&#10;# Solution&#10;&#10;&#10;# Note&#10;&#10;&#10;########################################################################">
-      <change afterPath="$PROJECT_DIR$/learn/logger/Logging.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/learn/file/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/learn/file/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/learn/logger/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/learn/logger/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/annotation/Annotate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/arrays/Array.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/boxing/Boxing.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/collection/arraylist/ArrayList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/file/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/file/foo.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/generics/Box.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/generics/InBox.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/generics/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/hello/Hello.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/id/Foo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/id/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/jar/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/jar/Manifest.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/logging/Logger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/logging/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/properties/Properties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/ref/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/ref/RInt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/templates/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/templates/Temp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Main.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn/Boxing/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn/Hello/Hello.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn/Hello/Hello.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn/Ref/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn/Ref/RInt.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn/annotation/Annotate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn/collection/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn/collection/arrayList/arrayList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn/file/Foo.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn/file/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn/generics/Box.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn/generics/Box.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn/generics/InBox.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn/generics/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn/generics/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn/id/Foo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn/id/Foo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn/id/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn/id/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn/jar/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn/jar/Main.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn/jar/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn/jar/Manifest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn/logger/Logging.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn/logger/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn/logger/test.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn/logger/test.log.lck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn/templateMethods/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn/templateMethods/Temp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn/templateMethods/Temp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/private.iml" beforeDir="false" afterPath="$PROJECT_DIR$/private.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +83,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectId" id="2D9v9q7yiQLWXHcMuK6HI6pg97g" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -36,21 +95,98 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/Users/naiithink/sprojects/private",
-    "settings.editor.selected.configurable": "configurable.group.appearance"
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "/Users/naiithink/sprojects/private/learn/src/logging",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.keymap"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration name="Logging" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Logging" />
-      <module name="private" />
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/learn/src/logging" />
+      <recent name="$PROJECT_DIR$/learn/src/file" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="collection" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.templates.Main">
+    <configuration name="Hello" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="hello.Hello" />
+      <module name="learn" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="hello.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Logger" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="logging.Logger" />
+      <module name="learn" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="logging.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="logging.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="logging.Main" />
+      <module name="learn" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="logging.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ref.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ref.Main" />
+      <module name="learn" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ref.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="templates.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="templates.Main" />
+      <module name="learn" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="templates.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Logging" />
+        <item itemvalue="Application.templates.Main" />
+        <item itemvalue="Application.ref.Main" />
+        <item itemvalue="Application.Logger" />
+        <item itemvalue="Application.logging.Main" />
+        <item itemvalue="Application.Hello" />
       </list>
     </recent_temporary>
   </component>
@@ -62,8 +198,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1660123965991</updated>
+      <workItem from="1660408686996" duration="11032000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -75,5 +215,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
