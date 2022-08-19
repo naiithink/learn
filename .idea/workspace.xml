@@ -4,7 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa9e0471-4bba-4ea8-ac97-ddaf295c6384" name="Changes" comment="# -*- coding: utf-8; mode: text; -*-&#10;##### 50 CHARS MAX ###############################&#10;## Subject&#10;&#10;&#10;##### 72 CHARS PER LINE ################################################&#10;# Problem&#10;&#10;&#10;# Solution&#10;&#10;&#10;# Note&#10;&#10;&#10;########################################################################" />
+    <list default="true" id="aa9e0471-4bba-4ea8-ac97-ddaf295c6384" name="Changes" comment="# -*- coding: utf-8; mode: text; -*-&#10;##### 50 CHARS MAX ###############################&#10;## Subject&#10;&#10;&#10;##### 72 CHARS PER LINE ################################################&#10;# Problem&#10;&#10;&#10;# Solution&#10;&#10;&#10;# Note&#10;&#10;&#10;########################################################################">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/inheritance/process/Process.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/jvm/Objects.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/types/dataTypes/Casting.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/types/dataTypes/References.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/types/dataTypes/Strings.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/types/dataTypes/Subtyping.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/types/variables/Autoboxing.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/types/variables/Final.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/types/variables/Naming.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/types/variables/Variables.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn/src/boxing/Boxing.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/learn/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/learn/boxing/Boxing.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/learn/hello/Hello.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/learn/hello/Hello.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/private/Foo.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/private/Main.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/private/Manifest.txt" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,7 +44,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2D9v9q7yiQLWXHcMuK6HI6pg97g" />
   <component name="ProjectViewState">
@@ -35,6 +55,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "17",
     "last_opened_file_path": "/Users/naiithink/sprojects/private/learn/src/logging",
@@ -51,16 +72,20 @@
       <recent name="$PROJECT_DIR$/learn/src/file" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="inheritance.process" />
+      <recent name="types" />
+      <recent name="types.dataTypes" />
+      <recent name="variables" />
       <recent name="collection" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.templates.Main">
-    <configuration name="Hello" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="hello.Hello" />
+  <component name="RunManager" selected="Application.Strings">
+    <configuration name="Casting" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="types.dataTypes.Casting" />
       <module name="learn" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="hello.*" />
+          <option name="PATTERN" value="types.dataTypes.String" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -68,12 +93,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Logger" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="logging.Logger" />
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="types.dataTypes.Main" />
       <module name="learn" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="logging.*" />
+          <option name="PATTERN" value="types.dataTypes.String" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -81,12 +106,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="logging.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="logging.Main" />
+    <configuration name="Parent" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="inheritance.process.Parent" />
       <module name="learn" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="logging.*" />
+          <option name="PATTERN" value="inheritance.process.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -94,12 +119,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ref.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ref.Main" />
+    <configuration name="Strings" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="types.dataTypes.Strings" />
       <module name="learn" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ref.*" />
+          <option name="PATTERN" value="types.dataTypes.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -122,11 +147,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Strings" />
+        <item itemvalue="Application.Parent" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Casting" />
         <item itemvalue="Application.templates.Main" />
-        <item itemvalue="Application.ref.Main" />
-        <item itemvalue="Application.Logger" />
-        <item itemvalue="Application.logging.Main" />
-        <item itemvalue="Application.Hello" />
       </list>
     </recent_temporary>
   </component>
@@ -139,6 +164,7 @@
       <option name="presentableId" value="Default" />
       <updated>1660123965991</updated>
       <workItem from="1660408686996" duration="11116000" />
+      <workItem from="1660896985404" duration="12508000" />
     </task>
     <servers />
   </component>
