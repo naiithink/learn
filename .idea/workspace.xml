@@ -5,25 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa9e0471-4bba-4ea8-ac97-ddaf295c6384" name="Changes" comment="# -*- coding: utf-8; mode: text; -*-&#10;##### 50 CHARS MAX ###############################&#10;## Subject&#10;&#10;&#10;##### 72 CHARS PER LINE ################################################&#10;# Problem&#10;&#10;&#10;# Solution&#10;&#10;&#10;# Note&#10;&#10;&#10;########################################################################">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn/src/inheritance/process/Process.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn/src/jvm/Objects.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn/src/types/dataTypes/Casting.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn/src/types/dataTypes/References.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn/src/types/dataTypes/Strings.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn/src/types/dataTypes/Subtyping.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn/src/types/variables/Autoboxing.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn/src/types/variables/Final.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn/src/types/variables/Naming.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn/src/types/variables/Variables.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/classes/Methods.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/inheritance/methodHiding/ChildField.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/inheritance/methodHiding/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/inheritance/methodHiding/SuperField.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/inheritance/offsprings/FirstSub.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/inheritance/offsprings/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/inheritance/offsprings/SecondSub.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/inheritance/offsprings/TheSuper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/inheritance/overriding/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/inheritance/overriding/SubClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/inheritance/overriding/SuperClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/types/dataTypes/getType/InstancePromotion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/types/dataTypes/getType/LectureGetType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/types/dataTypes/getType/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/types/dataTypes/getType/StaticPromotion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/learn/src/boxing/Boxing.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/learn/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/learn/boxing/Boxing.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/learn/hello/Hello.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/learn/hello/Hello.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/private/Foo.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/private/Main.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/private/Manifest.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,41 +48,41 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "/Users/naiithink/sprojects/private/learn/src/logging",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.keymap"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/naiithink/sprojects/private/learn/src/logging&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/learn/src/logging" />
       <recent name="$PROJECT_DIR$/learn/src/file" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="types.dataTypes.gettingType" />
       <recent name="inheritance.process" />
       <recent name="types" />
       <recent name="types.dataTypes" />
       <recent name="variables" />
-      <recent name="collection" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Strings">
-    <configuration name="Casting" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="types.dataTypes.Casting" />
+  <component name="RunManager" selected="Application.inheritance.offsprings.Main">
+    <configuration name="LectureGetType" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="types.dataTypes.getType.LectureGetType" />
       <module name="learn" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="types.dataTypes.String" />
+          <option name="PATTERN" value="types.dataTypes.getType.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -94,11 +91,11 @@
       </method>
     </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="types.dataTypes.Main" />
+      <option name="MAIN_CLASS_NAME" value="types.dataTypes.getType.Main" />
       <module name="learn" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="types.dataTypes.String" />
+          <option name="PATTERN" value="types.dataTypes.getType.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -106,12 +103,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Parent" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="inheritance.process.Parent" />
+    <configuration name="StaticPromotion" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="types.dataTypes.getType.StaticPromotion" />
       <module name="learn" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="inheritance.process.*" />
+          <option name="PATTERN" value="types.dataTypes.getType.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -119,12 +116,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Strings" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="types.dataTypes.Strings" />
+    <configuration name="inheritance.offsprings.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="inheritance.offsprings.Main" />
       <module name="learn" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="types.dataTypes.*" />
+          <option name="PATTERN" value="inheritance.offsprings.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -132,12 +129,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="templates.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="templates.Main" />
+    <configuration name="inheritance.overriding.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="inheritance.overriding.Main" />
       <module name="learn" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="templates.*" />
+          <option name="PATTERN" value="inheritance.overriding.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -147,11 +144,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Strings" />
-        <item itemvalue="Application.Parent" />
+        <item itemvalue="Application.inheritance.offsprings.Main" />
+        <item itemvalue="Application.LectureGetType" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Casting" />
-        <item itemvalue="Application.templates.Main" />
+        <item itemvalue="Application.StaticPromotion" />
+        <item itemvalue="Application.inheritance.overriding.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -165,6 +162,7 @@
       <updated>1660123965991</updated>
       <workItem from="1660408686996" duration="11116000" />
       <workItem from="1660896985404" duration="12508000" />
+      <workItem from="1660951978305" duration="5681000" />
     </task>
     <servers />
   </component>
