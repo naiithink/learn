@@ -1,0 +1,6 @@
+[submodule "servuino"]
+	path = servuino
+	url = git@github.com:bsaxen/servuino.git
+[submodule "simuino"]
+	path = simuino
+	url = git@github.com:bsaxen/simuino.git
