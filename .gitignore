@@ -8,6 +8,22 @@ out/
 *.a
 *.o
 *.so
+*.so.*
+*.dll
+*.dylib
+*.exe
+
+# Debug
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
 
 # VS Code
 .vscode/*
