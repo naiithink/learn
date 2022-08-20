@@ -5,21 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa9e0471-4bba-4ea8-ac97-ddaf295c6384" name="Changes" comment="# -*- coding: utf-8; mode: text; -*-&#10;##### 50 CHARS MAX ###############################&#10;## Subject&#10;&#10;&#10;##### 72 CHARS PER LINE ################################################&#10;# Problem&#10;&#10;&#10;# Solution&#10;&#10;&#10;# Note&#10;&#10;&#10;########################################################################">
-      <change afterPath="$PROJECT_DIR$/learn/src/classes/Methods.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn/src/inheritance/methodHiding/ChildField.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn/src/inheritance/methodHiding/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn/src/inheritance/methodHiding/SuperField.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn/src/inheritance/offsprings/FirstSub.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn/src/inheritance/offsprings/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn/src/inheritance/offsprings/SecondSub.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn/src/inheritance/offsprings/TheSuper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn/src/inheritance/overriding/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn/src/inheritance/overriding/SubClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn/src/inheritance/overriding/SuperClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn/src/types/dataTypes/getType/InstancePromotion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn/src/types/dataTypes/getType/LectureGetType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn/src/types/dataTypes/getType/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn/src/types/dataTypes/getType/StaticPromotion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/security/digest/GetDigest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,21 +34,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/naiithink/sprojects/private/learn/src/logging&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "/Users/naiithink/sprojects/private",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.keymap"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/learn/src/logging" />
@@ -163,6 +149,7 @@
       <workItem from="1660408686996" duration="11116000" />
       <workItem from="1660896985404" duration="12508000" />
       <workItem from="1660951978305" duration="5681000" />
+      <workItem from="1660967900009" duration="1657000" />
     </task>
     <servers />
   </component>
