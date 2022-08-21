@@ -1,28 +1,26 @@
 package file;
 
-import java.io.IOException;
-import java.nio.file.Path;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
+import java.io.IOException;
+
+import java.nio.charset.Charset;
+import java.nio.file.FileSystems;
+import java.nio.file.Path;
+import java.nio.file.Files;
 import java.io.BufferedReader;
 
 public class Main {
 
-    public static void main(String[] args) {
-        final String FILE_TO_READ = "foo.csv";
-        FileReader fileBuffer;
-        BufferedReader readFileBuffer;
+    public static void main(String[] args) throws IOException {
+        if (args.length < 1)
+            System.exit(1);
 
-        System.out.println();
+        Charset charset = Charset.forName("UTF-8");
 
-        try {
-            fileBuffer = new FileReader(FILE_TO_READ);
-            readFileBuffer = new BufferedReader(fileBuffer);
-            System.out.println(readFileBuffer.readLine());
-        } catch (FileNotFoundException e) {
-            System.err.println(e.getMessage());
-        } catch (IOException e) {
-            System.err.println(e.getMessage());
-        }
+        Path path = FileSystems.getDefault().getPath(args[0]);
+        BufferedReader reader = Files.newBufferedReader(path, charset);
+
+        while (reader.ready())
+            System.out.println(reader.readLine());
     }
 }

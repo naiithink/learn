@@ -1,29 +1,44 @@
 package security.digest;
 
+import java.io.File;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.nio.Buffer;
+import java.nio.file.*;
+import java.nio.charset.Charset;
+import java.security.DigestInputStream;
 import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 public class GetDigest {
 
-    private String path;
+    @FunctionalInterface
+    interface FileCheckPath {
+        public String getPath();
+    }
 
-    private byte digest;
+    private final String path;
 
-    public GetDigest(String path) {
+    private byte[] digest;
 
-        MessageDigest sha1 = MessageDigest.getInstance("SHA-1");
+    private Charset charset;
 
-        try {
-            BufferedReader reader = new BufferedReader();
+    private BufferedReader reader;
 
-            this.path = path;
+    public GetDigest(String path) throws NoSuchAlgorithmException {
+        this.path = new FileCheckPath(path) {
+            File file = new File(path);
+            if (file.exists() && file.isFile()) {
+                return path;
+            } else {
+                System.exit(1);
+            }
+        };
+        MessageDigest sha = MessageDigest.getInstance("SHA-1");
+        BufferedReader reader = new BufferedReader();
 
-            this.digest
 
-        } catch (CloneNotSupportedException e) {
-            System.err.println(e.getMessage());
-        }
+        // catch (CloneNotSupportedException e) {
     }
 
     public static void main(String[] args) {
