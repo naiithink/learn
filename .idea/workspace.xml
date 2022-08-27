@@ -5,9 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa9e0471-4bba-4ea8-ac97-ddaf295c6384" name="Changes" comment="# -*- coding: utf-8; mode: text; -*-&#10;##### 50 CHARS MAX ###############################&#10;## Subject&#10;&#10;&#10;##### 72 CHARS PER LINE ################################################&#10;# Problem&#10;&#10;&#10;# Solution&#10;&#10;&#10;# Note&#10;&#10;&#10;########################################################################">
+      <change afterPath="$PROJECT_DIR$/learn/src/generics/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/generics/bounding/Bounded.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/generics/bounding/MultiBounded.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/generics/methods/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/generics/methods/Pair.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/generics/methods/Util.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/packaging/ClassInPackage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/packaging/subpackage/ClassInSubpackage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/packaging/subpackage/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/packaging/subpackage/subsubpackage/ClassInSubsubpackage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/random/Animal/Animal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/random/Animal/Cat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/random/DefaultToString.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/records/Range.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/statically/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/statically/StaticFields.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/types/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/learn/src/file/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/learn/src/file/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/learn/src/security/digest/GetDigest.java" beforeDir="false" afterPath="$PROJECT_DIR$/learn/src/security/digest/GetDigest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn/learn.iml" beforeDir="false" afterPath="$PROJECT_DIR$/learn/learn.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn/src/generics/Box.java" beforeDir="false" afterPath="$PROJECT_DIR$/learn/src/generics/Box.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn/src/generics/InBox.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn/src/generics/Main.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,41 +54,67 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/naiithink/sprojects/private&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "/Users/naiithink/sprojects/private",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.keymap"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/learn/src/logging" />
       <recent name="$PROJECT_DIR$/learn/src/file" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="generics.bounding" />
+      <recent name="generics.methods" />
+      <recent name="packaging" />
       <recent name="types.dataTypes.gettingType" />
       <recent name="inheritance.process" />
-      <recent name="types" />
-      <recent name="types.dataTypes" />
-      <recent name="variables" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.file.Main">
-    <configuration name="LectureGetType" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="types.dataTypes.getType.LectureGetType" />
+  <component name="RunManager" selected="Application.MultiBounded">
+    <configuration name="Box" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="generics.Box" />
       <module name="learn" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="types.dataTypes.getType.*" />
+          <option name="PATTERN" value="generics.methods.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Cat" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="random.Animal.Cat" />
+      <module name="learn" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="random.Animal.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DefaultToString" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="random.DefaultToString" />
+      <module name="learn" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="random.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -78,11 +123,11 @@
       </method>
     </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="types.dataTypes.getType.Main" />
+      <option name="MAIN_CLASS_NAME" value="generics.methods.Main" />
       <module name="learn" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="types.dataTypes.getType.*" />
+          <option name="PATTERN" value="generics.methods.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -90,38 +135,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StaticPromotion" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="types.dataTypes.getType.StaticPromotion" />
+    <configuration name="MultiBounded" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="generics.bounding.MultiBounded" />
       <module name="learn" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="types.dataTypes.getType.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="file.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="file.Main" />
-      <module name="learn" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="file.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="inheritance.offsprings.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="inheritance.offsprings.Main" />
-      <module name="learn" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="inheritance.offsprings.*" />
+          <option name="PATTERN" value="generics.bounding.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -131,11 +150,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.file.Main" />
-        <item itemvalue="Application.inheritance.offsprings.Main" />
-        <item itemvalue="Application.LectureGetType" />
+        <item itemvalue="Application.MultiBounded" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.StaticPromotion" />
+        <item itemvalue="Application.Box" />
+        <item itemvalue="Application.Cat" />
+        <item itemvalue="Application.DefaultToString" />
       </list>
     </recent_temporary>
   </component>
@@ -152,6 +171,8 @@
       <workItem from="1660951978305" duration="5681000" />
       <workItem from="1660967900009" duration="1657000" />
       <workItem from="1660998672311" duration="6381000" />
+      <workItem from="1661508577065" duration="9246000" />
+      <workItem from="1661558948299" duration="7982000" />
     </task>
     <servers />
   </component>
