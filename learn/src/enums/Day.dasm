@@ -1,0 +1,13 @@
+Compiled from "Day.java"
+public final class enums.Day extends java.lang.Enum<enums.Day> {
+  public static final enums.Day MONDAY;
+  public static final enums.Day TUESDAY;
+  public static final enums.Day WEDNESDAY;
+  public static final enums.Day THURSDAY;
+  public static final enums.Day FRIDAY;
+  public static final enums.Day SATURDAY;
+  public static final enums.Day SUNDAY;
+  public static enums.Day[] values();
+  public static enums.Day valueOf(java.lang.String);
+  static {};
+}

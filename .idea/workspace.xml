@@ -5,28 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa9e0471-4bba-4ea8-ac97-ddaf295c6384" name="Changes" comment="# -*- coding: utf-8; mode: text; -*-&#10;##### 50 CHARS MAX ###############################&#10;## Subject&#10;&#10;&#10;##### 72 CHARS PER LINE ################################################&#10;# Problem&#10;&#10;&#10;# Solution&#10;&#10;&#10;# Note&#10;&#10;&#10;########################################################################">
-      <change afterPath="$PROJECT_DIR$/learn/src/generics/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn/src/generics/bounding/Bounded.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn/src/generics/bounding/MultiBounded.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn/src/generics/methods/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn/src/generics/methods/Pair.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn/src/generics/methods/Util.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn/src/packaging/ClassInPackage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn/src/packaging/subpackage/ClassInSubpackage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn/src/packaging/subpackage/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn/src/packaging/subpackage/subsubpackage/ClassInSubsubpackage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn/src/random/Animal/Animal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn/src/random/Animal/Cat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn/src/random/DefaultToString.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn/src/records/Range.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn/src/statically/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn/src/statically/StaticFields.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn/src/types/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/markdown.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/classes/finalClasses/FinalClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/classes/finalClasses/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/core/classloader/TestClassLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/core/classloader/custom/CustomClassLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/digest/FileDigest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/digest/files/hello.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/enums/Day.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/enums/Enum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/exceptions/Exceptions.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/exceptions/ListOfNumbers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/exceptions/Log.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/file/operation/CopyBytes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/file/operation/file-operation.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/properties/JavaProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/properties/hello.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/learn/learn.iml" beforeDir="false" afterPath="$PROJECT_DIR$/learn/learn.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/learn/src/generics/Box.java" beforeDir="false" afterPath="$PROJECT_DIR$/learn/src/generics/Box.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/learn/src/generics/InBox.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/learn/src/generics/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn/src/generics/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/learn/src/generics/generics.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn/src/inheritance/process/Parent.class" beforeDir="false" afterPath="$PROJECT_DIR$/learn/src/inheritance/process/Parent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn/src/jar/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/learn/src/jar/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn/src/properties/Properties.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn/src/types/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/learn/src/types/compile-time-constant.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +38,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -54,25 +57,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "/Users/naiithink/sprojects/private",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.keymap"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/naiithink/sprojects/private2&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.javacompiler&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/learn/src/logging" />
       <recent name="$PROJECT_DIR$/learn/src/file" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/learn/src/digest/files" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="generics.bounding" />
@@ -82,79 +90,98 @@
       <recent name="inheritance.process" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MultiBounded">
-    <configuration name="Box" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="generics.Box" />
+  <component name="RunManager" selected="Application.FileDigest">
+    <configuration name="CopyBytes" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="file.operation.CopyBytes" />
       <module name="learn" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="generics.methods.*" />
+          <option name="PATTERN" value="file.operation.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <method v="2">
-        <option name="Make" enabled="true" />
+        <option name="MakeNoErrorCheck" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Cat" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="random.Animal.Cat" />
+    <configuration name="FileDigest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="digest.FileDigest" />
       <module name="learn" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="random.Animal.*" />
+          <option name="PATTERN" value="digest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <method v="2">
-        <option name="Make" enabled="true" />
+        <option name="MakeNoErrorCheck" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DefaultToString" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="random.DefaultToString" />
+    <configuration name="JavaProperties" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="properties.JavaProperties" />
       <module name="learn" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="random.*" />
+          <option name="PATTERN" value="properties.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <method v="2">
-        <option name="Make" enabled="true" />
+        <option name="MakeNoErrorCheck" enabled="true" />
       </method>
     </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="generics.methods.Main" />
+      <option name="MAIN_CLASS_NAME" value="classes.finalClasses.Main" />
       <module name="learn" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="generics.methods.*" />
+          <option name="PATTERN" value="classes.finalClasses.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <method v="2">
-        <option name="Make" enabled="true" />
+        <option name="MakeNoErrorCheck" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MultiBounded" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="generics.bounding.MultiBounded" />
-      <module name="learn" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="generics.bounding.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+    <configuration default="true" type="Application" factoryName="Application">
       <method v="2">
-        <option name="Make" enabled="true" />
+        <option name="MakeNoErrorCheck" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="JarApplication">
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Java Scratch">
+      <shortenClasspath name="NONE" />
+      <method v="2">
+        <option name="MakeNoErrorCheck" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OpenJDK 17" type="docker-deploy" factoryName="docker-image" temporary="true" server-name="Docker">
+      <deployment type="docker-image">
+        <settings>
+          <option name="imageTag" value="openjdk:17" />
+          <option name="containerName" value="openjdk17" />
+          <option name="entrypoint" value="java -cp learn" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.FileDigest" />
+      <item itemvalue="Application.JavaProperties" />
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.CopyBytes" />
+      <item itemvalue="Docker.OpenJDK 17" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MultiBounded" />
+        <item itemvalue="Application.FileDigest" />
+        <item itemvalue="Application.JavaProperties" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Box" />
-        <item itemvalue="Application.Cat" />
-        <item itemvalue="Application.DefaultToString" />
+        <item itemvalue="Application.CopyBytes" />
+        <item itemvalue="Docker.OpenJDK 17" />
       </list>
     </recent_temporary>
   </component>
@@ -173,6 +200,18 @@
       <workItem from="1660998672311" duration="6381000" />
       <workItem from="1661508577065" duration="9246000" />
       <workItem from="1661558948299" duration="7982000" />
+      <workItem from="1661622666995" duration="9881000" />
+      <workItem from="1661642471704" duration="5766000" />
+      <workItem from="1661656753485" duration="3512000" />
+      <workItem from="1661662011345" duration="49000" />
+      <workItem from="1661662067290" duration="4729000" />
+      <workItem from="1661666812139" duration="882000" />
+      <workItem from="1661667704237" duration="926000" />
+      <workItem from="1661672204460" duration="2933000" />
+      <workItem from="1661679425632" duration="2559000" />
+      <workItem from="1661737838344" duration="1468000" />
+      <workItem from="1661739917225" duration="8000" />
+      <workItem from="1661739936367" duration="4258000" />
     </task>
     <servers />
   </component>
@@ -193,5 +232,10 @@
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/private2$CopyBytes.ic" NAME="CopyBytes Coverage Results" MODIFIED="1661667043680" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>file.operation.*</FILTER>
+    </SUITE>
   </component>
 </project>
