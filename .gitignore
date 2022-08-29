@@ -1,5 +1,7 @@
 out/
 
+*.class
+
 # VSCode
 .vscode/*
 !.vscode/settings.json
