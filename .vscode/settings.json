@@ -2,6 +2,11 @@
     "C_Cpp.intelliSenseEngine": "Default",
     "C_Cpp.errorSquiggles": "Enabled",
 
+    // Arduino
+    "arduino.path": "/opt/homebrew/bin",
+    "arduino.commandPath": "arduino-cli",
+    "arduino.useArduinoCli": true,
+
     // Remote
     "remote.SSH.remoteServerListenOnSocket": true,
     "remote.SSH.remotePlatform": {
@@ -39,8 +44,7 @@
         "*.idl": "c",
         "*.txt": "plaintext",
         "iostream": "cpp",
-        "string.h": "c",
-        "types.h": "c"
+        "string.h": "c"
     },
     // "workbench.editorAssociations": {
     //     "*.md": "vscode.markdown.preview.editor"
@@ -49,9 +53,6 @@
     // Extensions
     "extensions.autoCheckUpdates": true,
     "extensions.autoUpdate": "onlyEnabledExtensions",
-
-    // Editor
-    /// Controls whether suggestions should automatically show up while typing.
     "editor.guides.indentation": true,
     "editor.quickSuggestions": {
         "other": "on",
@@ -66,14 +67,14 @@
     "editor.renderWhitespace": "all",
     "editor.foldingMaximumRegions": 5000,
     "editor.wordWrap": "off",
-    "editor.wordWrapColumn": 80,
-    "editor.wrappingIndent": "indent",
+    // "editor.wordWrapColumn": 80,
+    // "editor.wrappingIndent": "indent",
     "editor.fontLigatures": false,
     "editor.fontFamily": "Consolas, Menlo, Monaco, 'Courier New', monospace",
     "editor.minimap.enabled": false,
-
     "breadcrumbs.enabled": false,
     "workbench.startupEditor": "none",
+
     "[latex]": {
         "editor.formatOnPaste": false,
         "editor.suggestSelection": "recentlyUsedByPrefix",
@@ -155,6 +156,17 @@
     "redhat.telemetry.enabled": false,
 
     /// "redhat.vscode-yaml"
+    "java.configuration.runtimes": [
+        {
+            "name": "JavaSE-17",
+            "path": "/Library/Java/JavaVirtualMachines/jdk-17.0.4.1.jdk/Contents/Home",
+            "default": true
+        },
+        {
+            "name": "JavaSE-18",
+            "path": "/opt/homebrew/Cellar/openjdk/18.0.2.1"
+        }
+    ],
     "yaml.schemas": {
         "file:///Users/naiithink/.vscode/extensions/atlassian.atlascode-2.10.12/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
     },
@@ -497,4 +509,5 @@
 
     /// Add `\\` in doxygen command suggestion for better readbility (need to enable commandSuggestion)
     "doxdocgen.generic.commandSuggestionAddPrefix": false,
+    "java.autobuild.enabled": false,
 }
