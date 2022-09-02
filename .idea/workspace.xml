@@ -5,30 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa9e0471-4bba-4ea8-ac97-ddaf295c6384" name="Changes" comment="# -*- coding: utf-8; mode: text; -*-&#10;##### 50 CHARS MAX ###############################&#10;## Subject&#10;&#10;&#10;##### 72 CHARS PER LINE ################################################&#10;# Problem&#10;&#10;&#10;# Solution&#10;&#10;&#10;# Note&#10;&#10;&#10;########################################################################">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/markdown.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn/src/classes/finalClasses/FinalClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn/src/classes/finalClasses/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn/src/core/classloader/TestClassLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn/src/core/classloader/custom/CustomClassLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn/src/digest/FileDigest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn/src/digest/files/hello.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn/src/enums/Day.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn/src/enums/Enum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn/src/exceptions/Exceptions.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn/src/exceptions/ListOfNumbers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn/src/exceptions/Log.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn/src/file/operation/CopyBytes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn/src/file/operation/file-operation.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn/src/properties/JavaProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn/src/properties/hello.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/file/operation/paths/Exists.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/src/file/operation/paths/null.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/learn/src/generics/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/learn/src/generics/generics.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/learn/src/inheritance/process/Parent.class" beforeDir="false" afterPath="$PROJECT_DIR$/learn/src/inheritance/process/Parent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/learn/src/jar/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/learn/src/jar/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/learn/src/properties/Properties.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/learn/src/types/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/learn/src/types/compile-time-constant.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.project" beforeDir="false" afterPath="$PROJECT_DIR$/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn/src/digest/FileDigest.java" beforeDir="false" afterPath="$PROJECT_DIR$/learn/src/digest/FileDigest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn/src/exceptions/ListOfNumbers.java" beforeDir="false" afterPath="$PROJECT_DIR$/learn/src/exceptions/ListOfNumbers.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,20 +65,33 @@
       <recent name="$PROJECT_DIR$/learn/src/digest/files" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="main" />
       <recent name="generics.bounding" />
       <recent name="generics.methods" />
       <recent name="packaging" />
       <recent name="types.dataTypes.gettingType" />
-      <recent name="inheritance.process" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.FileDigest">
+  <component name="RunManager" selected="Application.Exists">
     <configuration name="CopyBytes" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="file.operation.CopyBytes" />
       <module name="learn" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="file.operation.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="MakeNoErrorCheck" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Exists" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="file.operation.paths.Exists" />
+      <module name="learn" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="file.operation.paths.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -158,30 +153,20 @@
         <option name="MakeNoErrorCheck" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OpenJDK 17" type="docker-deploy" factoryName="docker-image" temporary="true" server-name="Docker">
-      <deployment type="docker-image">
-        <settings>
-          <option name="imageTag" value="openjdk:17" />
-          <option name="containerName" value="openjdk17" />
-          <option name="entrypoint" value="java -cp learn" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
     <list>
+      <item itemvalue="Application.Exists" />
       <item itemvalue="Application.FileDigest" />
       <item itemvalue="Application.JavaProperties" />
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.CopyBytes" />
-      <item itemvalue="Docker.OpenJDK 17" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Exists" />
         <item itemvalue="Application.FileDigest" />
         <item itemvalue="Application.JavaProperties" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.CopyBytes" />
-        <item itemvalue="Docker.OpenJDK 17" />
       </list>
     </recent_temporary>
   </component>
@@ -211,7 +196,14 @@
       <workItem from="1661679425632" duration="2559000" />
       <workItem from="1661737838344" duration="1468000" />
       <workItem from="1661739917225" duration="8000" />
-      <workItem from="1661739936367" duration="4258000" />
+      <workItem from="1661739936367" duration="6127000" />
+      <workItem from="1661774335321" duration="10768000" />
+      <workItem from="1661844878909" duration="865000" />
+      <workItem from="1661848212677" duration="598000" />
+      <workItem from="1661849835012" duration="7000" />
+      <workItem from="1661849850103" duration="110000" />
+      <workItem from="1661849970520" duration="852000" />
+      <workItem from="1661965258429" duration="653000" />
     </task>
     <servers />
   </component>

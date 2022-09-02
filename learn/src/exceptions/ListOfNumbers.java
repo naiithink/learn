@@ -98,14 +98,14 @@ public class ListOfNumbers {
         }
     }
 
-    public void writeList() {
-        // The FileWriter constructor throws IOException, which must be caught.
-        PrintWriter out = new PrintWriter(new FileWriter("OutFile.txt"));
+    // public void writeList() {
+    //     // The FileWriter constructor throws IOException, which must be caught.
+    //     PrintWriter out = new PrintWriter(new FileWriter("OutFile.txt"));
 
-        for (int i = 0; i < SIZE; i++) {
-            // The get(int) method throws IndexOutOfBoundsException, which must be caught.
-            out.println("Value at: " + i + " = " + list.get(i));
-        }
-        out.close();
-    }
+    //     for (int i = 0; i < SIZE; i++) {
+    //         // The get(int) method throws IndexOutOfBoundsException, which must be caught.
+    //         out.println("Value at: " + i + " = " + list.get(i));
+    //     }
+    //     out.close();
+    // }
 }
