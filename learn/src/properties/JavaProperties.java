@@ -5,13 +5,18 @@ import java.io.InputStream;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Properties;
 import java.util.Set;
 
 public class JavaProperties {
 
     public static void main(String[] args) {
-        Path inFile = FileSystems.getDefault().getPath("hello.properties");
+        System.out.println(System.getProperty("java.io.tmpdir"));
+
+        Path tmpDir = Paths.get(System.getProperty("java.io.tmpdir"));
+
+        Path inFile = FileSystems.getDefault().getPath("learn/src/properties/hello.properties");
         Set<Object> keySet;
         String[] keyArray;
 
@@ -35,7 +40,7 @@ public class JavaProperties {
                 System.out.println(i + " = " + prop.getProperty(i));
             }
         } catch (IOException e) {
-            System.err.println(e.getMessage());
+            System.err.println("Got an exception: " + e.getMessage());
         }
     }
 }

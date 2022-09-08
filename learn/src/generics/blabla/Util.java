@@ -1,4 +1,4 @@
-package generics.methods;
+package generics.blabla;
 
 public class Util {
 

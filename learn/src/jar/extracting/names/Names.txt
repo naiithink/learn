@@ -1,0 +1,11 @@
+Jar file: ${user.dir}/learn/src/jar/extracting/names/main/Main.jar
+Entries: java.util.zip.ZipFile$ZipEntryIterator@8bcc55f
+Entry 0
+getName: META-INF/
+getRealName: META-INF/
+Entry 1
+getName: META-INF/MANIFEST.MF
+getRealName: META-INF/MANIFEST.MF
+Entry 2
+getName: Main.class
+getRealName: Main.class
