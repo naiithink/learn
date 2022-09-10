@@ -1,0 +1,8 @@
+version: "3.9"
+services:
+  ubuntu:
+    build: ./compose/ubuntu.Dockerfile
+  jupyter:
+    image: jupyter/base-notebook:latest
+    ports:
+      - 5001:80
