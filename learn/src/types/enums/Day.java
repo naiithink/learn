@@ -7,5 +7,9 @@ public enum Day {
     THURSDAY,
     FRIDAY,
     SATURDAY,
-    SUNDAY
+    SUNDAY;
+
+    public static void main(String[] args) {
+        System.out.println(Day.MONDAY.getDeclaringClass().toString());
+    }
 }

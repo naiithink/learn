@@ -3,7 +3,7 @@
  * For interfaces, use 'implements' keyword.
  */
 
-package generics.bounding;
+package generic.bounding;
 
 public class Bounded<T extends Number> {
 

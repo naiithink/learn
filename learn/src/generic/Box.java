@@ -1,4 +1,4 @@
-package generics;
+package generic;
 
 public class Box<T> {
 

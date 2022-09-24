@@ -1,4 +1,4 @@
-package generics.methods;
+package generic.methods;
 
 public abstract class Method {
 

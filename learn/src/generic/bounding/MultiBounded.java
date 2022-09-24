@@ -1,4 +1,4 @@
-package generics.bounding;
+package generic.bounding;
 
 class A implements B, C {
 
