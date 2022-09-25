@@ -3,7 +3,7 @@
     "C_Cpp.errorSquiggles": "Enabled",
 
     // Arduino
-    "arduino.path": "/opt/homebrew/bin",
+    "arduino.path": "/opt/homebrew/bin/",
     "arduino.commandPath": "arduino-cli",
     "arduino.useArduinoCli": true,
 
@@ -24,35 +24,9 @@
     "liveshare.presence": false,
 
 
-    // Files
-    "files.insertFinalNewline": true,
-    "files.eol": "\n",
-    "files.associations": {
-        ".gitmessage": "plaintext",
-        "stdio.h": "c",
-        "locale.h": "c",
-        "limits.h": "c",
-        "stdlib.h": "c",
-        "gcrypt.h": "c",
-        "foo.h": "c",
-        "fileapi.h": "c",
-        "filesys.h": "c",
-        "file.h": "c",
-        "errno.h": "c",
-        "features.h": "c",
-        "cstdlib": "cpp",
-        "*.idl": "c",
-        "*.txt": "plaintext",
-        "iostream": "cpp",
-        "string.h": "c"
-    },
-    // "workbench.editorAssociations": {
-    //     "*.md": "vscode.markdown.preview.editor"
-    // },
-
-    // Extensions
-    "extensions.autoCheckUpdates": true,
-    "extensions.autoUpdate": "onlyEnabledExtensions",
+    // Editor
+    "editor.inlayHints.enabled": "off",
+    "editor.parameterHints.enabled": true,
     "editor.guides.indentation": true,
     "editor.quickSuggestions": {
         "other": "on",
@@ -84,6 +58,55 @@
         "editor.autoIndent": "none"
     },
     "window.titleBarStyle": "custom",
+
+
+
+    // Files
+    "files.insertFinalNewline": true,
+    "files.eol": "\n",
+
+    "files.associations": {
+        ".gitmessage": "plaintext",
+        "stdio.h": "c",
+        "locale.h": "c",
+        "limits.h": "c",
+        "stdlib.h": "c",
+        "gcrypt.h": "c",
+        "foo.h": "c",
+        "fileapi.h": "c",
+        "filesys.h": "c",
+        "file.h": "c",
+        "errno.h": "c",
+        "features.h": "c",
+        "cstdlib": "cpp",
+        "*.idl": "c",
+        "*.txt": "plaintext",
+        "iostream": "cpp",
+        "string.h": "c",
+        "*.ino": "arduino",
+        // Arduino < 1.0
+        // "*.pde": "arduino",
+    },
+
+    "[markdown]": {
+        "editor.unicodeHighlight.ambiguousCharacters": false,
+        "editor.unicodeHighlight.invisibleCharacters": false,
+        "editor.wordWrap": "off",
+        "editor.quickSuggestions": {
+            "comments": "off",
+            "strings": "off",
+            "other": "off"
+        },
+        "editor.autoClosingBrackets": "never"
+    },
+    // "workbench.editorAssociations": {
+    //     "*.md": "vscode.markdown.preview.editor"
+    // },
+
+    // Extensions
+    "extensions.autoCheckUpdates": true,
+    "extensions.autoUpdate": "onlyEnabledExtensions",
+
 
     // Git
     "git.autorefresh": true,
@@ -156,6 +179,7 @@
     "redhat.telemetry.enabled": false,
 
     /// "redhat.vscode-yaml"
+    "java.autobuild.enabled": false,
     "java.configuration.runtimes": [
         {
             "name": "JavaSE-17",
@@ -509,5 +533,4 @@
 
     /// Add `\\` in doxygen command suggestion for better readbility (need to enable commandSuggestion)
     "doxdocgen.generic.commandSuggestionAddPrefix": false,
-    "java.autobuild.enabled": false,
 }
