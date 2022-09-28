@@ -40,7 +40,7 @@ rm <old-repo>
 
 
 ## REMOVING SUBMODULES
-# - detelte relevant sections from `.gitmodules` file
+# - delete relevant sections from `.gitmodules` file
 # - stage `.gitmodules` changes
 # - delete relevant section from `.git/config`
 # - run `git rm --cached <path to submodule without trailing slash>`
