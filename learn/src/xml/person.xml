@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- <!DOCTYPE person SYSTEM "person.dtd"> -->
+
+<!DOCTYPE person [
+    <!ELEMENT person (name,number,email)>
+        <!ELEMENT name (#PCDATA)>
+        <!ELEMENT number (#PCDATA)>
+        <!ELEMENT email (#PCDATA)>
+]>
+
+<person>
+    <name>Nai</name>
+    <number>1711</number>
+    <email>me@naiithink.com</email>
+</person>
