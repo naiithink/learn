@@ -187,8 +187,8 @@
             "default": true
         },
         {
-            "name": "JavaSE-18",
-            "path": "/opt/homebrew/Cellar/openjdk/18.0.2.1"
+            "name": "JavaSE-19",
+            "path": "/opt/homebrew/Cellar/openjdk/19"
         }
     ],
     "yaml.schemas": {
