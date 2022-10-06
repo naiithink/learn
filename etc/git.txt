@@ -1,6 +1,7 @@
 # global
 git config --global user.name naiithink
 git config --global user.email potsawattkw@outlook.com
+git config --global core.ignorecase false
 git config --global diff.submodule log
 # git config status.submodulesummary 1
 git config submodule.recurse true
