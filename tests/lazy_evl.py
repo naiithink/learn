@@ -6,7 +6,10 @@ def print_b_returns_nought() -> bool:
     print("b")
     return False
 
-if print_a_returns_one() or print_b_returns_nought():
-    print("done")
-else:
-    print("only first")
+def test() -> bool:
+    a = print_a_returns_one()
+    b = print_b_returns_nought()
+
+    return a or b
+
+print(test())
