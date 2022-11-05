@@ -1,3 +1,0 @@
-terminal:
-  image: ubuntu:22.04
-  sleep: 60

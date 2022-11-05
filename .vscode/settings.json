@@ -1,12 +1,4 @@
 {
-    "C_Cpp.intelliSenseEngine": "Default",
-    "C_Cpp.errorSquiggles": "Enabled",
-
-    // Arduino
-    "arduino.path": "/opt/homebrew/bin",
-    "arduino.commandPath": "arduino-cli",
-    "arduino.useArduinoCli": true,
-
     // Remote
     "remote.SSH.remoteServerListenOnSocket": true,
     "remote.SSH.remotePlatform": {
