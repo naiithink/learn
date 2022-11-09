@@ -40,7 +40,12 @@
         "*.txt": "plaintext",
         "iostream": "cpp",
         "string.h": "c",
-        "types.h": "c"
+        "*.ino": "arduino",
+        "types.h": "c",
+        "inet.h": "c",
+        "time.h": "c",
+        "fcntl.h": "c",
+        "ioctl.h": "c"
     },
     // "workbench.editorAssociations": {
     //     "*.md": "vscode.markdown.preview.editor"
