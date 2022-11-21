@@ -1,0 +1,18 @@
+# Fdb version 3
+["pdflatex"] 1668838708 "/Users/naiithink/Developer/projects/naiithink/private/tests/tex/conditions/if.tex" "if.pdf" "if" 1668838708
+  "/Users/naiithink/Developer/projects/naiithink/private/tests/tex/conditions/if.tex" 1668838708 220 8f113a9cd83cfe2a59412f116c50e89d ""
+  "/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
+  "/usr/local/texlive/2022/texmf-dist/tex/latex/base/article.cls" 1667332637 20144 d5ecf0a5140c8d8d8b72cbe86e320eff ""
+  "/usr/local/texlive/2022/texmf-dist/tex/latex/base/ifthen.sty" 1654720880 5319 48d7f3cfa322abd2788e3c09d624b922 ""
+  "/usr/local/texlive/2022/texmf-dist/tex/latex/base/size10.clo" 1667332637 8448 c33a4e1cb35cee9b33c2b21033b73e39 ""
+  "/usr/local/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def" 1666901542 30426 f2fb69fcda4dc35ed0b7dee211bce679 ""
+  "/usr/local/texlive/2022/texmf-dist/web2c/texmf.cnf" 1646502317 40171 cdab547de63d26590bebb3baff566530 ""
+  "/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1668831770 4623329 5e28269c2aee4b9e2f0ef6bdcff03654 ""
+  "/usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1667573678 3063405 8d182e3f655449312d4708f71aeadda1 ""
+  "/usr/local/texlive/2022/texmf.cnf" 1647878952 577 209b46be99c9075fd74d4c0369380e8c ""
+  "if.aux" 1668838708 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "if.tex" 1668838708 220 8f113a9cd83cfe2a59412f116c50e89d ""
+  (generated)
+  "if.aux"
+  "if.log"
+  "if.pdf"

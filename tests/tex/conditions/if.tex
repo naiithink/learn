@@ -1,0 +1,16 @@
+\documentclass{article}
+
+\usepackage{ifthen}
+
+\newcommand{\hello}{%
+hello, world}
+
+
+\newcommand{\blank}{%
+null}
+
+\newcommand{\TRUE}{\boolean{true}}
+
+\begin{document}
+    \ifthenelse{\TRUE}{\hello}{\blank}
+\end{document}
