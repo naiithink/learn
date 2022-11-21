@@ -1,0 +1,48 @@
+% !TEX program = pdflatex
+\documentclass{article}
+
+\usepackage{blindtext}
+\usepackage{layout}
+\usepackage{showframe}
+
+\usepackage{geometry}
+\usepackage{fancyhdr}
+
+\geometry{%
+a4paper,
+landscape = false,
+includemp = true,
+reversemarginpar = true}
+
+\pagestyle{headings}
+
+% Title
+\title{Headers and Footers}
+\author{naiithink}
+\date{}
+
+\setlength{\parindent}{0pt}
+
+%% 
+\begin{document}
+\begin{titlepage}
+\newgeometry{%
+a4paper,
+landscape = false,
+includemp = false}
+
+\maketitle
+\thispagestyle{empty}
+\tableofcontents
+\end{titlepage}
+\newpage
+
+% \renewcommand{\sectionmark}{\markboth{sss}{world}}
+\section{Hello}
+\leftmark\\
+\rightmark
+\newpage
+
+\leftmark\\
+\rightmark
+\end{document}

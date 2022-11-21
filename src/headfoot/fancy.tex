@@ -1,0 +1,62 @@
+% !TEX program = pdflatex
+\documentclass{article}
+
+\usepackage{blindtext}
+\usepackage{layout}
+\usepackage{showframe}
+
+\usepackage{geometry}
+\usepackage{fancyhdr}
+
+\geometry{%
+a4paper,
+landscape = false,
+includeheadfoot = true,
+includemp = true,
+reversemarginpar = false}
+
+\pagestyle{fancy}
+
+% \fancyhf{}
+\fancyhead[L]{\leftmark}
+\fancyhead[C]{}
+\fancyhead[R]{\rightmark}
+
+\fancyhfoffset[R]{2in}
+% \fancyfoot[L]{From: Me}
+% \fancyfoot[C]{with love.}
+% \fancyfoot[R]{\thepage}
+
+\renewcommand{\sectionmark}[1]{\markboth{#1}{}}
+\renewcommand{\subsectionmark}[1]{\markright{#1}}
+
+% Title
+\title{Fancy Headers and Footers}
+\author{naiithink}
+\date{}
+
+\setlength{\parindent}{0pt}
+
+%% 
+\begin{document}
+\begin{titlepage}
+\newgeometry{%
+a4paper,
+landscape = false,
+includemp = false}
+
+\maketitle
+\thispagestyle{empty}
+\tableofcontents
+\end{titlepage}
+\newpage
+
+\section{Hello}
+
+this
+
+\subsection{world}
+\newpage
+
+\subsection{The World}
+\end{document}

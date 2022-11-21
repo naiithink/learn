@@ -1,0 +1,67 @@
+% !TEX program = pdflatex
+\documentclass{article}
+
+\usepackage{blindtext}
+\usepackage{layout}
+\usepackage{showframe}
+
+\usepackage{geometry}
+
+\usepackage{lscape}
+
+\geometry{%
+a4paper,
+landscape = false,
+includemp = true}
+
+\title{Page Layout Test}
+\author{naiithink}
+\date{}
+
+\setlength{\parindent}{0pt}
+
+%% 
+\begin{document}
+\blindtext[5]
+\newpage
+
+\layout
+\newpage
+
+% Overrides the 'default' geometry
+
+\newgeometry{%
+a0paper,
+includemp}
+
+\begin{landscape}
+\thispagestyle{empty}
+
+\marginpar{hello}
+
+Overridden
+
+% Saves current geometrical dimensions as 'test1'
+\savegeometry{test1}
+\end{landscape}
+\newpage
+\restoregeometry
+
+Restored
+\newpage
+
+\newgeometry{%
+margin = 1in,
+includemp,
+marginparwidth = 200pt,
+reversemarginpar = true}
+hello\marginpar{world}
+
+\blindtext[2]
+
+a\\
+b \marginpar[left B]{B}\\
+c
+
+% \addtolength{\marginparwidth}{100pt}
+\end{document}

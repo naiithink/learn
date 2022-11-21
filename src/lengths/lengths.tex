@@ -1,0 +1,83 @@
+% !TEX program = pdflatex
+\documentclass{article}
+
+\usepackage{blindtext}
+
+\usepackage[]{geometry}
+
+\title{Length Commands}
+\author{naiithink}
+\date{}
+
+\setlength{\parindent}{0pt}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Setting Values of Length Commands}
+
+\begin{verbatim}
+\newlength              Defines a new length command
+\setlength
+\addtolength
+\settowidth
+\settoheight
+\settodepth
+\end{verbatim}
+
+\section{\texttt{parindent}}
+
+\verb|\parindent|
+\newpage
+
+
+\section{Baselines}
+
+% Save default value
+\let\defaultbaselineskip\baselineskip
+Defaults to \the\defaultbaselineskip
+
+\subsection{\texttt{baselineskip}}
+
+\subsubsection{baselineskip: 12pt}
+
+\setlength{\baselineskip}{12pt}
+\blindtext[1]
+
+\subsubsection{baselineskip: 14pt}
+
+\setlength{\baselineskip}{14pt}
+\blindtext[1]
+
+\subsubsection{baselineskip: 16pt}
+
+\setlength{\baselineskip}{16pt}
+\blindtext[1]
+
+% Reset to default
+\setlength{\baselineskip}{\defaultbaselineskip}
+
+
+\subsection{\texttt{baselinestretch}}
+Multiplies the value of \verb|\baselineskip| --- applies to the entire document, including footnotes and tables ---
+In principle, ``double spacing'' can be obtained by \verb|\renewcommand{\baselinestretch}{2}|.
+\newpage
+
+\section{\texttt{parskip}}
+Extra vertical space inserted before a paragraph.
+
+\let\defaultparskip\parskip
+Defaults to: \the\defaultparskip
+
+\blindtext[1]
+
+\setlength{\parskip}{16pt}
+\blindtext[1]
+
+\setlength{\parskip}{32pt}
+\blindtext[1]
+
+\setlength{\parskip}{\defaultparskip}
+\end{document}

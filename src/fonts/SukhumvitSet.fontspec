@@ -1,0 +1,10 @@
+\defaultfontfeatures[SukhumvitSet]
+{
+    Script = Default,
+    Scale = 1.4,
+    Ligatures = TeX,
+    Extension = .ttf,
+    Path = ../../assets/fonts/sukhumvit-set/,
+    UprightFont = SukhumvitSet-Medium,
+    BoldFont = SukhumvitSet-Bold,
+}
