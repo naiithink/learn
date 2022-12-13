@@ -1,0 +1,200 @@
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.12.3)  13 DEC 2022 11:52
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**/Users/naiithink/Developer/projects/naiithink/private/tmpl/tex/ku/main
+(/Users/naiithink/Developer/projects/naiithink/private/tmpl/tex/ku/main.tex
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2022-11-02> (./naiithink.cls
+Document Class: naiithink 2022/12/13 The First naiithink's Own LaTeX Class
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/minimal.cls
+Document Class: minimal 2001/05/25 Standard LaTeX minimal class
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/blindtext/blindtext.sty
+Package: blindtext 2012/01/06 V2.0 blindtext-Package
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+)
+\c@blindtext=\count181
+\c@Blindtext=\count182
+\c@blind@countparstart=\count183
+\blind@countxx=\count184
+\blindtext@numBlindtext=\count185
+\blind@countyy=\count186
+\c@blindlist=\count187
+\c@blindlistlevel=\count188
+\c@blindlist@level=\count189
+\blind@listitem=\count190
+\c@blind@listcount=\count191
+\c@blind@levelcount=\count192
+\blind@mathformula=\count193
+\blind@Mathformula=\count194
+\c@blind@randomcount=\count195
+\c@blind@randommax=\count196
+\c@blind@pangramcount=\count197
+\c@blind@pangrammax=\count198
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+))
+\Gm@cnth=\count199
+\Gm@cntv=\count266
+\c@Gm@tempcnt=\count267
+\Gm@bindingoffset=\dimen140
+\Gm@wd@mp=\dimen141
+\Gm@odd@mp=\dimen142
+\Gm@even@mp=\dimen143
+\Gm@layoutwidth=\dimen144
+\Gm@layoutheight=\dimen145
+\Gm@layouthoffset=\dimen146
+\Gm@layoutvoffset=\dimen147
+\Gm@dimlist=\toks17
+
+
+/usr/local/texlive/2022/texmf-dist/tex/latex/geometry/geometry.sty:1006: Package geometry Error: \paperwidth (0.0pt) too short.
+
+See the geometry package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1006 \Gm@process
+                  
+Set a paper type (e.g., `a4paper').
+
+
+/usr/local/texlive/2022/texmf-dist/tex/latex/geometry/geometry.sty:1006: Package geometry Error: \paperheight (0.0pt) too short.
+
+See the geometry package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1006 \Gm@process
+                  
+Set a paper type (e.g., `a4paper').
+
+)) (/usr/local/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
+File: l3backend-xetex.def 2022-10-26 L3 backend support: XeTeX
+\g__graphics_track_int=\count268
+\l__pdf_internal_box=\box51
+\g__pdf_backend_object_int=\count269
+\g__pdf_backend_annotation_int=\count270
+\g__pdf_backend_link_int=\count271
+)
+No file main.aux.
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 9.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 9.
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/ts1cmr.fd
+File: ts1cmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: xetex
+*geometry* verbose mode - [ preamble ] result:
+* driver: xetex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(0.0pt, 0.0pt, 0.0pt)
+* v-part:(T,H,B)=(0.0pt, 0.0pt, 0.0pt)
+* \paperwidth=0.0pt
+* \paperheight=0.0pt
+* \textwidth=0.0pt
+* \textheight=0.0pt
+* \oddsidemargin=-72.26999pt
+* \evensidemargin=-72.26999pt
+* \topmargin=-72.26999pt
+* \headheight=0.0pt
+* \headsep=0.0pt
+* \topskip=10.0pt
+* \footskip=0.0pt
+* \marginparwidth=0.0pt
+* \marginparsep=0.0pt
+* \columnsep=0.0pt
+* \skip\footins=12.0pt plus 4.0pt minus 4.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+
+/Users/naiithink/Developer/projects/naiithink/private/tmpl/tex/ku/main.tex:10: LaTeX Error: Environment titlepage undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 \begin{titlepage}
+                      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+/Users/naiithink/Developer/projects/naiithink/private/tmpl/tex/ku/main.tex:11: Undefined control sequence.
+l.11 \maketitle
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+/Users/naiithink/Developer/projects/naiithink/private/tmpl/tex/ku/main.tex:12: LaTeX Error: \begin{document} ended by \end{titlepage}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.12 \end{titlepage}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[1
+
+]
+Overfull \vbox (10.0pt too high) has occurred while \output is active []
+
+ (./main.aux)
+Overfull \vbox (10.0pt too high) has occurred while \output is active []
+
+ [2] ) 
+Here is how much of TeX's memory you used:
+ 1113 strings out of 475641
+ 22022 string characters out of 5796263
+ 357762 words of memory out of 5000000
+ 22460 multiletter control sequences out of 15000+600000
+ 469267 words of font info for 29 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 70i,5n,76p,205b,92s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+Output written on main.pdf (2 pages).
