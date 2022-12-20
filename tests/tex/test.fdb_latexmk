@@ -1,6 +1,6 @@
-# Fdb version 3
-["pdflatex"] 1668838453 "/Users/naiithink/Developer/projects/naiithink/private/tests/tex/test.tex" "test.pdf" "test" 1668838453
-  "/Users/naiithink/Developer/projects/naiithink/private/tests/tex/test.tex" 1668155616 201 ba1840fc3605943f864f7c2da5f6fca5 ""
+# Fdb version 4
+["pdflatex"] 1670906487 "/Users/naiithink/Developer/projects/naiithink/private/tests/tex/test.tex" "test.pdf" "test" 1670906487 0
+  "/Users/naiithink/Developer/projects/naiithink/private/tests/tex/test.tex" 1669196837 201 ba1840fc3605943f864f7c2da5f6fca5 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1136768653 1324 c910af8c371558dc20f2d7822f66fe64 ""
@@ -25,14 +25,15 @@
   "/usr/local/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def" 1666901542 30426 f2fb69fcda4dc35ed0b7dee211bce679 ""
   "/usr/local/texlive/2022/texmf-dist/tex/latex/tools/xspace.sty" 1654720880 4545 4c279ac9292a1be8afa9ab2f1d3299c2 ""
   "/usr/local/texlive/2022/texmf-dist/web2c/texmf.cnf" 1646502317 40171 cdab547de63d26590bebb3baff566530 ""
-  "/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1668831770 4623329 5e28269c2aee4b9e2f0ef6bdcff03654 ""
-  "/usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1667573678 3063405 8d182e3f655449312d4708f71aeadda1 ""
+  "/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1670906157 4623329 5e28269c2aee4b9e2f0ef6bdcff03654 ""
+  "/usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1670073282 3063372 39c83e4576cd0d6723441e8a453cfaca ""
   "/usr/local/texlive/2022/texmf.cnf" 1647878952 577 209b46be99c9075fd74d4c0369380e8c ""
-  "test.aux" 1668838453 137 f7faa1aebc18d1061272dd0d03c06b47 "pdflatex"
-  "test.tex" 1668155616 201 ba1840fc3605943f864f7c2da5f6fca5 ""
-  "test.toc" 1668838453 64 8917d54587a0561a84ba55e0d4e2725e "pdflatex"
+  "test.aux" 1670906487 137 f7faa1aebc18d1061272dd0d03c06b47 "pdflatex"
+  "test.tex" 1669196837 201 ba1840fc3605943f864f7c2da5f6fca5 ""
+  "test.toc" 1670906487 64 8917d54587a0561a84ba55e0d4e2725e "pdflatex"
   (generated)
   "test.aux"
   "test.log"
   "test.pdf"
   "test.toc"
+  (rewritten before read)
