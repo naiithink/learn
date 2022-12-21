@@ -17,6 +17,11 @@ RUN     yes | unminimize 2>&1 \
         && bash /tmp/library-scripts/common-debian.sh "${INSTALL_ZSH}" "${USERNAME}" "${USER_UID}" "${USER_GID}" "${UPGRADE_PACKAGES}" "true" "true" \
         && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/library-scripts
 
+
+ENV RUN_XTERM=no
+ENV DISPLAY_WIDTH=1024
+ENV DISPLAY_HEIGHT=768
+
 # [Optional] Uncomment this section to install additional OS packages.
 RUN     apt-get update && export DEBIAN_FRONTEND=noninteractive \
         && apt-get -y install --no-install-recommends automake build-essential gnupg2 libtool-bin libncurses-dev libc6-dbg libxml2-dev
