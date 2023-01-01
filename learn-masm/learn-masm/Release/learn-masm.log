@@ -1,3 +1,8 @@
 ﻿  Assembling register.asm...
-  LINK : /LTCG specified but no code generation required; remove /LTCG from the link command line to improve linker performance
-  learn-masm.vcxproj -> C:\Users\naiithink\Developer\projects\naiithink\private\learn-masm\Release\learn-masm.exe
+register.asm(13): error A2008: syntax error : CS
+register.asm(17): error A2074: cannot access label through segment registers
+register.asm(18): error A2074: cannot access label through segment registers
+register.asm(20): error A2074: cannot access label through segment registers
+register.asm(15): error A2004: symbol type conflict
+register.asm(25): warning A4023: with /coff switch, leading underscore required for start address : FIRST
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\BuildCustomizations\masm.targets(70,5): error MSB3721: The command "ml.exe /c /nologo /Zi /Fo"Release\register.obj" /W3 /errorReport:prompt  /Taregister.asm" exited with code 1.
