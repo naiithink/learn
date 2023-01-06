@@ -81,7 +81,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <EntryPointSymbol>EIEI</EntryPointSymbol>
+      <EntryPointSymbol>_start</EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -134,7 +134,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <MASM Include="program1.asm" />
+    <MASM Include="hw1_1199.asm" />
+    <MASM Include="hw2_1199.asm" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

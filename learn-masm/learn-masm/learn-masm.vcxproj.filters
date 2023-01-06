@@ -15,7 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <MASM Include="program1.asm">
+    <MASM Include="hw2_1199.asm">
+      <Filter>Source Files</Filter>
+    </MASM>
+    <MASM Include="hw1_1199.asm">
       <Filter>Source Files</Filter>
     </MASM>
   </ItemGroup>
