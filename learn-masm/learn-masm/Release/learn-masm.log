@@ -1,3 +1,0 @@
-﻿  Assembling program1.asm...
-program1.asm(19): warning A4023: with /coff switch, leading underscore required for start address : START
-program1.obj : fatal error LNK1190: invalid fixup found, type 0x0001
