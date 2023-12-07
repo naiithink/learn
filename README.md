@@ -8,3 +8,7 @@ My programming (not just coding) playground,
 ...  
 
 **There're more on branches!**
+
+```
+ALL THE MALWARE I WROTE HAS BEEN TESTED, FOR EDUCATIONAL PURPOSES, ON MY OWN MACHINE – ETHICS MATTERS.
+```
