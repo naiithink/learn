@@ -1,0 +1,141 @@
+<html>
+
+<head>
+    <title>Hello</title>
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <!-- The core React library -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <!-- DOM-specific methods -->
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/jsx">
+        const app = document.getElementById('app');
+        // const header = document.createElement('h1');
+        // const headerContent = document.createTextNode('hello, world');
+
+        // header.appendChild(headerContent);
+        // app.appendChild(header);
+
+        // Deprecated in React 18
+        // ReactDOM.render(<h1>hello, world</h1>, app);
+        const root = ReactDOM.createRoot(app);
+
+        root.render(<h1>hello, world</h1>);
+    </script>
+
+    <div id="app2"></div>
+    <script type="text/jsx">
+        const app2 = document.getElementById('app2');
+        const root2 = ReactDOM.createRoot(app2);
+
+        // function Header(props) {
+        function Header({ title }) {
+            // console.log(title);
+            return <h1>{title}</h1>;
+        }
+
+        root2.render(<Header title="This is the first header of the second app on this page." />);
+    </script>
+
+    <div id="app3"></div>
+    <script type="text/jsx">
+        const app3 = document.getElementById('app3');
+        const root3 = ReactDOM.createRoot(app3);
+
+        const app3Title = 'App 3';
+        let app3Counter = 1;
+
+        function HomePage() {
+            const names = ['Potsawat Think', 'Jonathan Think', 'Nai Think'];
+
+            function handleClick() {
+                console.log('increment like count');
+            }
+
+            return (
+                <div>
+                    <Header title={app3Title + ': Header: ' + app3Counter++} />
+                    <Header title={app3Title + ': Header: ' + app3Counter++} />
+                    <div id="app3-name-list">
+                        <Header title={app3Title + ': Header: ' + app3Counter++ + ': Names'} />
+                        <ul>
+                            {/* names.map((name) => (<li>{name}</li>)) */}
+                            { names.map((name) => (<li key={name}>{name}</li>)) }
+                        </ul>
+
+                        <button onClick={handleClick}>Like</button>
+                    </div>
+                </div>
+            );
+        }
+
+        root3.render(<HomePage />);
+    </script>
+
+    <div id="app4"></div>
+    <script type="text/jsx">
+        const app4 = document.getElementById('app4');
+        const root4 = ReactDOM.createRoot(app4);
+
+        // function HomePage4() {
+        //     function MyButton1() {
+        //         const [count, setCount] = React.useState(0);
+    
+        //         function handleClick4() {
+        //             setCount(count + 1);
+        //         }
+    
+        //         return (
+        //             <button onClick={handleClick4}>
+        //                 Clicked {count} time{count === 1 && 's'}
+        //             </button>
+        //         );
+        //     }
+
+        //     return <>
+        //         <Header title='App 4' />
+        //         <article>
+        //             <MyButton1 />
+        //             <MyButton1 />
+        //             <MyButton1 />
+        //         </article>
+        //     </>;
+        // }
+
+        function HomePage4() {
+            const [count, setCount] = React.useState(0);
+    
+            function handleClick4() {
+                setCount(count + 1);
+            }
+
+            function MyButton1({ count, handleClick4 }) {
+                return (
+                    <button onClick={handleClick4}>
+                        Clicked {count} time{count === 1 && 's'}
+                    </button>
+                );
+            }
+
+            return <>
+                <Header title='App 4' />
+                <article>
+                    <MyButton1 count={count} handleClick4={handleClick4}/>
+                    <MyButton1 count={count} handleClick4={handleClick4}/>
+                    <MyButton1 count={count} handleClick4={handleClick4}/>
+                </article>
+            </>;
+        }
+
+        root4.render(<HomePage4 />);
+    </script>
+</body>
+
+</html>
